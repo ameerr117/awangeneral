@@ -185,7 +185,7 @@ const NavBar = () => {
               <span className="call">CALL US</span>
 
               <a href="tel:+9710050607000" className="phone-number">
-                +971 005 060 7000
+                +971 0508089726
               </a>
             </div>
 
@@ -193,7 +193,7 @@ const NavBar = () => {
             <div className="social-icons">
 
               <a
-                href="https://web.facebook.com/fahad.yaseen.5076/"
+                href="https://web.facebook.com/awangcaw@gmail.com/"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Facebook"

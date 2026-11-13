@@ -40,7 +40,7 @@ function Footer() {
             />
           </Link>
 
-          <h2>AWAN GENERAL ALUMINIUM</h2>
+          <h2>AWAN GENERAL CONTRACTING</h2>
 
           <p>
             Delivering professional aluminium, glazing and construction
@@ -184,8 +184,8 @@ function Footer() {
       {/* ================= BOTTOM FOOTER ================= */}
       <div className="footer-bottom">
         <p>
-          © {new Date().getFullYear()} AWAN GENERAL ALUMINIUM AND
-          CONSTRUCTION WORK LLC. All Rights Reserved.
+          © {new Date().getFullYear()} AWAN GENERAL CONTRACTING ALUMINIUM AND
+         ALUMINIUM WORK LLC. All Rights Reserved.
         </p>
       </div>
     </footer>
