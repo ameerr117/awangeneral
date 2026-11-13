@@ -1,0 +1,399 @@
+/* ===============================
+   ALUMINIUM WINDOW INFORMATION
+   =============================== */
+
+.tents-page {
+  width: 100%;
+  overflow: hidden;
+  font-family: Arial, sans-serif;
+  color: #2d2d2d;
+  background: #ffffff;
+}
+
+/* ===============================
+   HERO
+   =============================== */
+
+.tents-hero {
+  min-height: 560px;
+  display: flex;
+  align-items: center;
+  background:
+    linear-gradient(rgba(25, 25, 25, 0.72), rgba(25, 25, 25, 0.82)),
+    url("../../assets/window.jpg") center/cover no-repeat;
+}
+
+.tents-overlay {
+  width: 100%;
+}
+
+.tents-hero-content {
+  width: min(1180px, 90%);
+  margin: auto;
+  max-width: 750px;
+  padding: 80px 0;
+}
+
+.hero-label,
+.section-heading span,
+.benefits-intro > span {
+  display: block;
+  margin-bottom: 14px;
+  color: #b08a55;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.tents-hero h1 {
+  margin: 0 0 22px;
+  color: #ffffff;
+  font-size: clamp(38px, 6vw, 72px);
+  line-height: 1.08;
+  font-weight: 700;
+}
+
+.hero-description {
+  max-width: 650px;
+  color: #e5e5e5;
+  font-size: 18px;
+  line-height: 1.8;
+}
+
+/* ===============================
+   GENERAL SECTIONS
+   =============================== */
+
+.tents-intro,
+.window-types,
+.window-applications,
+.window-process {
+  width: min(1180px, 90%);
+  margin: auto;
+  padding: 100px 0;
+}
+
+.section-heading {
+  margin-bottom: 35px;
+}
+
+.section-heading h2,
+.benefits-intro h2 {
+  margin: 0;
+  color: #292929;
+  font-size: clamp(30px, 4vw, 48px);
+  line-height: 1.2;
+}
+
+.center-heading {
+  text-align: center;
+}
+
+.center-heading > p {
+  max-width: 650px;
+  margin: 20px auto 0;
+  color: #666;
+  line-height: 1.8;
+}
+
+.intro-content {
+  max-width: 900px;
+  padding-left: 25px;
+  border-left: 3px solid #b08a55;
+}
+
+.intro-content p {
+  margin: 0 0 18px;
+  color: #5e5e5e;
+  font-size: 17px;
+  line-height: 1.9;
+}
+
+/* ===============================
+   WINDOW TYPES
+   =============================== */
+
+.window-types {
+  max-width: none;
+  width: 100%;
+  padding-left: 5%;
+  padding-right: 5%;
+  background: #f5f5f5;
+}
+
+.window-grid {
+  width: min(1180px, 100%);
+  margin: 55px auto 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.window-card {
+  position: relative;
+  padding: 35px;
+  background: #ffffff;
+  border: 1px solid #e4e4e4;
+  transition: 0.3s ease;
+}
+
+.window-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.1);
+}
+
+.window-number {
+  display: block;
+  margin-bottom: 30px;
+  color: #b08a55;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.window-card h3 {
+  margin: 0;
+  color: #292929;
+  font-size: 23px;
+}
+
+.card-line {
+  width: 45px;
+  height: 2px;
+  margin: 20px 0;
+  background: #b08a55;
+}
+
+.window-card p {
+  margin: 0;
+  color: #666;
+  line-height: 1.8;
+}
+
+/* ===============================
+   BENEFITS
+   =============================== */
+
+.window-benefits {
+  padding: 100px 5%;
+  background: #292929;
+}
+
+.benefits-container {
+  width: min(1180px, 100%);
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 80px;
+  align-items: start;
+}
+
+.benefits-intro h2 {
+  color: #ffffff;
+}
+
+.benefits-intro p {
+  color: #c7c7c7;
+  line-height: 1.8;
+  font-size: 17px;
+}
+
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2px;
+}
+
+.benefit-card {
+  padding: 35px;
+  background: #353535;
+}
+
+.benefit-number {
+  color: #b08a55;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.benefit-card h3 {
+  margin: 18px 0 12px;
+  color: #ffffff;
+  font-size: 21px;
+}
+
+.benefit-card p {
+  margin: 0;
+  color: #c9c9c9;
+  line-height: 1.7;
+}
+
+/* ===============================
+   APPLICATIONS
+   =============================== */
+
+.application-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  margin-top: 50px;
+}
+
+.application-card {
+  padding: 45px 35px;
+  border-top: 4px solid #b08a55;
+  background: #f7f7f7;
+}
+
+.application-card span {
+  color: #b08a55;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.application-card h3 {
+  margin: 22px 0 12px;
+  font-size: 24px;
+}
+
+.application-card p {
+  margin: 0;
+  color: #666;
+  line-height: 1.8;
+}
+
+/* ===============================
+   PROCESS
+   =============================== */
+
+.window-process {
+  max-width: none;
+  width: 100%;
+  padding-left: 5%;
+  padding-right: 5%;
+  background: #f5f5f5;
+}
+
+.process-grid {
+  width: min(1180px, 100%);
+  margin: 55px auto 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+}
+
+.process-item {
+  position: relative;
+  padding: 25px 10px;
+}
+
+.process-item span {
+  display: block;
+  margin-bottom: 25px;
+  color: #b08a55;
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.process-item h3 {
+  margin: 0 0 12px;
+  font-size: 21px;
+}
+
+.process-item p {
+  margin: 0;
+  color: #666;
+  line-height: 1.7;
+}
+
+/* ===============================
+   CLOSING
+   =============================== */
+
+.tents-closing {
+  padding: 100px 5%;
+  text-align: center;
+  background: #b08a55;
+}
+
+.tents-closing > div {
+  max-width: 850px;
+  margin: auto;
+}
+
+.tents-closing span {
+  display: block;
+  margin-bottom: 18px;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.tents-closing h2 {
+  margin: 0 0 20px;
+  color: #ffffff;
+  font-size: clamp(30px, 4vw, 50px);
+}
+
+.tents-closing p {
+  margin: auto;
+  color: #fff;
+  line-height: 1.8;
+  font-size: 17px;
+}
+
+/* ===============================
+   RESPONSIVE DESIGN
+   =============================== */
+
+@media (max-width: 992px) {
+  .window-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .benefits-container {
+    grid-template-columns: 1fr;
+    gap: 45px;
+  }
+
+  .process-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 700px) {
+  .tents-hero {
+    min-height: 480px;
+  }
+
+  .tents-intro,
+  .window-types,
+  .window-applications,
+  .window-process {
+    padding-top: 70px;
+    padding-bottom: 70px;
+  }
+
+  .window-grid,
+  .application-grid,
+  .benefits-grid,
+  .process-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .tents-hero h1 {
+    font-size: 42px;
+  }
+
+  .window-card,
+  .benefit-card,
+  .application-card {
+    padding: 28px;
+  }
+
+  .window-benefits,
+  .tents-closing {
+    padding-top: 70px;
+    padding-bottom: 70px;
+  }
+}

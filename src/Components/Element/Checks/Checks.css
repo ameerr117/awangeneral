@@ -1,0 +1,290 @@
+/* General Styles */
+.Element-container {
+    padding: 20px;
+  }
+  
+  .form-and-switches {
+    display: flex;
+    margin-top: 20px;
+  }
+  
+  .form-elements,
+  .form-switches {
+    padding: 20px;
+  }
+  .form-elements{
+    background-color:rgba(203, 188, 169, 0.16);
+    margin: 10px;
+  }
+  .form-elements form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  label {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+  }
+  
+  input[type="text"],
+  input[type="text"],
+  input[type="color"],
+  textarea {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  textarea {
+    height: 100px;
+  }
+  
+  .city-select,
+  .country-select {
+    display: flex;
+    align-items: center;
+    position: relative;
+  }
+  
+  .city-select img,
+  .country-select img {
+    margin-right: 10px;
+  }
+  
+  .city-select input,
+  .country-select input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .city-select select,
+  .country-select select {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+  }
+  
+  .switch-group label,
+  .checkbox-group label,
+  .radio-group label {
+    
+    align-items: left; /* Align items horizontally */
+    justify-content: space-between; /* Place space between text and switch */
+    margin-bottom: 10px;
+  }
+  
+  .sswwitch{
+    display:list-item;
+    
+  }
+  .switch {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    
+  }
+  
+  
+  .switch .slider {
+    position: absolute;
+    cursor: pointer;
+    width: 34px;
+    height: 20px;
+    background-color: #ccc;
+    border-radius: 34px;
+    transition: .4s;
+    
+  }
+  
+  .slider {
+    position: relative;
+    cursor: pointer;
+    width: 34px;
+    height: 20px;
+    background-color: #ccc;
+    border-radius: 20px;
+    display: inline-block;
+  }
+  
+  .slider:before {
+    content: "";
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background-color: white;
+    transition: .4s;
+    
+  }
+  
+  .switch:checked + .slider {
+    background-color: #f00; /* Red when checked */
+  }
+  
+  .switch:checked + .slider:before {
+    transform: translateX(14px);
+  }
+  
+  .switch-primary:checked + .slider {
+    background-color: #0f0; /* Green when checked */
+  }
+  
+  .switch-confirm:checked + .slider {
+    background-color: #f00; /* Red when checked */
+  }
+  
+  .switch .slider:before {
+    position: absolute;
+    content: "";
+    height: 12px;
+    width: 12px;
+    border-radius: 50%;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+    
+  }
+  
+  .switch input:checked + .slider {
+    background-color: #2196F3;
+    
+  }
+  
+  .switch input:checked + .slider.red {
+    background-color: red;
+    
+  }
+  
+  .switch input:checked + .slider.green {
+    background-color: green;
+  }
+  
+  .checkbox-group input[type="checkbox"].red:checked {
+    background-color: red;
+  }
+  
+  .checkbox-group input[type="checkbox"].black:checked {
+    background-color: black;
+  }
+  
+  .checkbox-group input[type="checkbox"].dim {
+    background-color: #dcdcdc;
+  }
+  
+  .checkbox-group input[type="checkbox"].stop-icon:hover {
+    cursor: not-allowed;
+  }
+  
+  .radio-group input[type="radio"].pink:checked {
+    background-color: pink;
+  }
+  
+  .radio-group input[type="radio"].black:checked {
+    background-color: black;
+  }
+  
+  .select-box select {
+    width: 100%;
+  }
+  
+  .select-box {
+    margin-top: 50px;
+  }
+  
+  .checkbox-group,
+  .radio-group {
+    margin-top: 50px;
+  }
+  
+
+  /* Mobile Screen Adjustments for 480px */
+
+@media (max-width: 480px) {
+  .Element-container {
+    padding: 10px;
+  }
+
+  .form-and-switches {
+    flex-direction: column;
+  }
+
+  .form-elements,
+  .form-switches {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+  }
+
+  .form-elements {
+    margin: 0;
+    background-color: rgba(203, 188, 169, 0.16);
+  }
+
+  .form-switches {
+    margin: 10px 0;
+  }
+
+  .form-elements form {
+    display: block;
+  }
+
+  .form-elements label,
+  .form-switches label {
+    margin-bottom: 10px;
+  }
+
+  .city-select,
+  .country-select {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .city-select input,
+  .country-select input {
+    width: 100%;
+    margin-bottom: 5px;
+  }
+
+  .city-select select,
+  .country-select select {
+    width: 100%;
+    margin-top: 5px;
+  }
+
+  .switch-group,
+  .checkbox-group,
+  .radio-group {
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  .switch-group label,
+  .checkbox-group label,
+  .radio-group label {
+    display: block;
+    margin-bottom: 15px;
+  }
+
+  .switch,
+  .checkbox-group input[type="checkbox"],
+  .radio-group input[type="radio"] {
+    width: auto;
+    margin-right: 10px;
+  }
+
+  .select-box {
+    margin-top: 20px;
+  }
+}

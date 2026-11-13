@@ -1,0 +1,99 @@
+.page-container {
+  width: 100%;
+  display: flex;
+  align-items: stretch;
+  background: #f5f5f5;
+  box-sizing: border-box;
+}
+
+.leftside,
+.rightside {
+  width: 50%;
+}
+
+.leftside {
+  min-height: 480px;
+}
+
+.left-image {
+  width: 100%;
+  height: 100%;
+  min-height: 480px;
+  object-fit: cover;
+  display: block;
+}
+
+.rightside {
+  box-sizing: border-box;
+  padding: 70px 8%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: #2b2b2b;
+}
+
+.page-tag {
+  color: #c4a47c;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-bottom: 18px;
+}
+
+.rightside h1 {
+  color: #ffffff;
+  font-size: 38px;
+  line-height: 1.2;
+  margin: 0 0 25px;
+  font-weight: 700;
+}
+
+.rightside p {
+  color: #d0d0d0;
+  font-size: 15px;
+  line-height: 1.8;
+  margin: 0 0 18px;
+}
+
+.learn-more {
+  width: fit-content;
+  margin-top: 15px;
+  padding: 15px 28px;
+  background: #c4a47c;
+  color: #ffffff;
+  border: none;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.learn-more:hover {
+  background: #ffffff;
+  color: #2b2b2b;
+}
+
+/* Mobile and Tablet */
+@media (max-width: 768px) {
+  .page-container {
+    flex-direction: column;
+  }
+
+  .leftside,
+  .rightside {
+    width: 100%;
+  }
+
+  .leftside,
+  .left-image {
+    min-height: 320px;
+  }
+
+  .rightside {
+    padding: 50px 8%;
+  }
+
+  .rightside h1 {
+    font-size: 30px;
+  }
+}

@@ -1,0 +1,32 @@
+
+.Full {
+  width: 100%;
+  min-height: 100vh;
+  background: #000;
+}
+
+.Abouts {
+  min-height: 350px;
+  display: flex;
+  align-items: center;
+  padding: 60px 8%;
+  background: #000;
+}
+
+.Abouts-text h1 {
+  margin: 0;
+  color: #fff;
+  font-size: 55px;
+  font-weight: 700;
+}
+
+@media (max-width: 600px) {
+  .Abouts {
+    min-height: 260px;
+    padding: 50px 7%;
+  }
+
+  .Abouts-text h1 {
+    font-size: 40px;
+  }
+}

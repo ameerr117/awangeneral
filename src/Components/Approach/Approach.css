@@ -1,0 +1,226 @@
+/* =========================================
+   AWAN | PROFESSIONAL APPROACH SECTION
+========================================= */
+
+.programs {
+    width: 100%;
+    padding: 90px 8%;
+    box-sizing: border-box;
+    background: #ffffff;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  .program {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    align-items: center;
+    gap: 80px;
+  }
+  
+  /* -----------------------------------------
+     IMAGE
+  ----------------------------------------- */
+  
+  .program-image {
+    position: relative;
+  }
+  
+  .program-image img {
+    width: 100%;
+    height: 520px;
+    display: block;
+    object-fit: cover;
+  }
+  
+  .image-badge {
+    position: absolute;
+    right: -20px;
+    bottom: 30px;
+    padding: 18px 24px;
+    background: #2b2b2b;
+    border-left: 3px solid #b8956b;
+    color: #ffffff;
+  }
+  
+  .image-badge span {
+    display: block;
+    margin-bottom: 5px;
+    color: #b8956b;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 2px;
+  }
+  
+  .image-badge strong {
+    font-size: 14px;
+    letter-spacing: 1px;
+  }
+  
+  /* -----------------------------------------
+     CONTENT
+  ----------------------------------------- */
+  
+  .program-text {
+    max-width: 600px;
+  }
+  
+  .approach-label {
+    display: block;
+    margin-bottom: 16px;
+    color: #b8956b;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 3px;
+  }
+  
+  .program-text h1 {
+    margin: 0;
+    color: #2b2b2b;
+    font-size: clamp(32px, 3.5vw, 52px);
+    line-height: 1.15;
+    font-weight: 700;
+  }
+  
+  .title-line {
+    width: 65px;
+    height: 3px;
+    margin: 25px 0;
+    background: #b8956b;
+  }
+  
+  .program-text > p {
+    margin: 0 0 18px;
+    color: #6e7475;
+    font-size: 15px;
+    line-height: 1.9;
+  }
+  
+  /* -----------------------------------------
+     PROFESSIONAL FEATURES
+  ----------------------------------------- */
+  
+  .approach-features {
+    display: flex;
+    gap: 25px;
+    margin: 32px 0;
+    padding-top: 25px;
+    border-top: 1px solid #dedede;
+  }
+  
+  .approach-features div {
+    flex: 1;
+  }
+  
+  .approach-features span {
+    display: block;
+    margin-bottom: 8px;
+    color: #b8956b;
+    font-size: 20px;
+    font-weight: 800;
+  }
+  
+  .approach-features p {
+    margin: 0;
+    color: #2b2b2b;
+    font-size: 11px;
+    font-weight: 700;
+    line-height: 1.5;
+  }
+  
+  /* -----------------------------------------
+     BUTTON
+  ----------------------------------------- */
+  
+  .program-text .more {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 22px;
+    border: 1px solid #2b2b2b;
+    background: transparent;
+    color: #2b2b2b;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .program-text .more span {
+    color: #b8956b;
+    font-size: 18px;
+    transition: transform 0.3s ease;
+  }
+  
+  .program-text .more:hover {
+    background: #2b2b2b;
+    color: #ffffff;
+  }
+  
+  .program-text .more:hover span {
+    transform: translateX(5px);
+  }
+  
+  /* -----------------------------------------
+     TABLET
+  ----------------------------------------- */
+  
+  @media (max-width: 900px) {
+    .programs {
+      padding: 70px 6%;
+    }
+  
+    .program {
+      grid-template-columns: 1fr;
+      gap: 50px;
+    }
+  
+    .program-text {
+      max-width: 100%;
+    }
+  
+    .program-image img {
+      height: 450px;
+    }
+  
+    .image-badge {
+      right: 0;
+    }
+  }
+  
+  /* -----------------------------------------
+     MOBILE
+  ----------------------------------------- */
+  
+  @media (max-width: 550px) {
+    .programs {
+      padding: 55px 5%;
+    }
+  
+    .program-image img {
+      height: 350px;
+    }
+  
+    .program-text h1 {
+      font-size: 32px;
+    }
+  
+    .approach-features {
+      gap: 15px;
+    }
+  
+    .approach-features span {
+      font-size: 17px;
+    }
+  
+    .approach-features p {
+      font-size: 9px;
+    }
+  
+    .image-badge {
+      bottom: 15px;
+      padding: 14px 18px;
+    }
+  }

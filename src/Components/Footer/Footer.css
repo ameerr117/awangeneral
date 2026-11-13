@@ -1,0 +1,751 @@
+.footer {
+  width: 100%;
+  background: #2b2b2b;
+  color: #ffffff;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Main Footer - Reduced Size */
+.footer-container {
+  max-width: 1250px;
+  margin: 0 auto;
+  padding: 35px 5% 25px;
+  display: grid;
+  grid-template-columns: 1.4fr 0.8fr 0.9fr 1.2fr;
+  gap: 30px;
+  align-items: start;
+}
+
+/* Company Brand */
+.footer-brand {
+  max-width: 300px;
+}
+
+.footer-logo {
+  width: 58px;
+  height: auto;
+  margin-bottom: 8px;
+}
+
+.footer-brand h2 {
+  margin: 0 0 8px;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.footer-brand p {
+  margin: 0 0 14px;
+  color: #c5c5c5;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+/* Footer Sections */
+.footer-section h3 {
+  margin: 4px 0 12px;
+  color: #b8956b;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.footer-section ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.footer-section ul li {
+  margin-bottom: 7px;
+}
+
+.footer-section ul li a {
+  color: #c5c5c5;
+  text-decoration: none;
+  font-size: 12px;
+  transition: color 0.3s ease;
+}
+
+.footer-section ul li a:hover {
+  color: #b8956b;
+}
+
+/* Contact Section */
+.footer-contact p {
+  margin: 0 0 14px;
+  color: #c5c5c5;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.footer-contact-btn {
+  display: inline-block;
+  padding: 9px 14px;
+  border: 1px solid #b8956b;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+}
+
+.footer-contact-btn:hover {
+  background: #b8956b;
+  color: #2b2b2b;
+}
+
+/* Social Icons - Compact */
+.social-icons {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.social-icons a {
+  width: 26px;
+  height: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+}
+
+.social-icons a:hover {
+  border-color: #b8956b;
+  transform: translateY(-2px);
+}
+
+.social-icons img {
+  width: 14px;
+  height: 14px;
+  object-fit: contain;
+}
+
+/* Bottom Footer */
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 12px 5%;
+  text-align: center;
+}
+
+.footer-bottom p {
+  margin: 0;
+  color: #999999;
+  font-size: 10px;
+  line-height: 1.5;
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+  .footer-container {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 30px 6% 20px;
+    gap: 25px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 550px) {
+  .footer-container {
+    grid-template-columns: 1fr;
+    padding: 30px 7% 20px;
+    gap: 22px;
+  }
+
+  .footer-brand {
+    max-width: 100%;
+  }
+
+  .footer-logo {
+    width: 52px;
+  }
+
+  .footer-section h3 {
+    margin-bottom: 9px;
+  }
+}
+/* ========================================
+   AWAN GENERAL ALUMINIUM - FOOTER
+======================================== */
+
+.footer {
+  width: 100%;
+  background: #242424;
+  color: #ffffff;
+  font-family: Arial, sans-serif;
+}
+
+/* Main Footer Container */
+.footer-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 65px 5% 50px;
+
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
+  gap: 50px;
+}
+
+/* ========================================
+   COMPANY BRAND
+======================================== */
+
+.footer-brand {
+  max-width: 370px;
+}
+
+.footer-logo-link {
+  display: inline-flex;
+  text-decoration: none;
+  margin-bottom: 18px;
+}
+
+.footer-logo {
+  width: 90px;
+  height: 90px;
+  object-fit: contain;
+
+  transition: transform 0.3s ease;
+}
+
+.footer-logo-link:hover .footer-logo {
+  transform: scale(1.06);
+}
+
+.footer-brand h2 {
+  margin: 0 0 15px;
+
+  color: #ffffff;
+  font-size: 21px;
+  font-weight: 700;
+  line-height: 1.3;
+  letter-spacing: 0.5px;
+}
+
+.footer-brand p {
+  margin: 0;
+  max-width: 350px;
+
+  color: #bdbdbd;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+/* ========================================
+   SOCIAL MEDIA
+======================================== */
+
+.footer .social-icons {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+
+  margin-top: 24px;
+}
+
+.footer .social-icons a {
+  width: 38px;
+  height: 38px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 50%;
+
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.footer .social-icons a:hover {
+  background: #ffffff;
+  border-color: #ffffff;
+  transform: translateY(-4px);
+}
+
+.footer .social-icons img {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+
+  transition: transform 0.3s ease;
+}
+
+.footer .social-icons a:hover img {
+  transform: scale(1.1);
+}
+
+/* ========================================
+   FOOTER SECTIONS
+======================================== */
+
+.footer-section {
+  padding-top: 8px;
+}
+
+.footer-section h3 {
+  position: relative;
+  margin: 0 0 24px;
+  padding-bottom: 12px;
+
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.footer-section h3::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+
+  width: 38px;
+  height: 2px;
+
+  background: #a0a0a0;
+}
+
+/* Footer Navigation List */
+.footer-section ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.footer-section ul li {
+  margin-bottom: 13px;
+}
+
+.footer-section ul li a {
+  position: relative;
+  display: inline-block;
+
+  color: #bdbdbd;
+  font-size: 14px;
+  text-decoration: none;
+
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.footer-section ul li a::before {
+  content: "→";
+  margin-right: 8px;
+
+  color: #888;
+  transition: margin 0.3s ease;
+}
+
+.footer-section ul li a:hover {
+  color: #ffffff;
+  transform: translateX(4px);
+}
+
+.footer-section ul li a:hover::before {
+  margin-right: 12px;
+  color: #ffffff;
+}
+
+/* ========================================
+   CONTACT SECTION
+======================================== */
+
+.footer-contact p {
+  margin: 0 0 24px;
+
+  color: #bdbdbd;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.footer-contact-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 13px 22px;
+
+  background: transparent;
+  color: #ffffff;
+
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  border-radius: 2px;
+
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.7px;
+  text-decoration: none;
+
+  transition: all 0.3s ease;
+}
+
+.footer-contact-btn:hover {
+  background: #ffffff;
+  color: #242424;
+  border-color: #ffffff;
+
+  transform: translateY(-3px);
+}
+
+/* ========================================
+   FOOTER BOTTOM
+======================================== */
+
+.footer-bottom {
+  padding: 22px 5%;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+
+  text-align: center;
+}
+
+.footer-bottom p {
+  margin: 0;
+
+  color: #929292;
+  font-size: 12px;
+  line-height: 1.6;
+  letter-spacing: 0.2px;
+}
+
+/* ========================================
+   TABLET RESPONSIVE
+======================================== */
+
+@media (max-width: 1100px) {
+  .footer-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 45px 60px;
+  }
+
+  .footer-brand {
+    max-width: 450px;
+  }
+}
+
+/* ========================================
+   MOBILE RESPONSIVE
+======================================== */
+
+@media (max-width: 650px) {
+  .footer-container {
+    grid-template-columns: 1fr;
+    gap: 38px;
+
+    padding: 50px 7% 40px;
+  }
+
+  .footer-brand {
+    max-width: 100%;
+  }
+
+  .footer-logo {
+    width: 80px;
+    height: 80px;
+  }
+
+  .footer-brand h2 {
+    font-size: 19px;
+  }
+
+  .footer-section {
+    padding-top: 0;
+  }
+
+  .footer-section h3 {
+    margin-bottom: 18px;
+  }
+
+  .footer-section ul li {
+    margin-bottom: 11px;
+  }
+
+  .footer-contact-btn {
+    width: 100%;
+    padding: 15px 20px;
+  }
+
+  .footer-bottom {
+    padding: 20px 7%;
+  }
+
+  .footer-bottom p {
+    font-size: 11px;
+  }
+}
+
+/* ========================================
+   SMALL MOBILE DEVICES
+======================================== */
+
+@media (max-width: 380px) {
+  .footer-container {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .footer .social-icons {
+    gap: 8px;
+  }
+
+  .footer .social-icons a {
+    width: 35px;
+    height: 35px;
+  }
+}
+
+/* ========================================
+   COMPACT AWAN GENERAL ALUMINIUM FOOTER
+======================================== */
+
+.footer {
+  width: 100%;
+  background: #242424;
+  color: #ffffff;
+  font-family: Arial, sans-serif;
+}
+
+/* Main Footer Container */
+.footer-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 38px 5% 30px;
+
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr 1.2fr;
+  gap: 35px;
+}
+
+/* ========================================
+   COMPANY BRAND
+======================================== */
+
+.footer-brand {
+  max-width: 330px;
+}
+
+.footer-logo-link {
+  display: inline-flex;
+  margin-bottom: 10px;
+}
+
+.footer-logo {
+  width: 62px;
+  height: 62px;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.footer-logo-link:hover .footer-logo {
+  transform: scale(1.05);
+}
+
+.footer-brand h2 {
+  margin: 0 0 8px;
+  color: #ffffff;
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.footer-brand p {
+  margin: 0;
+  color: #bdbdbd;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+/* ========================================
+   SOCIAL MEDIA
+======================================== */
+
+.footer .social-icons {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin-top: 14px;
+}
+
+.footer .social-icons a {
+  width: 30px;
+  height: 30px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 50%;
+
+  transition: all 0.3s ease;
+}
+
+.footer .social-icons a:hover {
+  background: #ffffff;
+  transform: translateY(-3px);
+}
+
+.footer .social-icons img {
+  width: 14px;
+  height: 14px;
+  object-fit: contain;
+}
+
+/* ========================================
+   FOOTER SECTIONS
+======================================== */
+
+.footer-section {
+  padding-top: 3px;
+}
+
+.footer-section h3 {
+  position: relative;
+  margin: 0 0 14px;
+  padding-bottom: 7px;
+
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.footer-section h3::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+
+  width: 28px;
+  height: 2px;
+  background: #999;
+}
+
+.footer-section ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.footer-section ul li {
+  margin-bottom: 8px;
+}
+
+.footer-section ul li a {
+  display: inline-block;
+
+  color: #bdbdbd;
+  font-size: 12px;
+  text-decoration: none;
+
+  transition: all 0.25s ease;
+}
+
+.footer-section ul li a::before {
+  content: "›";
+  margin-right: 6px;
+  color: #888;
+}
+
+.footer-section ul li a:hover {
+  color: #ffffff;
+  transform: translateX(3px);
+}
+
+/* ========================================
+   CONTACT SECTION
+======================================== */
+
+.footer-contact p {
+  margin: 0 0 14px;
+  color: #bdbdbd;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.footer-contact-btn {
+  display: inline-flex;
+  padding: 9px 15px;
+
+  background: transparent;
+  color: #ffffff;
+
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  border-radius: 2px;
+
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.6px;
+  text-decoration: none;
+
+  transition: all 0.3s ease;
+}
+
+.footer-contact-btn:hover {
+  background: #ffffff;
+  color: #242424;
+}
+
+/* ========================================
+   FOOTER BOTTOM
+======================================== */
+
+.footer-bottom {
+  padding: 13px 5%;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  text-align: center;
+}
+
+.footer-bottom p {
+  margin: 0;
+  color: #929292;
+  font-size: 10px;
+}
+
+/* ========================================
+   TABLET
+======================================== */
+
+@media (max-width: 1000px) {
+  .footer-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px 40px;
+  }
+}
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 650px) {
+  .footer-container {
+    grid-template-columns: 1fr;
+    gap: 25px;
+    padding: 30px 7% 25px;
+  }
+
+  .footer-logo {
+    width: 55px;
+    height: 55px;
+  }
+
+  .footer-brand h2 {
+    font-size: 16px;
+  }
+
+  .footer-contact-btn {
+    width: 100%;
+    justify-content: center;
+    padding: 11px;
+  }
+
+  .footer-bottom {
+    padding: 12px 7%;
+  }
+}

@@ -1,0 +1,279 @@
+
+.resources-section {
+  width: 100%;
+  background: #2b2b2b;
+  padding: 90px 7%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.resources-layout {
+  width: 100%;
+  max-width: 1250px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  align-items: center;
+  gap: 65px;
+}
+
+/* LEFT CONTENT */
+.resources-content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.section-label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #bd9b75;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  margin-bottom: 22px;
+}
+
+.section-label span {
+  width: 35px;
+  height: 2px;
+  background: #bd9b75;
+}
+
+.resources-content h1 {
+  color: #ffffff;
+  font-size: clamp(32px, 4vw, 48px);
+  line-height: 1.2;
+  font-weight: 700;
+  margin: 0 0 22px;
+}
+
+.resources-content h1 strong {
+  display: block;
+  color: #bd9b75;
+  font-weight: 700;
+}
+
+.resources-description {
+  color: #c5c5c5;
+  font-size: 15px;
+  line-height: 1.8;
+  max-width: 580px;
+  margin-bottom: 30px;
+}
+
+/* SOLUTION CARDS */
+.solution-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.solution-card {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 18px 20px;
+  background: #353535;
+  border: 1px solid #494949;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.solution-card:hover {
+  background: #404040;
+  border-color: #bd9b75;
+  transform: translateX(5px);
+}
+
+.solution-number {
+  color: #bd9b75;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.solution-details {
+  flex: 1;
+}
+
+.solution-details h2 {
+  color: #ffffff;
+  font-size: 17px;
+  margin: 0 0 7px;
+}
+
+.solution-details p {
+  color: #bdbdbd;
+  font-size: 12px;
+  line-height: 1.7;
+  margin: 0;
+}
+
+.solution-arrow {
+  color: #bd9b75;
+  font-size: 23px;
+  transition: transform 0.3s ease;
+}
+
+.solution-card:hover .solution-arrow {
+  transform: translateX(5px);
+}
+
+/* EXPLORE BUTTON */
+.all-solutions-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  width: fit-content;
+  margin-top: 28px;
+  padding: 14px 24px;
+  background: #bd9b75;
+  color: #171717;
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+}
+
+.all-solutions-btn:hover {
+  background: #ffffff;
+}
+
+.all-solutions-btn span {
+  font-size: 18px;
+}
+
+/* RIGHT IMAGE */
+.resources-image-area {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.image-frame {
+  width: 100%;
+  height: 550px;
+  overflow: hidden;
+  border: 1px solid #bd9b75;
+  padding: 9px;
+  box-sizing: border-box;
+}
+
+.resources-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s ease;
+}
+
+.image-frame:hover .resources-image {
+  transform: scale(1.04);
+}
+
+/* QUALITY BADGE */
+.experience-badge {
+  position: absolute;
+  left: -30px;
+  bottom: 35px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: #bd9b75;
+  color: #1c1c1c;
+  padding: 18px 25px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+}
+
+.badge-line {
+  width: 3px;
+  height: 38px;
+  background: #252525;
+}
+
+.experience-badge strong {
+  font-size: 15px;
+  letter-spacing: 2px;
+}
+
+.experience-badge p {
+  font-size: 11px;
+  margin: 5px 0 0;
+}
+
+/* TABLET */
+@media (max-width: 950px) {
+  .resources-section {
+    padding: 70px 6%;
+  }
+
+  .resources-layout {
+    grid-template-columns: 1fr 0.85fr;
+    gap: 35px;
+  }
+
+  .image-frame {
+    height: 470px;
+  }
+
+  .experience-badge {
+    left: -15px;
+  }
+}
+
+/* MOBILE */
+@media (max-width: 700px) {
+  .resources-section {
+    padding: 55px 6%;
+  }
+
+  .resources-layout {
+    grid-template-columns: 1fr;
+    gap: 45px;
+  }
+
+  .resources-content h1 {
+    font-size: 35px;
+  }
+
+  .resources-description {
+    font-size: 14px;
+  }
+
+  .image-frame {
+    height: 380px;
+  }
+
+  .experience-badge {
+    left: -5px;
+    bottom: 20px;
+    padding: 14px 18px;
+  }
+}
+
+@media (max-width: 400px) {
+  .solution-card {
+    padding: 14px 12px;
+    gap: 10px;
+  }
+
+  .solution-details h2 {
+    font-size: 14px;
+  }
+
+  .solution-details p {
+    font-size: 11px;
+  }
+
+  .image-frame {
+    height: 300px;
+  }
+}

@@ -1,0 +1,187 @@
+.Gallerys {
+    position: relative;
+    width: 100%;
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden; 
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7) ), url('../../../assets/slider2.jpg.webp') center center/cover;;
+    
+}
+
+.Gallerys-text{
+    text-align: center;
+    
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+}
+.Gallerys-text h1{
+    font-size: 90px;
+    font-weight: 600;
+}
+.Gallerys-text p{
+    /* max-width: 700px; */
+    margin: 10px auto 20px;
+    line-height: 1.4;
+    font-size: 20px;
+}
+
+/*......media query.......*/
+
+@media (max-width: 850px){
+    .Abouts-text h1{
+        font-size: 40px;
+    }
+}
+@media (max-width: 650px){
+    .Abouts-text h1{
+        font-size: 30px;
+        max-width: 400px;
+        margin: auto;
+    }
+    .h-text p{
+        font-size: 14px;
+        margin: 15px auto 30px;
+    }
+    
+}
+.Gallery{
+    margin-left: 130px;;
+}
+.Gallery4 img{
+    width: 20%;
+    margin-top:150px;
+    margin-left: 30px;
+    margin-bottom: 0px;
+}
+.Gallery2 img{
+    width: 42.3%;
+    margin-top:150px;
+    margin-left: 30px;
+    margin-top: 30px;
+}
+.Gallery5 img{
+    width: 20%;
+    margin-top:10px;
+    margin-left: 30px;
+    margin-bottom: 0px;
+}
+
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+  }
+  
+  .modal {
+    position: relative;
+    max-width: 90%;
+    max-height: 90%;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .modal-image {
+    max-width: 1000px; /* Increased size */
+    max-height: 1000px;
+    width: auto;
+    height: auto;
+    display: block;
+    cursor: zoom-in; /* Change cursor to zoom-in */
+    transition: transform 0.3s ease; /* Smooth zoom transition */
+  }
+  
+  .modal-image.zoomed {
+    transform: scale(1.3); /* Zoomed in effect */
+    cursor: zoom-out; /* Change cursor to zoom-out */
+  }
+  
+  .modal-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.8);
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 24px;
+    color: #000;
+    z-index: 1001;
+  }
+  
+  .modal-button.left {
+    left: 10px;
+  }
+  
+  .modal-button.right {
+    right: 10px;
+  }
+
+ /* Media Queries */
+@media (max-width: 768px) {
+    .Gallery4,
+    .Gallery5,
+    .Gallery2,
+    .Gallery5 {
+      flex-direction: column;
+    }
+  
+    .Gallery4 img,
+    .Gallery5 img,
+    .Gallery2 img,
+    .Gallery5 img {
+      width: calc(50% - 20px); /* Adjust width to fit two images per row */
+      max-width: 100%;
+      margin: 10px;
+    }
+  
+    .modal {
+      max-width: 95%;
+      max-height: 95%;
+    }
+  
+    .modal-image {
+      max-width: 100%;
+      max-height: 100%;
+    }
+  
+    .modal-button {
+      padding: 5px;
+      font-size: 20px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .Gallery4 img,
+    .Gallery5 img,
+    .Gallery5 img {
+      width: 25%; /* Full width for single column layout */
+      margin: 10px 0;
+      
+    }
+    .Gallery{
+        align-items: center;
+        justify-content: center;
+        margin-left: 0px;
+    }
+  
+    .modal-button {
+      padding: 3px;
+      font-size: 18px;
+    }
+  
+    .modal-image.zoomed {
+      transform: scale(1.2);
+    }
+  }

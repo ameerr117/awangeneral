@@ -1,0 +1,53 @@
+.parteners {
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .parteners h1 {
+    font-size: 3rem; /* Increased font size */
+    font-weight: bold; /* Made it bold */
+    margin-bottom: 1.5rem; /* Added some margin */
+  }
+  
+  .parteners p {
+    font-size: 1.5rem; /* Increased font size */
+    color: dimgray;
+    margin-bottom: 3rem; /* Added margin between p and logos */
+    line-height: 1.5; /* Added line height for better readability */
+    max-width: 800px; /* Optional: to keep text within a reasonable width */
+    margin: 0 auto 3rem auto; /* Center the text and add margin at the bottom */
+  }
+  
+  .logos-container {
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+  }
+  
+  .lgo {
+    width: 100px;
+    margin: 0 10px;
+    transition: transform 3s ease-in-out;
+    flex-shrink: 0;
+  }
+
+  
+@media (max-width: 480px) {
+  .parteners h1 {
+    font-size: 1.5rem; /* Further reduced font size for very small screens */
+    margin-bottom: 0.5rem; /* Further reduced margin */
+  }
+
+  .parteners p {
+    font-size: 1rem; /* Further reduced font size */
+    margin-bottom: 1.5rem; /* Further reduced margin between p and logos */
+  }
+
+  .logo {
+    width: 60px; /* Further adjusted logo size for very small screens */
+    margin: 5px 0; /* Maintained margins */
+  }
+}
+  
