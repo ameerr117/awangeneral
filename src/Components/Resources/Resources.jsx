@@ -45,7 +45,7 @@ const Resources = () => {
           </h1>
 
           <p className="resources-description">
-            AWAN GENERAL ALUMINIUM AND CONSTRUCTION WORK LLC delivers
+            AWAN GENERAL CONTRACTING & ALUMINIUM  WORK LLC delivers
             professional aluminium and glazing solutions for residential,
             commercial and architectural projects.
           </p>

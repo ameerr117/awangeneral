@@ -11,7 +11,7 @@
   align-items: center;
   background:
     linear-gradient(rgba(20, 20, 20, 0.72), rgba(20, 20, 20, 0.85)),
-    url("../../assets/door.jpg") center/cover no-repeat;
+    url("../../assets/alu006.jpg") center/cover no-repeat;
 }
 
 .door-hero-content {

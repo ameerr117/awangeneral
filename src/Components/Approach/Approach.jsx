@@ -34,7 +34,7 @@ const Approach = () => {
           <div className="title-line"></div>
 
           <p>
-            At AWAN GENERAL ALUMINIUM & CONSTRUCTION WORK LLC, we provide
+            At AWAN GENERAL CONTRACTING & ALUMINIUM WORK LLC, we provide
             professional aluminium, glass and architectural solutions for
             residential, commercial and construction projects. Our approach
             focuses on accurate fabrication, quality materials and reliable
@@ -65,9 +65,7 @@ const Approach = () => {
             </div>
           </div>
 
-          <button className="more">
-            DISCOVER OUR SERVICES <span>→</span>
-          </button>
+         
 
         </div>
 

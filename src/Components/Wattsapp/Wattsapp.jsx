@@ -1,23 +1,22 @@
+
 import './WhatsAppButton.css';
 import { FaWhatsapp } from 'react-icons/fa';
 
 const WhatsAppButton = () => {
   const phoneNumber = '971562700627';
 
-  const message = encodeURIComponent(
-    'Hello! I would like to know more about your aluminium and contracting services.'
-  );
+  const whatsappLink = `https://wa.me/${phoneNumber}`;
 
   return (
     <a
-      href={`https://wa.me/${phoneNumber}?text=${message}`}
+      href={whatsappLink}
       className="whatsapp-button"
       target="_blank"
       rel="noopener noreferrer"
-      aria-label="Chat with us on WhatsApp"
+      aria-label="Chat with AWAN on WhatsApp"
     >
       <FaWhatsapp />
-      <span>Chat with Us</span>
+      <span>Chat on WhatsApp</span>
     </a>
   );
 };

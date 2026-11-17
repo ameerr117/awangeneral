@@ -24,7 +24,7 @@ const Timer = () => {
 
         {/* Left Side - Company Name */}
         <div className="company-name">
-          AWAN GENERAL ALUMINIUM AND CONSTRUCTION WORK LLC
+          AWAN GENERAL CONTRACTING AND ALUMINIUM  WORK LLC
         </div>
 
         {/* Center - Live Time */}

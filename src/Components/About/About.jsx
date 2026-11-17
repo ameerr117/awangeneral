@@ -15,7 +15,7 @@ const About = () => {
 
         <div className="Abouts-text">
           <span className="about-tag">
-            AWAN GENERAL ALUMINIUM & CONSTRUCTION
+            AWAN GENERAL CONTRACTING & ALUMINIUM WORK L.L.C
           </span>
 
           <h1>Engineering Quality. Building Confidence.</h1>

@@ -152,7 +152,7 @@ const NavBar = () => {
           {/* COMPANY BRAND */}
           <div className="navbar-brand">
             <span className="brand-name">
-              AWAN GENERAL CONSTRUCTION
+              AWAN GENERAL CONTRACTING
             </span>
 
             <span className="brand-subtitle">
