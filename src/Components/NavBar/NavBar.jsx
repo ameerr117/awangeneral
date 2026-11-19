@@ -364,19 +364,19 @@ const NavBar = () => {
 
                 <li>
                   <Link to="/blog" onClick={handleNavigation}>
-                    Industry News
+                    Projects
                   </Link>
                 </li>
 
                 <li>
                   <Link to="/blog-detail" onClick={handleNavigation}>
-                    Project Insights
+                   Other Services
                   </Link>
                 </li>
 
                 <li>
                   <Link to="/element" onClick={handleNavigation}>
-                    Technical Information
+                    Client Portal
                   </Link>
                 </li>
 

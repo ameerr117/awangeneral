@@ -15,7 +15,7 @@ const Hero1 = () => {
 
   // Replace with your actual WhatsApp number
   // Use country code without the + symbol
-  const phoneNumber = '923001234567';
+  const phoneNumber = '+971562700627';
 
   useEffect(() => {
     const slider = setInterval(() => {

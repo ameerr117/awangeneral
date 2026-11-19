@@ -749,3 +749,13 @@
     padding: 12px 7%;
   }
 }
+.footer-brand h2 {
+  font-size: 19px;
+  font-weight: 700;
+  line-height: 1.5;
+  letter-spacing: 0.5px;
+}
+
+.footer-brand h2 span {
+  display: block;
+}

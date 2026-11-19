@@ -1,472 +1,769 @@
-/* =====================================
-   AWAN PROJECT PORTFOLIO
-===================================== */
+
+/* ===================================
+   GLOBAL PROJECT PAGE
+=================================== */
 
 .awan-project-page {
   width: 100%;
-  background: #f7f7f6;
-  color: #292d2f;
-  font-family: inherit;
+  overflow: hidden;
+  background: #f5f5f3;
+  color: #25292b;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-/* HERO */
+.awan-project-page * {
+  box-sizing: border-box;
+}
+
+/* ===================================
+   HERO SECTION
+=================================== */
 
 .awan-project-hero {
-  min-height: 430px;
+  min-height: 610px;
+  position: relative;
   display: flex;
   align-items: center;
-  padding: 70px 8%;
   background:
-    linear-gradient(90deg, rgba(20, 25, 28, .92), rgba(20, 25, 28, .45)),
-    url("../../assets/alu008.jpg") center/cover no-repeat;
+    linear-gradient(90deg, rgba(15, 19, 21, 0.96), rgba(15, 19, 21, 0.58)),
+    url("../../assets/ay03.jpeg") center/cover no-repeat;
+  color: #fff;
+}
+
+.awan-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(184, 128, 77, 0.12),
+    transparent 55%
+  );
 }
 
 .awan-project-hero-content {
-  max-width: 720px;
-  color: white;
+  position: relative;
+  z-index: 2;
+  width: min(1150px, 90%);
+  margin: auto;
+  padding: 90px 0;
 }
 
-.awan-project-hero-content > span {
-  color: #c49a63;
-  font-size: 11px;
+.awan-hero-label,
+.awan-section-label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #c99b70;
+  font-size: 12px;
   font-weight: 700;
-  letter-spacing: 2px;
+  letter-spacing: 3px;
+}
+
+.awan-hero-label span {
+  width: 35px;
+  height: 2px;
+  background: #c99b70;
 }
 
 .awan-project-hero h1 {
-  margin: 18px 0;
-  font-size: clamp(42px, 6vw, 68px);
+  max-width: 850px;
+  margin: 30px 0 20px;
+  font-size: clamp(42px, 6vw, 76px);
+  line-height: 1.12;
   font-weight: 800;
+  letter-spacing: -2px;
 }
 
-.awan-project-hero p {
-  max-width: 570px;
-  color: #dedede;
-  font-size: 15px;
+.awan-project-hero h1 span {
+  display: block;
+  color: #c99b70;
+}
+
+.awan-project-hero-content > p {
+  max-width: 590px;
+  color: #d0d0d0;
+  font-size: 16px;
   line-height: 1.9;
+  margin-bottom: 35px;
 }
 
 .awan-hero-button {
   display: inline-flex;
   align-items: center;
-  gap: 12px;
-  margin-top: 22px;
-  padding: 15px 24px;
-  background: #c49a63;
+  gap: 20px;
+  padding: 16px 25px;
+  background: #bd9068;
   color: #fff;
   text-decoration: none;
-  font-size: 11px;
-  font-weight: 700;
-  transition: .3s;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  transition: 0.3s ease;
 }
 
 .awan-hero-button:hover {
   background: #fff;
-  color: #292d2f;
+  color: #24292b;
+  transform: translateY(-4px);
 }
 
-/* INTRO */
+.awan-hero-bottom {
+  display: flex;
+  gap: 35px;
+  margin-top: 85px;
+  color: #bdbdbd;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 3px;
+}
+
+.awan-hero-bottom span {
+  position: relative;
+}
+
+.awan-hero-bottom span:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  right: -19px;
+  top: 3px;
+  width: 4px;
+  height: 4px;
+  background: #bd9068;
+  border-radius: 50%;
+}
+
+.awan-hero-number {
+  position: absolute;
+  right: 5%;
+  bottom: 35px;
+  color: #b9b9b9;
+  font-size: 11px;
+  letter-spacing: 3px;
+}
+
+/* ===================================
+   INTRODUCTION
+=================================== */
 
 .awan-project-intro {
-  max-width: 850px;
+  max-width: 1150px;
+  width: 90%;
   margin: auto;
-  padding: 75px 20px 55px;
-  text-align: center;
-}
-
-.awan-project-intro > span,
-.awan-portfolio-heading > div:first-child > span {
-  color: #b58a55;
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 2px;
+  padding: 100px 0;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 70px;
+  align-items: center;
 }
 
 .awan-project-intro h2 {
-  margin: 13px 0;
-  font-size: clamp(27px, 4vw, 38px);
+  margin: 22px 0 0;
+  font-size: clamp(30px, 4vw, 45px);
+  line-height: 1.25;
+  color: #292e30;
 }
 
-.awan-project-intro p {
-  color: #777;
-  font-size: 14px;
-  line-height: 1.8;
+.awan-project-intro h2 span {
+  display: block;
+  color: #b48761;
 }
 
-/* PORTFOLIO */
+.awan-intro-right p {
+  color: #666c6e;
+  font-size: 15px;
+  line-height: 1.9;
+}
+
+.awan-intro-line {
+  height: 3px;
+  width: 85px;
+  margin-top: 25px;
+  background: #bd9068;
+}
+
+/* ===================================
+   PORTFOLIO
+=================================== */
 
 .awan-project-portfolio {
-  max-width: 1250px;
-  margin: auto;
-  padding: 30px 25px 80px;
+  padding: 85px 5%;
+  background: #eaecea;
 }
 
 .awan-portfolio-heading {
+  max-width: 1250px;
+  margin: 0 auto 45px;
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  gap: 20px;
-  margin-bottom: 30px;
+  align-items: center;
+  gap: 25px;
 }
 
 .awan-portfolio-heading h2 {
-  margin: 10px 0;
-  font-size: 30px;
+  margin: 15px 0 10px;
+  color: #252a2c;
+  font-size: clamp(30px, 4vw, 43px);
 }
 
 .awan-portfolio-heading p {
-  color: #777;
-  font-size: 13px;
+  margin: 0;
+  color: #727779;
+  font-size: 14px;
 }
 
 .awan-total-projects {
   display: flex;
   align-items: center;
-  gap: 10px;
-  padding: 16px 20px;
-  background: white;
-  border: 1px solid #e8e8e8;
+  gap: 18px;
+  padding: 22px 28px;
+  background: #252a2c;
+  color: #c99b70;
 }
 
-.awan-total-projects svg {
-  color: #b58a55;
-  font-size: 20px;
+.awan-total-projects > svg {
+  font-size: 28px;
+}
+
+.awan-total-projects div {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
 }
 
 .awan-total-projects strong {
-  font-size: 23px;
+  color: #fff;
+  font-size: 32px;
 }
 
 .awan-total-projects span {
-  color: #777;
-  font-size: 11px;
+  color: #c4c4c4;
+  font-size: 9px;
+  letter-spacing: 1.5px;
 }
 
-/* FILTER BUTTONS */
+/* ===================================
+   SEARCH AND FILTER
+=================================== */
 
-.awan-project-filters {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 15px;
-  margin-bottom: 25px;
+.awan-project-controls {
+  max-width: 1250px;
+  margin: 0 auto 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
 }
 
-.awan-project-filters button {
+.awan-search-box {
+  width: 350px;
   display: flex;
   align-items: center;
-  gap: 13px;
-  min-height: 75px;
-  padding: 17px;
+  gap: 12px;
+  padding: 14px 17px;
   background: #fff;
-  border: 1px solid #e6e6e6;
-  color: #353535;
-  cursor: pointer;
-  text-align: left;
-  transition: .3s ease;
+  border: 1px solid #dedfdd;
 }
 
-.awan-project-filters button svg {
-  font-size: 21px;
-  color: #b58a55;
+.awan-search-box > svg {
+  color: #b48761;
 }
 
-.awan-project-filters button span {
+.awan-search-box input {
   flex: 1;
+  width: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: #252a2c;
   font-size: 13px;
-  font-weight: 700;
 }
 
-.awan-project-filters button strong {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 29px;
-  height: 29px;
-  background: #f1f1f1;
-  border-radius: 50%;
-  font-size: 11px;
-}
-
-.awan-project-filters button:hover,
-.awan-project-filters button.selected {
-  border-color: #292d2f;
-  background: #292d2f;
-  color: white;
-  transform: translateY(-3px);
-}
-
-.awan-project-filters button.selected svg {
-  color: #c49a63;
-}
-
-.awan-project-filters button.selected strong {
-  background: #c49a63;
-  color: white;
-}
-
-/* SELECTED STATUS */
-
-.awan-selected-status {
-  display: flex;
-  align-items: center;
-  gap: 18px;
-  margin: 35px 0 25px;
-}
-
-.awan-status-icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 52px;
-  height: 52px;
-  background: #292d2f;
-  color: #c49a63;
-  font-size: 22px;
-}
-
-.awan-selected-status h3 {
-  margin: 0 0 5px;
-  font-size: 20px;
-}
-
-.awan-selected-status p {
-  margin: 0;
+.awan-search-box button {
+  border: none;
+  background: transparent;
   color: #777;
-  font-size: 12px;
-  line-height: 1.6;
+  cursor: pointer;
 }
 
-/* PROJECT GRID */
+.awan-category-filter {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.awan-category-filter span {
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  color: #656a6b;
+}
+
+.awan-category-filter select {
+  min-width: 190px;
+  padding: 14px;
+  border: 1px solid #dedfdd;
+  background: #fff;
+  color: #333;
+  outline: none;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.awan-results-line {
+  max-width: 1250px;
+  margin: 0 auto 22px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #777;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+}
+
+.awan-results-line strong {
+  color: #292e30;
+}
+
+.awan-completed-indicator {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #56836b;
+}
+
+/* ===================================
+   PROJECT GRID
+=================================== */
 
 .awan-project-grid {
+  max-width: 1250px;
+  margin: auto;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 28px;
 }
 
 .awan-project-card {
-  overflow: hidden;
+  min-width: 0;
   background: #fff;
-  border: 1px solid #e9e9e9;
-  transition: .3s ease;
+  cursor: pointer;
+  overflow: hidden;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
 }
 
 .awan-project-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 30px rgba(0,0,0,.08);
+  transform: translateY(-9px);
+  box-shadow: 0 18px 38px rgba(28, 35, 37, 0.13);
 }
 
 .awan-project-image {
+  height: 265px;
   position: relative;
-  height: 230px;
   overflow: hidden;
+  background: #292e30;
 }
 
 .awan-project-image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: .5s ease;
+  display: block;
+  transition: transform 0.7s ease;
 }
 
 .awan-project-card:hover .awan-project-image img {
-  transform: scale(1.06);
+  transform: scale(1.09);
 }
 
-.awan-status-badge {
+.awan-image-overlay {
   position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.35),
+    transparent 35%,
+    rgba(0, 0, 0, 0.65)
+  );
+}
+
+.awan-project-number {
+  position: absolute;
+  top: 17px;
+  left: 17px;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.awan-completed-badge {
+  position: absolute;
+  right: 15px;
   top: 15px;
-  left: 15px;
-  padding: 8px 12px;
-  color: white;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 8px 11px;
+  background: rgba(26, 43, 36, 0.88);
+  color: #d9eddf;
   font-size: 9px;
-  font-weight: 700;
+  font-weight: 800;
   letter-spacing: 1px;
 }
 
-.awan-status-badge.active {
-  background: #328354;
+.awan-image-view {
+  position: absolute;
+  bottom: 18px;
+  left: 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #fff;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: 0.3s ease;
 }
 
-.awan-status-badge.pending {
-  background: #b58a36;
+.awan-project-card:hover .awan-image-view {
+  opacity: 1;
+  transform: translateY(0);
 }
-
-.awan-status-badge.completed {
-  background: #426b9d;
-}
-
-/* PROJECT DETAILS */
 
 .awan-project-details {
-  padding: 24px;
+  padding: 24px 23px 18px;
 }
 
 .awan-project-category {
-  color: #b58a55;
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 1.2px;
+  color: #b48761;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 1.7px;
 }
 
 .awan-project-details h3 {
   min-height: 48px;
-  margin: 12px 0;
-  font-size: 19px;
-  line-height: 1.4;
+  margin: 12px 0 22px;
+  color: #292e30;
+  font-size: 18px;
+  line-height: 1.45;
 }
 
-.awan-project-details > p {
-  min-height: 65px;
-  color: #777;
-  font-size: 12px;
-  line-height: 1.8;
-}
-
-.awan-project-stage {
-  display: flex;
-  align-items: center;
-  gap: 9px;
-  margin: 20px 0;
-  color: #555;
-  font-size: 11px;
-}
-
-.awan-project-stage svg {
-  color: #b58a55;
-}
-
-.awan-progress-heading {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 9px;
-  font-size: 11px;
-}
-
-.awan-progress-heading strong {
-  color: #b58a55;
-}
-
-.awan-progress-track {
-  height: 6px;
-  overflow: hidden;
-  background: #eeeeee;
-}
-
-.awan-progress-fill {
-  height: 100%;
-  background: #b58a55;
-  transition: width .4s ease;
-}
-
-.awan-progress-fill.completed {
-  background: #328354;
-}
-
-.awan-progress-fill.pending {
-  background: #b58a36;
-}
-
-/* VIEW BUTTON */
-
-.awan-project-view {
+.awan-card-bottom {
+  padding-top: 16px;
+  border-top: 1px solid #eceeed;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 10px;
-  margin-top: 23px;
-  padding-top: 17px;
-  border-top: 1px solid #e9e9e9;
-  color: #292d2f;
-  text-decoration: none;
-  font-size: 10px;
+}
+
+.awan-card-bottom > span {
+  color: #999;
+  font-size: 9px;
   font-weight: 700;
-  letter-spacing: .6px;
-  transition: .3s;
+  letter-spacing: 1.4px;
 }
 
-.awan-project-view:hover {
-  color: #b58a55;
+.awan-card-bottom button {
+  width: 35px;
+  height: 35px;
+  border: none;
+  background: #292e30;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.3s ease;
 }
 
-/* EMPTY STATE */
+.awan-card-bottom button:hover {
+  background: #bd9068;
+  transform: rotate(-45deg);
+}
+
+/* ===================================
+   EMPTY SEARCH RESULTS
+=================================== */
 
 .awan-empty-projects {
-  padding: 60px 20px;
-  background: white;
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 55px 20px;
   text-align: center;
+  background: #fff;
 }
 
-.awan-empty-projects svg {
-  color: #b58a55;
-  font-size: 35px;
+.awan-empty-projects > svg {
+  color: #bd9068;
+  font-size: 38px;
 }
 
 .awan-empty-projects h3 {
-  margin: 15px 0 8px;
+  color: #292e30;
+  margin: 18px 0 10px;
 }
 
 .awan-empty-projects p {
   color: #777;
-  font-size: 13px;
+  font-size: 14px;
 }
 
-/* CONTACT */
+.awan-empty-projects button {
+  margin-top: 15px;
+  padding: 13px 20px;
+  background: #292e30;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
 
-.awan-project-contact {
+/* ===================================
+   FEATURE SECTION
+=================================== */
+
+.awan-project-feature {
+  padding: 85px 7%;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 25px;
-  padding: 55px 8%;
-  background: #292d2f;
-  color: white;
+  gap: 45px;
+  background: #252a2c;
+  color: #fff;
 }
 
-.awan-project-contact span {
-  color: #c49a63;
-  font-size: 10px;
-  font-weight: 700;
+.awan-feature-content {
+  max-width: 570px;
+}
+
+.awan-feature-content > span {
+  color: #c99b70;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 3px;
+}
+
+.awan-feature-content h2 {
+  margin: 18px 0;
+  font-size: clamp(29px, 4vw, 43px);
+  line-height: 1.3;
+}
+
+.awan-feature-content h2 span {
+  display: block;
+  color: #c99b70;
+}
+
+.awan-feature-content p {
+  color: #c2c5c5;
+  font-size: 14px;
+  line-height: 1.9;
+}
+
+.awan-feature-stats {
+  display: flex;
+  gap: 35px;
+}
+
+.awan-feature-stats div {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.awan-feature-stats strong {
+  color: #c99b70;
+  font-size: 38px;
+}
+
+.awan-feature-stats span {
+  color: #ddd;
+  font-size: 9px;
   letter-spacing: 1.5px;
 }
 
+/* ===================================
+   CONTACT SECTION
+=================================== */
+
+.awan-project-contact {
+  max-width: 1250px;
+  width: 90%;
+  margin: auto;
+  padding: 85px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.awan-project-contact > div > span {
+  color: #b48761;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
 .awan-project-contact h2 {
-  margin: 12px 0;
-  font-size: 30px;
+  margin: 13px 0;
+  color: #292e30;
+  font-size: clamp(26px, 4vw, 38px);
 }
 
 .awan-project-contact p {
-  color: #ccc;
-  font-size: 13px;
-  line-height: 1.7;
+  max-width: 580px;
+  color: #777;
+  font-size: 14px;
+  line-height: 1.8;
 }
 
 .awan-project-contact > a {
+  flex-shrink: 0;
   display: inline-flex;
   align-items: center;
-  justify-content: center;
-  gap: 12px;
-  padding: 16px 22px;
-  background: #c49a63;
-  color: white;
+  gap: 18px;
+  padding: 17px 25px;
+  background: #292e30;
+  color: #fff;
   text-decoration: none;
   font-size: 11px;
-  font-weight: 700;
-  white-space: nowrap;
+  font-weight: 800;
+  letter-spacing: 1px;
+  transition: 0.3s ease;
 }
 
-/* RESPONSIVE */
+.awan-project-contact > a:hover {
+  background: #bd9068;
+  transform: translateY(-4px);
+}
 
-@media (max-width: 950px) {
+/* ===================================
+   FULL IMAGE MODAL
+=================================== */
+
+.awan-project-modal-overlay {
+  position: fixed;
+  z-index: 9999;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 25px;
+  background: rgba(8, 10, 11, 0.96);
+  backdrop-filter: blur(7px);
+}
+
+.awan-project-modal {
+  position: relative;
+  width: 95%;
+  max-width: 1150px;
+  height: 88vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: awanModalShow 0.3s ease;
+}
+
+.awan-project-modal img {
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+
+.awan-modal-close {
+  position: absolute;
+  z-index: 5;
+  top: -18px;
+  right: -18px;
+  width: 43px;
+  height: 43px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 50%;
+  background: #bd9068;
+  color: #fff;
+  font-size: 17px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.awan-modal-close:hover {
+  background: #fff;
+  color: #252a2c;
+  transform: rotate(90deg);
+}
+
+@keyframes awanModalShow {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* ===================================
+   RESPONSIVE DESIGN
+=================================== */
+
+@media (max-width: 1000px) {
   .awan-project-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .awan-project-feature {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .awan-project-intro {
+    gap: 35px;
   }
 }
 
 @media (max-width: 650px) {
   .awan-project-hero {
-    min-height: 370px;
-    padding: 50px 25px;
+    min-height: 560px;
+  }
+
+  .awan-project-hero-content {
+    padding: 70px 0;
+  }
+
+  .awan-project-hero h1 {
+    font-size: 43px;
+    letter-spacing: -1px;
+  }
+
+  .awan-project-hero-content > p {
+    font-size: 14px;
+  }
+
+  .awan-hero-bottom {
+    gap: 22px;
+    font-size: 8px;
+    margin-top: 65px;
+  }
+
+  .awan-project-intro {
+    padding: 65px 0;
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .awan-project-portfolio {
+    padding: 65px 5%;
   }
 
   .awan-portfolio-heading {
@@ -474,343 +771,87 @@
     flex-direction: column;
   }
 
-  .awan-project-filters {
-    grid-template-columns: 1fr;
+  .awan-total-projects {
+    width: 100%;
+  }
+
+  .awan-project-controls {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .awan-search-box {
+    width: 100%;
+  }
+
+  .awan-category-filter {
+    justify-content: space-between;
+  }
+
+  .awan-category-filter select {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .awan-results-line {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 12px;
   }
 
   .awan-project-grid {
     grid-template-columns: 1fr;
+    gap: 22px;
+  }
+
+  .awan-project-image {
+    height: 250px;
+  }
+
+  .awan-image-view {
+    opacity: 1;
+    transform: none;
+  }
+
+  .awan-project-details h3 {
+    min-height: auto;
+  }
+
+  .awan-project-feature {
+    padding: 65px 7%;
+  }
+
+  .awan-feature-stats {
+    width: 100%;
+    justify-content: space-between;
+    gap: 12px;
+  }
+
+  .awan-feature-stats strong {
+    font-size: 30px;
+  }
+
+  .awan-feature-stats span {
+    font-size: 8px;
   }
 
   .awan-project-contact {
+    padding: 65px 0;
     align-items: flex-start;
     flex-direction: column;
-    padding: 45px 25px;
   }
 
-  .awan-project-contact h2 {
-    font-size: 25px;
-  }
-
-  .awan-project-portfolio {
-    padding-right: 18px;
-    padding-left: 18px;
-  }
-}.project-status-navigation {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 18px;
-  margin: 35px 0;
-}
-
-.project-btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
-  padding: 18px 16px;
-  text-decoration: none;
-  color: #333;
-  background: #f5f5f3;
-  border: 1px solid #dededb;
-  border-radius: 8px;
-  font-weight: 700;
-  transition: all 0.3s ease;
-}
-
-.project-btn strong {
-  margin-left: auto;
-  background: #dededb;
-  padding: 5px 10px;
-  border-radius: 20px;
-}
-
-.project-btn:hover,
-.project-btn.selected {
-  background: #292d30;
-  color: #fff;
-  border-color: #292d30;
-}
-
-.project-btn.selected strong,
-.project-btn:hover strong {
-  background: #b38b55;
-  color: #fff;
-}
-
-@media (max-width: 768px) {
-  .project-status-navigation {
-    grid-template-columns: 1fr;
-  }
-}
-/* PROJECT DETAIL BUTTON */
-.awan-project-view {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 12px;
-  padding: 15px 18px;
-  border: none;
-  background: #292d30;
-  color: #fff;
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 1px;
-  cursor: pointer;
-  transition: 0.3s ease;
-}
-
-.awan-project-view:hover {
-  background: #b38b55;
-}
-
-/* MODAL OVERLAY */
-.awan-project-modal-overlay {
-  position: fixed;
-  inset: 0;
-  z-index: 99999;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 25px;
-  background: rgba(13, 17, 20, 0.88);
-  backdrop-filter: blur(6px);
-}
-
-/* MODAL */
-.awan-project-modal {
-  position: relative;
-  width: 100%;
-  max-width: 950px;
-  max-height: 92vh;
-  overflow-y: auto;
-  background: #fff;
-  border-radius: 12px;
-  animation: awanModalAnimation 0.3s ease;
-}
-
-.awan-modal-close {
-  position: absolute;
-  top: 18px;
-  right: 18px;
-  z-index: 5;
-  width: 43px;
-  height: 43px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: none;
-  border-radius: 50%;
-  background: #292d30;
-  color: #fff;
-  font-size: 18px;
-  cursor: pointer;
-}
-
-.awan-modal-close:hover {
-  background: #b38b55;
-}
-
-/* MODAL IMAGE */
-.awan-modal-image-wrapper {
-  position: relative;
-}
-
-.awan-modal-image {
-  display: block;
-  width: 100%;
-  height: 350px;
-  object-fit: cover;
-}
-
-.awan-modal-image-wrapper .awan-status-badge {
-  position: absolute;
-  left: 25px;
-  bottom: 20px;
-}
-
-/* MODAL CONTENT */
-.awan-modal-content {
-  padding: 38px;
-}
-
-.awan-modal-content h2 {
-  margin: 12px 0;
-  color: #252a2e;
-  font-size: 34px;
-  line-height: 1.25;
-}
-
-.awan-modal-description {
-  color: #666;
-  font-size: 15px;
-  line-height: 1.9;
-  margin-bottom: 28px;
-}
-
-/* OVERVIEW */
-.awan-modal-overview {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 15px;
-  margin: 25px 0;
-}
-
-.awan-modal-overview div {
-  display: flex;
-  flex-direction: column;
-  gap: 9px;
-  padding: 20px;
-  background: #f4f5f5;
-  border-left: 3px solid #b38b55;
-}
-
-.awan-modal-overview svg {
-  color: #b38b55;
-  font-size: 20px;
-}
-
-.awan-modal-overview span {
-  color: #777;
-  font-size: 12px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-.awan-modal-overview strong {
-  color: #292d30;
-  font-size: 14px;
-  line-height: 1.5;
-}
-
-/* PROGRESS */
-.awan-modal-progress {
-  margin: 30px 0;
-}
-
-/* TECHNICAL SECTIONS */
-.awan-technical-section {
-  padding: 25px 0;
-  border-top: 1px solid #e6e6e6;
-}
-
-.awan-technical-section h3 {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  margin-bottom: 17px;
-  color: #292d30;
-  font-size: 19px;
-}
-
-.awan-technical-section h3 svg {
-  color: #b38b55;
-}
-
-.awan-detail-list {
-  padding-left: 22px;
-  margin: 0;
-}
-
-.awan-detail-list li {
-  padding: 7px 0;
-  color: #62676b;
-  font-size: 14px;
-  line-height: 1.7;
-}
-
-.awan-standards-section {
-  background: #f7f7f5;
-  padding: 25px;
-  border-radius: 8px;
-}
-
-/* TECHNICAL DISCLAIMER */
-.awan-technical-note {
-  margin-top: 25px;
-  padding: 16px;
-  background: #fff8e9;
-  border-left: 3px solid #b38b55;
-  color: #6b604d;
-  font-size: 12px;
-  line-height: 1.8;
-}
-
-/* CLOSE BUTTON */
-.awan-modal-done {
-  width: 100%;
-  margin-top: 25px;
-  padding: 16px;
-  border: none;
-  background: #292d30;
-  color: white;
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 1px;
-  cursor: pointer;
-  transition: 0.3s ease;
-}
-
-.awan-modal-done:hover {
-  background: #b38b55;
-}
-
-/* ANIMATION */
-@keyframes awanModalAnimation {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* TABLET */
-@media (max-width: 768px) {
-  .awan-modal-content {
-    padding: 25px;
-  }
-
-  .awan-modal-image {
-    height: 260px;
-  }
-
-  .awan-modal-content h2 {
-    font-size: 27px;
-  }
-}
-
-/* MOBILE */
-@media (max-width: 500px) {
   .awan-project-modal-overlay {
-    padding: 10px;
+    padding: 12px;
   }
 
   .awan-project-modal {
-    max-height: 95vh;
+    width: 100%;
+    height: 80vh;
   }
 
-  .awan-modal-image {
-    height: 210px;
-  }
-
-  .awan-modal-content {
-    padding: 20px;
-  }
-
-  .awan-modal-content h2 {
-    font-size: 23px;
-  }
-
-  .awan-modal-overview {
-    grid-template-columns: 1fr;
-  }
-
-  .awan-technical-section h3 {
-    font-size: 16px;
+  .awan-modal-close {
+    top: -17px;
+    right: -5px;
   }
 }
