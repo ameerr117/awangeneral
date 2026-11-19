@@ -17,30 +17,56 @@ import {
   FaFacebookF,
   FaInstagram,
   FaLinkedinIn,
-  FaEnvelope
+  FaEnvelope,
+  FaBars,
+  FaPhoneAlt,
+  FaChevronDown
 } from 'react-icons/fa';
 
 const NavBar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isMobileOpen, setIsMobileOpen] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [searchTerm, setSearchTerm] = useState('');
+  const [openDropdown, setOpenDropdown] = useState('');
 
   const navigate = useNavigate();
 
   // SCROLL DETECTION
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
+      setIsScrolled(window.scrollY > 40);
     };
 
     window.addEventListener('scroll', handleScroll);
-
     handleScroll();
 
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  // CLOSE SEARCH WITH ESCAPE
+  useEffect(() => {
+    const handleEscape = (e) => {
+      if (e.key === 'Escape') {
+        setIsSearchOpen(false);
+        setIsMobileOpen(false);
+        setOpenDropdown('');
+      }
+    };
+
+    window.addEventListener('keydown', handleEscape);
+
+    return () => window.removeEventListener('keydown', handleEscape);
+  }, []);
+
+  // PREVENT BACKGROUND SCROLL WHEN SEARCH IS OPEN
+  useEffect(() => {
+    document.body.style.overflow = isSearchOpen ? 'hidden' : '';
+
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [isSearchOpen]);
 
   // SCROLL TO TOP
   const scrollTop = () => {
@@ -50,23 +76,32 @@ const NavBar = () => {
     });
   };
 
-  // NAVIGATION HANDLER
-  const handleNavigation = () => {
+  // CLOSE MOBILE MENU
+  const closeMenus = () => {
+    setIsMobileOpen(false);
+    setOpenDropdown('');
     setIsSearchOpen(false);
     setSearchTerm('');
+  };
+
+  // NAVIGATION HANDLER
+  const handleNavigation = () => {
+    closeMenus();
     scrollTop();
   };
 
-  // NAVIGATE TO A PAGE
+  // NAVIGATE TO PAGE
   const goToPage = (path) => {
-    setIsSearchOpen(false);
-    setSearchTerm('');
+    closeMenus();
     navigate(path);
+    scrollTop();
+  };
 
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
-    });
+  // DROPDOWN HANDLER
+  const toggleDropdown = (name) => {
+    setOpenDropdown((current) =>
+      current === name ? '' : name
+    );
   };
 
   // WEBSITE SEARCH
@@ -109,33 +144,29 @@ const NavBar = () => {
         keywords: ['glass', 'architectural glass', 'glazing'],
         path: '/glass'
       },
-
-      // CURTAIN AND PARTITION PAGE
       {
         keywords: [
-          'curtain',
-          'curtains',
-          'curtain wall',
-          'curtain walls',
-          'curtain wall systems',
           'partition',
           'partitions',
           'glass partition',
           'glass partitions',
           'aluminium partition',
           'aluminium partitions',
-          'curtain and partition',
-          'curtain & partition',
-          'curtain partition systems',
-          'partition systems',
           'office partition',
-          'office partitions',
-          'glass wall',
-          'glass walls'
+          'office partitions'
+        ],
+        path: '/partner'
+      },
+      {
+        keywords: [
+          'curtain',
+          'curtains',
+          'curtain wall',
+          'curtain walls',
+          'curtain wall systems'
         ],
         path: '/curtain'
       },
-
       {
         keywords: ['solution', 'solutions', 'services'],
         path: '/programz'
@@ -149,7 +180,7 @@ const NavBar = () => {
         path: '/blog-detail'
       },
       {
-        keywords: ['technical', 'information'],
+        keywords: ['technical', 'information', 'client portal', 'account'],
         path: '/element'
       },
       {
@@ -178,9 +209,7 @@ const NavBar = () => {
     'https://mail.google.com/mail/?view=cm&fs=1' +
     '&to=awangcaw@gmail.com' +
     '&su=' +
-    encodeURIComponent(
-      'New Website Enquiry - AWAN General Contracting'
-    ) +
+    encodeURIComponent('New Website Enquiry - AWAN General Contracting') +
     '&body=' +
     encodeURIComponent(
       'Hello AWAN Team,\n\n' +
@@ -191,13 +220,12 @@ const NavBar = () => {
 
   return (
     <>
-      {/* MAIN NAVBAR */}
       <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
 
         {/* TOP NAVBAR */}
         <div className="navbar-top">
 
-          {/* COMPANY LOGO */}
+          {/* LOGO */}
           <div className="navbar-left">
             <Link to="/" onClick={handleNavigation}>
               <img
@@ -208,7 +236,7 @@ const NavBar = () => {
             </Link>
           </div>
 
-          {/* COMPANY BRAND */}
+          {/* BRAND NAME */}
           <div className="navbar-brand">
             <span className="brand-name">
               AWAN GENERAL CONTRACTING
@@ -226,7 +254,6 @@ const NavBar = () => {
           {/* RIGHT INFORMATION */}
           <div className="navbar-right">
 
-            {/* CLIENT PORTAL */}
             <Link
               to="/element"
               onClick={handleNavigation}
@@ -240,17 +267,14 @@ const NavBar = () => {
               </div>
             </Link>
 
-            {/* CONTACT NUMBER */}
             <div className="contact-info">
               <span className="call">CALL US</span>
 
               <a
-                href="tel:
-+971558816618"
+                href="tel:+971558816618"
                 className="phone-number"
               >
-                
-+971558816618
+                +971 558816618
               </a>
             </div>
 
@@ -303,20 +327,30 @@ const NavBar = () => {
 
             </div>
           </div>
+
+          {/* MOBILE MENU BUTTON */}
+          <button
+            type="button"
+            className="mobile-menu-btn"
+            onClick={() => setIsMobileOpen(!isMobileOpen)}
+            aria-label={isMobileOpen ? 'Close menu' : 'Open menu'}
+            aria-expanded={isMobileOpen}
+          >
+            {isMobileOpen ? <FaTimes /> : <FaBars />}
+          </button>
+
         </div>
 
-        {/* MAIN NAVIGATION */}
-        <div className="nav-links">
+        {/* NAVIGATION LINKS */}
+        <div className={`nav-links ${isMobileOpen ? 'mobile-active' : ''}`}>
           <ul>
 
-            {/* HOME */}
             <li>
               <Link to="/" onClick={handleNavigation}>
                 Home
               </Link>
             </li>
 
-            {/* ABOUT */}
             <li>
               <Link to="/about" onClick={handleNavigation}>
                 About Us
@@ -324,23 +358,28 @@ const NavBar = () => {
             </li>
 
             {/* ALUMINIUM SOLUTIONS */}
-            <li className="dropdown programs-menu">
+            <li className={`dropdown programs-menu ${openDropdown === 'solutions' ? 'dropdown-open' : ''}`}>
 
-              <Link
-                to="/programz"
-                onClick={handleNavigation}
-              >
-                Aluminium Solutions
-                <span className="nav-arrow">⌄</span>
-              </Link>
+              <div className="nav-dropdown-heading">
+                <Link to="/programz" onClick={handleNavigation}>
+                  Aluminium Solutions
+                </Link>
+
+                <button
+                  type="button"
+                  className="dropdown-toggle"
+                  onClick={() => toggleDropdown('solutions')}
+                  aria-label="Toggle Aluminium Solutions"
+                  aria-expanded={openDropdown === 'solutions'}
+                >
+                  <FaChevronDown />
+                </button>
+              </div>
 
               <div className="mega-menu">
 
-                {/* MEGA MENU HEADER */}
                 <div className="mega-menu-header">
-                  <span>
-                    ARCHITECTURAL ALUMINIUM SOLUTIONS
-                  </span>
+                  <span>ARCHITECTURAL ALUMINIUM SOLUTIONS</span>
 
                   <p>
                     Explore our modern aluminium, curtain and glass
@@ -349,82 +388,59 @@ const NavBar = () => {
                   </p>
                 </div>
 
-                {/* SOLUTIONS GRID */}
                 <div className="mega-menu-grid">
 
-                  {/* WINDOWS */}
                   <div className="mega-column">
-                    <h4>
-                      <FaWindowMaximize /> WINDOWS
-                    </h4>
-
+                    <h4><FaWindowMaximize /> WINDOWS</h4>
                     <Link to="/window" onClick={handleNavigation}>
                       Aluminium Windows
                     </Link>
                   </div>
 
-                  {/* DOORS */}
                   <div className="mega-column">
-                    <h4>
-                      <FaDoorOpen /> DOORS
-                    </h4>
-
+                    <h4><FaDoorOpen /> DOORS</h4>
                     <Link to="/door" onClick={handleNavigation}>
                       Aluminium Doors
                     </Link>
                   </div>
 
-                  {/* CLADDING */}
                   <div className="mega-column">
-                    <h4>
-                      <FaBuilding /> CLADDING
-                    </h4>
-
+                    <h4><FaBuilding /> CLADDING</h4>
                     <Link to="/cladding" onClick={handleNavigation}>
                       Aluminium Cladding
                     </Link>
                   </div>
 
-                  {/* TENTS */}
                   <div className="mega-column">
-                    <h4>
-                      <FaLayerGroup /> TENTS
-                    </h4>
-
+                    <h4><FaLayerGroup /> TENTS</h4>
                     <Link to="/tents" onClick={handleNavigation}>
                       Aluminium Tents
                     </Link>
                   </div>
 
-                  {/* GLASS */}
                   <div className="mega-column">
-                    <h4>
-                      <FaLayerGroup /> GLASS
-                    </h4>
-
+                    <h4><FaLayerGroup /> GLASS</h4>
                     <Link to="/glass" onClick={handleNavigation}>
                       Architectural Glass
                     </Link>
                   </div>
 
-                  {/* CURTAIN AND PARTITIONS */}
-                  <div className="mega-column curtain-column">
-                    <h4>
-                      <FaBorderAll /> CURTAIN & PARTITIONS
-                    </h4>
+                  <div className="mega-column">
+                    <h4><FaBorderAll /> CURTAIN WALL</h4>
+                    <Link to="/curtain" onClick={handleNavigation}>
+                      Curtain Wall Systems
+                    </Link>
+                  </div>
 
-                    <Link
-                      to="/curtain"
-                      onClick={handleNavigation}
-                      title="Open Curtain and Partition Systems"
-                    >
-                      Curtain & Partition Systems
+                  <div className="mega-column">
+                    <h4><FaBorderAll /> PARTITIONS</h4>
+                    <Link to="/partner" onClick={handleNavigation}>
+                      Aluminium & Glass Partitions
                     </Link>
                   </div>
 
                 </div>
 
-                {/* MEGA MENU FOOTER */}
                 <div className="mega-menu-footer">
                   <FaBorderAll />
 
@@ -432,10 +448,7 @@ const NavBar = () => {
                     Quality. Precision. Architectural Excellence.
                   </span>
 
-                  <Link
-                    to="/programz"
-                    onClick={handleNavigation}
-                  >
+                  <Link to="/programz" onClick={handleNavigation}>
                     VIEW ALL SOLUTIONS →
                   </Link>
                 </div>
@@ -444,15 +457,25 @@ const NavBar = () => {
             </li>
 
             {/* INSIGHTS */}
-            <li className="dropdown">
+            <li className={`dropdown insights-menu ${openDropdown === 'insights' ? 'dropdown-open' : ''}`}>
 
-              <Link to="/blog" onClick={handleNavigation}>
-                Insights
-                <span className="nav-arrow">⌄</span>
-              </Link>
+              <div className="nav-dropdown-heading">
+                <Link to="/blog" onClick={handleNavigation}>
+                  Insights
+                </Link>
+
+                <button
+                  type="button"
+                  className="dropdown-toggle"
+                  onClick={() => toggleDropdown('insights')}
+                  aria-label="Toggle Insights"
+                  aria-expanded={openDropdown === 'insights'}
+                >
+                  <FaChevronDown />
+                </button>
+              </div>
 
               <ul className="dropdown-content">
-
                 <li>
                   <Link to="/blog" onClick={handleNavigation}>
                     Projects
@@ -470,11 +493,9 @@ const NavBar = () => {
                     Client Portal
                   </Link>
                 </li>
-
               </ul>
             </li>
 
-            {/* CONTACT */}
             <li>
               <Link to="/contact" onClick={handleNavigation}>
                 Contact
@@ -486,7 +507,11 @@ const NavBar = () => {
               <button
                 type="button"
                 className="nav-search-modern"
-                onClick={() => setIsSearchOpen(true)}
+                onClick={() => {
+                  setIsSearchOpen(true);
+                  setIsMobileOpen(false);
+                  setOpenDropdown('');
+                }}
                 aria-label="Search website"
               >
                 <FaSearch />
@@ -498,7 +523,15 @@ const NavBar = () => {
         </div>
       </nav>
 
-      {/* WEBSITE SEARCH POPUP */}
+      {/* MOBILE MENU BACKDROP */}
+      {isMobileOpen && (
+        <div
+          className="mobile-menu-backdrop"
+          onClick={closeMenus}
+        />
+      )}
+
+      {/* SEARCH POPUP */}
       {isSearchOpen && (
         <div
           className="website-search-overlay"
@@ -509,7 +542,6 @@ const NavBar = () => {
             onClick={(e) => e.stopPropagation()}
           >
 
-            {/* CLOSE BUTTON */}
             <button
               type="button"
               className="website-search-close"
@@ -526,19 +558,17 @@ const NavBar = () => {
             <h2>Search Our Website</h2>
 
             <p className="website-search-text">
-              Find aluminium solutions, windows, doors, curtains,
+              Find aluminium solutions, windows, doors, curtain walls,
               partitions, glass systems, projects and more.
             </p>
 
-            {/* SEARCH FORM */}
             <form onSubmit={handleSearch}>
-
               <div className="website-search-input">
                 <FaSearch />
 
                 <input
                   type="text"
-                  placeholder="Search windows, doors, curtains, partitions..."
+                  placeholder="Search windows, doors, partitions..."
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
                   autoFocus
@@ -551,40 +581,38 @@ const NavBar = () => {
               >
                 SEARCH WEBSITE
               </button>
-
             </form>
 
-            {/* POPULAR SEARCHES */}
             <div className="website-search-suggestions">
               <span>POPULAR SEARCHES</span>
 
               {[
-                'windows',
-                'doors',
-                'glass',
-                'curtains',
-                'partitions',
-                'curtain walls',
-                'contact'
+                'Windows',
+                'Doors',
+                'Glass',
+                'Curtain Walls',
+                'Partitions',
+                'Cladding',
+                'Contact'
               ].map((item) => (
                 <button
                   key={item}
                   type="button"
-                  onClick={() => goToPage(
-                    item === 'curtains' ||
-                    item === 'partitions' ||
-                    item === 'curtain walls'
-                      ? '/curtain'
-                      : item === 'windows'
-                        ? '/window'
-                        : item === 'doors'
-                          ? '/door'
-                          : item === 'glass'
-                            ? '/glass'
-                            : '/contact'
-                  )}
+                  onClick={() => {
+                    const paths = {
+                      Windows: '/window',
+                      Doors: '/door',
+                      Glass: '/glass',
+                      'Curtain Walls': '/curtain',
+                      Partitions: '/partner',
+                      Cladding: '/cladding',
+                      Contact: '/contact'
+                    };
+
+                    goToPage(paths[item]);
+                  }}
                 >
-                  {item.charAt(0).toUpperCase() + item.slice(1)}
+                  {item}
                 </button>
               ))}
 

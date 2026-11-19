@@ -11,19 +11,23 @@ import image4 from '../../assets/alu09.jpg';
 
 const Hero1 = () => {
   const images = [image1, image2, image3, image4];
+
   const [current, setCurrent] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
 
-  // Replace with your actual WhatsApp number
-  // Use country code without the + symbol
-  const phoneNumber = '+971562700627';
+  // WhatsApp number with country code
+  const phoneNumber = '971562700627';
 
+  // AUTOMATIC SLIDER
   useEffect(() => {
+    if (isPaused) return;
+
     const slider = setInterval(() => {
       setCurrent((prev) => (prev + 1) % images.length);
     }, 5000);
 
     return () => clearInterval(slider);
-  }, [images.length]);
+  }, [images.length, isPaused]);
 
   const nextSlide = () => {
     setCurrent((prev) => (prev + 1) % images.length);
@@ -36,9 +40,19 @@ const Hero1 = () => {
   };
 
   return (
-    <section className="awan-hero">
+    <section
+      className="awan-hero"
+      onMouseEnter={() => setIsPaused(true)}
+      onMouseLeave={() => setIsPaused(false)}
+      onFocus={() => setIsPaused(true)}
+      onBlur={(e) => {
+        if (!e.currentTarget.contains(e.relatedTarget)) {
+          setIsPaused(false);
+        }
+      }}
+    >
 
-      {/* Background Images */}
+      {/* BACKGROUND IMAGES */}
       <div className="awan-hero-images">
         {images.map((image, index) => (
           <div
@@ -51,10 +65,10 @@ const Hero1 = () => {
         ))}
       </div>
 
-      {/* Image Overlay */}
+      {/* DARK IMAGE OVERLAY */}
       <div className="awan-hero-shade"></div>
 
-      {/* Main Content */}
+      {/* MAIN CONTENT */}
       <div className="awan-hero-inner">
 
         <div className="awan-hero-left">
@@ -74,6 +88,7 @@ const Hero1 = () => {
 
           <div className="awan-hero-description">
             <div className="awan-description-line"></div>
+
             <p>
               Precision-engineered aluminium and glass solutions
               for contemporary architecture. We combine technical
@@ -83,6 +98,7 @@ const Hero1 = () => {
           </div>
 
           <div className="awan-hero-actions">
+
             <Link to="/blog" className="awan-primary-button">
               EXPLORE OUR PROJECTS
               <span>↗</span>
@@ -92,22 +108,29 @@ const Hero1 = () => {
               GET IN TOUCH
               <span>→</span>
             </Link>
+
           </div>
 
         </div>
 
-        {/* Right Side Information */}
+        {/* RIGHT SIDE INFORMATION */}
         <div className="awan-hero-right">
+
           <div className="awan-hero-image-caption">
-            <span className="caption-index">0{current + 1}</span>
+            <span className="caption-index">
+              0{current + 1}
+            </span>
+
             <span className="caption-divider"></span>
+
             <span>ARCHITECTURAL SOLUTIONS</span>
           </div>
+
         </div>
 
       </div>
 
-      {/* Bottom Bar */}
+      {/* BOTTOM BAR */}
       <div className="awan-hero-footer">
 
         <div className="awan-footer-brand">
@@ -123,7 +146,9 @@ const Hero1 = () => {
           <span>FAÇADE SYSTEMS</span>
         </div>
 
+        {/* SLIDER CONTROLS */}
         <div className="awan-slider-controls">
+
           <button
             type="button"
             onClick={previousSlide}
@@ -140,6 +165,7 @@ const Hero1 = () => {
                 className={current === index ? 'selected' : ''}
                 onClick={() => setCurrent(index)}
                 aria-label={`Show slide ${index + 1}`}
+                aria-current={current === index ? 'true' : undefined}
               />
             ))}
           </div>
@@ -151,15 +177,17 @@ const Hero1 = () => {
           >
             →
           </button>
+
         </div>
 
       </div>
 
+      {/* LOCATION */}
       <div className="awan-hero-vertical">
         ABU DHABI · UNITED ARAB EMIRATES
       </div>
 
-      {/* Floating WhatsApp Button */}
+      {/* FLOATING WHATSAPP */}
       <a
         href={`https://wa.me/${phoneNumber}`}
         className="whatsapp-float"
