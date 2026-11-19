@@ -19,7 +19,6 @@ import {
   FaLinkedinIn,
   FaEnvelope,
   FaBars,
-  FaPhoneAlt,
   FaChevronDown
 } from 'react-icons/fa';
 
