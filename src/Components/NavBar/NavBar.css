@@ -874,3 +874,125 @@
     font-size: 24px;
   }
 }
+
+/* =====================================
+   PROFESSIONAL SOCIAL MEDIA ICONS
+===================================== */
+
+.social-icons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  flex-shrink: 0;
+}
+
+.social-link {
+  width: 34px;
+  height: 34px;
+  min-width: 34px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+
+  color: #ffffff;
+  background: #34383b;
+
+  border: 1px solid #bd955c;
+  border-radius: 50%;
+
+  font-size: 15px;
+  text-decoration: none;
+
+  transition:
+    background 0.3s ease,
+    color 0.3s ease,
+    transform 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.social-link svg {
+  display: block;
+  width: 16px;
+  height: 16px;
+}
+
+/* FACEBOOK */
+.social-link.facebook:hover {
+  background: #1877f2;
+  border-color: #1877f2;
+  color: #ffffff;
+  transform: translateY(-3px);
+}
+
+/* INSTAGRAM */
+.social-link.instagram:hover {
+  background: #d62976;
+  border-color: #d62976;
+  color: #ffffff;
+  transform: translateY(-3px);
+}
+
+/* LINKEDIN */
+.social-link.linkedin:hover {
+  background: #0a66c2;
+  border-color: #0a66c2;
+  color: #ffffff;
+  transform: translateY(-3px);
+}
+
+/* EMAIL */
+.social-link.email:hover {
+  background: #bd955c;
+  border-color: #bd955c;
+  color: #ffffff;
+  transform: translateY(-3px);
+}
+
+/* KEYBOARD ACCESSIBILITY */
+.social-link:focus-visible {
+  outline: 3px solid #bd955c;
+  outline-offset: 4px;
+}
+
+/* TABLET */
+@media (max-width: 992px) {
+  .social-icons {
+    gap: 7px;
+  }
+
+  .social-link {
+    width: 32px;
+    height: 32px;
+    min-width: 32px;
+  }
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .social-icons {
+    gap: 12px;
+  }
+
+  .social-link {
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
+    font-size: 18px;
+  }
+
+  .social-link svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .social-link:hover {
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .social-link {
+    transition: none;
+  }
+}

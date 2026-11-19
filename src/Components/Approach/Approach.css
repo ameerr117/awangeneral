@@ -1,226 +1,255 @@
-/* =========================================
-   AWAN | PROFESSIONAL APPROACH SECTION
-========================================= */
 
+/* MAIN SECTION */
 .programs {
-    width: 100%;
-    padding: 90px 8%;
-    box-sizing: border-box;
-    background: #ffffff;
-    font-family: Arial, Helvetica, sans-serif;
+  width: 100%;
+  padding: 85px 6%;
+  background: #f5f6f7;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+/* MAIN CONTENT */
+.program {
+  max-width: 1250px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 65px;
+}
+
+/* IMAGE */
+.program-image {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.program-image img {
+  display: block;
+  width: 100%;
+  height: 520px;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.program-image:hover img {
+  transform: scale(1.04);
+}
+
+/* IMAGE BADGE */
+.image-badge {
+  position: absolute;
+  bottom: 25px;
+  left: 25px;
+  background: #292d30;
+  color: white;
+  padding: 16px 25px;
+  display: flex;
+  flex-direction: column;
+  border-left: 4px solid #bd955c;
+}
+
+.image-badge span {
+  font-size: 11px;
+  letter-spacing: 3px;
+  color: #d4b17d;
+}
+
+.image-badge strong {
+  font-size: 19px;
+  letter-spacing: 2px;
+  margin-top: 4px;
+}
+
+/* TEXT */
+.program-text {
+  width: 100%;
+}
+
+.approach-label {
+  display: inline-block;
+  color: #a77c45;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  margin-bottom: 18px;
+}
+
+.program-text h1 {
+  font-size: clamp(30px, 3vw, 43px);
+  line-height: 1.25;
+  font-weight: 700;
+  color: #292d30;
+  margin: 0;
+  letter-spacing: -0.8px;
+}
+
+.title-line {
+  width: 75px;
+  height: 4px;
+  background: #bd955c;
+  margin: 25px 0;
+  border-radius: 5px;
+}
+
+/* PARAGRAPHS */
+.program-text > p {
+  font-size: 16px;
+  line-height: 1.9;
+  color: #62676b;
+  margin-bottom: 20px;
+  text-align: left;
+  overflow-wrap: break-word;
+}
+
+/* FEATURES */
+.approach-features {
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+  margin-top: 30px;
+}
+
+.approach-features > div {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 13px 15px;
+  background: #ffffff;
+  border-left: 3px solid #bd955c;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  cursor: default;
+}
+
+.approach-features > div:hover {
+  transform: translateX(7px);
+  background: #292d30;
+}
+
+.approach-features span {
+  color: #bd955c;
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.approach-features p {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 600;
+  color: #34383b;
+  line-height: 1.5;
+}
+
+.approach-features > div:hover p {
+  color: #ffffff;
+}
+
+/* TABLET */
+@media (max-width: 992px) {
+  .programs {
+    padding: 65px 5%;
   }
-  
+
   .program {
-    max-width: 1400px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-    align-items: center;
-    gap: 80px;
+    gap: 35px;
   }
-  
-  /* -----------------------------------------
-     IMAGE
-  ----------------------------------------- */
-  
-  .program-image {
-    position: relative;
-  }
-  
+
   .program-image img {
-    width: 100%;
-    height: 520px;
-    display: block;
-    object-fit: cover;
+    height: 440px;
   }
-  
+
+  .program-text h1 {
+    font-size: 32px;
+  }
+
+  .program-text > p {
+    font-size: 15px;
+    line-height: 1.8;
+  }
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .programs {
+    padding: 45px 20px;
+  }
+
+  .program {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+
+  .program-image img {
+    height: auto;
+    aspect-ratio: 4 / 3;
+  }
+
   .image-badge {
-    position: absolute;
-    right: -20px;
-    bottom: 30px;
-    padding: 18px 24px;
-    background: #2b2b2b;
-    border-left: 3px solid #b8956b;
-    color: #ffffff;
+    bottom: 15px;
+    left: 15px;
+    padding: 12px 18px;
   }
-  
-  .image-badge span {
-    display: block;
-    margin-bottom: 5px;
-    color: #b8956b;
-    font-size: 9px;
-    font-weight: 800;
+
+  .program-text h1 {
+    font-size: 29px;
+    line-height: 1.35;
+  }
+
+  .approach-label {
+    font-size: 12px;
     letter-spacing: 2px;
   }
-  
-  .image-badge strong {
-    font-size: 14px;
-    letter-spacing: 1px;
-  }
-  
-  /* -----------------------------------------
-     CONTENT
-  ----------------------------------------- */
-  
-  .program-text {
-    max-width: 600px;
-  }
-  
-  .approach-label {
-    display: block;
-    margin-bottom: 16px;
-    color: #b8956b;
-    font-size: 10px;
-    font-weight: 800;
-    letter-spacing: 3px;
-  }
-  
-  .program-text h1 {
-    margin: 0;
-    color: #2b2b2b;
-    font-size: clamp(32px, 3.5vw, 52px);
-    line-height: 1.15;
-    font-weight: 700;
-  }
-  
-  .title-line {
-    width: 65px;
-    height: 3px;
-    margin: 25px 0;
-    background: #b8956b;
-  }
-  
+
   .program-text > p {
-    margin: 0 0 18px;
-    color: #6e7475;
-    font-size: 15px;
-    line-height: 1.9;
+    font-size: 16px;
+    line-height: 1.85;
   }
-  
-  /* -----------------------------------------
-     PROFESSIONAL FEATURES
-  ----------------------------------------- */
-  
+
   .approach-features {
-    display: flex;
-    gap: 25px;
-    margin: 32px 0;
-    padding-top: 25px;
-    border-top: 1px solid #dedede;
-  }
-  
-  .approach-features div {
-    flex: 1;
-  }
-  
-  .approach-features span {
-    display: block;
-    margin-bottom: 8px;
-    color: #b8956b;
-    font-size: 20px;
-    font-weight: 800;
-  }
-  
-  .approach-features p {
-    margin: 0;
-    color: #2b2b2b;
-    font-size: 11px;
-    font-weight: 700;
-    line-height: 1.5;
-  }
-  
-  /* -----------------------------------------
-     BUTTON
-  ----------------------------------------- */
-  
-  .program-text .more {
-    display: inline-flex;
-    align-items: center;
     gap: 12px;
-    padding: 14px 22px;
-    border: 1px solid #2b2b2b;
-    background: transparent;
-    color: #2b2b2b;
-    font-size: 10px;
-    font-weight: 800;
-    letter-spacing: 1.5px;
-    cursor: pointer;
-    transition: all 0.3s ease;
   }
-  
-  .program-text .more span {
-    color: #b8956b;
-    font-size: 18px;
-    transition: transform 0.3s ease;
+
+  .approach-features > div {
+    padding: 15px;
+    min-height: 48px;
   }
-  
-  .program-text .more:hover {
-    background: #2b2b2b;
-    color: #ffffff;
+
+  .approach-features > div:hover {
+    transform: none;
   }
-  
-  .program-text .more:hover span {
-    transform: translateX(5px);
+}
+
+/* SMALL MOBILE */
+@media (max-width: 480px) {
+  .programs {
+    padding: 35px 16px;
   }
-  
-  /* -----------------------------------------
-     TABLET
-  ----------------------------------------- */
-  
-  @media (max-width: 900px) {
-    .programs {
-      padding: 70px 6%;
-    }
-  
-    .program {
-      grid-template-columns: 1fr;
-      gap: 50px;
-    }
-  
-    .program-text {
-      max-width: 100%;
-    }
-  
-    .program-image img {
-      height: 450px;
-    }
-  
-    .image-badge {
-      right: 0;
-    }
+
+  .program-text h1 {
+    font-size: 26px;
   }
-  
-  /* -----------------------------------------
-     MOBILE
-  ----------------------------------------- */
-  
-  @media (max-width: 550px) {
-    .programs {
-      padding: 55px 5%;
-    }
-  
-    .program-image img {
-      height: 350px;
-    }
-  
-    .program-text h1 {
-      font-size: 32px;
-    }
-  
-    .approach-features {
-      gap: 15px;
-    }
-  
-    .approach-features span {
-      font-size: 17px;
-    }
-  
-    .approach-features p {
-      font-size: 9px;
-    }
-  
-    .image-badge {
-      bottom: 15px;
-      padding: 14px 18px;
-    }
+
+  .program-text > p {
+    font-size: 15px;
+    line-height: 1.8;
   }
+
+  .image-badge strong {
+    font-size: 16px;
+  }
+
+  .approach-features p {
+    font-size: 14px;
+  }
+}
+
+/* ACCESSIBILITY */
+@media (prefers-reduced-motion: reduce) {
+  .program-image img,
+  .approach-features > div {
+    transition: none;
+  }
+}

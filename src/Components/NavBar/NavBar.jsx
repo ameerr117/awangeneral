@@ -4,11 +4,6 @@ import { Link, useNavigate } from 'react-router-dom';
 import './NavBar.css';
 
 import logo from "../../assets/a6759469-cb67-47ae-be2d-838ac8b91cec.png";
-import fb from "../../assets/FBlogo.png";
-import insta from "../../assets/instalogo.webp";
-import twitter from "../../assets/Twitterlogo.png";
-import linkdin from "../../assets/inlogo.png";
-import gmail from "../../assets/Gmaillogo.png";
 
 import {
   FaWindowMaximize,
@@ -18,7 +13,11 @@ import {
   FaBorderAll,
   FaUserCircle,
   FaSearch,
-  FaTimes
+  FaTimes,
+  FaFacebookF,
+  FaInstagram,
+  FaLinkedinIn,
+  FaEnvelope
 } from 'react-icons/fa';
 
 const NavBar = () => {
@@ -51,10 +50,7 @@ const NavBar = () => {
     scrollTop();
   };
 
-  /* =========================================
-     WEBSITE SEARCH
-  ========================================= */
-
+  /* WEBSITE SEARCH */
   const handleSearch = (e) => {
     e.preventDefault();
 
@@ -63,60 +59,23 @@ const NavBar = () => {
     if (!query) return;
 
     const searchPages = [
-      {
-        keywords: ['home', 'main', 'awan'],
-        path: '/',
-      },
-      {
-        keywords: ['about', 'company', 'construction', 'aluminium company'],
-        path: '/about',
-      },
-      {
-        keywords: ['window', 'windows', 'sliding window', 'aluminium window'],
-        path: '/window',
-      },
-      {
-        keywords: ['door', 'doors', 'aluminium door'],
-        path: '/door',
-      },
-      {
-        keywords: ['cladding', 'facade', 'façade', 'panel'],
-        path: '/cladding',
-      },
-      {
-        keywords: ['tent', 'tents', 'aluminium tent'],
-        path: '/tents',
-      },
-      {
-        keywords: ['glass', 'architectural glass', 'glazing'],
-        path: '/glass',
-      },
-      {
-        keywords: ['solution', 'solutions', 'services', 'aluminium solutions'],
-        path: '/programz',
-      },
-      {
-        keywords: ['blog', 'news', 'insights', 'industry news'],
-        path: '/blog',
-      },
-      {
-        keywords: ['project', 'projects', 'project insights'],
-        path: '/blog-detail',
-      },
-      {
-        keywords: ['technical', 'technical information', 'information'],
-        path: '/element',
-      },
-      {
-        keywords: ['contact', 'phone', 'email', 'call'],
-        path: '/contact',
-      }
+      { keywords: ['home', 'main', 'awan'], path: '/' },
+      { keywords: ['about', 'company', 'construction', 'aluminium company'], path: '/about' },
+      { keywords: ['window', 'windows', 'sliding window', 'aluminium window'], path: '/window' },
+      { keywords: ['door', 'doors', 'aluminium door'], path: '/door' },
+      { keywords: ['cladding', 'facade', 'façade', 'panel'], path: '/cladding' },
+      { keywords: ['tent', 'tents', 'aluminium tent'], path: '/tents' },
+      { keywords: ['glass', 'architectural glass', 'glazing'], path: '/glass' },
+      { keywords: ['solution', 'solutions', 'services'], path: '/programz' },
+      { keywords: ['blog', 'news', 'insights'], path: '/blog' },
+      { keywords: ['project', 'projects'], path: '/blog-detail' },
+      { keywords: ['technical', 'information'], path: '/element' },
+      { keywords: ['contact', 'phone', 'email', 'call'], path: '/contact' }
     ];
 
     const result = searchPages.find((page) =>
-      page.keywords.some(
-        (keyword) =>
-          query.includes(keyword) || keyword.includes(query)
+      page.keywords.some((keyword) =>
+        query.includes(keyword) || keyword.includes(query)
       )
     );
 
@@ -126,7 +85,7 @@ const NavBar = () => {
       setSearchTerm('');
       scrollTop();
     } else {
-      alert(`No results found for "${searchTerm}". Please try another keyword.`);
+      alert(`No results found for "${searchTerm}".`);
     }
   };
 
@@ -134,11 +93,10 @@ const NavBar = () => {
     <>
       <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
 
-        {/* =====================================
-            TOP NAVBAR
-        ====================================== */}
+        {/* TOP NAVBAR */}
         <div className="navbar-top">
 
+          {/* LOGO */}
           <div className="navbar-left">
             <Link to="/" onClick={handleNavigation}>
               <img
@@ -164,6 +122,7 @@ const NavBar = () => {
             </span>
           </div>
 
+          {/* RIGHT INFORMATION */}
           <div className="navbar-right">
 
             {/* CLIENT PORTAL */}
@@ -184,21 +143,26 @@ const NavBar = () => {
             <div className="contact-info">
               <span className="call">CALL US</span>
 
-              <a href="tel:+9710050607000" className="phone-number">
+              <a
+                href="tel:+971508089726"
+                className="phone-number"
+              >
                 +971 0508089726
               </a>
             </div>
 
-            {/* SOCIAL MEDIA */}
+            {/* SOCIAL MEDIA ICONS */}
             <div className="social-icons">
 
               <a
-                href="https://web.facebook.com/awangcaw@gmail.com/"
+                href="https://www.facebook.com/"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Facebook"
+                title="Facebook"
+                className="social-link facebook"
               >
-                <img src={fb} alt="Facebook" />
+                <FaFacebookF />
               </a>
 
               <a
@@ -206,33 +170,30 @@ const NavBar = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Instagram"
+                title="Instagram"
+                className="social-link instagram"
               >
-                <img src={insta} alt="Instagram" />
+                <FaInstagram />
               </a>
 
               <a
-                href="https://twitter.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Twitter"
-              >
-                <img src={twitter} alt="Twitter" />
-              </a>
-
-              <a
-                href="https://www.linkedin.com"
+                href="https://www.linkedin.com/"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="LinkedIn"
+                title="LinkedIn"
+                className="social-link linkedin"
               >
-                <img src={linkdin} alt="LinkedIn" />
+                <FaLinkedinIn />
               </a>
 
               <a
                 href="mailto:AGCAW@gmail.com"
                 aria-label="Company Email"
+                title="Email"
+                className="social-link email"
               >
-                <img src={gmail} alt="Email" />
+                <FaEnvelope />
               </a>
 
             </div>
@@ -240,9 +201,7 @@ const NavBar = () => {
           </div>
         </div>
 
-        {/* =====================================
-            MAIN NAVIGATION
-        ====================================== */}
+        {/* MAIN NAVIGATION */}
         <div className="nav-links">
           <ul>
 
@@ -258,7 +217,7 @@ const NavBar = () => {
               </Link>
             </li>
 
-            {/* ALUMINIUM SOLUTIONS MEGA MENU */}
+            {/* ALUMINIUM SOLUTIONS */}
             <li className="dropdown programs-menu">
 
               <Link to="/programz" onClick={handleNavigation}>
@@ -272,64 +231,44 @@ const NavBar = () => {
                   <span>ARCHITECTURAL ALUMINIUM SOLUTIONS</span>
 
                   <p>
-                    Explore our range of modern aluminium and glass
-                    systems, engineered for residential, commercial
-                    and architectural projects.
+                    Explore our modern aluminium and glass systems,
+                    engineered for residential, commercial and
+                    architectural projects.
                   </p>
                 </div>
 
                 <div className="mega-menu-grid">
 
                   <div className="mega-column">
-                    <h4>
-                      <FaWindowMaximize />
-                      WINDOWS
-                    </h4>
-
+                    <h4><FaWindowMaximize /> WINDOWS</h4>
                     <Link to="/window" onClick={handleNavigation}>
                       Aluminium Windows
                     </Link>
                   </div>
 
                   <div className="mega-column">
-                    <h4>
-                      <FaDoorOpen />
-                      DOORS
-                    </h4>
-
+                    <h4><FaDoorOpen /> DOORS</h4>
                     <Link to="/door" onClick={handleNavigation}>
                       Aluminium Doors
                     </Link>
                   </div>
 
                   <div className="mega-column">
-                    <h4>
-                      <FaBuilding />
-                      CLADDING
-                    </h4>
-
+                    <h4><FaBuilding /> CLADDING</h4>
                     <Link to="/cladding" onClick={handleNavigation}>
                       Aluminium Cladding
                     </Link>
                   </div>
 
                   <div className="mega-column">
-                    <h4>
-                      <FaLayerGroup />
-                      TENTS
-                    </h4>
-
+                    <h4><FaLayerGroup /> TENTS</h4>
                     <Link to="/tents" onClick={handleNavigation}>
                       Aluminium Tents
                     </Link>
                   </div>
 
                   <div className="mega-column">
-                    <h4>
-                      <FaLayerGroup />
-                      GLASS
-                    </h4>
-
+                    <h4><FaLayerGroup /> GLASS</h4>
                     <Link to="/glass" onClick={handleNavigation}>
                       Architectural Glass
                     </Link>
@@ -352,7 +291,7 @@ const NavBar = () => {
               </div>
             </li>
 
-            {/* INSIGHTS DROPDOWN */}
+            {/* INSIGHTS */}
             <li className="dropdown">
 
               <Link to="/blog" onClick={handleNavigation}>
@@ -370,7 +309,7 @@ const NavBar = () => {
 
                 <li>
                   <Link to="/blog-detail" onClick={handleNavigation}>
-                   Other Services
+                    Other Services
                   </Link>
                 </li>
 
@@ -389,14 +328,13 @@ const NavBar = () => {
               </Link>
             </li>
 
-            {/* PROFESSIONAL SEARCH BUTTON - BELOW ROW */}
+            {/* SEARCH */}
             <li className="nav-search-item">
               <button
                 type="button"
                 className="nav-search-modern"
                 onClick={() => setIsSearchOpen(true)}
                 aria-label="Search website"
-                title="Search website"
               >
                 <FaSearch />
                 <span>SEARCH</span>
@@ -408,9 +346,7 @@ const NavBar = () => {
 
       </nav>
 
-      {/* =====================================
-          WEBSITE SEARCH POPUP
-      ====================================== */}
+      {/* SEARCH POPUP */}
       {isSearchOpen && (
         <div
           className="website-search-overlay"
@@ -420,6 +356,7 @@ const NavBar = () => {
             className="website-search-modal"
             onClick={(e) => e.stopPropagation()}
           >
+
             <button
               type="button"
               className="website-search-close"
@@ -441,6 +378,7 @@ const NavBar = () => {
             </p>
 
             <form onSubmit={handleSearch}>
+
               <div className="website-search-input">
                 <FaSearch />
 
@@ -453,46 +391,33 @@ const NavBar = () => {
                 />
               </div>
 
-              <button type="submit" className="website-search-submit">
+              <button
+                type="submit"
+                className="website-search-submit"
+              >
                 SEARCH WEBSITE
               </button>
+
             </form>
 
             <div className="website-search-suggestions">
               <span>POPULAR SEARCHES</span>
 
-              <button
-                type="button"
-                onClick={() => setSearchTerm('windows')}
-              >
-                Windows
-              </button>
-
-              <button
-                type="button"
-                onClick={() => setSearchTerm('doors')}
-              >
-                Doors
-              </button>
-
-              <button
-                type="button"
-                onClick={() => setSearchTerm('glass')}
-              >
-                Glass
-              </button>
-
-              <button
-                type="button"
-                onClick={() => setSearchTerm('contact')}
-              >
-                Contact
-              </button>
+              {['windows', 'doors', 'glass', 'contact'].map((item) => (
+                <button
+                  key={item}
+                  type="button"
+                  onClick={() => setSearchTerm(item)}
+                >
+                  {item.charAt(0).toUpperCase() + item.slice(1)}
+                </button>
+              ))}
             </div>
 
           </div>
         </div>
       )}
+
     </>
   );
 };

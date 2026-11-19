@@ -1,13 +1,12 @@
+
 import about1 from "../../assets/alu006.jpg";
 import './Approach.css';
 
 const Approach = () => {
   return (
     <section className="programs">
-
       <div className="program">
 
-        {/* Project Image */}
         <div className="program-image">
           <img
             src={about1}
@@ -20,9 +19,7 @@ const Approach = () => {
           </div>
         </div>
 
-        {/* Company Information */}
         <div className="program-text">
-
           <span className="approach-label">
             OUR APPROACH
           </span>
@@ -34,18 +31,18 @@ const Approach = () => {
           <div className="title-line"></div>
 
           <p>
-            At AWAN GENERAL CONTRACTING & ALUMINIUM WORK LLC, we provide
-            professional aluminium, glass and architectural solutions for
-            residential, commercial and construction projects. Our approach
-            focuses on accurate fabrication, quality materials and reliable
-            installation.
+            At AWAN GENERAL CONTRACTING & ALUMINIUM WORK LLC,
+            we provide professional aluminium, glass and architectural
+            solutions for residential, commercial and construction
+            projects. Our approach focuses on accurate fabrication,
+            quality materials and reliable installation.
           </p>
 
           <p>
-            From initial project requirements through fabrication and final
-            installation, our team works with attention to detail, clear
-            coordination and professional workmanship to support successful
-            project delivery.
+            From initial project requirements through fabrication
+            and final installation, our team works with attention
+            to detail, clear coordination and professional
+            workmanship to support successful project delivery.
           </p>
 
           <div className="approach-features">
@@ -64,13 +61,9 @@ const Approach = () => {
               <p>Professional Installation</p>
             </div>
           </div>
-
-         
-
         </div>
 
       </div>
-
     </section>
   );
 };
