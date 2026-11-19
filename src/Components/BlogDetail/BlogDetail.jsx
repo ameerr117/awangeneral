@@ -83,6 +83,33 @@ const BlogDetail = () => {
     }
   ];
 
+  const gallery = [
+    {
+      number: '01',
+      category: 'CONSTRUCTION',
+      title: 'Modern Building Works',
+      description: 'Professional building and construction solutions.',
+      image: 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1200&q=85',
+      alt: 'Modern architectural building and construction project'
+    },
+    {
+      number: '02',
+      category: 'INTERIOR DESIGN',
+      title: 'Interior Finishing',
+      description: 'Beautiful interiors with quality finishing details.',
+      image: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=85',
+      alt: 'Modern interior design with premium finishing'
+    },
+    {
+      number: '03',
+      category: 'EXTERIOR WORKS',
+      title: 'Exterior Solutions',
+      description: 'Contemporary building exteriors and finishing.',
+      image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=85',
+      alt: 'Contemporary commercial building exterior'
+    }
+  ];
+
   return (
     <div className="extra-services-page">
 
@@ -146,6 +173,49 @@ const BlogDetail = () => {
             installation and maintenance for residential and commercial
             developments.
           </p>
+
+        </div>
+
+      </section>
+
+      {/* THREE IMAGE GALLERY */}
+      <section className="extra-gallery">
+
+        <div className="extra-gallery-heading">
+          <span>OUR WORK & EXPERTISE</span>
+          <h2>Building Solutions in Action</h2>
+          <p>
+            Explore our construction, installation and finishing services.
+          </p>
+        </div>
+
+        <div className="extra-gallery-grid">
+
+          {gallery.map((item) => (
+
+            <article className="extra-gallery-card" key={item.number}>
+
+              <img
+                src={item.image}
+                alt={item.alt}
+                loading="lazy"
+              />
+
+              <div className="extra-gallery-caption">
+
+                <span>
+                  {item.number} / {item.category}
+                </span>
+
+                <h3>{item.title}</h3>
+
+                <p>{item.description}</p>
+
+              </div>
+
+            </article>
+
+          ))}
 
         </div>
 

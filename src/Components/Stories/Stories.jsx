@@ -1,17 +1,10 @@
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import './Stories.css';
 
 import class1 from "../../assets/ay00.jpeg";
 import class2 from "../../assets/ay01.jpeg";
 import class3 from "../../assets/ay02.jpeg";
-
-import class4 from "../../assets/ay00.jpeg";
-import class5 from "../../assets/ay01.jpeg";
-import class6 from "../../assets/ay02.jpeg";
-import class7 from "../../assets/ay00.jpeg";
-import class8 from "../../assets/ay01.jpeg";
-import class9 from "../../assets/ay02.jpeg";
 
 const Stories = () => {
   const [current, setCurrent] = useState(0);
@@ -22,80 +15,98 @@ const Stories = () => {
       title: 'Aluminium Windows',
       category: 'WINDOW SYSTEMS',
       image: class1,
-      description: 'Modern aluminium window systems for residential and commercial buildings.'
+      description:
+        'Explore modern aluminium window solutions designed for durability, natural lighting and elegant architectural finishes.'
     },
     {
       title: 'Curtain Wall Systems',
       category: 'FACADE SYSTEMS',
       image: class2,
-      description: 'Contemporary glass and aluminium facade solutions.'
+      description:
+        'Discover contemporary curtain wall solutions combining aluminium framing and glass for modern building facades.'
     },
     {
       title: 'Aluminium Doors',
       category: 'DOOR SYSTEMS',
       image: class3,
-      description: 'Elegant and durable entrance and interior door solutions.'
+      description:
+        'High-quality aluminium door solutions designed for practical performance, durability and modern architectural style.'
     },
     {
       title: 'Glass Railings',
       category: 'RAILING SYSTEMS',
-      image: class4,
-      description: 'Modern railing systems for balconies and staircases.'
+      image: class1,
+      description:
+        'Elegant glass railing solutions for balconies, staircases and contemporary architectural spaces.'
     },
     {
       title: 'Aluminium Cladding',
       category: 'EXTERIOR SOLUTIONS',
-      image: class5,
-      description: 'Professional exterior cladding for modern buildings.'
+      image: class2,
+      description:
+        'Modern aluminium cladding solutions that enhance building exteriors with clean and professional finishes.'
     },
     {
       title: 'Glass Partitions',
       category: 'INTERIOR SOLUTIONS',
-      image: class6,
-      description: 'Create bright, elegant and functional interior spaces.'
+      image: class3,
+      description:
+        'Functional glass partition systems that create bright, modern and organized interior environments.'
     },
     {
       title: 'Custom Fabrication',
       category: 'FABRICATION',
-      image: class7,
-      description: 'Custom aluminium fabrication according to project needs.'
+      image: class1,
+      description:
+        'Custom aluminium fabrication developed to meet project specifications and architectural requirements.'
     },
     {
       title: 'Automatic Doors',
       category: 'ACCESS SYSTEMS',
-      image: class8,
-      description: 'Modern automatic entrance systems for commercial spaces.'
+      image: class2,
+      description:
+        'Modern automatic door solutions for convenient access in commercial and residential environments.'
     },
     {
       title: 'Aluminium Louvers',
       category: 'ARCHITECTURAL SYSTEMS',
-      image: class9,
-      description: 'Architectural shading and ventilation solutions.'
+      image: class3,
+      description:
+        'Architectural louver systems designed to complement building facades and provide practical shading.'
     },
     {
       title: 'Complete Projects',
       category: 'PROJECT EXECUTION',
       image: class1,
-      description: 'Professional aluminium and construction project solutions.'
+      description:
+        'Professional project execution combining aluminium, glazing and construction services.'
     }
   ];
 
   const visibleCards = 3;
-  const maxSlide = stories.length - visibleCards;
+  const maxSlide = Math.max(0, stories.length - visibleCards);
 
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrent(prev => prev >= maxSlide ? 0 : prev + 1);
-    }, 4000);
-
-    return () => clearInterval(timer);
+  const next = useCallback(() => {
+    setCurrent(prev => prev >= maxSlide ? 0 : prev + 1);
   }, [maxSlide]);
 
-  // Close image with Escape key
+  const previous = useCallback(() => {
+    setCurrent(prev => prev <= 0 ? maxSlide : prev - 1);
+  }, [maxSlide]);
+
+  // Automatic slider
+  useEffect(() => {
+    if (selected) return;
+
+    const timer = setInterval(next, 4000);
+    return () => clearInterval(timer);
+  }, [next, selected]);
+
+  // Close popup with Escape key
   useEffect(() => {
     if (!selected) return;
 
-    const handleEscape = (event) => {
+    const handleEscape = event => {
       if (event.key === 'Escape') {
         setSelected(null);
       }
@@ -110,37 +121,44 @@ const Stories = () => {
     };
   }, [selected]);
 
-  const next = () => {
-    setCurrent(prev => prev >= maxSlide ? 0 : prev + 1);
-  };
-
-  const previous = () => {
-    setCurrent(prev => prev <= 0 ? maxSlide : prev - 1);
-  };
-
   return (
     <section className="stories-container">
 
+      {/* HEADER */}
       <div className="stories-header">
         <div>
           <span className="stories-tag">
-            AWAN GENERAL ALUMINIUM
+            AWAN GENERAL CONTRACTING & ALUMINIUM WORKS
           </span>
 
           <h1>Our Expertise & Solutions</h1>
 
           <p>
             Discover our aluminium, glass and architectural
-            solutions for modern construction projects.
+            solutions for modern residential and commercial projects.
           </p>
         </div>
 
         <div className="slider-buttons">
-          <button onClick={previous} aria-label="Previous">←</button>
-          <button onClick={next} aria-label="Next">→</button>
+          <button
+            type="button"
+            onClick={previous}
+            aria-label="Previous projects"
+          >
+            ←
+          </button>
+
+          <button
+            type="button"
+            onClick={next}
+            aria-label="Next projects"
+          >
+            →
+          </button>
         </div>
       </div>
 
+      {/* SLIDER */}
       <div className="stories-slider">
         <div
           className="stories-track"
@@ -149,23 +167,26 @@ const Stories = () => {
           }}
         >
           {stories.map((story, index) => (
-            <div className="stories-slide" key={index}>
-              <div className="stories-card">
+            <div className="stories-slide" key={`${story.title}-${index}`}>
+              <article className="stories-card">
 
                 <div
                   className="stories-image"
-                  onClick={() => setSelected(story.image)}
+                  onClick={() => setSelected(story)}
                   role="button"
                   tabIndex={0}
-                  onKeyDown={e => {
-                    if (e.key === 'Enter' || e.key === ' ') {
-                      e.preventDefault();
-                      setSelected(story.image);
+                  onKeyDown={event => {
+                    if (event.key === 'Enter' || event.key === ' ') {
+                      event.preventDefault();
+                      setSelected(story);
                     }
                   }}
-                  style={{ cursor: 'pointer' }}
                 >
-                  <img src={story.image} alt={story.title} />
+                  <img
+                    src={story.image}
+                    alt={story.title}
+                    loading="lazy"
+                  />
 
                   <span>{story.category}</span>
                 </div>
@@ -176,21 +197,25 @@ const Stories = () => {
                   <p>{story.description}</p>
 
                   <button
+                    type="button"
                     className="read-more-btn"
-                    onClick={() => setSelected(story.image)}
+                    onClick={() => setSelected(story)}
                   >
                     View Full Image →
                   </button>
                 </div>
 
-              </div>
+              </article>
             </div>
           ))}
         </div>
       </div>
 
+      {/* PROGRESS */}
       <div className="stories-progress">
-        <span>{String(current + 1).padStart(2, '0')}</span>
+        <span>
+          {String(current + 1).padStart(2, '0')}
+        </span>
 
         <div className="progress-line">
           <div
@@ -200,16 +225,19 @@ const Stories = () => {
           />
         </div>
 
-        <span>{String(maxSlide + 1).padStart(2, '0')}</span>
+        <span>
+          {String(maxSlide + 1).padStart(2, '0')}
+        </span>
       </div>
 
-      {/* FULL IMAGE POPUP - IMAGE ONLY */}
+      {/* FULL IMAGE POPUP */}
       {selected && (
         <div
           className="story-image-overlay"
           onClick={() => setSelected(null)}
         >
           <button
+            type="button"
             className="story-image-close"
             onClick={() => setSelected(null)}
             aria-label="Close image"
@@ -217,12 +245,22 @@ const Stories = () => {
             ×
           </button>
 
-          <img
-            src={selected}
-            alt="Full project"
-            className="story-full-image"
-            onClick={e => e.stopPropagation()}
-          />
+          <div
+            className="story-image-modal"
+            onClick={event => event.stopPropagation()}
+          >
+            <img
+              src={selected.image}
+              alt={selected.title}
+              className="story-full-image"
+            />
+
+            <div className="story-popup-info">
+              <span>{selected.category}</span>
+              <h2>{selected.title}</h2>
+              <p>{selected.description}</p>
+            </div>
+          </div>
         </div>
       )}
 

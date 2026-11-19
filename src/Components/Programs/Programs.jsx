@@ -182,7 +182,7 @@ const Programs = () => {
 
         <div className="showcase-brand">
           <span>AWAN</span>
-          <small>GENERAL ALUMINIUM & CONSTRUCTION</small>
+          <small>GENERAL CONTRACTING & ALUMINIUM </small>
         </div>
 
         <div className="showcase-progress">
