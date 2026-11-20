@@ -40,10 +40,12 @@ const NavBar = () => {
     window.addEventListener('scroll', handleScroll);
     handleScroll();
 
-    return () => window.removeEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
   }, []);
 
-  // CLOSE SEARCH WITH ESCAPE
+  // CLOSE MENU WITH ESCAPE
   useEffect(() => {
     const handleEscape = (e) => {
       if (e.key === 'Escape') {
@@ -55,27 +57,22 @@ const NavBar = () => {
 
     window.addEventListener('keydown', handleEscape);
 
-    return () => window.removeEventListener('keydown', handleEscape);
+    return () => {
+      window.removeEventListener('keydown', handleEscape);
+    };
   }, []);
 
-  // PREVENT BACKGROUND SCROLL WHEN SEARCH IS OPEN
+  // PREVENT BACKGROUND SCROLL
   useEffect(() => {
-    document.body.style.overflow = isSearchOpen ? 'hidden' : '';
+    document.body.style.overflow =
+      isSearchOpen ? 'hidden' : '';
 
     return () => {
       document.body.style.overflow = '';
     };
   }, [isSearchOpen]);
 
-  // SCROLL TO TOP
-  const scrollTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
-    });
-  };
-
-  // CLOSE MOBILE MENU
+  // CLOSE ALL MENUS
   const closeMenus = () => {
     setIsMobileOpen(false);
     setOpenDropdown('');
@@ -86,14 +83,21 @@ const NavBar = () => {
   // NAVIGATION HANDLER
   const handleNavigation = () => {
     closeMenus();
-    scrollTop();
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
   };
 
   // NAVIGATE TO PAGE
   const goToPage = (path) => {
     closeMenus();
     navigate(path);
-    scrollTop();
+
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
   };
 
   // DROPDOWN HANDLER
@@ -103,90 +107,51 @@ const NavBar = () => {
     );
   };
 
+  // SEARCH PAGES
+  const searchPages = [
+    { keywords: ['home', 'main', 'awan'], path: '/' },
+    { keywords: ['about', 'company', 'construction'], path: '/about' },
+    { keywords: ['window', 'windows'], path: '/window' },
+    { keywords: ['door', 'doors'], path: '/door' },
+    { keywords: ['cladding', 'facade', 'façade'], path: '/cladding' },
+    { keywords: ['tent', 'tents'], path: '/tents' },
+    { keywords: ['glass', 'architectural glass'], path: '/glass' },
+
+    {
+      keywords: [
+        'curtain',
+        'curtain wall',
+        'curtain walls',
+        'curtain wall systems'
+      ],
+      path: '/check'
+    },
+
+    {
+      keywords: [
+        'partition',
+        'partitions',
+        'glass partition',
+        'glass partitions',
+        'office partition'
+      ],
+      path: '/gallery'
+    },
+
+    { keywords: ['solution', 'solutions', 'services'], path: '/programz' },
+    { keywords: ['blog', 'news', 'insights'], path: '/blog' },
+    { keywords: ['project', 'projects'], path: '/blog' },
+    { keywords: ['technical', 'information', 'client portal'], path: '/element' },
+    { keywords: ['contact', 'phone', 'email'], path: '/contact' }
+  ];
+
   // WEBSITE SEARCH
   const handleSearch = (e) => {
     e.preventDefault();
 
-    const query = searchTerm
-      .trim()
-      .toLowerCase()
-      .replace(/\s+/g, ' ');
+    const query = searchTerm.trim().toLowerCase();
 
     if (!query) return;
-
-    const searchPages = [
-      {
-        keywords: ['home', 'main', 'awan'],
-        path: '/'
-      },
-      {
-        keywords: ['about', 'company', 'construction', 'aluminium company'],
-        path: '/about'
-      },
-      {
-        keywords: ['window', 'windows', 'sliding window', 'aluminium window'],
-        path: '/window'
-      },
-      {
-        keywords: ['door', 'doors', 'aluminium door'],
-        path: '/door'
-      },
-      {
-        keywords: ['cladding', 'facade', 'façade', 'panel'],
-        path: '/cladding'
-      },
-      {
-        keywords: ['tent', 'tents', 'aluminium tent'],
-        path: '/tents'
-      },
-      {
-        keywords: ['glass', 'architectural glass', 'glazing'],
-        path: '/glass'
-      },
-      {
-        keywords: [
-          'partition',
-          'partitions',
-          'glass partition',
-          'glass partitions',
-          'aluminium partition',
-          'aluminium partitions',
-          'office partition',
-          'office partitions'
-        ],
-        path: '/partner'
-      },
-      {
-        keywords: [
-          'curtain',
-          'curtains',
-          'curtain wall',
-          'curtain walls',
-          'curtain wall systems'
-        ],
-        path: '/curtain'
-      },
-      {
-        keywords: ['solution', 'solutions', 'services'],
-        path: '/programz'
-      },
-      {
-        keywords: ['blog', 'news', 'insights'],
-        path: '/blog'
-      },
-      {
-        keywords: ['project', 'projects'],
-        path: '/blog-detail'
-      },
-      {
-        keywords: ['technical', 'information', 'client portal', 'account'],
-        path: '/element'
-      },
-      {
-        keywords: ['contact', 'phone', 'email', 'call'],
-        path: '/contact'
-      }
-    ];
 
     const result = searchPages.find((page) =>
       page.keywords.some((keyword) =>
@@ -203,7 +168,7 @@ const NavBar = () => {
     }
   };
 
-  // GMAIL MESSAGE LINK
+  // GMAIL LINK
   const gmailLink =
     'https://mail.google.com/mail/?view=cm&fs=1' +
     '&to=awangcaw@gmail.com' +
@@ -285,7 +250,6 @@ const NavBar = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Facebook"
-                title="Facebook"
                 className="social-link facebook"
               >
                 <FaFacebookF />
@@ -296,7 +260,6 @@ const NavBar = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Instagram"
-                title="Instagram"
                 className="social-link instagram"
               >
                 <FaInstagram />
@@ -307,7 +270,6 @@ const NavBar = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="LinkedIn"
-                title="LinkedIn"
                 className="social-link linkedin"
               >
                 <FaLinkedinIn />
@@ -317,8 +279,7 @@ const NavBar = () => {
                 href={gmailLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="Message AWAN through Gmail"
-                title="Message Us Anytime - Gmail"
+                aria-label="Email AWAN"
                 className="social-link email"
               >
                 <FaEnvelope />
@@ -332,7 +293,7 @@ const NavBar = () => {
             type="button"
             className="mobile-menu-btn"
             onClick={() => setIsMobileOpen(!isMobileOpen)}
-            aria-label={isMobileOpen ? 'Close menu' : 'Open menu'}
+            aria-label="Toggle navigation menu"
             aria-expanded={isMobileOpen}
           >
             {isMobileOpen ? <FaTimes /> : <FaBars />}
@@ -342,6 +303,7 @@ const NavBar = () => {
 
         {/* NAVIGATION LINKS */}
         <div className={`nav-links ${isMobileOpen ? 'mobile-active' : ''}`}>
+
           <ul>
 
             <li>
@@ -357,9 +319,12 @@ const NavBar = () => {
             </li>
 
             {/* ALUMINIUM SOLUTIONS */}
-            <li className={`dropdown programs-menu ${openDropdown === 'solutions' ? 'dropdown-open' : ''}`}>
+            <li className={`dropdown programs-menu ${
+              openDropdown === 'solutions' ? 'dropdown-open' : ''
+            }`}>
 
               <div className="nav-dropdown-heading">
+
                 <Link to="/programz" onClick={handleNavigation}>
                   Aluminium Solutions
                 </Link>
@@ -373,18 +338,24 @@ const NavBar = () => {
                 >
                   <FaChevronDown />
                 </button>
+
               </div>
 
+              {/* MEGA MENU */}
               <div className="mega-menu">
 
                 <div className="mega-menu-header">
-                  <span>ARCHITECTURAL ALUMINIUM SOLUTIONS</span>
+
+                  <span>
+                    ARCHITECTURAL ALUMINIUM SOLUTIONS
+                  </span>
 
                   <p>
                     Explore our modern aluminium, curtain and glass
                     systems, engineered for residential, commercial
                     and architectural projects.
                   </p>
+
                 </div>
 
                 <div className="mega-menu-grid">
@@ -424,17 +395,19 @@ const NavBar = () => {
                     </Link>
                   </div>
 
+                  {/* CURTAIN WALLS - CHECK.JSX */}
                   <div className="mega-column">
-                    <h4><FaBorderAll /> CURTAIN WALL</h4>
-                    <Link to="/curtain" onClick={handleNavigation}>
+                    <h4><FaBorderAll /> CURTAIN WALLS</h4>
+                    <Link to="/check" onClick={handleNavigation}>
                       Curtain Wall Systems
                     </Link>
                   </div>
 
+                  {/* GLASS PARTITIONS - GALLERY.JSX */}
                   <div className="mega-column">
-                    <h4><FaBorderAll /> PARTITIONS</h4>
-                    <Link to="/partner" onClick={handleNavigation}>
-                      Aluminium & Glass Partitions
+                    <h4><FaBorderAll /> GLASS PARTITIONS</h4>
+                    <Link to="/gallery" onClick={handleNavigation}>
+                      Glass Partition Systems
                     </Link>
                   </div>
 
@@ -453,12 +426,16 @@ const NavBar = () => {
                 </div>
 
               </div>
+
             </li>
 
             {/* INSIGHTS */}
-            <li className={`dropdown insights-menu ${openDropdown === 'insights' ? 'dropdown-open' : ''}`}>
+            <li className={`dropdown insights-menu ${
+              openDropdown === 'insights' ? 'dropdown-open' : ''
+            }`}>
 
               <div className="nav-dropdown-heading">
+
                 <Link to="/blog" onClick={handleNavigation}>
                   Insights
                 </Link>
@@ -472,9 +449,11 @@ const NavBar = () => {
                 >
                   <FaChevronDown />
                 </button>
+
               </div>
 
               <ul className="dropdown-content">
+
                 <li>
                   <Link to="/blog" onClick={handleNavigation}>
                     Projects
@@ -492,9 +471,12 @@ const NavBar = () => {
                     Client Portal
                   </Link>
                 </li>
+
               </ul>
+
             </li>
 
+            {/* CONTACT */}
             <li>
               <Link to="/contact" onClick={handleNavigation}>
                 Contact
@@ -503,6 +485,7 @@ const NavBar = () => {
 
             {/* SEARCH */}
             <li className="nav-search-item">
+
               <button
                 type="button"
                 className="nav-search-modern"
@@ -516,13 +499,16 @@ const NavBar = () => {
                 <FaSearch />
                 <span>SEARCH</span>
               </button>
+
             </li>
 
           </ul>
+
         </div>
+
       </nav>
 
-      {/* MOBILE MENU BACKDROP */}
+      {/* MOBILE BACKDROP */}
       {isMobileOpen && (
         <div
           className="mobile-menu-backdrop"
@@ -532,10 +518,12 @@ const NavBar = () => {
 
       {/* SEARCH POPUP */}
       {isSearchOpen && (
+
         <div
           className="website-search-overlay"
           onClick={() => setIsSearchOpen(false)}
         >
+
           <div
             className="website-search-modal"
             onClick={(e) => e.stopPropagation()}
@@ -562,7 +550,9 @@ const NavBar = () => {
             </p>
 
             <form onSubmit={handleSearch}>
+
               <div className="website-search-input">
+
                 <FaSearch />
 
                 <input
@@ -572,6 +562,7 @@ const NavBar = () => {
                   onChange={(e) => setSearchTerm(e.target.value)}
                   autoFocus
                 />
+
               </div>
 
               <button
@@ -580,9 +571,12 @@ const NavBar = () => {
               >
                 SEARCH WEBSITE
               </button>
+
             </form>
 
+            {/* POPULAR SEARCHES */}
             <div className="website-search-suggestions">
+
               <span>POPULAR SEARCHES</span>
 
               {[
@@ -593,33 +587,38 @@ const NavBar = () => {
                 'Partitions',
                 'Cladding',
                 'Contact'
-              ].map((item) => (
-                <button
-                  key={item}
-                  type="button"
-                  onClick={() => {
-                    const paths = {
-                      Windows: '/window',
-                      Doors: '/door',
-                      Glass: '/glass',
-                      'Curtain Walls': '/curtain',
-                      Partitions: '/partner',
-                      Cladding: '/cladding',
-                      Contact: '/contact'
-                    };
+              ].map((item) => {
 
-                    goToPage(paths[item]);
-                  }}
-                >
-                  {item}
-                </button>
-              ))}
+                const paths = {
+                  Windows: '/window',
+                  Doors: '/door',
+                  Glass: '/glass',
+                  'Curtain Walls': '/check',
+                  Partitions: '/gallery',
+                  Cladding: '/cladding',
+                  Contact: '/contact'
+                };
+
+                return (
+                  <button
+                    key={item}
+                    type="button"
+                    onClick={() => goToPage(paths[item])}
+                  >
+                    {item}
+                  </button>
+                );
+
+              })}
 
             </div>
 
           </div>
+
         </div>
+
       )}
+
     </>
   );
 };

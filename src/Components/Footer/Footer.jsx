@@ -166,7 +166,10 @@ function Footer() {
               <FaEnvelope />
               <div>
                 <span>Email Us</span>
-                <a href="mailto:AGCAW@gmail.com">AGCAW@gmail.com</a>
+                <a href="mailto:awangcaw@gmail.com">awangcaw@gmail.com
+
+
+</a>
               </div>
             </div>
 
@@ -174,7 +177,7 @@ function Footer() {
               <FaMapMarkerAlt />
               <div>
                 <span>Location</span>
-                <p>Abu Dhabi, United Arab Emirates</p>
+                <p>M32/2, MUSAFFAH, ABU DHABI - UAE</p>
               </div>
             </div>
 

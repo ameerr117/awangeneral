@@ -855,3 +855,232 @@
     right: -5px;
   }
 }
+
+/* =====================================
+   AWAN COMPLETED PROJECT GALLERY
+===================================== */
+
+.awan-project-portfolio {
+  width: 100%;
+  padding: 65px 6%;
+  background: #f4f5f6;
+}
+
+.awan-project-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 28px;
+  max-width: 1400px;
+  margin: auto;
+}
+
+.awan-project-card {
+  overflow: hidden;
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.07);
+  border-radius: 15px;
+  cursor: pointer;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.07);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.awan-project-card:hover {
+  transform: translateY(-7px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.13);
+}
+
+.awan-project-image {
+  position: relative;
+  width: 100%;
+  height: 280px;
+  overflow: hidden;
+  background: #e9ecef;
+}
+
+.awan-project-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.awan-project-card:hover .awan-project-image img {
+  transform: scale(1.06);
+}
+
+.awan-image-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.35),
+    transparent 45%
+  );
+  pointer-events: none;
+}
+
+.awan-project-number {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  background: rgba(25, 30, 35, 0.78);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 9px;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.awan-image-view {
+  position: absolute;
+  right: 18px;
+  bottom: 18px;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.3s ease;
+}
+
+.awan-project-card:hover .awan-image-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.awan-project-details {
+  padding: 20px 22px;
+  min-height: 120px;
+  display: flex;
+  align-items: center;
+  background: #fff;
+}
+
+.awan-company-quotation {
+  margin: 0;
+  color: #555e66;
+  font-size: 14px;
+  line-height: 1.85;
+  font-style: italic;
+}
+
+/* =====================================
+   FULL IMAGE POPUP
+===================================== */
+
+.awan-project-modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 25px;
+  background: rgba(10, 14, 18, 0.92);
+  backdrop-filter: blur(10px);
+}
+
+.awan-project-modal {
+  position: relative;
+  width: 100%;
+  max-width: 1050px;
+  max-height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.awan-project-modal img {
+  display: block;
+  max-width: 100%;
+  max-height: 85vh;
+  object-fit: contain;
+  border-radius: 10px;
+}
+
+.awan-modal-close {
+  position: absolute;
+  top: -18px;
+  right: -18px;
+  z-index: 2;
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  background: #252b31;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  font-size: 18px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.awan-modal-close:hover {
+  background: #a9783e;
+  transform: rotate(90deg);
+}
+
+/* =====================================
+   TABLET
+===================================== */
+
+@media (max-width: 900px) {
+  .awan-project-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
+  }
+
+  .awan-project-image {
+    height: 250px;
+  }
+}
+
+/* =====================================
+   MOBILE
+===================================== */
+
+@media (max-width: 600px) {
+  .awan-project-portfolio {
+    padding: 40px 5%;
+  }
+
+  .awan-project-grid {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+
+  .awan-project-image {
+    height: 260px;
+  }
+
+  .awan-project-details {
+    padding: 17px;
+    min-height: auto;
+  }
+
+  .awan-company-quotation {
+    font-size: 13px;
+  }
+
+  .awan-project-modal-overlay {
+    padding: 15px;
+  }
+
+  .awan-modal-close {
+    top: -15px;
+    right: -5px;
+  }
+}
