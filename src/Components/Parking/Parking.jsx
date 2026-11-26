@@ -1,5 +1,4 @@
 
-import React from "react";
 import { Link } from "react-router-dom";
 import "./Parking.css";
 
@@ -384,7 +383,7 @@ const Parking = () => {
 
       {/* FINAL CTA */}
       <section className="parking-cta">
-        <span>LET'S PLAN YOUR PARKING SPACE</span>
+        <span>LETS PLAN YOUR PARKING SPACE</span>
 
         <h2>Looking for Modern Car Parking Shades?</h2>
 

@@ -1,330 +1,238 @@
 
+import { useState } from 'react';
 import './Contact.css';
 
 import {
   FaEnvelope,
   FaPhoneAlt,
   FaFacebookF,
-  FaLinkedinIn,
   FaInstagram,
-  FaArrowRight,
+  FaLinkedinIn,
+  FaWhatsapp,
   FaMapMarkerAlt,
-  FaCheckCircle
+  FaArrowRight,
+  FaGlobe
 } from 'react-icons/fa';
 
 import { SiGmail } from 'react-icons/si';
 
 const Contact = () => {
+  const emailAddress = 'awangcaw@gmail.com';
+  const phoneNumber = '+971562700627';
+  const displayPhone = '+971 56 270 0627';
+
+  const mapAddress = 'M32/2, Musaffah, Abu Dhabi - UAE';
+
+  const mapLink =
+    'https://www.google.com/maps/search/?api=1&query=' +
+    encodeURIComponent(mapAddress);
+
+  const directionsLink =
+    'https://www.google.com/maps/dir/?api=1&destination=' +
+    encodeURIComponent(mapAddress);
+
+  const gmailLink =
+    `https://mail.google.com/mail/?view=cm&fs=1&to=${emailAddress}`;
+
+  const whatsappLink =
+    `https://wa.me/${phoneNumber.replace('+', '')}`;
+
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    project: '',
+    message: ''
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+
+    setFormData((previous) => ({
+      ...previous,
+      [name]: value
+    }));
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    const form = e.currentTarget;
-    const data = new FormData(form);
-
-    const name = data.get('name');
-    const phone = data.get('phone');
-    const email = data.get('email');
-    const project = data.get('project');
-    const message = data.get('message');
-
     const subject = encodeURIComponent(
-      `New Project Enquiry - ${name}`
+      `New Project Enquiry from ${formData.name}`
     );
 
     const body = encodeURIComponent(
-`Dear AWAN General Contracting & Aluminium Works Team,
+      `NEW PROJECT ENQUIRY
 
-I would like to enquire about your services.
+Name: ${formData.name}
+Email: ${formData.email}
+Phone: ${formData.phone}
+Project Type: ${formData.project}
 
-CUSTOMER DETAILS
--------------------------
-Full Name: ${name}
-Phone Number: ${phone}
-Email Address: ${email}
+Message:
+${formData.message}
 
-PROJECT INFORMATION
--------------------------
-Project Type: ${project}
-
-Project Requirements:
-${message}
-
-I would appreciate it if your team could contact me to discuss the project details, pricing and next steps.
-
-Thank you.
-
-Best Regards,
-${name}`
+Business Address:
+${mapAddress}`
     );
 
-    const gmailUrl =
-      `https://mail.google.com/mail/?view=cm&fs=1&to=awangcaw@gmail.com&su=${subject}&body=${body}`;
+    const composeLink =
+      `https://mail.google.com/mail/?view=cm&fs=1&to=${emailAddress}&su=${subject}&body=${body}`;
 
-    window.open(gmailUrl, '_blank', 'noopener,noreferrer');
+    window.open(
+      composeLink,
+      '_blank',
+      'noopener,noreferrer'
+    );
   };
-
-  const mapAddress = 'AWAN GENERAL CONTRACTING & ALUMINIUM WORKS';
 
   return (
     <div className="contact-page">
 
-      {/* CONTACT HERO */}
+      {/* HERO SECTION */}
       <section className="contact-hero">
-        <div className="contact-hero-overlay"></div>
-
         <div className="contact-hero-content">
-          <span className="contact-hero-label">
+
+          <span className="contact-label">
             AWAN GENERAL CONTRACTING & ALUMINIUM WORKS
           </span>
 
           <h1>
-            Let's Build
-            <span>Something Exceptional.</span>
+            LET'S DISCUSS
+            <span> YOUR PROJECT</span>
           </h1>
 
           <p>
-            From aluminium systems to complete architectural
-            solutions, let's discuss your next project.
+            Have a project in mind? Contact our team for professional
+            aluminium, glass, construction and interior finishing services.
           </p>
 
-          <div className="contact-hero-bottom">
-            <span>QUALITY</span>
-            <i></i>
-            <span>PRECISION</span>
-            <i></i>
-            <span>TRUST</span>
-          </div>
-        </div>
+          <a href="#contact-main" className="contact-hero-btn">
+            GET IN TOUCH <FaArrowRight />
+          </a>
 
-        <div className="contact-hero-number">
-          <span>01</span>
-          <small>GET IN TOUCH</small>
         </div>
       </section>
 
-      {/* CONTACT MAIN SECTION */}
-      <section className="contact-main-section">
 
-        <div className="contact-section-heading">
-          <div>
-            <span className="contact-small-label">
-              START A CONVERSATION
-            </span>
+      {/* MAIN CONTACT SECTION */}
+      <section className="contact-main" id="contact-main">
 
-            <h2>
-              Tell Us About
-              <span>Your Project.</span>
-            </h2>
-          </div>
+        <div className="contact-heading">
+
+          <span>CONTACT AWAN</span>
+
+          <h2>We Are Ready To Help You</h2>
 
           <p>
-            Have a question or planning a new project?
-            Complete the enquiry form and our team will
-            be happy to assist you.
+            Share your requirements with us. Our team will be happy
+            to discuss your project and provide suitable solutions.
           </p>
+
         </div>
 
-        <div className="contact-us-container">
 
-          {/* LEFT SIDE FORM */}
-          <div className="contact-form-box">
+        <div className="contact-container">
 
-            <div className="contact-form-heading">
-              <span className="contact-form-index">01 / PROJECT ENQUIRY</span>
+          {/* LEFT CONTACT INFORMATION */}
+          <div className="contact-info">
 
-              <h2>
-                Got a Project in Mind?
-                <span>Let's Talk About Your Plan!</span>
-              </h2>
+            <span className="contact-small-heading">
+              GET IN TOUCH
+            </span>
 
-              <p>
-                Share your requirements with us.
-                We will help you find the right solution.
-              </p>
-            </div>
+            <h2>Contact Information</h2>
 
-            <form onSubmit={handleSubmit}>
+            <p className="contact-info-description">
+              Reach out to AWAN for aluminium, glass and
+              architectural construction solutions.
+            </p>
 
-              <div className="contact-form-grid">
-
-                <div className="contact-input-group">
-                  <label htmlFor="name">FULL NAME *</label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    placeholder="Enter your full name"
-                    required
-                  />
-                </div>
-
-                <div className="contact-input-group">
-                  <label htmlFor="email">EMAIL ADDRESS *</label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    placeholder="Enter your email address"
-                    required
-                  />
-                </div>
-
-                <div className="contact-input-group">
-                  <label htmlFor="phone">PHONE NUMBER *</label>
-                  <input
-                    type="tel"
-                    id="phone"
-                    name="phone"
-                    placeholder="+971 XX XXX XXXX"
-                    required
-                  />
-                </div>
-
-                <div className="contact-input-group">
-                  <label htmlFor="project">PROJECT TYPE *</label>
-
-                  <select
-                    id="project"
-                    name="project"
-                    defaultValue=""
-                    required
-                  >
-                    <option value="" disabled>
-                      Select project type
-                    </option>
-
-                    <option>Aluminium Windows & Doors</option>
-                    <option>Curtain Wall & Facade</option>
-                    <option>Glass & Glazing Works</option>
-                    <option>Aluminium Cladding</option>
-                    <option>Glass Railings</option>
-                    <option>Painting Works</option>
-                    <option>Plumbing Works</option>
-                    <option>Electrical Works</option>
-                    <option>Flooring & Tiling</option>
-                    <option>Carpentry & Joinery</option>
-                    <option>Civil Construction</option>
-                    <option>Building Maintenance</option>
-                    <option>Other Construction Works</option>
-                  </select>
-                </div>
-
-              </div>
-
-              <div className="contact-input-group contact-message-group">
-                <label htmlFor="message">PROJECT DETAILS *</label>
-
-                <textarea
-                  id="message"
-                  name="message"
-                  rows="5"
-                  placeholder="Tell us about your project requirements..."
-                  required
-                />
-              </div>
-
-              <button type="submit" className="contact-submit">
-                <span>Send Your Enquiry</span>
-                <FaArrowRight />
-              </button>
-
-            </form>
-
-            <div className="contact-form-bottom">
-              <span>AWAN GENERAL CONTRACTING</span>
-              <span>QUALITY · PRECISION · TRUST</span>
-            </div>
-
-          </div>
-
-          {/* RIGHT SIDE INFORMATION */}
-          <div className="contact-information">
-
-            <div className="contact-info-heading">
-              <span className="contact-small-label">
-                CONTACT OUR TEAM
-              </span>
-
-              <h2>
-                We're Here
-                <span>To Help You.</span>
-              </h2>
-
-              <p className="contact-info-description">
-                Connect with our team for project enquiries,
-                quotations and professional aluminium
-                and construction solutions.
-              </p>
-            </div>
 
             {/* EMAIL */}
             <a
-              href="mailto:awangcaw@gmail.com"
-              className="contact-info-card"
+              href={gmailLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="contact-info-item"
             >
+
               <div className="contact-info-icon">
                 <FaEnvelope />
               </div>
 
               <div className="contact-info-text">
                 <span>EMAIL OUR TEAM</span>
-                <h3>awangcaw@gmail.com</h3>
+                <strong>{emailAddress}</strong>
               </div>
 
-              <FaArrowRight className="contact-card-arrow" />
             </a>
+
 
             {/* PHONE */}
             <a
               href="tel:+971562700627"
-              className="contact-info-card"
+              className="contact-info-item"
             >
+
               <div className="contact-info-icon">
                 <FaPhoneAlt />
               </div>
 
               <div className="contact-info-text">
                 <span>CALL OUR TEAM</span>
-                <h3>+971 56 270 0627</h3>
+                <strong>{displayPhone}</strong>
               </div>
 
-              <FaArrowRight className="contact-card-arrow" />
             </a>
+
+
+            {/* WHATSAPP */}
+            <a
+              href={whatsappLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="contact-info-item"
+            >
+
+              <div className="contact-info-icon">
+                <FaWhatsapp />
+              </div>
+
+              <div className="contact-info-text">
+                <span>WHATSAPP</span>
+                <strong>Chat With Our Team</strong>
+              </div>
+
+            </a>
+
 
             {/* LOCATION */}
             <a
-              href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(mapAddress)}`}
+              href={mapLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="contact-location-card"
+              className="contact-info-item"
             >
-              <div className="contact-location-icon">
+
+              <div className="contact-info-icon">
                 <FaMapMarkerAlt />
               </div>
 
-              <div>
-                <span>FIND OUR LOCATION</span>
-                <h3>View Our Location on Map</h3>
-                <p>Open Google Maps for directions</p>
+              <div className="contact-info-text">
+                <span>OUR OFFICE LOCATION</span>
+                <strong>{mapAddress}</strong>
               </div>
 
-              <FaArrowRight className="contact-card-arrow" />
             </a>
 
+
             {/* SOCIAL MEDIA */}
-            <div className="contact-social">
-              <span className="contact-social-label">
-                STAY CONNECTED
-              </span>
+            <div className="contact-social-section">
 
-              <h2>Connect With Us</h2>
+              <h3>Connect With Us</h3>
 
-              <p>
-                Follow our work and discover our latest projects.
-              </p>
-
-              <div className="social-icons">
+              <div className="contact-social-icons">
 
                 <a
                   href="https://www.facebook.com/"
@@ -333,15 +241,6 @@ ${name}`
                   aria-label="Facebook"
                 >
                   <FaFacebookF />
-                </a>
-
-                <a
-                  href="https://www.linkedin.com/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="LinkedIn"
-                >
-                  <FaLinkedinIn />
                 </a>
 
                 <a
@@ -354,46 +253,306 @@ ${name}`
                 </a>
 
                 <a
-                  href="mailto:awangcaw@gmail.com"
+                  href="https://www.linkedin.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="LinkedIn"
+                >
+                  <FaLinkedinIn />
+                </a>
+
+                <a
+                  href={gmailLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   aria-label="Gmail"
                 >
                   <SiGmail />
                 </a>
 
-              </div>
-            </div>
+                <a
+                  href={whatsappLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="WhatsApp"
+                >
+                  <FaWhatsapp />
+                </a>
 
-            {/* BRAND FOOTER */}
-            <div className="contact-brand-footer">
-              <span className="contact-brand-mark">A.</span>
-
-              <div>
-                <strong>AWAN ALUMINIUM WORKS</strong>
-                <small>ENGINEERED FOR EXCELLENCE</small>
               </div>
+
             </div>
 
           </div>
 
+
+          {/* RIGHT CONTACT FORM */}
+          <div className="contact-form-wrapper">
+
+            <div className="contact-form-heading">
+
+              <span>SEND US A MESSAGE</span>
+
+              <h2>Tell Us About Your Project</h2>
+
+              <p>
+                Complete the form below and send your enquiry
+                directly to our Gmail account.
+              </p>
+
+            </div>
+
+
+            <form
+              className="contact-form"
+              onSubmit={handleSubmit}
+            >
+
+              {/* NAME AND EMAIL */}
+              <div className="contact-form-row">
+
+                <div className="contact-form-group">
+
+                  <label htmlFor="contact-name">
+                    Your Name *
+                  </label>
+
+                  <input
+                    type="text"
+                    id="contact-name"
+                    name="name"
+                    placeholder="Enter your name"
+                    value={formData.name}
+                    onChange={handleChange}
+                    required
+                  />
+
+                </div>
+
+
+                <div className="contact-form-group">
+
+                  <label htmlFor="contact-email">
+                    Email Address *
+                  </label>
+
+                  <input
+                    type="email"
+                    id="contact-email"
+                    name="email"
+                    placeholder="Enter your email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    required
+                  />
+
+                </div>
+
+              </div>
+
+
+              {/* PHONE AND PROJECT */}
+              <div className="contact-form-row">
+
+                <div className="contact-form-group">
+
+                  <label htmlFor="contact-phone">
+                    Mobile Number *
+                  </label>
+
+                  <input
+                    type="tel"
+                    id="contact-phone"
+                    name="phone"
+                    placeholder="+971 00 000 0000"
+                    value={formData.phone}
+                    onChange={handleChange}
+                    required
+                  />
+
+                </div>
+
+
+                <div className="contact-form-group">
+
+                  <label htmlFor="contact-project">
+                    Project Type *
+                  </label>
+
+                  <select
+                    id="contact-project"
+                    name="project"
+                    value={formData.project}
+                    onChange={handleChange}
+                    required
+                  >
+
+                    <option value="">
+                      Select Project Type
+                    </option>
+
+                    <option value="Aluminium Windows">
+                      Aluminium Windows
+                    </option>
+
+                    <option value="Aluminium Doors">
+                      Aluminium Doors
+                    </option>
+
+                    <option value="Aluminium Cladding">
+                      Aluminium Cladding
+                    </option>
+
+                    <option value="Aluminium Tents">
+                      Aluminium Tents
+                    </option>
+
+                    <option value="Architectural Glass">
+                      Architectural Glass
+                    </option>
+
+                    <option value="Curtain Wall Systems">
+                      Curtain Wall Systems
+                    </option>
+
+                    <option value="Glass Partition Systems">
+                      Glass Partition Systems
+                    </option>
+
+                    <option value="Wrought Iron Gate">
+                      Wrought Iron Gate
+                    </option>
+
+                    <option value="Car Parkings & Shades">
+                      Car Parkings & Shades
+                    </option>
+
+                    <option value="Paints & Gypsum Works">
+                      Paints & Gypsum Works
+                    </option>
+
+                    <option value="Other Enquiry">
+                      Other Enquiry
+                    </option>
+
+                  </select>
+
+                </div>
+
+              </div>
+
+
+              {/* MESSAGE */}
+              <div className="contact-form-group">
+
+                <label htmlFor="contact-message">
+                  Your Message *
+                </label>
+
+                <textarea
+                  id="contact-message"
+                  name="message"
+                  rows="6"
+                  placeholder="Describe your project requirements..."
+                  value={formData.message}
+                  onChange={handleChange}
+                  required
+                />
+
+              </div>
+
+
+              {/* SUBMIT */}
+              <button
+                type="submit"
+                className="contact-submit-btn"
+              >
+                SEND MESSAGE <FaArrowRight />
+              </button>
+
+            </form>
+
+          </div>
+
         </div>
+
       </section>
 
-      {/* BOTTOM TRUST STRIP */}
-      <section className="contact-trust-strip">
-        <div>
-          <FaCheckCircle />
-          <span>QUALITY MATERIALS</span>
+
+      {/* LOCATION SECTION */}
+      <section className="contact-location-section">
+
+        <div className="contact-location-content">
+
+          <span className="contact-location-label">
+            FIND OUR LOCATION
+          </span>
+
+          <h2>Visit Our Office</h2>
+
+          <div className="contact-location-address">
+
+            <FaMapMarkerAlt />
+
+            <p>
+              M32/2, Musaffah, Abu Dhabi - UAE
+            </p>
+
+          </div>
+
+
+          <div className="contact-location-buttons">
+
+            <a
+              href={mapLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="contact-map-btn"
+            >
+              VIEW OUR LOCATION ON MAP
+              <FaArrowRight />
+            </a>
+
+            <a
+              href={directionsLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="contact-directions-btn"
+            >
+              OPEN GOOGLE MAPS FOR DIRECTIONS
+            </a>
+
+          </div>
+
         </div>
 
-        <div>
-          <FaCheckCircle />
-          <span>PRECISION WORKMANSHIP</span>
-        </div>
+      </section>
 
-        <div>
-          <FaCheckCircle />
-          <span>PROFESSIONAL SOLUTIONS</span>
-        </div>
+
+      {/* BOTTOM BANNER */}
+      <section className="contact-bottom-banner">
+
+        <span>
+          AWAN GENERAL CONTRACTING & ALUMINIUM WORKS
+        </span>
+
+        <h2>
+          Quality. Precision. Architectural Excellence.
+        </h2>
+
+        <p>
+          Building better spaces with professional aluminium
+          and architectural solutions.
+        </p>
+
+        <a
+          href={gmailLink}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          EMAIL OUR TEAM <FaArrowRight />
+        </a>
+
       </section>
 
     </div>

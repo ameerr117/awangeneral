@@ -1,127 +1,88 @@
+
 import { Link } from 'react-router-dom';
 import Stories from "../../Components/Stories/Stories";
 
 import blog1 from "../../assets/WhatsApp Image 2026-11-11 at 12.28.50 AM (1).jpeg";
 import blog2 from "../../assets/alu006.jpg";
 import blog3 from "../../assets/alu008.jpg";
-import blog4 from "../../assets/alu006.jpg";
+import blog4 from "../../assets/alu007.jpg";
 
 import './Programz.css';
 
+
 const products = [
   {
-    title: "Windows",
-    category: "WINDOW SYSTEMS",
+    title: "Aluminium Windows",
+    category: "WINDOWS",
     image: blog1,
-    description:
-      "Modern aluminium window systems designed for smooth operation, natural light and contemporary buildings.",
-    link: "/window"
+    description: "Premium aluminium window systems for modern residential and commercial buildings.",
+    link: "/Window"
   },
   {
-    title: "Doors",
-    category: "DOOR SYSTEMS",
+    title: "Aluminium Doors",
+    category: "DOORS",
     image: blog2,
-    description:
-      "Professional aluminium door solutions designed for residential, commercial and architectural applications.",
-    link: "/door"
-  },
-  {
-    title: "Aluminium Curtain",
-    category: "CURTAIN WALL SYSTEMS",
-    image: blog3,
-    description:
-      "Architectural aluminium and glazing systems for elegant commercial buildings and modern exterior facades.",
-    link: "/curtain"
-  },
-  {
-    title: "Aluminium Glass",
-    category: "GLASS SYSTEMS",
-    image: blog4,
-    description:
-      "Professional architectural glass and glazing solutions for modern residential and commercial spaces.",
-    link: "/glass"
-  },
-  {
-    title: "Tents",
-    category: "ALUMINIUM SOLUTIONS",
-    image: blog1,
-    description:
-      "Complete aluminium solutions designed for modern construction, fabrication and architectural applications.",
-    link: "/tents"
+    description: "Modern aluminium door solutions combining durability, functionality and architectural style.",
+    link: "/Door"
   },
   {
     title: "Aluminium Cladding",
-    category: "CLADDING SYSTEMS",
-    image: blog2,
-    description:
-      "Durable aluminium cladding systems designed to protect and enhance modern building facades.",
-    link: "/cladding"
+    category: "CLADDING",
+    image: blog3,
+    description: "High-quality aluminium cladding systems for contemporary building facades.",
+    link: "/Cladding"
   },
   {
-    title: "Aluminium Composite Cladding",
-    category: "CLADDING SYSTEMS",
-    image: blog3,
-    description:
-      "Contemporary aluminium composite panel solutions for attractive and professional building elevations.",
-    link: "/cladding"
+    title: "Aluminium Tents",
+    category: "TENTS",
+    image: blog4,
+    description: "Strong and durable aluminium tent structures for outdoor and commercial applications.",
+    link: "/Tents"
+  },
+  {
+    title: "Architectural Glass",
+    category: "GLASS",
+    image: blog1,
+    description: "Architectural glass solutions for modern buildings, offices and interior spaces.",
+    link: "/Glass"
+  },
+  {
+    title: "Curtain Wall Systems",
+    category: "CURTAIN WALLS",
+    image: blog2,
+    description: "Modern aluminium and glass curtain wall systems for elegant building exteriors.",
+    link: "/Curtain"
   },
   {
     title: "Glass Partition Systems",
-    category: "INTERIOR GLASS SYSTEMS",
-    image: blog4,
-    description:
-      "Modern glass partition systems that create functional interior spaces while maintaining openness and natural light.",
-    link: "/glass"
-  },
-  {
-    title: "Aluminium Louvers",
-    category: "ARCHITECTURAL SYSTEMS",
-    image: blog1,
-    description:
-      "Architectural aluminium louver systems designed for shading, ventilation and modern facade detailing.",
-    link: "/tents"
-  },
-  {
-    title: "Automatic Glass Doors",
-    category: "DOOR SYSTEMS",
-    image: blog2,
-    description:
-      "Automatic aluminium and glass entrance door solutions for offices, commercial spaces and public buildings.",
-    link: "/door"
-  },
-  {
-    title: "Frameless Glass Doors",
-    category: "GLASS & DOOR SYSTEMS",
+    category: "GLASS PARTITIONS",
     image: blog3,
-    description:
-      "Minimalist frameless glass door solutions for clean, modern and elegant architectural spaces.",
-    link: "/glass"
+    description: "Professional glass partition systems for modern offices and interior environments.",
+    link: "/Partition"
   },
   {
-    title: "Aluminium Skylights",
-    category: "ROOF & GLASS SYSTEMS",
+    title: "Wrought Iron Gate",
+    category: "WROUGHT IRON GATE",
     image: blog4,
-    description:
-      "Modern aluminium and glazed roof systems designed to introduce natural daylight into architectural spaces.",
-    link: "/glass"
+    description: "Custom wrought iron gates designed for security, strength and attractive entrances.",
+    link: "/Iron"
   },
   {
-    title: "Aluminium Kitchen Cabinets",
-    category: "INTERIOR ALUMINIUM",
+    title: "Car Parkings & Shades",
+    category: "CAR PARKINGS & SHADES",
     image: blog1,
-    description:
-      "Functional and durable aluminium cabinet solutions designed for modern kitchens and interior environments.",
-    link: "/tents"
+    description: "Durable parking shades and structures designed to protect vehicles from sunlight and weather.",
+    link: "/Parking"
   },
   {
-    title: "Aluminium Shopfront Systems",
-    category: "COMMERCIAL SYSTEMS",
+    title: "Paints & Gypsum Works",
+    category: "PAINTS & GYPSUM WORKS",
     image: blog2,
-    description:
-      "Professional aluminium shopfront and commercial glazing systems designed for retail and business spaces.",
-    link: "/door"
+    description: "Professional painting and gypsum finishing solutions for modern residential and commercial interiors.",
+    link: "/Paints"
   }
 ];
+
 
 const Programz = () => {
   return (
@@ -130,13 +91,16 @@ const Programz = () => {
       {/* HERO SECTION */}
       <section className="products-hero">
         <div className="products-hero-content">
-          <span className="products-label">AWAN GENERAL ALUMINIUM</span>
+          <span className="products-label">
+            AWAN GENERAL CONTRACTING & ALUMINIUM WORKS
+          </span>
 
           <h1>OUR PRODUCTS</h1>
 
           <p>
-            Explore our range of aluminium, glass and architectural
-            systems designed for modern residential and commercial spaces.
+            Explore our complete range of aluminium, glass and
+            architectural solutions designed for modern residential,
+            commercial and industrial projects.
           </p>
 
           <Link to="/contact" className="products-hero-btn">
@@ -145,21 +109,19 @@ const Programz = () => {
         </div>
       </section>
 
-
       {/* INTRODUCTION */}
       <section className="products-intro">
         <div className="products-intro-heading">
           <span>WHAT WE OFFER</span>
-          <h2>Architectural Aluminium Solutions</h2>
+          <h2>Complete Aluminium Solutions</h2>
         </div>
 
         <p>
-          Discover our complete range of aluminium, glass and architectural
-          solutions. From windows and doors to curtain walls, cladding and
-          glazing systems, our products are designed for modern construction.
+          From aluminium windows and doors to curtain walls, glass
+          partitions, cladding and structural shades, AWAN delivers
+          professional solutions for modern construction projects.
         </p>
       </section>
-
 
       {/* PRODUCTS */}
       <section className="products-section">
@@ -173,14 +135,17 @@ const Programz = () => {
           <p>{products.length} PRODUCT CATEGORIES</p>
         </div>
 
-
         <div className="products-grid">
           {products.map((product, index) => (
             <article className="product-card" key={product.title}>
 
               {/* IMAGE */}
               <div className="product-image">
-                <img src={product.image} alt={product.title} />
+                <img
+                  src={product.image}
+                  alt={product.title}
+                  loading="lazy"
+                />
 
                 <span className="product-number">
                   {String(index + 1).padStart(2, '0')}
@@ -190,7 +155,6 @@ const Programz = () => {
                   AWAN ALUMINIUM
                 </span>
               </div>
-
 
               {/* CONTENT */}
               <div className="product-content">
@@ -203,19 +167,18 @@ const Programz = () => {
 
                 <p>{product.description}</p>
 
-                {/* RELATED PAGE LINK */}
-                <Link to={product.link} className="product-link">
+                <Link
+                  to={product.link}
+                  className="product-link"
+                >
                   VIEW DETAILS <span>↗</span>
                 </Link>
 
               </div>
-
             </article>
           ))}
         </div>
-
       </section>
-
 
       {/* CONTACT SECTION */}
       <section className="products-contact">
@@ -225,8 +188,8 @@ const Programz = () => {
           <h2>Lets Build Something Exceptional.</h2>
 
           <p>
-            Contact our team to discuss your aluminium and architectural
-            requirements.
+            Contact our team to discuss your aluminium, glass
+            and architectural requirements.
           </p>
         </div>
 
@@ -234,7 +197,6 @@ const Programz = () => {
           CONTACT US →
         </Link>
       </section>
-
 
       {/* STORIES */}
       <section className="products-stories">

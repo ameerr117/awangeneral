@@ -900,3 +900,1475 @@
     transition-duration: 0.01ms !important;
   }
 }
+/* =========================================
+   AWAN CONTACT INFORMATION STRIP
+========================================= */
+
+.awan-contact-strip {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(
+    110deg,
+    #061e49 0%,
+    #0b3479 65%,
+    #0643a0 100%
+  );
+  border-top: 4px solid #d9e4ef;
+  border-bottom: 3px solid #bd875b;
+  color: #ffffff;
+}
+
+.awan-contact-inner {
+  width: 100%;
+  max-width: 1600px;
+  min-height: 112px;
+  margin: 0 auto;
+  padding: 20px 3%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+/* CONTACT ITEM */
+.awan-contact-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  color: #ffffff;
+  text-decoration: none;
+  min-width: 0;
+  transition: 0.3s ease;
+}
+
+.awan-contact-item:hover {
+  color: #e3c49d;
+  transform: translateY(-3px);
+}
+
+.awan-contact-icon {
+  min-width: 38px;
+  width: 38px;
+  height: 38px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #ffffff;
+  font-size: 29px;
+}
+
+.awan-contact-text {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.awan-contact-text span {
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.awan-contact-text strong {
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+/* DIVIDERS */
+.awan-contact-divider {
+  display: block;
+  width: 2px;
+  height: 49px;
+  flex-shrink: 0;
+  background: rgba(255, 255, 255, 0.75);
+}
+
+/* LOCATION */
+.awan-location-item .awan-contact-text strong {
+  font-size: 13px;
+}
+
+/* TAGLINE */
+.awan-contact-tagline {
+  min-width: 185px;
+  padding-left: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transform: rotate(-5deg);
+  border-left: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.awan-contact-tagline span,
+.awan-contact-tagline strong {
+  color: #ffffff;
+  font-size: 25px;
+  font-style: italic;
+  font-weight: 800;
+  line-height: 1.2;
+  text-shadow: 2px 3px 5px rgba(0, 0, 0, 0.3);
+}
+
+.awan-contact-tagline strong {
+  font-size: 29px;
+}
+
+.awan-contact-tagline i {
+  width: 100px;
+  height: 2px;
+  margin-top: 7px;
+  background: #d4aa85;
+  transform: rotate(-4deg);
+}
+
+/* =========================================
+   TABLET RESPONSIVE
+========================================= */
+
+@media (max-width: 1100px) {
+  .awan-contact-inner {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
+    padding: 25px 5%;
+  }
+
+  .awan-contact-divider {
+    display: none;
+  }
+
+  .awan-contact-tagline {
+    grid-column: 1 / -1;
+    border-left: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.25);
+    padding: 18px 0 5px;
+    margin-top: 5px;
+  }
+}
+
+/* =========================================
+   MOBILE RESPONSIVE
+========================================= */
+
+@media (max-width: 600px) {
+  .awan-contact-inner {
+    grid-template-columns: 1fr;
+    gap: 0;
+    padding: 12px 22px;
+  }
+
+  .awan-contact-item {
+    width: 100%;
+    padding: 15px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.17);
+  }
+
+  .awan-contact-icon {
+    min-width: 35px;
+    width: 35px;
+    font-size: 25px;
+  }
+
+  .awan-contact-text span {
+    font-size: 11px;
+  }
+
+  .awan-contact-text strong {
+    font-size: 13px;
+    white-space: normal;
+    overflow-wrap: anywhere;
+  }
+
+  .awan-contact-tagline {
+    grid-column: auto;
+    padding: 22px 0 12px;
+    margin: 0;
+  }
+
+  .awan-contact-tagline span {
+    font-size: 22px;
+  }
+
+  .awan-contact-tagline strong {
+    font-size: 27px;
+  }
+}
+
+@media (max-width: 360px) {
+  .awan-contact-inner {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .awan-contact-text strong {
+    font-size: 12px;
+  }
+}
+
+/* =========================================
+   AWAN FIXED WHATSAPP BUTTON
+   ALL SCREEN SIZES
+========================================= */
+
+.whatsapp-float {
+  position: fixed !important;
+  right: 25px;
+  bottom: 25px;
+  z-index: 99999;
+
+  width: 60px;
+  height: 60px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  color: #ffffff;
+  background: #20c768;
+
+  font-size: 31px;
+  text-decoration: none;
+
+  border: 3px solid #ffffff;
+  border-radius: 50%;
+
+  box-shadow:
+    0 5px 20px rgba(0, 0, 0, 0.25),
+    0 0 0 5px rgba(32, 199, 104, 0.15);
+
+  transition: all 0.3s ease;
+}
+
+.whatsapp-float:hover {
+  color: #ffffff;
+  background: #159e50;
+  transform: translateY(-5px) scale(1.07);
+  box-shadow: 0 8px 25px rgba(32, 199, 104, 0.4);
+}
+
+/* TOOLTIP */
+.whatsapp-tooltip {
+  position: absolute;
+  right: 72px;
+
+  padding: 9px 15px;
+
+  color: #ffffff;
+  background: #10271f;
+
+  font-size: 12px;
+  font-weight: 600;
+  white-space: nowrap;
+
+  border-radius: 5px;
+
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(8px);
+
+  transition: all 0.3s ease;
+}
+
+.whatsapp-float:hover .whatsapp-tooltip {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(0);
+}
+
+/* TABLET */
+@media (max-width: 768px) {
+  .whatsapp-float {
+    width: 55px;
+    height: 55px;
+    right: 18px;
+    bottom: 20px;
+    font-size: 28px;
+  }
+}
+
+/* MOBILE */
+@media (max-width: 480px) {
+  .whatsapp-float {
+    width: 52px;
+    height: 52px;
+    right: 15px;
+    bottom: 18px;
+    font-size: 27px;
+  }
+
+  .whatsapp-tooltip {
+    display: none;
+  }
+}
+
+/* SMALL MOBILE */
+@media (max-width: 350px) {
+  .whatsapp-float {
+    width: 47px;
+    height: 47px;
+    right: 12px;
+    bottom: 15px;
+    font-size: 24px;
+  }
+}
+
+/* =========================================
+   FIXED WHATSAPP BUTTON - ALL SCREENS
+========================================= */
+
+.whatsapp-float {
+  position: fixed !important;
+  right: 25px;
+  bottom: 25px;
+  z-index: 999999;
+
+  width: 60px;
+  height: 60px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  color: #ffffff;
+  background: #20c768;
+
+  font-size: 32px;
+  text-decoration: none;
+
+  border: 3px solid #ffffff;
+  border-radius: 50%;
+
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.25),
+              0 0 0 5px rgba(32, 199, 104, 0.15);
+
+  transition: all 0.3s ease;
+}
+
+.whatsapp-float:hover {
+  color: #ffffff;
+  background: #159e50;
+  transform: translateY(-5px) scale(1.08);
+}
+
+/* TOOLTIP */
+.whatsapp-tooltip {
+  position: absolute;
+  right: 72px;
+
+  padding: 10px 16px;
+
+  color: #ffffff;
+  background: #10271f;
+
+  font-size: 12px;
+  font-weight: 600;
+  white-space: nowrap;
+
+  border-radius: 6px;
+
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(8px);
+
+  transition: all 0.3s ease;
+}
+
+.whatsapp-float:hover .whatsapp-tooltip {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(0);
+}
+
+/* TABLET */
+@media (max-width: 768px) {
+  .whatsapp-float {
+    width: 55px;
+    height: 55px;
+    right: 18px;
+    bottom: 20px;
+    font-size: 29px;
+  }
+}
+
+/* MOBILE */
+@media (max-width: 480px) {
+  .whatsapp-float {
+    width: 52px;
+    height: 52px;
+    right: 15px;
+    bottom: 18px;
+    font-size: 27px;
+  }
+
+  .whatsapp-tooltip {
+    display: none;
+  }
+}
+
+/* SMALL MOBILE */
+@media (max-width: 350px) {
+  .whatsapp-float {
+    width: 47px;
+    height: 47px;
+    right: 12px;
+    bottom: 15px;
+    font-size: 24px;
+  }
+}
+
+/* ==================================================
+   AWAN PREMIUM CONTACT SECTION
+   Architectural Corporate Design
+   Green | Ivory | Copper | Gold
+================================================== */
+
+.awan-contact-strip {
+  --awan-green: #183b32;
+  --awan-deep: #0c1d17;
+  --awan-dark: #101713;
+  --awan-copper: #bd875b;
+  --awan-gold: #d4aa85;
+  --awan-ivory: #f3f0e8;
+  --awan-white: #ffffff;
+
+  position: relative;
+  isolation: isolate;
+  width: 100%;
+  overflow: hidden;
+  background:
+    radial-gradient(
+      ellipse at 90% 0%,
+      rgba(189, 135, 91, 0.17),
+      transparent 38%
+    ),
+    linear-gradient(
+      120deg,
+      var(--awan-deep),
+      var(--awan-green) 55%,
+      #102820
+    );
+  color: var(--awan-white);
+  border-top: 3px solid var(--awan-copper);
+  border-bottom: 3px solid var(--awan-gold);
+}
+
+/* Decorative architectural shapes */
+
+.awan-contact-strip::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  width: 330px;
+  height: 330px;
+  top: -210px;
+  left: 25%;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 50%;
+}
+
+.awan-contact-strip::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  width: 280px;
+  height: 280px;
+  right: -120px;
+  bottom: -190px;
+  border: 1px solid rgba(212, 170, 133, 0.18);
+  border-radius: 50%;
+}
+
+/* ==================================================
+   MAIN DESKTOP LAYOUT
+================================================== */
+
+.awan-contact-inner {
+  width: 100%;
+  max-width: 1550px;
+  min-height: 125px;
+  margin: 0 auto;
+  padding: 24px 4%;
+
+  display: grid;
+  grid-template-columns:
+    repeat(4, minmax(0, 1fr))
+    minmax(175px, 0.85fr);
+
+  align-items: center;
+  gap: 17px;
+}
+
+/* ==================================================
+   CONTACT ITEMS
+================================================== */
+
+.awan-contact-item {
+  position: relative;
+  min-width: 0;
+  min-height: 65px;
+  padding: 12px;
+
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  color: var(--awan-white);
+  text-decoration: none;
+
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  border-radius: 9px;
+  background: rgba(255, 255, 255, 0.045);
+
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.awan-contact-item:hover {
+  transform: translateY(-4px);
+  background: rgba(255, 255, 255, 0.10);
+  border-color: rgba(212, 170, 133, 0.65);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* ICON */
+
+.awan-contact-icon {
+  width: 43px;
+  height: 43px;
+  min-width: 43px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: var(--awan-gold);
+  font-size: 20px;
+
+  background: rgba(189, 135, 91, 0.13);
+  border: 1px solid rgba(212, 170, 133, 0.30);
+  border-radius: 8px;
+
+  transition: all 0.3s ease;
+}
+
+.awan-contact-item:hover .awan-contact-icon {
+  color: var(--awan-deep);
+  background: var(--awan-gold);
+  border-color: var(--awan-gold);
+}
+
+/* TEXT */
+
+.awan-contact-text {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.awan-contact-text span {
+  color: var(--awan-gold);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.awan-contact-text strong {
+  display: block;
+  color: var(--awan-white);
+  font-size: clamp(11px, 0.85vw, 13px);
+  font-weight: 600;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
+.awan-location-item .awan-contact-text strong {
+  font-size: clamp(10px, 0.8vw, 12px);
+}
+
+/* DIVIDER */
+
+.awan-contact-divider {
+  display: none;
+}
+
+/* ==================================================
+   BRAND TAGLINE
+================================================== */
+
+.awan-contact-tagline {
+  min-width: 0;
+  min-height: 75px;
+  padding: 12px 8px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  border-left: 2px solid var(--awan-copper);
+  text-align: center;
+  transform: rotate(-3deg);
+}
+
+.awan-contact-tagline span {
+  color: var(--awan-ivory);
+  font-size: clamp(16px, 1.3vw, 21px);
+  font-weight: 800;
+  font-style: italic;
+  white-space: nowrap;
+}
+
+.awan-contact-tagline strong {
+  color: var(--awan-gold);
+  font-size: clamp(21px, 1.7vw, 27px);
+  font-weight: 900;
+  font-style: italic;
+  line-height: 1.15;
+}
+
+.awan-contact-tagline i {
+  display: block;
+  width: 75%;
+  height: 2px;
+  margin-top: 8px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--awan-gold),
+    transparent
+  );
+}
+
+/* ==================================================
+   LARGE SCREENS
+================================================== */
+
+@media (min-width: 1450px) {
+  .awan-contact-inner {
+    min-height: 140px;
+    gap: 22px;
+    padding: 27px 4%;
+  }
+
+  .awan-contact-item {
+    min-height: 72px;
+    padding: 14px;
+    gap: 14px;
+  }
+
+  .awan-contact-icon {
+    width: 48px;
+    height: 48px;
+    min-width: 48px;
+    font-size: 22px;
+  }
+
+  .awan-contact-text span {
+    font-size: 11px;
+  }
+
+  .awan-contact-text strong {
+    font-size: 13px;
+  }
+}
+
+/* ==================================================
+   LAPTOP SCREENS
+================================================== */
+
+@media (max-width: 1200px) and (min-width: 901px) {
+  .awan-contact-inner {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 12px;
+    padding: 22px 2%;
+  }
+
+  .awan-contact-item {
+    padding: 10px 8px;
+    gap: 8px;
+  }
+
+  .awan-contact-icon {
+    width: 36px;
+    height: 36px;
+    min-width: 36px;
+    font-size: 17px;
+  }
+
+  .awan-contact-text span {
+    font-size: 9px;
+  }
+
+  .awan-contact-text strong,
+  .awan-location-item .awan-contact-text strong {
+    font-size: 10px;
+  }
+
+  .awan-contact-tagline {
+    grid-column: 1 / -1;
+    min-height: 65px;
+    border-left: none;
+    border-top: 1px solid rgba(212, 170, 133, 0.35);
+    margin-top: 4px;
+    padding: 15px 0 5px;
+  }
+
+  .awan-contact-tagline span {
+    font-size: 20px;
+  }
+
+  .awan-contact-tagline strong {
+    font-size: 24px;
+  }
+}
+
+/* ==================================================
+   TABLET
+================================================== */
+
+@media (max-width: 900px) {
+  .awan-contact-inner {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 13px;
+    padding: 25px 4%;
+  }
+
+  .awan-contact-item {
+    min-height: 75px;
+    padding: 14px;
+    background: rgba(255, 255, 255, 0.07);
+  }
+
+  .awan-contact-icon {
+    width: 42px;
+    height: 42px;
+    min-width: 42px;
+  }
+
+  .awan-contact-text strong,
+  .awan-location-item .awan-contact-text strong {
+    font-size: 12px;
+  }
+
+  .awan-contact-tagline {
+    grid-column: 1 / -1;
+    min-height: 85px;
+    margin-top: 7px;
+    padding: 17px 0 8px;
+    border-left: none;
+    border-top: 1px solid rgba(212, 170, 133, 0.35);
+  }
+
+  .awan-contact-tagline span {
+    font-size: 22px;
+  }
+
+  .awan-contact-tagline strong {
+    font-size: 28px;
+  }
+}
+
+/* ==================================================
+   MOBILE SCREENS
+================================================== */
+
+@media (max-width: 600px) {
+  .awan-contact-inner {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    padding: 22px 16px;
+  }
+
+  .awan-contact-item {
+    width: 100%;
+    min-height: 72px;
+    padding: 13px 15px;
+    gap: 14px;
+
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.065);
+  }
+
+  .awan-contact-icon {
+    width: 44px;
+    height: 44px;
+    min-width: 44px;
+    font-size: 20px;
+  }
+
+  .awan-contact-text {
+    gap: 4px;
+  }
+
+  .awan-contact-text span {
+    font-size: 9px;
+    letter-spacing: 1.5px;
+  }
+
+  .awan-contact-text strong,
+  .awan-location-item .awan-contact-text strong {
+    font-size: 12px;
+    line-height: 1.5;
+  }
+
+  .awan-contact-tagline {
+    grid-column: auto;
+    min-height: 100px;
+    margin-top: 8px;
+    padding: 22px 0 12px;
+    border-left: none;
+    border-top: 1px solid rgba(212, 170, 133, 0.4);
+  }
+
+  .awan-contact-tagline span {
+    font-size: 23px;
+  }
+
+  .awan-contact-tagline strong {
+    font-size: 30px;
+  }
+
+  .awan-contact-tagline i {
+    width: 100px;
+  }
+}
+
+/* ==================================================
+   EXTRA SMALL MOBILE
+================================================== */
+
+@media (max-width: 360px) {
+  .awan-contact-inner {
+    padding: 18px 11px;
+    gap: 8px;
+  }
+
+  .awan-contact-item {
+    min-height: 65px;
+    padding: 10px;
+    gap: 10px;
+  }
+
+  .awan-contact-icon {
+    width: 37px;
+    height: 37px;
+    min-width: 37px;
+    font-size: 17px;
+  }
+
+  .awan-contact-text span {
+    font-size: 8px;
+  }
+
+  .awan-contact-text strong,
+  .awan-location-item .awan-contact-text strong {
+    font-size: 11px;
+  }
+
+  .awan-contact-tagline span {
+    font-size: 20px;
+  }
+
+  .awan-contact-tagline strong {
+    font-size: 26px;
+  }
+}
+
+/* ==================================================
+   ACCESSIBILITY
+================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .awan-contact-strip *,
+  .awan-contact-strip *::before,
+  .awan-contact-strip *::after {
+    transition: none !important;
+    animation: none !important;
+  }
+}
+
+/* =========================================
+   AWAN COMPACT CONTACT SECTION
+   Premium Green & Copper Theme
+========================================= */
+
+.awan-contact-strip {
+  --green: #183b32;
+  --deep: #0c1d17;
+  --copper: #bd875b;
+  --gold: #d4aa85;
+
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 90% 20%, rgba(189,135,91,.13), transparent 35%),
+    linear-gradient(110deg, #0c1d17, #183b32 60%, #102820);
+  color: #fff;
+  border-top: 2px solid var(--copper);
+  border-bottom: 2px solid var(--copper);
+}
+
+.awan-contact-inner {
+  width: 100%;
+  max-width: 1450px;
+  min-height: 90px;
+  margin: auto;
+  padding: 13px 3%;
+
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr)) minmax(145px, .8fr);
+  align-items: center;
+  gap: 12px;
+}
+
+/* CONTACT CARDS */
+
+.awan-contact-item {
+  min-width: 0;
+  min-height: 54px;
+  padding: 8px 10px;
+
+  display: flex;
+  align-items: center;
+  gap: 9px;
+
+  color: #fff;
+  text-decoration: none;
+  background: rgba(255,255,255,.045);
+  border: 1px solid rgba(255,255,255,.10);
+  border-radius: 7px;
+
+  transition: .3s ease;
+}
+
+.awan-contact-item:hover {
+  background: rgba(255,255,255,.11);
+  border-color: var(--gold);
+  transform: translateY(-2px);
+}
+
+/* ICONS */
+
+.awan-contact-icon {
+  width: 34px;
+  height: 34px;
+  min-width: 34px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: var(--gold);
+  font-size: 16px;
+  background: rgba(189,135,91,.13);
+  border: 1px solid rgba(212,170,133,.25);
+  border-radius: 7px;
+
+  transition: .3s ease;
+}
+
+.awan-contact-item:hover .awan-contact-icon {
+  color: var(--deep);
+  background: var(--gold);
+}
+
+/* CONTACT TEXT */
+
+.awan-contact-text {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.awan-contact-text span {
+  color: var(--gold);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.awan-contact-text strong {
+  color: #fff;
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 1.35;
+  overflow-wrap: anywhere;
+}
+
+.awan-location-item .awan-contact-text strong {
+  font-size: 10px;
+}
+
+.awan-contact-divider {
+  display: none;
+}
+
+/* TAGLINE */
+
+.awan-contact-tagline {
+  min-width: 0;
+  min-height: 55px;
+  padding: 5px 8px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  border-left: 2px solid var(--copper);
+  text-align: center;
+}
+
+.awan-contact-tagline span {
+  color: #fff;
+  font-size: 16px;
+  font-weight: 800;
+  font-style: italic;
+  white-space: nowrap;
+}
+
+.awan-contact-tagline strong {
+  color: var(--gold);
+  font-size: 21px;
+  font-weight: 900;
+  font-style: italic;
+  line-height: 1.1;
+}
+
+.awan-contact-tagline i {
+  width: 65px;
+  height: 2px;
+  margin-top: 5px;
+  background: var(--copper);
+}
+
+/* =========================================
+   LAPTOP
+========================================= */
+
+@media (max-width: 1200px) {
+  .awan-contact-inner {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 9px;
+    padding: 12px 2%;
+  }
+
+  .awan-contact-item {
+    gap: 7px;
+    padding: 7px;
+  }
+
+  .awan-contact-icon {
+    width: 30px;
+    height: 30px;
+    min-width: 30px;
+    font-size: 14px;
+  }
+
+  .awan-contact-text span {
+    font-size: 8px;
+  }
+
+  .awan-contact-text strong,
+  .awan-location-item .awan-contact-text strong {
+    font-size: 10px;
+  }
+
+  .awan-contact-tagline {
+    grid-column: 1 / -1;
+    min-height: 45px;
+    border-left: none;
+    border-top: 1px solid rgba(212,170,133,.3);
+    padding-top: 9px;
+  }
+
+  .awan-contact-tagline span {
+    font-size: 17px;
+  }
+
+  .awan-contact-tagline strong {
+    font-size: 20px;
+  }
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+  .awan-contact-inner {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 9px;
+    padding: 14px 3%;
+  }
+
+  .awan-contact-item {
+    min-height: 55px;
+    padding: 8px 10px;
+  }
+
+  .awan-contact-icon {
+    width: 33px;
+    height: 33px;
+    min-width: 33px;
+  }
+
+  .awan-contact-text strong,
+  .awan-location-item .awan-contact-text strong {
+    font-size: 11px;
+  }
+
+  .awan-contact-tagline {
+    grid-column: 1 / -1;
+    min-height: 50px;
+  }
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+  .awan-contact-inner {
+    grid-template-columns: 1fr;
+    gap: 7px;
+    padding: 12px 13px;
+  }
+
+  .awan-contact-item {
+    min-height: 49px;
+    padding: 7px 10px;
+    gap: 10px;
+    border-radius: 6px;
+  }
+
+  .awan-contact-icon {
+    width: 32px;
+    height: 32px;
+    min-width: 32px;
+    font-size: 15px;
+  }
+
+  .awan-contact-text {
+    gap: 2px;
+  }
+
+  .awan-contact-text span {
+    font-size: 8px;
+  }
+
+  .awan-contact-text strong,
+  .awan-location-item .awan-contact-text strong {
+    font-size: 10px;
+  }
+
+  .awan-contact-tagline {
+    min-height: 58px;
+    margin-top: 3px;
+    padding: 9px 0 3px;
+  }
+
+  .awan-contact-tagline span {
+    font-size: 18px;
+  }
+
+  .awan-contact-tagline strong {
+    font-size: 22px;
+  }
+}
+
+/* EXTRA SMALL MOBILE */
+
+@media (max-width: 360px) {
+  .awan-contact-inner {
+    padding: 10px;
+    gap: 6px;
+  }
+
+  .awan-contact-item {
+    min-height: 45px;
+    padding: 6px 8px;
+    gap: 8px;
+  }
+
+  .awan-contact-icon {
+    width: 29px;
+    height: 29px;
+    min-width: 29px;
+    font-size: 13px;
+  }
+
+  .awan-contact-text span {
+    font-size: 7px;
+  }
+
+  .awan-contact-text strong,
+  .awan-location-item .awan-contact-text strong {
+    font-size: 9px;
+  }
+}
+
+/* ACCESSIBILITY */
+
+@media (prefers-reduced-motion: reduce) {
+  .awan-contact-strip *,
+  .awan-contact-strip *::before,
+  .awan-contact-strip *::after {
+    transition: none !important;
+  }
+}
+
+/* =========================================
+   AWAN CONTACT STRIP
+   SAME DESKTOP LAYOUT ON MOBILE
+========================================= */
+
+.awan-contact-strip {
+  --green: #183b32;
+  --deep: #0c1d17;
+  --copper: #bd875b;
+  --gold: #d4aa85;
+
+  width: 100%;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 90% 20%, rgba(189,135,91,.13), transparent 35%),
+    linear-gradient(110deg, var(--deep), var(--green) 60%, #102820);
+  color: #fff;
+  border-top: 2px solid var(--copper);
+  border-bottom: 2px solid var(--copper);
+}
+
+.awan-contact-inner {
+  width: 100%;
+  min-height: 90px;
+  padding: 12px 2%  ;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr)) minmax(100px, .8fr);
+  align-items: center;
+  gap: 8px;
+  box-sizing: border-box;
+}
+
+.awan-contact-item {
+  min-width: 0;
+  min-height: 52px;
+  padding: 7px;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  color: #fff;
+  text-decoration: none;
+  background: rgba(255,255,255,.045);
+  border: 1px solid rgba(255,255,255,.10);
+  border-radius: 7px;
+  box-sizing: border-box;
+  transition: .3s ease;
+}
+
+.awan-contact-item:hover {
+  background: rgba(255,255,255,.11);
+  border-color: var(--gold);
+}
+
+.awan-contact-icon {
+  width: 30px;
+  height: 30px;
+  min-width: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--gold);
+  font-size: 14px;
+  background: rgba(189,135,91,.13);
+  border: 1px solid rgba(212,170,133,.25);
+  border-radius: 6px;
+}
+
+.awan-contact-text {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.awan-contact-text span {
+  color: var(--gold);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: .7px;
+  text-transform: uppercase;
+}
+
+.awan-contact-text strong {
+  color: #fff;
+  font-size: 10px;
+  font-weight: 600;
+  line-height: 1.3;
+  overflow-wrap: anywhere;
+}
+
+.awan-location-item .awan-contact-text strong {
+  font-size: 9px;
+}
+
+.awan-contact-divider {
+  display: none;
+}
+
+.awan-contact-tagline {
+  min-width: 0;
+  min-height: 52px;
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-left: 2px solid var(--copper);
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.awan-contact-tagline span {
+  color: #fff;
+  font-size: 15px;
+  font-weight: 800;
+  font-style: italic;
+  white-space: nowrap;
+}
+
+.awan-contact-tagline strong {
+  color: var(--gold);
+  font-size: 19px;
+  font-weight: 900;
+  font-style: italic;
+  line-height: 1.1;
+}
+
+.awan-contact-tagline i {
+  width: 55px;
+  height: 2px;
+  margin-top: 4px;
+  background: var(--copper);
+}
+
+/* TABLET AND MOBILE: KEEP THE SAME HORIZONTAL LAYOUT */
+@media (max-width: 900px) {
+  .awan-contact-inner {
+    min-height: 70px;
+    padding: 8px 6px;
+    grid-template-columns: repeat(4, minmax(0, 1fr)) minmax(75px, .8fr);
+    gap: 4px;
+  }
+
+  .awan-contact-item {
+    min-height: 44px;
+    padding: 4px;
+    gap: 4px;
+  }
+
+  .awan-contact-icon {
+    width: 23px;
+    height: 23px;
+    min-width: 23px;
+    font-size: 11px;
+  }
+
+  .awan-contact-text {
+    gap: 2px;
+  }
+
+  .awan-contact-text span {
+    font-size: 7px;
+    letter-spacing: 0;
+  }
+
+  .awan-contact-text strong,
+  .awan-location-item .awan-contact-text strong {
+    font-size: 8px;
+    line-height: 1.2;
+  }
+
+  .awan-contact-tagline {
+    min-height: 44px;
+    padding: 2px;
+  }
+
+  .awan-contact-tagline span {
+    font-size: 11px;
+  }
+
+  .awan-contact-tagline strong {
+    font-size: 14px;
+  }
+
+  .awan-contact-tagline i {
+    width: 35px;
+    margin-top: 3px;
+  }
+}
+
+/* SMALL MOBILE */
+@media (max-width: 480px) {
+  .awan-contact-inner {
+    min-height: 58px;
+    padding: 6px 3px;
+    gap: 2px;
+    grid-template-columns: repeat(4, minmax(0, 1fr)) minmax(55px, .8fr);
+  }
+
+  .awan-contact-item {
+    min-height: 40px;
+    padding: 3px;
+    gap: 3px;
+    border-radius: 4px;
+  }
+
+  .awan-contact-icon {
+    width: 18px;
+    height: 18px;
+    min-width: 18px;
+    font-size: 9px;
+    border-radius: 4px;
+  }
+
+  .awan-contact-text span {
+    font-size: 6px;
+  }
+
+  .awan-contact-text strong,
+  .awan-location-item .awan-contact-text strong {
+    font-size: 6.5px;
+    line-height: 1.15;
+  }
+
+  .awan-contact-tagline {
+    min-height: 40px;
+    padding: 1px;
+  }
+
+  .awan-contact-tagline span {
+    font-size: 8px;
+  }
+
+  .awan-contact-tagline strong {
+    font-size: 11px;
+  }
+
+  .awan-contact-tagline i {
+    width: 25px;
+    height: 1px;
+  }
+}

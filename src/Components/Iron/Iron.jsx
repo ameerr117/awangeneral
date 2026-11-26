@@ -1,5 +1,4 @@
 
-import React from "react";
 import { Link } from "react-router-dom";
 import "./Iron.css";
 
@@ -171,7 +170,7 @@ const Iron = () => {
           <p>
             From elegant ornamental entrance gates to practical
             sliding and swing systems, our designs are developed
-            around the property's architecture, access requirements
+            around the propertys architecture, access requirements
             and intended use.
           </p>
 
@@ -402,7 +401,7 @@ const Iron = () => {
             <h3>Structural Design</h3>
             <p>
               Suitable frames, sections and support arrangements
-              based on the gate's size and intended use.
+              based on the gates size and intended use.
             </p>
           </article>
 
@@ -434,7 +433,7 @@ const Iron = () => {
 
       {/* CTA */}
       <section className="iron-cta">
-        <span>LET'S CREATE YOUR ENTRANCE</span>
+        <span>LETS CREATE YOUR ENTRANCE</span>
 
         <h2>Looking for Custom Wrought Iron Gates?</h2>
 

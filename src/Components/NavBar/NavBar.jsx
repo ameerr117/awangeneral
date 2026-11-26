@@ -22,7 +22,8 @@ import {
   FaChevronDown,
   FaShieldAlt,
   FaCar,
-  FaPaintRoller
+  FaPaintRoller,
+  FaWhatsapp
 } from 'react-icons/fa';
 
 const NavBar = () => {
@@ -34,7 +35,108 @@ const NavBar = () => {
 
   const navigate = useNavigate();
 
+  // =========================================
+  // ALL WEBSITE PAGES — COMMON SEARCH DATABASE
+  // =========================================
+
+  const searchPages = [
+    {
+      name: 'Home',
+      keywords: ['home', 'main', 'awan', 'homepage'],
+      path: '/'
+    },
+    
+    {
+      name: 'About Us',
+      keywords: ['about', 'about us', 'company', 'construction', 'company profile'],
+      path: '/about'
+    },
+    {
+      name: 'Aluminium Solutions',
+      keywords: ['solution', 'solutions', 'services', 'aluminium solutions'],
+      path: '/programz'
+    },
+    {
+      name: 'Windows',
+      keywords: ['window', 'windows', 'aluminium window', 'sliding window'],
+      path: '/Window'
+    },
+    {
+      name: 'Doors',
+      keywords: ['door', 'doors', 'aluminium door', 'sliding door'],
+      path: '/Door'
+    },
+    {
+      name: 'Cladding',
+      keywords: ['cladding', 'aluminium cladding', 'facade', 'façade', 'building facade'],
+      path: '/Cladding'
+    },
+    {
+      name: 'Tents',
+      keywords: ['tent', 'tents', 'aluminium tent', 'fabric structure'],
+      path: '/Tents'
+    },
+    {
+      name: 'Glass',
+      keywords: ['glass', 'architectural glass', 'toughened glass', 'glass work'],
+      path: '/Glass'
+    },
+    {
+      name: 'Curtain Walls',
+      keywords: ['curtain', 'curtain wall', 'curtain walls', 'aluminium curtain wall', 'facade system'],
+      path: '/Curtain'
+    },
+    {
+      name: 'Partitions',
+      keywords: ['partition', 'partitions', 'glass partition', 'office partition', 'aluminium partition'],
+      path: '/Partition'
+    },
+    {
+      name: 'Wrought Iron Gates',
+      keywords: ['iron', 'wrought iron', 'wrought iron gate', 'iron gate', 'gates', 'metal gate'],
+      path: '/Iron'
+    },
+    {
+      name: 'Car Parkings & Shades',
+      keywords: ['parking', 'car parking', 'car parkings', 'parking shade', 'parking shades', 'car shade', 'carport'],
+      path: '/Parking'
+    },
+    {
+      name: 'Paints & Gypsum Works',
+      keywords: ['paint', 'paints', 'painting', 'gypsum', 'gypsum works', 'interior painting', 'exterior painting'],
+      path: '/Paints'
+    },
+    {
+      name: 'Insights',
+      keywords: ['insights', 'blog', 'blogs', 'news', 'articles'],
+      path: '/blog'
+    },
+    {
+      name: 'Projects',
+      keywords: ['project', 'projects', 'our projects', 'portfolio'],
+      path: '/blog'
+    },
+    {
+      name: 'Blog Details',
+      keywords: ['blog details', 'other services'],
+      path: '/blog-detail'
+    },
+    {
+      name: 'Client Portal',
+      keywords: ['client portal', 'client', 'account', 'my account', 'technical information'],
+      path: '/element'
+    },
+    {
+      name: 'Contact',
+      keywords: ['contact', 'contact us', 'phone', 'email', 'address', 'location'],
+      path: '/contact'
+    }
+  ];
+
+  // =========================================
   // SCROLL DETECTION
+  // =========================================
+
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 40);
@@ -48,7 +150,10 @@ const NavBar = () => {
     };
   }, []);
 
+  // =========================================
   // CLOSE MENU WITH ESCAPE
+  // =========================================
+
   useEffect(() => {
     const handleEscape = (e) => {
       if (e.key === 'Escape') {
@@ -65,7 +170,10 @@ const NavBar = () => {
     };
   }, []);
 
+  // =========================================
   // PREVENT BACKGROUND SCROLL
+  // =========================================
+
   useEffect(() => {
     document.body.style.overflow = isSearchOpen ? 'hidden' : '';
 
@@ -74,7 +182,10 @@ const NavBar = () => {
     };
   }, [isSearchOpen]);
 
+  // =========================================
   // CLOSE ALL MENUS
+  // =========================================
+
   const closeMenus = () => {
     setIsMobileOpen(false);
     setOpenDropdown('');
@@ -82,7 +193,10 @@ const NavBar = () => {
     setSearchTerm('');
   };
 
+  // =========================================
   // NAVIGATION HANDLER
+  // =========================================
+
   const handleNavigation = () => {
     closeMenus();
 
@@ -92,7 +206,10 @@ const NavBar = () => {
     });
   };
 
+  // =========================================
   // NAVIGATE TO PAGE
+  // =========================================
+
   const goToPage = (path) => {
     closeMenus();
     navigate(path);
@@ -103,79 +220,87 @@ const NavBar = () => {
     });
   };
 
+  // =========================================
   // DROPDOWN HANDLER
+  // =========================================
+
   const toggleDropdown = (name) => {
     setOpenDropdown((current) =>
       current === name ? '' : name
     );
   };
 
-  // SEARCH PAGES
-  const searchPages = [
-    { keywords: ['home', 'main', 'awan'], path: '/' },
-    { keywords: ['about', 'company', 'construction'], path: '/about' },
-    { keywords: ['window', 'windows'], path: '/window' },
-    { keywords: ['door', 'doors'], path: '/door' },
-    { keywords: ['cladding', 'facade', 'façade'], path: '/cladding' },
-    { keywords: ['tent', 'tents'], path: '/tents' },
-    { keywords: ['glass', 'architectural glass'], path: '/glass' },
+  // =========================================
+  // IMPROVED WEBSITE SEARCH
+  // =========================================
 
-    {
-      keywords: ['curtain', 'curtain wall', 'curtain walls'],
-      path: '/check'
-    },
-
-    {
-      keywords: ['partition', 'partitions', 'glass partition'],
-      path: '/gallery'
-    },
-
-    {
-      keywords: ['wrought iron', 'wrought iron gate', 'iron gate', 'gates'],
-      path: '/wrought-iron'
-    },
-
-    {
-      keywords: ['car parking', 'car parkings', 'parking shades', 'car shades'],
-      path: '/car-parking'
-    },
-
-    {
-      keywords: ['paints', 'painting', 'gypsum', 'gypsum works'],
-      path: '/timer'
-    },
-
-    { keywords: ['solution', 'solutions', 'services'], path: '/programz' },
-    { keywords: ['blog', 'news', 'insights'], path: '/blog' },
-    { keywords: ['project', 'projects'], path: '/blog' },
-    { keywords: ['technical', 'information', 'client portal'], path: '/element' },
-    { keywords: ['contact', 'phone', 'email'], path: '/contact' }
-  ];
-
-  // WEBSITE SEARCH
   const handleSearch = (e) => {
     e.preventDefault();
 
-    const query = searchTerm.trim().toLowerCase();
+    const query = searchTerm
+      .trim()
+      .toLowerCase()
+      .replace(/\s+/g, ' ');
 
-    if (!query) return;
+    if (!query) {
+      return;
+    }
 
-    const result = searchPages.find((page) =>
-      page.keywords.some((keyword) =>
-        query === keyword ||
-        query.includes(keyword) ||
-        keyword.includes(query)
-      )
-    );
+    const result = searchPages
+      .map((page) => {
+        let score = 0;
+
+        page.keywords.forEach((keyword) => {
+          const key = keyword.toLowerCase();
+
+          if (query === key) {
+            score = Math.max(score, 100);
+          } else if (key.startsWith(query)) {
+            score = Math.max(score, 80);
+          } else if (query.startsWith(key)) {
+            score = Math.max(score, 70);
+          } else if (key.includes(query)) {
+            score = Math.max(score, 60);
+          } else if (query.includes(key)) {
+            score = Math.max(score, 50);
+          }
+        });
+
+        return {
+          ...page,
+          score
+        };
+      })
+      .filter((page) => page.score > 0)
+      .sort((a, b) => b.score - a.score)[0];
 
     if (result) {
       goToPage(result.path);
     } else {
-      alert(`No results found for "${searchTerm}".`);
+      alert(
+        `No results found for "${searchTerm}". Please try another keyword.`
+      );
     }
   };
 
+  // =========================================
+  // POPULAR SEARCH HANDLER
+  // =========================================
+
+  const handlePopularSearch = (item) => {
+    const page = searchPages.find(
+      (page) => page.name.toLowerCase() === item.toLowerCase()
+    );
+
+    if (page) {
+      goToPage(page.path);
+    }
+  };
+
+  // =========================================
   // GMAIL LINK
+  // =========================================
+
   const gmailLink =
     'https://mail.google.com/mail/?view=cm&fs=1' +
     '&to=awangcaw@gmail.com' +
@@ -189,37 +314,40 @@ const NavBar = () => {
       'Thank you.'
     );
 
+  // =========================================
   // ALL ALUMINIUM SOLUTIONS
+  // =========================================
+
   const solutions = [
     {
       icon: <FaWindowMaximize />,
       title: 'WINDOWS',
       name: 'Aluminium Windows',
-      path: '/window'
+      path: '/Window'
     },
     {
       icon: <FaDoorOpen />,
       title: 'DOORS',
       name: 'Aluminium Doors',
-      path: '/door'
+      path: '/Door'
     },
     {
       icon: <FaBuilding />,
       title: 'CLADDING',
       name: 'Aluminium Cladding',
-      path: '/cladding'
+      path: '/Cladding'
     },
     {
       icon: <FaLayerGroup />,
       title: 'TENTS',
       name: 'Aluminium Tents',
-      path: '/tents'
+      path: '/Tents'
     },
     {
       icon: <FaLayerGroup />,
       title: 'GLASS',
       name: 'Architectural Glass',
-      path: '/glass'
+      path: '/Glass'
     },
     {
       icon: <FaBorderAll />,
@@ -243,7 +371,7 @@ const NavBar = () => {
       icon: <FaCar />,
       title: 'CAR PARKINGS & SHADES',
       name: 'Car Parkings & Shades',
-      path: '/parking'
+      path: '/Parking'
     },
     {
       icon: <FaPaintRoller />,
@@ -251,6 +379,26 @@ const NavBar = () => {
       name: 'Paints & Gypsum Works',
       path: '/Paints'
     }
+  ];
+
+  // =========================================
+  // POPULAR SEARCH BUTTONS
+  // =========================================
+
+  const popularSearches = [
+    'Windows',
+    'Doors',
+    'Glass',
+    'Curtain Walls',
+    'Partitions',
+    'Cladding',
+    'Tents',
+    'Wrought Iron Gates',
+    'Car Parkings & Shades',
+    'Paints & Gypsum Works',
+    'About Us',
+    'Projects',
+    'Contact'
   ];
 
   return (
@@ -313,7 +461,7 @@ const NavBar = () => {
               </a>
             </div>
 
-            {/* SOCIAL MEDIA */}
+            {/* DESKTOP SOCIAL MEDIA */}
             <div className="social-icons">
 
               <a
@@ -390,9 +538,11 @@ const NavBar = () => {
             </li>
 
             {/* ALUMINIUM SOLUTIONS */}
-            <li className={`dropdown programs-menu ${
-              openDropdown === 'solutions' ? 'dropdown-open' : ''
-            }`}>
+            <li
+              className={`dropdown programs-menu ${
+                openDropdown === 'solutions' ? 'dropdown-open' : ''
+              }`}
+            >
 
               <div className="nav-dropdown-heading">
 
@@ -473,9 +623,11 @@ const NavBar = () => {
             </li>
 
             {/* INSIGHTS */}
-            <li className={`dropdown insights-menu ${
-              openDropdown === 'insights' ? 'dropdown-open' : ''
-            }`}>
+            <li
+              className={`dropdown insights-menu ${
+                openDropdown === 'insights' ? 'dropdown-open' : ''
+              }`}
+            >
 
               <div className="nav-dropdown-heading">
 
@@ -547,6 +699,73 @@ const NavBar = () => {
 
           </ul>
 
+          {/* MOBILE MENU SOCIAL MEDIA */}
+          {isMobileOpen && (
+            <div className="mobile-social-section">
+
+              <p>CONNECT WITH AWAN</p>
+
+              <div className="mobile-social-icons">
+
+                <a
+                  href="https://www.facebook.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Facebook"
+                  className="mobile-social-link"
+                >
+                  <FaFacebookF />
+                </a>
+
+                <a
+                  href="https://www.instagram.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Instagram"
+                  className="mobile-social-link"
+                >
+                  <FaInstagram />
+                </a>
+
+                <a
+                  href="https://www.linkedin.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="LinkedIn"
+                  className="mobile-social-link"
+                >
+                  <FaLinkedinIn />
+                </a>
+
+                <a
+                  href="https://wa.me/971558816618"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="WhatsApp"
+                  className="mobile-social-link"
+                >
+                  <FaWhatsapp />
+                </a>
+
+                <a
+                  href={gmailLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Email AWAN"
+                  className="mobile-social-link"
+                >
+                  <FaEnvelope />
+                </a>
+
+              </div>
+
+              <span>
+                AWAN GENERAL CONTRACTING &amp; ALUMINIUM WORKS
+              </span>
+
+            </div>
+          )}
+
         </div>
 
       </nav>
@@ -572,6 +791,7 @@ const NavBar = () => {
             onClick={(e) => e.stopPropagation()}
           >
 
+            {/* CLOSE BUTTON */}
             <button
               type="button"
               className="website-search-close"
@@ -594,6 +814,7 @@ const NavBar = () => {
               paints and gypsum works.
             </p>
 
+            {/* SEARCH FORM */}
             <form onSubmit={handleSearch}>
 
               <div className="website-search-input">
@@ -624,43 +845,17 @@ const NavBar = () => {
 
               <span>POPULAR SEARCHES</span>
 
-              {[
-                'Windows',
-                'Doors',
-                'Glass',
-                'Curtain Walls',
-                'Partitions',
-                'Cladding',
-                'Wrought Iron Gate',
-                'Car Parkings & Shades',
-                'Paints & Gypsum Works',
-                'Contact'
-              ].map((item) => {
+              {popularSearches.map((item) => (
 
-                const paths = {
-                  Windows: '/window',
-                  Doors: '/door',
-                  Glass: '/glass',
-                  'Curtain Walls': '/check',
-                  Partitions: '/gallery',
-                  Cladding: '/cladding',
-                  'Wrought Iron Gate': '/wrought-iron',
-                  'Car Parkings & Shades': '/car-parking',
-                  'Paints & Gypsum Works': '/timer',
-                  Contact: '/contact'
-                };
+                <button
+                  key={item}
+                  type="button"
+                  onClick={() => handlePopularSearch(item)}
+                >
+                  {item}
+                </button>
 
-                return (
-                  <button
-                    key={item}
-                    type="button"
-                    onClick={() => goToPage(paths[item])}
-                  >
-                    {item}
-                  </button>
-                );
-
-              })}
+              ))}
 
             </div>
 
