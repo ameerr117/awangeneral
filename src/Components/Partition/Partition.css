@@ -1,0 +1,524 @@
+
+/* =====================================
+   AWAN PARTITION PAGE
+===================================== */
+
+.partition-page {
+  width: 100%;
+  overflow: hidden;
+  background: #f5f5f2;
+  color: #242a2d;
+  font-family: "Poppins", "Segoe UI", sans-serif;
+}
+
+.partition-hero {
+  min-height: 540px;
+  padding: 100px 9%;
+  display: flex;
+  align-items: center;
+  position: relative;
+  background:
+    linear-gradient(90deg, rgba(20, 26, 28, .96), rgba(20, 26, 28, .72)),
+    url("https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1800&q=85")
+    center/cover no-repeat;
+  color: #fff;
+}
+
+.partition-hero-content {
+  max-width: 750px;
+  position: relative;
+  z-index: 2;
+}
+
+.partition-hero-content > span,
+.partition-cta > span {
+  color: #c5a15b;
+  font-size: 12px;
+  letter-spacing: 3px;
+  font-weight: 700;
+}
+
+.partition-hero h1 {
+  font-size: clamp(40px, 6vw, 68px);
+  line-height: 1.15;
+  margin: 25px 0;
+  font-weight: 800;
+}
+
+.partition-hero h1 strong {
+  color: #c5a15b;
+}
+
+.partition-hero-content p {
+  color: #d3d6d6;
+  font-size: 16px;
+  line-height: 1.9;
+  max-width: 600px;
+}
+
+.partition-hero-buttons {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin-top: 35px;
+}
+
+.partition-btn,
+.partition-outline-btn {
+  display: inline-block;
+  padding: 15px 25px;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 700;
+  transition: .3s;
+}
+
+.partition-btn {
+  background: #c5a15b;
+  color: #171b1d;
+}
+
+.partition-outline-btn {
+  border: 1px solid #fff;
+  color: #fff;
+}
+
+.partition-btn:hover,
+.partition-outline-btn:hover {
+  background: #fff;
+  color: #202629;
+}
+
+.partition-hero-label {
+  position: absolute;
+  right: 9%;
+  bottom: 35px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  color: #fff;
+}
+
+.partition-hero-label span {
+  color: #c5a15b;
+  font-size: 35px;
+  font-weight: 800;
+}
+
+.partition-hero-label p {
+  font-size: 10px;
+  letter-spacing: 2px;
+}
+
+/* INTRO */
+
+.partition-intro {
+  padding: 100px 9%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 70px;
+  align-items: center;
+  background: #fff;
+}
+
+.partition-tag {
+  color: #a98745;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.partition-intro h2 {
+  font-size: clamp(29px, 4vw, 43px);
+  line-height: 1.3;
+  margin-top: 20px;
+}
+
+.partition-intro h2 span {
+  color: #a98745;
+}
+
+.partition-intro-right p {
+  font-size: 14px;
+  line-height: 2;
+  color: #686e70;
+  margin-bottom: 18px;
+}
+
+/* SERVICES */
+
+.partition-services {
+  padding: 100px 9%;
+  background: #f1f2ef;
+}
+
+.partition-section-heading {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 55px;
+}
+
+.partition-section-heading h2 {
+  font-size: clamp(30px, 4vw, 43px);
+  margin: 15px 0;
+}
+
+.partition-section-heading p {
+  color: #737a7b;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.partition-services-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.partition-service-card {
+  background: #fff;
+  padding: 32px 25px;
+  min-height: 300px;
+  border-bottom: 3px solid #c5a15b;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, .04);
+  transition: .35s;
+}
+
+.partition-service-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, .1);
+}
+
+.partition-card-number {
+  font-size: 35px;
+  color: #c5a15b;
+  font-weight: 800;
+}
+
+.partition-card-line {
+  width: 45px;
+  height: 3px;
+  background: #c5a15b;
+  margin: 20px 0;
+}
+
+.partition-service-card h3 {
+  font-size: 19px;
+  margin-bottom: 15px;
+}
+
+.partition-service-card p {
+  color: #747b7d;
+  font-size: 13px;
+  line-height: 1.9;
+  margin-bottom: 20px;
+}
+
+.partition-service-card a {
+  color: #a98745;
+  font-size: 12px;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+/* APPLICATIONS */
+
+.partition-applications {
+  padding: 100px 9%;
+  background: #202629;
+  color: #fff;
+}
+
+.partition-applications-content {
+  max-width: 950px;
+  margin: auto;
+}
+
+.partition-applications h2 {
+  max-width: 650px;
+  font-size: clamp(30px, 4vw, 45px);
+  margin: 20px 0 40px;
+  line-height: 1.3;
+}
+
+.partition-applications-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+}
+
+.partition-applications-list span {
+  padding: 22px 10px;
+  border-top: 1px solid rgba(255,255,255,.2);
+  color: #d4d7d7;
+  font-size: 14px;
+}
+
+/* PROCESS */
+
+.partition-process {
+  padding: 100px 9%;
+  background: #fff;
+}
+
+.partition-process-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+}
+
+.partition-process-grid > div {
+  padding: 25px;
+  border-left: 2px solid #c5a15b;
+  background: #f6f6f3;
+}
+
+.partition-process-grid span {
+  color: #c5a15b;
+  font-size: 27px;
+  font-weight: 800;
+}
+
+.partition-process-grid h3 {
+  margin: 18px 0 12px;
+  font-size: 17px;
+}
+
+.partition-process-grid p {
+  font-size: 13px;
+  color: #777;
+  line-height: 1.8;
+}
+
+/* CTA */
+
+.partition-cta {
+  padding: 85px 8%;
+  text-align: center;
+  background: #252c2f;
+  color: #fff;
+}
+
+.partition-cta h2 {
+  font-size: clamp(28px, 4vw, 42px);
+  margin: 18px 0;
+}
+
+.partition-cta p {
+  color: #c7cccc;
+  font-size: 14px;
+  line-height: 1.8;
+  margin-bottom: 30px;
+}
+
+.partition-cta a {
+  display: inline-block;
+  padding: 15px 30px;
+  background: #c5a15b;
+  color: #202629;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 800;
+  transition: .3s;
+}
+
+.partition-cta a:hover {
+  background: #fff;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 1000px) {
+  .partition-services-grid,
+  .partition-process-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .partition-intro {
+    gap: 35px;
+  }
+}
+
+@media (max-width: 650px) {
+  .partition-hero {
+    min-height: 500px;
+    padding: 75px 6%;
+  }
+
+  .partition-hero-label {
+    display: none;
+  }
+
+  .partition-intro {
+    padding: 65px 6%;
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .partition-services,
+  .partition-process,
+  .partition-applications {
+    padding: 65px 6%;
+  }
+
+  .partition-services-grid,
+  .partition-process-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .partition-applications-list {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .partition-hero-buttons {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 380px) {
+  .partition-applications-list {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =========================================
+   AWAN PREMIUM PARTITION PAGE THEME
+========================================= */
+
+.partition-page {
+  --primary: #202629;
+  --secondary: #30383b;
+  --accent: #c5a15b;
+  --accent-hover: #ad8946;
+  --light: #f4f4f2;
+  --white: #ffffff;
+  --text: #30383b;
+  --muted: #777e80;
+
+  width: 100%;
+  overflow: hidden;
+  background: var(--light);
+  color: var(--text);
+  font-family: 'Poppins', 'Segoe UI', sans-serif;
+}
+
+.partition-page .partition-hero {
+  background-color: var(--primary);
+  color: var(--white);
+}
+
+.partition-page .partition-hero h1,
+.partition-page .partition-hero h2 {
+  color: var(--white);
+}
+
+.partition-page .partition-hero span,
+.partition-page .partition-hero .highlight {
+  color: var(--accent);
+}
+
+.partition-page .partition-section {
+  background: var(--light);
+  color: var(--text);
+  padding: 85px 8%;
+}
+
+.partition-page .partition-section.dark {
+  background: var(--primary);
+  color: var(--white);
+}
+
+.partition-page h2,
+.partition-page h3 {
+  color: var(--primary);
+}
+
+.partition-page .dark h2,
+.partition-page .dark h3 {
+  color: var(--white);
+}
+
+.partition-page .section-label {
+  color: var(--accent);
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.partition-page .partition-card {
+  background: var(--white);
+  border: 1px solid #e7e3da;
+  border-radius: 12px;
+  padding: 28px;
+  box-shadow: 0 8px 25px rgba(32, 38, 41, 0.06);
+  transition: 0.3s ease;
+}
+
+.partition-page .partition-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--accent);
+  box-shadow: 0 15px 35px rgba(32, 38, 41, 0.12);
+}
+
+.partition-page .partition-card h3 {
+  color: var(--primary);
+}
+
+.partition-page .partition-card p {
+  color: var(--muted);
+}
+
+.partition-page .partition-icon {
+  color: var(--accent);
+}
+
+.partition-page .partition-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--accent);
+  color: var(--primary);
+  padding: 14px 30px;
+  border-radius: 5px;
+  font-weight: 700;
+  text-decoration: none;
+  border: 1px solid var(--accent);
+  transition: 0.3s ease;
+}
+
+.partition-page .partition-btn:hover {
+  background: var(--accent-hover);
+  color: var(--white);
+  border-color: var(--accent-hover);
+}
+
+.partition-page .partition-outline-btn {
+  background: transparent;
+  color: var(--white);
+  border: 1px solid var(--accent);
+}
+
+.partition-page .partition-outline-btn:hover {
+  background: var(--accent);
+  color: var(--primary);
+}
+
+.partition-page .partition-cta {
+  background: var(--primary);
+  color: var(--white);
+}
+
+.partition-page .partition-cta h2 {
+  color: var(--white);
+}
+
+.partition-page .partition-cta p {
+  color: #d2d4d3;
+}
+
+@media (max-width: 768px) {
+  .partition-page .partition-section {
+    padding: 60px 6%;
+  }
+}
