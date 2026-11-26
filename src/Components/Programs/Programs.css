@@ -1,316 +1,238 @@
-/* =============================================
-   AWAN | INTERNATIONAL PRODUCT SHOWCASE
-============================================= */
 
-.Blogs-container {
+.awan-project-banner {
   width: 100%;
-  padding: 90px 7%;
-  box-sizing: border-box;
-  background: #25292b;
-  font-family: Arial, Helvetica, sans-serif;
+  min-height: 395px;
+  position: relative;
   overflow: hidden;
+  display: flex;
+  align-items: center;
+  background: #213f68;
+  font-family: Arial, Helvetica, sans-serif;
+  box-sizing: border-box;
 }
 
-/* HEADER */
+.awan-project-banner * {
+  box-sizing: border-box;
+}
 
-.showcase-top {
+/* Architectural illustrations */
+
+.awan-building-art {
+  position: absolute;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.awan-building-left {
+  left: 0;
+  bottom: 0;
+  width: 650px;
+  height: 100%;
+  opacity: 1;
+}
+
+.awan-building-right {
+  right: 0;
+  bottom: 0;
+  width: 430px;
+  height: 220px;
+  opacity: 1;
+}
+
+/* Main content */
+
+.awan-banner-content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  padding: 70px 12%;
   display: flex;
-  align-items: flex-end;
   justify-content: space-between;
-  gap: 40px;
-  margin-bottom: 55px;
+  align-items: center;
+  gap: 35px;
 }
 
-.showcase-intro {
-  max-width: 760px;
+.awan-banner-heading {
+  max-width: 520px;
 }
 
-.section-label {
-  display: block;
-  color: #b89a70;
-  font-size: 10px;
-  font-weight: 800;
-  letter-spacing: 3px;
-  margin-bottom: 20px;
-}
-
-.showcase-intro h1 {
-  margin: 0 0 22px;
-  color: #ffffff;
-  font-size: clamp(35px, 4.5vw, 60px);
-  line-height: 1.08;
-  font-weight: 700;
-  letter-spacing: -1.5px;
-}
-
-.showcase-intro h1 span {
-  color: #b89a70;
-}
-
-.showcase-intro p {
-  max-width: 650px;
+.awan-banner-heading h1 {
   margin: 0;
-  color: #afb5b7;
-  font-size: 15px;
-  line-height: 1.9;
+  color: #ffffff;
+  font-size: clamp(32px, 3vw, 40px);
+  font-weight: 750;
+  line-height: 1.35;
+  letter-spacing: -1.2px;
 }
 
-/* NAVIGATION */
+/* Buttons */
 
-.showcase-controls {
+.awan-banner-actions {
   display: flex;
-  gap: 10px;
+  align-items: center;
+  gap: 25px;
   flex-shrink: 0;
 }
 
-.showcase-controls button {
-  width: 54px;
-  height: 54px;
-  border: 1px solid rgba(184, 154, 112, 0.65);
-  background: transparent;
-  color: #ffffff;
-  cursor: pointer;
+.awan-quote-button,
+.awan-services-button {
+  min-width: 195px;
+  min-height: 70px;
+  padding: 0 28px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  font-weight: 700;
+  text-decoration: none;
   transition: all 0.3s ease;
 }
 
-.showcase-controls button span {
-  font-size: 23px;
+.awan-quote-button {
+  color: #183b63;
+  background: #ffffff;
+  border: 1px solid #ffffff;
+  border-radius: 50px;
 }
 
-.showcase-controls button:hover {
-  background: #b89a70;
-  color: #25292b;
-}
-
-/* PRODUCT ROW */
-
-.showcase-viewport {
-  width: 100%;
-}
-
-.products-row {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 22px;
-}
-
-/* PRODUCT CARD */
-
-.post {
-  position: relative;
-  min-height: 510px;
-  background: #2e3335;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  transition: transform 0.4s ease, border-color 0.4s ease;
-}
-
-.post:hover {
-  transform: translateY(-8px);
-  border-color: rgba(184, 154, 112, 0.7);
-}
-
-.product-index {
-  position: absolute;
-  top: 18px;
-  left: 20px;
-  z-index: 3;
-  color: #b89a70;
-  font-size: 12px;
-  font-weight: 800;
-  letter-spacing: 2px;
-}
-
-/* IMAGE */
-
-.post-info {
-  position: relative;
-  height: 250px;
-  overflow: hidden;
-}
-
-.post-info img {
-  width: 100%;
-  height: 100%;
-  display: block;
-  object-fit: cover;
-  filter: grayscale(15%);
-  transition: transform 0.7s ease, filter 0.5s ease;
-}
-
-.post:hover .post-info img {
-  transform: scale(1.07);
-  filter: grayscale(0%);
-}
-
-.image-overlay {
-  position: absolute;
-  left: 20px;
-  bottom: 18px;
-}
-
-.image-overlay span {
-  padding: 8px 10px;
-  background: rgba(35, 39, 41, 0.9);
-  border-left: 2px solid #b89a70;
+.awan-quote-button:hover {
   color: #ffffff;
-  font-size: 9px;
-  font-weight: 800;
-  letter-spacing: 1.5px;
+  background: #00aeda;
+  border-color: #00aeda;
+  transform: translateY(-3px);
 }
 
-/* CONTENT */
-
-.Blogs-text {
-  padding: 30px;
-}
-
-.card-line {
-  width: 40px;
-  height: 2px;
-  margin-bottom: 20px;
-  background: #b89a70;
-}
-
-.Blogs-text h3 {
-  margin: 0 0 15px;
+.awan-services-button {
   color: #ffffff;
-  font-size: 25px;
-  line-height: 1.2;
-  font-weight: 600;
-}
-
-.Blogs-text p {
-  margin: 0 0 25px;
-  color: #aeb4b6;
-  font-size: 13px;
-  line-height: 1.8;
-}
-
-/* EXPLORE BUTTON */
-
-.more {
-  display: inline-flex;
-  align-items: center;
-  gap: 13px;
-  padding: 0;
-  border: none;
   background: transparent;
-  color: #ffffff;
-  font-size: 10px;
-  font-weight: 800;
-  letter-spacing: 1.5px;
-  cursor: pointer;
+  border: 1px solid #ffffff;
 }
 
-.more span {
-  color: #b89a70;
-  font-size: 18px;
-  transition: transform 0.3s ease;
+.awan-services-button:hover {
+  color: #183b63;
+  background: #ffffff;
+  transform: translateY(-3px);
 }
 
-.more:hover span {
-  transform: translateX(6px);
-}
+/* Tablet */
 
-/* BOTTOM INFORMATION */
-
-.showcase-bottom {
-  margin-top: 50px;
-  padding-top: 25px;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 40px;
-}
-
-.showcase-brand span {
-  display: block;
-  color: #ffffff;
-  font-size: 18px;
-  font-weight: 800;
-  letter-spacing: 5px;
-}
-
-.showcase-brand small {
-  color: #b89a70;
-  font-size: 8px;
-  font-weight: 700;
-  letter-spacing: 1.5px;
-}
-
-.showcase-progress {
-  width: 320px;
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  color: #b89a70;
-  font-size: 10px;
-  font-weight: 800;
-}
-
-.progress-track {
-  flex: 1;
-  height: 2px;
-  background: rgba(255, 255, 255, 0.15);
-}
-
-.progress-fill {
-  height: 100%;
-  background: #b89a70;
-  transition: width 0.5s ease;
-}
-
-/* TABLET */
-
-@media (max-width: 900px) {
-  .Blogs-container {
+@media (max-width: 1050px) {
+  .awan-banner-content {
     padding: 70px 6%;
   }
 
-  .products-row {
-    grid-template-columns: repeat(2, 1fr);
+  .awan-banner-actions {
+    gap: 15px;
   }
 
-  .products-row .post:last-child {
-    display: none;
+  .awan-quote-button,
+  .awan-services-button {
+    min-width: 155px;
+    min-height: 60px;
+    font-size: 14px;
+  }
+
+  .awan-building-left {
+    width: 480px;
+  }
+
+  .awan-building-right {
+    width: 320px;
   }
 }
 
-/* MOBILE */
+/* Mobile */
 
-@media (max-width: 600px) {
-  .Blogs-container {
-    padding: 55px 5%;
+@media (max-width: 700px) {
+  .awan-project-banner {
+    min-height: 470px;
   }
 
-  .showcase-top {
+  .awan-banner-content {
     flex-direction: column;
     align-items: flex-start;
+    justify-content: center;
+    padding: 65px 25px;
+    gap: 32px;
   }
 
-  .showcase-intro h1 {
-    font-size: 35px;
+  .awan-banner-heading h1 {
+    font-size: 34px;
+    line-height: 1.3;
   }
 
-  .products-row {
-    grid-template-columns: 1fr;
+  .awan-banner-actions {
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 12px;
   }
 
-  .products-row .post:last-child {
-    display: block;
+  .awan-quote-button,
+  .awan-services-button {
+    min-width: 0;
+    min-height: 55px;
+    flex: 1;
+    padding: 0 15px;
+    font-size: 13px;
   }
 
-  .post {
-    min-height: auto;
+  .awan-building-left {
+    width: 370px;
+    opacity: 0.45;
   }
 
-  .showcase-bottom {
+  .awan-building-right {
+    width: 230px;
+    opacity: 0.4;
+  }
+}
+
+/* Small mobile */
+
+@media (max-width: 380px) {
+  .awan-project-banner {
+    min-height: 440px;
+  }
+
+  .awan-banner-heading h1 {
+    font-size: 29px;
+  }
+
+  .awan-banner-content {
+    padding: 50px 18px;
+  }
+
+  .awan-banner-actions {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: stretch;
   }
 
-  .showcase-progress {
+  .awan-quote-button,
+  .awan-services-button {
     width: 100%;
   }
+}
+.awan-project-banner {
+  width: 100%;
+  min-height: 395px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  background: linear-gradient(
+    90deg,
+    #183b32 0%,
+    #183b32 50%,
+    #f3f0e8 50%,
+    #f3f0e8 100%
+  );
+  font-family: Arial, Helvetica, sans-serif;
+  box-sizing: border-box;
+}.awan-banner-heading h1 {
+  margin: 0;
+  color: #ffffff;
+  font-size: clamp(32px, 3vw, 40px);
+  font-weight: 750;
+  line-height: 1.35;
+  letter-spacing: -1.2px;
 }

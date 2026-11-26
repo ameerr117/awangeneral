@@ -1,250 +1,1147 @@
-.door-page {
-  width: 100%;
-  overflow: hidden;
-  font-family: Arial, sans-serif;
-  color: #2b2b2b;
+
+/* ==========================================
+   AWAN PREMIUM ALUMINIUM DOOR PAGE
+   Brand: Forest Green / Copper / Ivory
+========================================== */
+
+:root {
+  --door-green: #102A24;
+  --door-green-light: #183B32;
+  --door-green-soft: #25483E;
+  --door-copper: #BD875B;
+  --door-copper-light: #D4AA85;
+  --door-ivory: #F3F0E8;
+  --door-white: #FFFFFF;
+  --door-text: #26352F;
+  --door-muted: #737B75;
 }
 
+/* GLOBAL */
+
+.awan-door-page {
+  width: 100%;
+  overflow: hidden;
+  background: var(--door-ivory);
+  color: var(--door-text);
+  font-family: 'Poppins', 'Segoe UI', sans-serif;
+}
+
+.awan-door-page * {
+  box-sizing: border-box;
+}
+
+.door-container {
+  width: 100%;
+  max-width: 1440px;
+  padding-left: 7%;
+  padding-right: 7%;
+  margin: 0 auto;
+}
+
+.door-small-heading {
+  display: inline-block;
+  color: var(--door-copper);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  line-height: 1.7;
+}
+
+/* ==========================================
+   HERO
+========================================== */
+
 .door-hero {
-  min-height: 560px;
+  min-height: 650px;
+  position: relative;
   display: flex;
   align-items: center;
+  background: var(--door-green);
+  isolation: isolate;
+}
+
+.door-hero-image {
+  position: absolute;
+  inset: 0;
+  z-index: -3;
+  background-image: url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=2000&q=90');
+  background-size: cover;
+  background-position: center;
+  transform: scale(1.02);
+}
+
+.door-hero-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
   background:
-    linear-gradient(rgba(20, 20, 20, 0.72), rgba(20, 20, 20, 0.85)),
-    url("../../assets/alu006.jpg") center/cover no-repeat;
+    linear-gradient(
+      90deg,
+      rgba(10, 30, 25, 0.96) 0%,
+      rgba(10, 30, 25, 0.86) 43%,
+      rgba(10, 30, 25, 0.30) 100%
+    );
 }
 
 .door-hero-content {
-  width: min(1180px, 90%);
-  margin: auto;
-  max-width: 760px;
+  position: relative;
+  padding-top: 100px;
+  padding-bottom: 110px;
+  color: var(--door-white);
 }
 
-.door-hero span,
-.door-heading > span,
-.door-benefits-intro > span {
+.door-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--door-copper-light);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  margin-bottom: 27px;
+}
+
+.door-eyebrow span {
+  width: 35px;
+  height: 2px;
+  background: var(--door-copper);
+}
+
+.door-hero h1 {
+  max-width: 760px;
+  margin: 0;
+  color: var(--door-white);
+  font-size: clamp(48px, 6.3vw, 86px);
+  line-height: 1.08;
+  font-weight: 700;
+  letter-spacing: -3px;
+}
+
+.door-hero h1 em {
   display: block;
-  margin-bottom: 14px;
-  color: #b08a55;
+  color: var(--door-copper-light);
+  font-family: Georgia, serif;
+  font-weight: 400;
+}
+
+.door-hero-content > p {
+  max-width: 570px;
+  margin: 27px 0 34px;
+  color: rgba(255,255,255,0.78);
+  font-size: 15px;
+  line-height: 1.9;
+}
+
+.door-hero-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.door-primary-btn,
+.door-outline-btn {
+  min-height: 52px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  padding: 0 24px;
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 700;
+  transition: 0.3s ease;
+}
+
+.door-primary-btn {
+  background: var(--door-copper);
+  color: var(--door-white);
+}
+
+.door-primary-btn:hover {
+  background: var(--door-white);
+  color: var(--door-green);
+  transform: translateY(-3px);
+}
+
+.door-outline-btn {
+  color: var(--door-white);
+  border: 1px solid rgba(255,255,255,0.5);
+}
+
+.door-outline-btn:hover {
+  background: var(--door-white);
+  color: var(--door-green);
+  border-color: var(--door-white);
+}
+
+.door-hero-bottom {
+  position: absolute;
+  bottom: 38px;
+  left: 7%;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  color: rgba(255,255,255,0.65);
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 2px;
+}
+
+.door-hero-bottom span:first-child {
+  color: var(--door-copper-light);
+}
+
+.door-hero-bottom-line {
+  width: 55px;
+  height: 1px;
+  background: var(--door-copper);
+}
+
+.door-hero-side-label {
+  position: absolute;
+  right: 30px;
+  bottom: 55px;
+  writing-mode: vertical-rl;
+  color: rgba(255,255,255,0.55);
+  font-size: 9px;
+  letter-spacing: 3px;
+}
+
+/* ==========================================
+   INTRODUCTION
+========================================== */
+
+.door-intro-section {
+  padding: 105px 0;
+  background: var(--door-ivory);
+}
+
+.door-intro-grid {
+  display: grid;
+  grid-template-columns: 0.8fr 1.6fr 1.2fr;
+  align-items: start;
+  gap: 45px;
+}
+
+.door-section-label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-top: 8px;
+  color: var(--door-muted);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+}
+
+.door-section-label span {
+  color: var(--door-copper);
+  font-size: 15px;
+}
+
+.door-section-label div {
+  width: 25px;
+  height: 1px;
+  background: var(--door-copper);
+}
+
+.door-intro-heading h2,
+.door-section-heading h2,
+.door-process-heading h2 {
+  margin: 12px 0 0;
+  color: var(--door-green);
+  font-size: clamp(31px, 3.5vw, 48px);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -1.5px;
+}
+
+.door-intro-heading h2 span,
+.door-section-heading h2 span,
+.door-process-heading h2 span {
+  color: var(--door-copper);
+  font-family: Georgia, serif;
+  font-weight: 400;
+}
+
+.door-intro-description p {
+  color: var(--door-muted);
   font-size: 13px;
+  line-height: 1.95;
+  margin: 0 0 17px;
+}
+
+.door-text-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 10px;
+  color: var(--door-green);
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 700;
+  border-bottom: 1px solid var(--door-copper);
+  padding-bottom: 8px;
+}
+
+.door-text-link svg {
+  color: var(--door-copper);
+  transition: 0.3s;
+}
+
+.door-text-link:hover svg {
+  transform: translateX(5px);
+}
+
+/* ==========================================
+   DOOR SYSTEMS
+========================================== */
+
+.door-systems-section {
+  padding: 100px 0 115px;
+  background: #EAE7DE;
+}
+
+.door-section-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 35px;
+  margin-bottom: 45px;
+}
+
+.door-section-heading h2 {
+  max-width: 600px;
+}
+
+.door-section-heading > p {
+  max-width: 390px;
+  margin: 0 0 5px;
+  color: var(--door-muted);
+  font-size: 13px;
+  line-height: 1.9;
+}
+
+.door-system-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 25px;
+}
+
+.door-system-card {
+  min-width: 0;
+  background: var(--door-white);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.door-system-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 18px 40px rgba(16,42,36,0.12);
+}
+
+.door-card-image {
+  height: 270px;
+  position: relative;
+  overflow: hidden;
+  background: var(--door-green);
+}
+
+.door-card-image img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  transition: transform 0.65s ease;
+}
+
+.door-system-card:hover .door-card-image img {
+  transform: scale(1.08);
+}
+
+.door-card-image-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(10,30,25,0.12),
+    transparent 35%,
+    rgba(10,30,25,0.65)
+  );
+}
+
+.door-card-number {
+  position: absolute;
+  top: 17px;
+  left: 18px;
+  z-index: 1;
+  width: 38px;
+  height: 38px;
+  display: grid;
+  place-items: center;
+  background: var(--door-copper);
+  color: var(--door-white);
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.door-card-category {
+  position: absolute;
+  bottom: 17px;
+  left: 20px;
+  z-index: 1;
+  color: var(--door-white);
+  font-size: 9px;
   font-weight: 700;
   letter-spacing: 2px;
 }
 
-.door-hero h1 {
-  margin: 0 0 20px;
-  color: white;
-  font-size: clamp(40px, 6vw, 68px);
-  line-height: 1.1;
+.door-card-content {
+  padding: 25px 24px 27px;
 }
 
-.door-hero p {
-  color: #dddddd;
-  font-size: 18px;
-  line-height: 1.8;
+.door-card-title-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
 }
 
-.door-intro,
-.door-process {
-  width: min(1180px, 90%);
-  margin: auto;
-  padding: 100px 0;
-}
-
-.door-heading {
-  margin-bottom: 40px;
-}
-
-.door-heading h2,
-.door-benefits-intro h2 {
+.door-card-title-row h3 {
   margin: 0;
-  font-size: clamp(30px, 4vw, 48px);
-  line-height: 1.2;
+  color: var(--door-green);
+  font-size: 20px;
+  font-weight: 700;
 }
 
-.door-center {
-  text-align: center;
+.door-card-title-row > span {
+  width: 34px;
+  height: 34px;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  background: var(--door-ivory);
+  color: var(--door-copper);
+  font-size: 12px;
+  transition: 0.3s;
 }
 
-.door-intro-text {
-  max-width: 900px;
-  padding-left: 28px;
-  border-left: 3px solid #b08a55;
+.door-system-card:hover .door-card-title-row > span {
+  background: var(--door-green);
+  color: var(--door-white);
 }
 
-.door-intro-text p {
-  color: #666;
-  font-size: 17px;
+.door-card-content > p {
+  min-height: 76px;
+  margin: 15px 0 20px;
+  color: var(--door-muted);
+  font-size: 12px;
   line-height: 1.9;
 }
 
-.door-systems {
-  padding: 100px 5%;
-  background: #f5f5f5;
+.door-card-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--door-green);
+  text-decoration: none;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.4px;
 }
 
-.door-grid {
-  width: min(1180px, 100%);
-  margin: auto;
+.door-card-link svg {
+  color: var(--door-copper);
+  transition: 0.3s;
+}
+
+.door-card-link:hover svg {
+  transform: translateX(5px);
+}
+
+/* ==========================================
+   BRAND STATEMENT
+========================================== */
+
+.door-brand-section {
+  padding: 115px 0;
+  background: var(--door-green);
+}
+
+.door-brand-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 22px;
+  grid-template-columns: 1.05fr 0.95fr;
+  align-items: center;
+  gap: 85px;
 }
 
-.door-card {
-  padding: 35px;
-  background: white;
-  border: 1px solid #e5e5e5;
-  transition: 0.3s ease;
+.door-brand-image {
+  height: 540px;
+  position: relative;
 }
 
-.door-card:hover {
-  transform: translateY(-7px);
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+.door-brand-image::before {
+  content: '';
+  position: absolute;
+  top: -16px;
+  left: -16px;
+  width: 120px;
+  height: 120px;
+  border-top: 2px solid var(--door-copper);
+  border-left: 2px solid var(--door-copper);
+  z-index: 1;
 }
 
-.door-number {
-  color: #b08a55;
-  font-weight: bold;
+.door-brand-image img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
 }
 
-.door-card h3 {
-  margin-top: 24px;
-  font-size: 23px;
+.door-image-caption {
+  position: absolute;
+  bottom: 25px;
+  left: 25px;
+  padding: 17px 23px;
+  background: var(--door-green);
+  color: var(--door-white);
+  border-left: 3px solid var(--door-copper);
 }
 
-.door-line {
-  width: 45px;
-  height: 2px;
-  margin: 18px 0;
-  background: #b08a55;
+.door-image-caption span {
+  display: block;
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: 4px;
 }
 
-.door-card p {
-  color: #666;
-  line-height: 1.8;
+.door-image-caption small {
+  display: block;
+  margin-top: 4px;
+  color: var(--door-copper-light);
+  font-size: 8px;
+  letter-spacing: 2px;
 }
 
-.door-benefits {
-  padding: 100px 5%;
-  background: #292929;
+.door-brand-content .door-small-heading {
+  color: var(--door-copper-light);
 }
 
-.door-benefits-container {
-  width: min(1180px, 100%);
-  margin: auto;
+.door-brand-content h2 {
+  max-width: 550px;
+  margin: 17px 0 23px;
+  color: var(--door-white);
+  font-size: clamp(37px, 4.5vw, 58px);
+  line-height: 1.15;
+  letter-spacing: -2px;
+}
+
+.door-brand-content h2 span {
+  display: block;
+  color: var(--door-copper-light);
+  font-family: Georgia, serif;
+  font-weight: 400;
+}
+
+.door-brand-content > p {
+  max-width: 500px;
+  color: rgba(255,255,255,0.68);
+  font-size: 13px;
+  line-height: 2;
+}
+
+.door-brand-content ul {
   display: grid;
-  grid-template-columns: 1fr 2fr;
-  gap: 70px;
+  gap: 17px;
+  padding: 0;
+  margin: 28px 0 34px;
+  list-style: none;
 }
 
-.door-benefits-intro h2,
-.door-benefits-intro p {
-  color: white;
+.door-brand-content li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--door-ivory);
+  font-size: 12px;
 }
 
-.door-benefits-intro p {
-  color: #cccccc;
-  line-height: 1.8;
+.door-brand-content li svg {
+  color: var(--door-copper-light);
+  font-size: 12px;
+}
+
+/* ==========================================
+   BENEFITS
+========================================== */
+
+.door-benefits-section {
+  padding: 105px 0;
+  background: var(--door-ivory);
+}
+
+.door-benefits-heading {
+  margin-bottom: 48px;
 }
 
 .door-benefits-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 2px;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  border-top: 1px solid #D8D2C6;
+  border-bottom: 1px solid #D8D2C6;
 }
 
 .door-benefit-card {
-  padding: 35px;
-  background: #363636;
+  min-height: 250px;
+  padding: 27px 25px 30px;
+  border-right: 1px solid #D8D2C6;
+  transition: background 0.3s;
 }
 
-.door-benefit-card span {
-  color: #b08a55;
-  font-weight: bold;
+.door-benefit-card:first-child {
+  border-left: 1px solid #D8D2C6;
+}
+
+.door-benefit-card:hover {
+  background: var(--door-white);
+}
+
+.door-benefit-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 35px;
+}
+
+.door-benefit-top > span {
+  color: var(--door-copper);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.door-benefit-icon {
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  background: var(--door-green);
+  color: var(--door-copper-light);
+  font-size: 17px;
 }
 
 .door-benefit-card h3 {
-  color: white;
-  margin: 18px 0 12px;
+  margin: 0 0 12px;
+  color: var(--door-green);
+  font-size: 16px;
 }
 
 .door-benefit-card p {
-  color: #cccccc;
-  line-height: 1.7;
+  margin: 0;
+  color: var(--door-muted);
+  font-size: 11px;
+  line-height: 1.9;
+}
+
+/* ==========================================
+   PROCESS
+========================================== */
+
+.door-process-section {
+  padding: 105px 0 115px;
+  background: #EAE7DE;
+}
+
+.door-process-heading {
+  max-width: 700px;
+  margin: 0 auto 65px;
+  text-align: center;
+}
+
+.door-process-heading h2 {
+  margin-top: 14px;
+}
+
+.door-process-heading > p {
+  max-width: 540px;
+  margin: 20px auto 0;
+  color: var(--door-muted);
+  font-size: 13px;
+  line-height: 1.9;
 }
 
 .door-process-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 25px;
 }
 
-.door-process-grid span {
-  color: #b08a55;
-  font-size: 28px;
-  font-weight: bold;
+.door-process-card {
+  position: relative;
+  padding-top: 25px;
+  border-top: 1px solid #CFC7B9;
 }
 
-.door-process-grid h3 {
-  margin: 20px 0 10px;
+.door-process-number {
+  display: inline-block;
+  margin-bottom: 25px;
+  color: var(--door-copper);
+  font-family: Georgia, serif;
+  font-size: 36px;
 }
 
-.door-process-grid p {
-  color: #666;
-  line-height: 1.7;
+.door-process-line {
+  width: 45px;
+  height: 2px;
+  margin-bottom: 23px;
+  background: var(--door-copper);
 }
 
-.door-closing {
-  padding: 100px 5%;
+.door-process-card h3 {
+  margin: 0 0 12px;
+  color: var(--door-green);
+  font-size: 17px;
+}
+
+.door-process-card p {
+  max-width: 250px;
+  margin: 0;
+  color: var(--door-muted);
+  font-size: 12px;
+  line-height: 1.9;
+}
+
+/* ==========================================
+   CALL TO ACTION
+========================================== */
+
+.door-cta-section {
+  position: relative;
+  overflow: hidden;
+  padding: 100px 0 35px;
+  background: var(--door-green);
+  color: var(--door-white);
   text-align: center;
-  background: #b08a55;
-  color: white;
 }
 
-.door-closing span {
+.door-cta-pattern {
+  position: absolute;
+  top: -180px;
+  right: -130px;
+  width: 500px;
+  height: 500px;
+  border: 1px solid rgba(212,170,133,0.18);
+  border-radius: 50%;
+}
+
+.door-cta-pattern::before,
+.door-cta-pattern::after {
+  content: '';
+  position: absolute;
+  border: 1px solid rgba(212,170,133,0.14);
+  border-radius: 50%;
+}
+
+.door-cta-pattern::before {
+  inset: 35px;
+}
+
+.door-cta-pattern::after {
+  inset: 75px;
+}
+
+.door-cta-content {
+  position: relative;
+  z-index: 1;
+}
+
+.door-cta-icon {
+  width: 60px;
+  height: 60px;
+  display: grid;
+  place-items: center;
+  margin: 0 auto 25px;
+  border: 1px solid var(--door-copper);
+  color: var(--door-copper-light);
+  font-size: 23px;
+}
+
+.door-cta-content > span {
+  color: var(--door-copper-light);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 3px;
+}
+
+.door-cta-content h2 {
+  max-width: 800px;
+  margin: 20px auto;
+  color: var(--door-white);
+  font-size: clamp(35px, 5vw, 62px);
+  line-height: 1.15;
+  letter-spacing: -2px;
+}
+
+.door-cta-content h2 em {
+  display: block;
+  color: var(--door-copper-light);
+  font-family: Georgia, serif;
+  font-weight: 400;
+}
+
+.door-cta-content > p {
+  max-width: 550px;
+  margin: 0 auto;
+  color: rgba(255,255,255,0.7);
   font-size: 13px;
-  font-weight: bold;
+  line-height: 1.9;
+}
+
+.door-cta-actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 32px;
+}
+
+.door-cta-button,
+.door-cta-phone {
+  min-height: 50px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 13px;
+  padding: 0 23px;
+  text-decoration: none;
+  font-size: 11px;
+  font-weight: 700;
+  transition: 0.3s;
+}
+
+.door-cta-button {
+  background: var(--door-copper);
+  color: var(--door-white);
+}
+
+.door-cta-button:hover {
+  background: var(--door-white);
+  color: var(--door-green);
+}
+
+.door-cta-phone {
+  border: 1px solid rgba(255,255,255,0.35);
+  color: var(--door-white);
+}
+
+.door-cta-phone:hover {
+  border-color: var(--door-copper);
+  color: var(--door-copper-light);
+}
+
+.door-cta-footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  margin-top: 90px;
+  padding-top: 22px;
+  border-top: 1px solid rgba(255,255,255,0.15);
+  color: rgba(255,255,255,0.45);
+  font-size: 9px;
   letter-spacing: 2px;
 }
 
-.door-closing h2 {
-  font-size: clamp(30px, 4vw, 50px);
-}
+/* ==========================================
+   RESPONSIVE TABLET
+========================================== */
 
-.door-closing p {
-  max-width: 750px;
-  margin: auto;
-  line-height: 1.8;
-}
-
-@media (max-width: 992px) {
-  .door-grid {
-    grid-template-columns: repeat(2, 1fr);
+@media (max-width: 1050px) {
+  .door-container {
+    padding-left: 5%;
+    padding-right: 5%;
   }
 
-  .door-benefits-container {
-    grid-template-columns: 1fr;
+  .door-intro-grid {
+    grid-template-columns: 1fr 1.5fr;
+    gap: 30px;
   }
 
-  .door-process-grid {
-    grid-template-columns: repeat(2, 1fr);
+  .door-section-label {
+    grid-column: 1 / -1;
+  }
+
+  .door-system-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .door-brand-grid {
+    gap: 45px;
+  }
+
+  .door-brand-image {
+    height: 470px;
+  }
+
+  .door-benefits-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .door-benefit-card:nth-child(3) {
+    border-left: 1px solid #D8D2C6;
+  }
+
+  .door-benefit-card:nth-child(n+3) {
+    border-top: 1px solid #D8D2C6;
   }
 }
+
+/* ==========================================
+   RESPONSIVE MOBILE
+========================================== */
 
 @media (max-width: 700px) {
-  .door-grid,
-  .door-benefits-grid,
+  .door-container {
+    padding-left: 6%;
+    padding-right: 6%;
+  }
+
+  .door-hero {
+    min-height: 590px;
+  }
+
+  .door-hero-image {
+    background-position: 58% center;
+  }
+
+  .door-hero-overlay {
+    background: linear-gradient(
+      90deg,
+      rgba(10,30,25,0.94),
+      rgba(10,30,25,0.68)
+    );
+  }
+
+  .door-hero-content {
+    padding-top: 90px;
+    padding-bottom: 100px;
+  }
+
+  .door-eyebrow {
+    max-width: 300px;
+    font-size: 8px;
+    letter-spacing: 1.5px;
+    line-height: 1.8;
+  }
+
+  .door-hero h1 {
+    font-size: clamp(43px, 11vw, 65px);
+    letter-spacing: -2px;
+  }
+
+  .door-hero-content > p {
+    max-width: 440px;
+    font-size: 13px;
+  }
+
+  .door-hero-bottom {
+    left: 6%;
+    bottom: 30px;
+    font-size: 8px;
+    letter-spacing: 1px;
+  }
+
+  .door-hero-side-label {
+    display: none;
+  }
+
+  .door-intro-section,
+  .door-systems-section,
+  .door-brand-section,
+  .door-benefits-section,
+  .door-process-section {
+    padding-top: 75px;
+    padding-bottom: 75px;
+  }
+
+  .door-intro-grid {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .door-section-label {
+    grid-column: auto;
+  }
+
+  .door-intro-heading h2,
+  .door-section-heading h2,
+  .door-process-heading h2 {
+    font-size: 36px;
+  }
+
+  .door-intro-description p {
+    font-size: 12px;
+  }
+
+  .door-section-heading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 30px;
+  }
+
+  .door-section-heading > p {
+    font-size: 12px;
+  }
+
+  .door-system-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .door-card-image {
+    height: 260px;
+  }
+
+  .door-card-content > p {
+    min-height: auto;
+  }
+
+  .door-brand-grid {
+    grid-template-columns: 1fr;
+    gap: 45px;
+  }
+
+  .door-brand-image {
+    height: 390px;
+    margin-left: 10px;
+  }
+
+  .door-brand-content h2 {
+    font-size: 42px;
+  }
+
+  .door-benefits-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .door-benefit-card,
+  .door-benefit-card:first-child,
+  .door-benefit-card:nth-child(3) {
+    min-height: auto;
+    padding: 25px 20px;
+    border-left: 1px solid #D8D2C6;
+    border-right: 1px solid #D8D2C6;
+    border-bottom: 1px solid #D8D2C6;
+  }
+
+  .door-benefit-card:first-child {
+    border-top: 1px solid #D8D2C6;
+  }
+
+  .door-benefit-top {
+    margin-bottom: 20px;
+  }
+
+  .door-process-heading {
+    margin-bottom: 40px;
+    text-align: left;
+  }
+
+  .door-process-heading > p {
+    margin-left: 0;
+  }
+
+  .door-process-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 35px 20px;
+  }
+
+  .door-process-number {
+    font-size: 30px;
+    margin-bottom: 18px;
+  }
+
+  .door-process-card h3 {
+    font-size: 15px;
+  }
+
+  .door-process-card p {
+    font-size: 11px;
+  }
+
+  .door-cta-section {
+    padding-top: 75px;
+  }
+
+  .door-cta-content h2 {
+    font-size: 39px;
+  }
+
+  .door-cta-footer {
+    margin-top: 65px;
+    font-size: 7px;
+    letter-spacing: 1px;
+  }
+}
+
+/* ==========================================
+   SMALL MOBILE
+========================================== */
+
+@media (max-width: 400px) {
+  .door-hero {
+    min-height: 560px;
+  }
+
+  .door-hero h1 {
+    font-size: 42px;
+  }
+
+  .door-primary-btn,
+  .door-outline-btn {
+    width: 100%;
+    min-height: 49px;
+    padding: 0 14px;
+    font-size: 11px;
+  }
+
+  .door-brand-image {
+    height: 310px;
+  }
+
+  .door-brand-content h2 {
+    font-size: 36px;
+  }
+
   .door-process-grid {
     grid-template-columns: 1fr;
   }
 
-  .door-intro,
-  .door-systems,
-  .door-benefits,
-  .door-process,
-  .door-closing {
-    padding-top: 70px;
-    padding-bottom: 70px;
+  .door-cta-content h2 {
+    font-size: 34px;
+  }
+
+  .door-cta-footer {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* ==========================================
+   ACCESSIBILITY
+========================================== */
+
+.awan-door-page a:focus-visible {
+  outline: 2px solid var(--door-copper);
+  outline-offset: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .awan-door-page *,
+  .awan-door-page *::before,
+  .awan-door-page *::after {
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }

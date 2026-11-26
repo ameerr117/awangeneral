@@ -1,4 +1,3 @@
-
 import { Link } from 'react-router-dom';
 import './Footer.css';
 
@@ -9,67 +8,59 @@ import {
   FaEnvelope,
   FaPhoneAlt,
   FaMapMarkerAlt,
-  FaArrowRight
+  FaArrowRight,
+  FaGlobe
 } from 'react-icons/fa';
 
-import unilogo from "../../assets/a6759469-cb67-47ae-be2d-838ac8b91cec.png";
+import logo from "../../assets/a6759469-cb67-47ae-be2d-838ac8b91cec.png";
 
-function Footer() {
-
-  const handleNavigation = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
-    });
-  };
-
+const Footer = () => {
   return (
     <footer className="footer">
 
+      {/* TOP ACCENT LINE */}
       <div className="footer-top-line"></div>
 
+      {/* MAIN FOOTER */}
       <div className="footer-container">
 
-        {/* COMPANY BRANDING */}
+        {/* BRAND SECTION */}
         <div className="footer-brand">
 
-          <Link
-            to="/"
-            onClick={handleNavigation}
-            className="footer-logo-link"
-            aria-label="Go to homepage"
-          >
+          <Link to="/" className="footer-logo-link">
             <img
-              src={unilogo}
-              alt="AWAN General Contracting Logo"
+              src={logo}
+              alt="Awan General Contracting Logo"
               className="footer-logo"
             />
           </Link>
 
-          <h2>
+          <h2 className="footer-company-name">
             AWAN GENERAL CONTRACTING
             <span>& ALUMINIUM WORK LLC</span>
           </h2>
 
-          <h4 className="footer-tagline">
+          <div className="footer-brand-line"></div>
+
+          <p className="footer-tagline">
             ARCHITECTURAL ALUMINIUM SOLUTIONS
-          </h4>
+          </p>
 
           <p className="footer-description">
-            Delivering professional aluminium, glazing and construction
-            solutions through quality craftsmanship, innovative designs
-            and international standards.
+            We deliver professional aluminium and architectural solutions
+            with a strong commitment to quality, precision, innovation,
+            and customer satisfaction.
           </p>
 
           {/* SOCIAL MEDIA */}
-          <div className="social-icons">
+          <div className="footer-social-icons">
 
             <a
               href="https://www.facebook.com/"
               target="_blank"
               rel="noopener noreferrer"
+              className="footer-social"
               aria-label="Facebook"
-              className="social-link"
             >
               <FaFacebookF />
             </a>
@@ -78,8 +69,8 @@ function Footer() {
               href="https://www.instagram.com/fadibadshah/"
               target="_blank"
               rel="noopener noreferrer"
+              className="footer-social"
               aria-label="Instagram"
-              className="social-link"
             >
               <FaInstagram />
             </a>
@@ -88,16 +79,16 @@ function Footer() {
               href="https://www.linkedin.com/"
               target="_blank"
               rel="noopener noreferrer"
+              className="footer-social"
               aria-label="LinkedIn"
-              className="social-link"
             >
               <FaLinkedinIn />
             </a>
 
             <a
-              href="mailto:awangcaw@gmail.com?subject=Website%20Enquiry%20-%20AWAN%20General%20Contracting"
-              aria-label="Send us an email"
-              className="social-link"
+              href="mailto:awangcaw@gmail.com"
+              className="footer-social"
+              aria-label="Email"
             >
               <FaEnvelope />
             </a>
@@ -108,109 +99,192 @@ function Footer() {
         {/* QUICK LINKS */}
         <div className="footer-section">
 
-          <h3>Quick Links</h3>
-          <span className="footer-heading-line"></span>
+          <h3 className="footer-heading">
+            QUICK LINKS
+            <span className="footer-heading-line"></span>
+          </h3>
 
-          <ul>
-            <li><Link to="/" onClick={handleNavigation}>Home</Link></li>
-            <li><Link to="/about" onClick={handleNavigation}>About Us</Link></li>
-            <li><Link to="/blog" onClick={handleNavigation}>Our Projects</Link></li>
-            <li><Link to="/blog-detail" onClick={handleNavigation}>Other Services</Link></li>
-            <li><Link to="/element" onClick={handleNavigation}>Client Portal</Link></li>
-            <li><Link to="/contact" onClick={handleNavigation}>Contact Us</Link></li>
+          <ul className="footer-links">
+
+            <li>
+              <Link to="/">
+                <FaArrowRight />
+                Home
+              </Link>
+            </li>
+
+            <li>
+              <Link to="/about">
+                <FaArrowRight />
+                About Us
+              </Link>
+            </li>
+
+            <li>
+              <Link to="/programz">
+                <FaArrowRight />
+                Our Projects
+              </Link>
+            </li>
+
+            <li>
+              <Link to="/blog">
+                <FaArrowRight />
+                Blog
+              </Link>
+            </li>
+
+         
+
+            <li>
+              <Link to="/contact">
+                <FaArrowRight />
+                Contact Us
+              </Link>
+            </li>
+
           </ul>
-
         </div>
 
-        {/* ALUMINIUM SOLUTIONS */}
-        <div className="footer-section">
-
-          <h3>Our Solutions</h3>
-          <span className="footer-heading-line"></span>
-
-          <ul>
-            <li><Link to="/programz" onClick={handleNavigation}>Aluminium Works</Link></li>
-            <li><Link to="/window" onClick={handleNavigation}>Aluminium Windows</Link></li>
-            <li><Link to="/door" onClick={handleNavigation}>Aluminium Doors</Link></li>
-            <li><Link to="/cladding" onClick={handleNavigation}>Aluminium Cladding</Link></li>
-            <li><Link to="/tents" onClick={handleNavigation}>Tents</Link></li>
-            <li><Link to="/glass" onClick={handleNavigation}>Glass Works</Link></li>
-            <li><Link to="/curtain" onClick={handleNavigation}>Curtain Walls</Link></li>
-            <li><Link to="/partner" onClick={handleNavigation}>Glass Partitions</Link></li>
-          </ul>
-
-        </div>
-
-        {/* CONTACT INFORMATION */}
+        {/* CONTACT SECTION */}
         <div className="footer-section footer-contact">
 
-          <h3>Get in Touch</h3>
-          <span className="footer-heading-line"></span>
+          <h3 className="footer-heading">
+            CONTACT US
+            <span className="footer-heading-line"></span>
+          </h3>
 
           <p className="contact-description">
-            Have a project in mind? Our professional team is ready
-            to discuss your aluminium and construction requirements.
+            Get in touch with our team for professional assistance
+            and project inquiries.
           </p>
 
-          <div className="footer-contact-info">
+          {/* PHONE */}
+          <div className="contact-item">
 
-            <div className="contact-item">
+            <div className="contact-icon">
               <FaPhoneAlt />
-              <div>
-                <span>Call Us</span>
-                <a href="tel:+971558816618">+971 55 881 6618</a>
-              </div>
             </div>
 
-            <div className="contact-item">
-              <FaEnvelope />
-              <div>
-                <span>Email Us</span>
-                <a href="mailto:awangcaw@gmail.com">awangcaw@gmail.com
-
-
-</a>
-              </div>
-            </div>
-
-            <div className="contact-item">
-              <FaMapMarkerAlt />
-              <div>
-                <span>Location</span>
-                <p>M32/2, MUSAFFAH, ABU DHABI - UAE</p>
-              </div>
+            <div className="contact-details">
+              <span>PHONE NUMBER</span>
+              <a href="tel:+971558816618">
+                +971 55 881 6618
+              </a>
             </div>
 
           </div>
 
-          <Link
-            to="/contact"
-            className="footer-contact-btn"
-            onClick={handleNavigation}
-          >
-            Contact Our Team <FaArrowRight />
+          {/* EMAIL */}
+          <div className="contact-item">
+
+            <div className="contact-icon">
+              <FaEnvelope />
+            </div>
+
+            <div className="contact-details">
+              <span>EMAIL ADDRESS</span>
+              <a href="mailto:awangcaw@gmail.com">
+                awangcaw@gmail.com
+              </a>
+            </div>
+
+          </div>
+
+          {/* ADDRESS */}
+          <div className="contact-item">
+
+            <div className="contact-icon">
+              <FaMapMarkerAlt />
+            </div>
+
+            <div className="contact-details">
+              <span>OUR LOCATION</span>
+              <p>
+                M32/2, Musaffah,
+                Abu Dhabi - UAE
+              </p>
+            </div>
+
+          </div>
+
+          {/* WEBSITE */}
+          <div className="contact-item">
+
+            <div className="contact-icon">
+              <FaGlobe />
+            </div>
+
+            <div className="contact-details">
+              <span>BUSINESS</span>
+              <p>
+                AWAN GENERAL CONTRACTING
+                & ALUMINIUM WORK LLC
+              </p>
+            </div>
+
+          </div>
+
+          <Link to="/contact" className="footer-contact-btn">
+            CONTACT OUR TEAM
+            <FaArrowRight />
           </Link>
 
         </div>
 
       </div>
 
-      {/* BOTTOM COPYRIGHT */}
-      <div className="footer-bottom">
+      {/* QUALITY STRIP */}
+      <div className="footer-middle-strip">
 
-        <p>
-          © {new Date().getFullYear()} AWAN GENERAL CONTRACTING
-          & ALUMINIUM WORK LLC. All Rights Reserved.
-        </p>
+        <div className="footer-strip-inner">
 
-        <Link to="/" onClick={handleNavigation}>
-          Back to Home ↑
-        </Link>
+          <div className="footer-strip-item">
+            <span>01</span>
+            <p>QUALITY</p>
+          </div>
+
+          <div className="footer-strip-item">
+            <span>02</span>
+            <p>PRECISION</p>
+          </div>
+
+          <div className="footer-strip-item">
+            <span>03</span>
+            <p>INNOVATION</p>
+          </div>
+
+          <div className="footer-strip-item">
+            <span>04</span>
+            <p>EXCELLENCE</p>
+          </div>
+
+        </div>
+
+      </div>
+
+      {/* BOTTOM FOOTER */}
+      <div className="footer-bottom-wrapper">
+
+        <div className="footer-bottom">
+
+          <p>
+            © {new Date().getFullYear()} AWAN GENERAL CONTRACTING
+            & ALUMINIUM WORK LLC.
+            <span> ALL RIGHTS RESERVED.</span>
+          </p>
+
+          <div className="footer-bottom-links">
+            <Link to="/">Home</Link>
+            <Link to="/contact">Contact</Link>
+          </div>
+
+        </div>
 
       </div>
 
     </footer>
   );
-}
+};
 
 export default Footer;

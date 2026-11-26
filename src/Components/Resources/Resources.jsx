@@ -1,100 +1,155 @@
 
-import { Link } from 'react-router-dom';
-import visit1 from "../../assets/alu007.jpg";
-import './Resources.css';
+import { useState } from "react";
+import { Link } from "react-router-dom";
+import { FaCheckCircle, FaPhoneAlt, FaTimes, FaExpand } from "react-icons/fa";
+
+import visit1 from "../../assets/agc9.jpeg";
+import visit2 from "../../assets/agc.jpeg";
+import visit3 from "../../assets/agc3.jpeg";
+
+import "./Resources.css";
 
 const Resources = () => {
-  const solutions = [
+  const [selectedImage, setSelectedImage] = useState(null);
+
+  const features = [
+    "Custom aluminium windows and doors designed for modern residential and commercial spaces.",
+    "Professional curtain wall, glass facade and architectural glazing solutions.",
+    "High-quality glass partitions, shower enclosures and aluminium railings.",
+    "Careful measurements, material selection and precision installation for every project.",
+    "Reliable workmanship and attention to detail from planning through project completion.",
+  ];
+
+  const galleryImages = [
     {
-      number: '01',
-      title: 'Windows & Door Systems',
-      description:
-        'Precision-engineered aluminium windows and doors designed for modern architecture, durability and everyday performance.',
-      link: '/window',
+      src: visit1,
+      alt: "AWAN aluminium architectural solutions",
+      number: "01",
+      title: "ALUMINIUM SYSTEMS",
     },
     {
-      number: '02',
-      title: 'Curtain Walls & Facades',
-      description:
-        'Contemporary glazing and facade systems that combine architectural beauty with reliable structural performance.',
-      link: '/curtain',
+      src: visit2,
+      alt: "Aluminium doors and glass installation",
+      number: "02",
+      title: "GLASS SOLUTIONS",
     },
     {
-      number: '03',
-      title: 'Custom Aluminium Works',
-      description:
-        'Tailored aluminium fabrication, partitions, railings and architectural solutions developed around your project.',
-      link: '/services',
+      src: visit3,
+      alt: "Architectural aluminium project",
+      number: "03",
+      title: "ARCHITECTURAL WORKS",
     },
   ];
 
   return (
-    <section className="resources-section">
-      <div className="resources-layout">
+    <section className="awan-resources-section">
+      <div className="awan-resources-container">
 
-        {/* Content Side */}
-        <div className="resources-content">
-          <div className="section-label">
-            <span></span>
-            OUR EXPERTISE
+        {/* LEFT CONTENT */}
+        <div className="awan-resources-content">
+          <div className="awan-resources-label">
+            <span>WHY CHOOSE AWAN</span>
+            <i></i>
           </div>
 
           <h1>
-            Architectural Solutions
-            <strong>Built With Precision.</strong>
+            Aluminium Solutions
+            <span>Designed Around Your Needs.</span>
           </h1>
 
-          <p className="resources-description">
-            AWAN GENERAL CONTRACTING & ALUMINIUM  WORK LLC delivers
-            professional aluminium and glazing solutions for residential,
-            commercial and architectural projects.
+          <p className="awan-resources-intro">
+            AWAN GENERAL CONTRACTING & ALUMINIUM WORKS provides
+            professional aluminium and glass solutions for residential,
+            commercial and architectural projects. We bring together
+            thoughtful design, quality materials and precise workmanship
+            to deliver solutions suited to each project.
           </p>
 
-          <div className="solution-list">
-            {solutions.map((solution) => (
-              <Link
-                to={solution.link}
-                className="solution-card"
-                key={solution.number}
-              >
-                <span className="solution-number">{solution.number}</span>
-
-                <div className="solution-details">
-                  <h2>{solution.title}</h2>
-                  <p>{solution.description}</p>
-                </div>
-
-                <span className="solution-arrow">→</span>
-              </Link>
+          {/* FEATURES */}
+          <div className="awan-resources-features">
+            {features.map((feature, index) => (
+              <div className="awan-resource-feature" key={index}>
+                <FaCheckCircle className="awan-check-icon" />
+                <p>{feature}</p>
+              </div>
             ))}
           </div>
 
-          <Link to="/programz" className="all-solutions-btn">
-            Explore All Solutions
-            <span>→</span>
-          </Link>
+          {/* BUTTONS */}
+          <div className="awan-resources-actions">
+            <Link to="/programz" className="awan-about-btn">
+              EXPLORE OUR SERVICES
+              <span>↗</span>
+            </Link>
+
+            <Link to="/contact" className="awan-call-btn">
+              <FaPhoneAlt />
+              <span>CONTACT OUR TEAM</span>
+            </Link>
+          </div>
         </div>
 
-        {/* Image Side */}
-        <div className="resources-image-area">
-          <div className="image-frame">
-            <img
-              src={visit1}
-              alt="Professional aluminium architectural work"
-              className="resources-image"
-            />
-          </div>
+        {/* RIGHT IMAGE GALLERY */}
+        <div className="awan-resources-gallery">
+          {galleryImages.map((image, index) => (
+            <button
+              type="button"
+              className={`awan-gallery-image gallery-image-${[
+                "one",
+                "two",
+                "three",
+              ][index]}`}
+              key={image.number}
+              onClick={() => setSelectedImage(image)}
+              aria-label={`Open ${image.title} image`}
+            >
+              <img src={image.src} alt={image.alt} />
 
-          <div className="experience-badge">
-            <span className="badge-line"></span>
-            <div>
-              <strong>QUALITY</strong>
-              <p>Precision in Every Detail</p>
+              <div className="awan-gallery-caption">
+                <span>{image.number}</span>
+                <p>{image.title}</p>
+                <FaExpand className="awan-expand-icon" />
+              </div>
+            </button>
+          ))}
+
+          <div className="awan-gallery-brand">
+            <strong>AWAN</strong>
+            <span>GENERAL CONTRACTING</span>
+            <small>& ALUMINIUM WORKS</small>
+          </div>
+        </div>
+      </div>
+
+      {/* IMAGE LIGHTBOX */}
+      {selectedImage && (
+        <div
+          className="awan-image-lightbox"
+          onClick={() => setSelectedImage(null)}
+          role="presentation"
+        >
+          <button
+            type="button"
+            className="awan-lightbox-close"
+            onClick={() => setSelectedImage(null)}
+            aria-label="Close image"
+          >
+            <FaTimes />
+          </button>
+
+          <div
+            className="awan-lightbox-content"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <img src={selectedImage.src} alt={selectedImage.alt} />
+
+            <div className="awan-lightbox-caption">
+              <span>{selectedImage.number}</span>
+              <p>{selectedImage.title}</p>
             </div>
           </div>
         </div>
-
-      </div>
+      )}
     </section>
   );
 };

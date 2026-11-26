@@ -19,7 +19,10 @@ import {
   FaLinkedinIn,
   FaEnvelope,
   FaBars,
-  FaChevronDown
+  FaChevronDown,
+  FaShieldAlt,
+  FaCar,
+  FaPaintRoller
 } from 'react-icons/fa';
 
 const NavBar = () => {
@@ -64,8 +67,7 @@ const NavBar = () => {
 
   // PREVENT BACKGROUND SCROLL
   useEffect(() => {
-    document.body.style.overflow =
-      isSearchOpen ? 'hidden' : '';
+    document.body.style.overflow = isSearchOpen ? 'hidden' : '';
 
     return () => {
       document.body.style.overflow = '';
@@ -83,6 +85,7 @@ const NavBar = () => {
   // NAVIGATION HANDLER
   const handleNavigation = () => {
     closeMenus();
+
     window.scrollTo({
       top: 0,
       behavior: 'smooth'
@@ -118,24 +121,28 @@ const NavBar = () => {
     { keywords: ['glass', 'architectural glass'], path: '/glass' },
 
     {
-      keywords: [
-        'curtain',
-        'curtain wall',
-        'curtain walls',
-        'curtain wall systems'
-      ],
+      keywords: ['curtain', 'curtain wall', 'curtain walls'],
       path: '/check'
     },
 
     {
-      keywords: [
-        'partition',
-        'partitions',
-        'glass partition',
-        'glass partitions',
-        'office partition'
-      ],
+      keywords: ['partition', 'partitions', 'glass partition'],
       path: '/gallery'
+    },
+
+    {
+      keywords: ['wrought iron', 'wrought iron gate', 'iron gate', 'gates'],
+      path: '/wrought-iron'
+    },
+
+    {
+      keywords: ['car parking', 'car parkings', 'parking shades', 'car shades'],
+      path: '/car-parking'
+    },
+
+    {
+      keywords: ['paints', 'painting', 'gypsum', 'gypsum works'],
+      path: '/timer'
     },
 
     { keywords: ['solution', 'solutions', 'services'], path: '/programz' },
@@ -181,6 +188,70 @@ const NavBar = () => {
       'Please contact me with further information.\n\n' +
       'Thank you.'
     );
+
+  // ALL ALUMINIUM SOLUTIONS
+  const solutions = [
+    {
+      icon: <FaWindowMaximize />,
+      title: 'WINDOWS',
+      name: 'Aluminium Windows',
+      path: '/window'
+    },
+    {
+      icon: <FaDoorOpen />,
+      title: 'DOORS',
+      name: 'Aluminium Doors',
+      path: '/door'
+    },
+    {
+      icon: <FaBuilding />,
+      title: 'CLADDING',
+      name: 'Aluminium Cladding',
+      path: '/cladding'
+    },
+    {
+      icon: <FaLayerGroup />,
+      title: 'TENTS',
+      name: 'Aluminium Tents',
+      path: '/tents'
+    },
+    {
+      icon: <FaLayerGroup />,
+      title: 'GLASS',
+      name: 'Architectural Glass',
+      path: '/glass'
+    },
+    {
+      icon: <FaBorderAll />,
+      title: 'CURTAIN WALLS',
+      name: 'Curtain Wall Systems',
+      path: '/Curtain'
+    },
+    {
+      icon: <FaBorderAll />,
+      title: 'GLASS PARTITIONS',
+      name: 'Glass Partition Systems',
+      path: '/Partition'
+    },
+    {
+      icon: <FaShieldAlt />,
+      title: 'WROUGHT IRON GATE',
+      name: 'Wrought Iron Gate',
+      path: '/Iron'
+    },
+    {
+      icon: <FaCar />,
+      title: 'CAR PARKINGS & SHADES',
+      name: 'Car Parkings & Shades',
+      path: '/parking'
+    },
+    {
+      icon: <FaPaintRoller />,
+      title: 'PAINTS & GYPSUM WORKS',
+      name: 'Paints & Gypsum Works',
+      path: '/Paints'
+    }
+  ];
 
   return (
     <>
@@ -256,7 +327,7 @@ const NavBar = () => {
               </a>
 
               <a
-                href="https://www.instagram.com/fadibadshah/"
+                href="https://www.instagram.com/"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Instagram"
@@ -347,82 +418,54 @@ const NavBar = () => {
                 <div className="mega-menu-header">
 
                   <span>
-                    ARCHITECTURAL ALUMINIUM SOLUTIONS
+                    COMPLETE ARCHITECTURAL SOLUTIONS
                   </span>
 
                   <p>
-                    Explore our modern aluminium, curtain and glass
-                    systems, engineered for residential, commercial
-                    and architectural projects.
+                    Explore our complete range of aluminium,
+                    architectural glass, metal fabrication,
+                    parking shades and interior finishing services.
                   </p>
 
                 </div>
 
                 <div className="mega-menu-grid">
 
-                  <div className="mega-column">
-                    <h4><FaWindowMaximize /> WINDOWS</h4>
-                    <Link to="/window" onClick={handleNavigation}>
-                      Aluminium Windows
-                    </Link>
-                  </div>
+                  {solutions.map((item) => (
+                    <div className="mega-column" key={item.title}>
 
-                  <div className="mega-column">
-                    <h4><FaDoorOpen /> DOORS</h4>
-                    <Link to="/door" onClick={handleNavigation}>
-                      Aluminium Doors
-                    </Link>
-                  </div>
+                      <h4>
+                        {item.icon}
+                        {item.title}
+                      </h4>
 
-                  <div className="mega-column">
-                    <h4><FaBuilding /> CLADDING</h4>
-                    <Link to="/cladding" onClick={handleNavigation}>
-                      Aluminium Cladding
-                    </Link>
-                  </div>
+                      <Link
+                        to={item.path}
+                        onClick={handleNavigation}
+                      >
+                        {item.name}
+                      </Link>
 
-                  <div className="mega-column">
-                    <h4><FaLayerGroup /> TENTS</h4>
-                    <Link to="/tents" onClick={handleNavigation}>
-                      Aluminium Tents
-                    </Link>
-                  </div>
-
-                  <div className="mega-column">
-                    <h4><FaLayerGroup /> GLASS</h4>
-                    <Link to="/glass" onClick={handleNavigation}>
-                      Architectural Glass
-                    </Link>
-                  </div>
-
-                  {/* CURTAIN WALLS - CHECK.JSX */}
-                  <div className="mega-column">
-                    <h4><FaBorderAll /> CURTAIN WALLS</h4>
-                    <Link to="/check" onClick={handleNavigation}>
-                      Curtain Wall Systems
-                    </Link>
-                  </div>
-
-                  {/* GLASS PARTITIONS - GALLERY.JSX */}
-                  <div className="mega-column">
-                    <h4><FaBorderAll /> GLASS PARTITIONS</h4>
-                    <Link to="/gallery" onClick={handleNavigation}>
-                      Glass Partition Systems
-                    </Link>
-                  </div>
+                    </div>
+                  ))}
 
                 </div>
 
                 <div className="mega-menu-footer">
+
                   <FaBorderAll />
 
                   <span>
                     Quality. Precision. Architectural Excellence.
                   </span>
 
-                  <Link to="/programz" onClick={handleNavigation}>
+                  <Link
+                    to="/programz"
+                    onClick={handleNavigation}
+                  >
                     VIEW ALL SOLUTIONS →
                   </Link>
+
                 </div>
 
               </div>
@@ -545,8 +588,10 @@ const NavBar = () => {
             <h2>Search Our Website</h2>
 
             <p className="website-search-text">
-              Find aluminium solutions, windows, doors, curtain walls,
-              partitions, glass systems, projects and more.
+              Find aluminium solutions, windows, doors,
+              curtain walls, partitions, glass systems,
+              wrought iron gates, car parking shades,
+              paints and gypsum works.
             </p>
 
             <form onSubmit={handleSearch}>
@@ -557,7 +602,7 @@ const NavBar = () => {
 
                 <input
                   type="text"
-                  placeholder="Search windows, doors, partitions..."
+                  placeholder="Search our services..."
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
                   autoFocus
@@ -586,6 +631,9 @@ const NavBar = () => {
                 'Curtain Walls',
                 'Partitions',
                 'Cladding',
+                'Wrought Iron Gate',
+                'Car Parkings & Shades',
+                'Paints & Gypsum Works',
                 'Contact'
               ].map((item) => {
 
@@ -596,6 +644,9 @@ const NavBar = () => {
                   'Curtain Walls': '/check',
                   Partitions: '/gallery',
                   Cladding: '/cladding',
+                  'Wrought Iron Gate': '/wrought-iron',
+                  'Car Parkings & Shades': '/car-parking',
+                  'Paints & Gypsum Works': '/timer',
                   Contact: '/contact'
                 };
 

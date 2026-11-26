@@ -1,33 +1,47 @@
 
-/* ===================================
-   GLOBAL PROJECT PAGE
-=================================== */
+/* =========================================
+   AWAN PREMIUM PROJECT PORTFOLIO
+   Forest Green / Copper / Ivory
+========================================= */
 
 .awan-project-page {
   width: 100%;
   overflow: hidden;
-  background: #f5f5f3;
-  color: #25292b;
-  font-family: Arial, Helvetica, sans-serif;
+  background: #f3f0e8;
+  color: #183b32;
+  font-family: 'Poppins', 'Segoe UI', sans-serif;
 }
 
 .awan-project-page * {
   box-sizing: border-box;
 }
 
-/* ===================================
-   HERO SECTION
-=================================== */
+.awan-project-container {
+  width: 100%;
+  max-width: 1250px;
+  margin: 0 auto;
+}
+
+/* =========================================
+   HERO
+========================================= */
 
 .awan-project-hero {
-  min-height: 610px;
   position: relative;
+  min-height: 490px;
   display: flex;
   align-items: center;
+  padding: 70px 8%;
+  overflow: hidden;
   background:
-    linear-gradient(90deg, rgba(15, 19, 21, 0.96), rgba(15, 19, 21, 0.58)),
-    url("../../assets/ay03.jpeg") center/cover no-repeat;
-  color: #fff;
+    linear-gradient(
+      90deg,
+      rgba(8, 21, 16, 0.96),
+      rgba(13, 39, 31, 0.85) 58%,
+      rgba(13, 39, 31, 0.45)
+    ),
+    url("https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=2000&q=90")
+    center/cover no-repeat;
 }
 
 .awan-hero-overlay {
@@ -35,345 +49,304 @@
   inset: 0;
   background: linear-gradient(
     135deg,
-    rgba(184, 128, 77, 0.12),
-    transparent 55%
+    rgba(189, 135, 91, 0.12),
+    transparent 60%
   );
 }
 
 .awan-project-hero-content {
   position: relative;
   z-index: 2;
-  width: min(1150px, 90%);
-  margin: auto;
-  padding: 90px 0;
 }
 
-.awan-hero-label,
-.awan-section-label {
+.awan-hero-label {
   display: flex;
   align-items: center;
   gap: 12px;
-  color: #c99b70;
-  font-size: 12px;
+  margin-bottom: 19px;
+  color: #d4aa85;
+  font-size: 9px;
   font-weight: 700;
-  letter-spacing: 3px;
+  letter-spacing: 2px;
 }
 
-.awan-hero-label span {
-  width: 35px;
+.awan-hero-label span,
+.awan-section-label i {
+  width: 30px;
   height: 2px;
-  background: #c99b70;
+  flex-shrink: 0;
+  background: #bd875b;
 }
 
 .awan-project-hero h1 {
-  max-width: 850px;
-  margin: 30px 0 20px;
-  font-size: clamp(42px, 6vw, 76px);
+  max-width: 780px;
+  margin: 0;
+  color: #fff;
+  font-size: clamp(39px, 5vw, 62px);
+  font-weight: 700;
   line-height: 1.12;
-  font-weight: 800;
   letter-spacing: -2px;
 }
 
 .awan-project-hero h1 span {
   display: block;
-  color: #c99b70;
+  color: #d4aa85;
 }
 
 .awan-project-hero-content > p {
-  max-width: 590px;
-  color: #d0d0d0;
-  font-size: 16px;
+  max-width: 570px;
+  margin: 20px 0 27px;
+  color: #e1e5df;
+  font-size: 12px;
   line-height: 1.9;
-  margin-bottom: 35px;
 }
 
 .awan-hero-button {
+  min-height: 47px;
   display: inline-flex;
   align-items: center;
-  gap: 20px;
-  padding: 16px 25px;
-  background: #bd9068;
+  justify-content: center;
+  gap: 14px;
+  padding: 0 23px;
+  background: #bd875b;
   color: #fff;
-  text-decoration: none;
-  font-size: 12px;
+  font-size: 9px;
   font-weight: 800;
   letter-spacing: 1px;
+  text-decoration: none;
   transition: 0.3s ease;
 }
 
 .awan-hero-button:hover {
-  background: #fff;
-  color: #24292b;
-  transform: translateY(-4px);
+  background: #d4aa85;
+  color: #102a24;
+  transform: translateY(-3px);
+}
+
+.awan-hero-button svg {
+  transition: 0.3s ease;
+}
+
+.awan-hero-button:hover svg {
+  transform: translateX(5px);
 }
 
 .awan-hero-bottom {
   display: flex;
-  gap: 35px;
-  margin-top: 85px;
-  color: #bdbdbd;
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 3px;
+  flex-wrap: wrap;
+  gap: 23px;
+  margin-top: 34px;
+  padding-top: 18px;
+  border-top: 1px solid rgba(255,255,255,0.2);
 }
 
 .awan-hero-bottom span {
-  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #f3f0e8;
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 1px;
 }
 
-.awan-hero-bottom span:not(:last-child)::after {
-  content: "";
+.awan-hero-bottom svg {
+  color: #d4aa85;
+  font-size: 12px;
+}
+
+/* =========================================
+   AWAN LOGO
+========================================= */
+
+.awan-project-brand {
   position: absolute;
-  right: -19px;
-  top: 3px;
-  width: 4px;
-  height: 4px;
-  background: #bd9068;
-  border-radius: 50%;
+  right: 8%;
+  bottom: 24px;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  gap: 13px;
+}
+
+.awan-brand-symbol {
+  width: 43px;
+  height: 43px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #bd875b;
+  background: rgba(189,135,91,0.12);
+  transform: rotate(45deg);
+}
+
+.awan-brand-symbol span {
+  color: #d4aa85;
+  font-family: Georgia, serif;
+  font-size: 27px;
+  font-weight: 700;
+  transform: rotate(-45deg);
+}
+
+.awan-brand-text h2 {
+  margin: 0;
+  color: #fff;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: 3px;
+}
+
+.awan-brand-text h2 span {
+  color: #bd875b;
+}
+
+.awan-brand-text p {
+  margin: 5px 0 2px;
+  color: #d4aa85;
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 1.4px;
+}
+
+.awan-brand-text small {
+  color: rgba(255,255,255,0.7);
+  font-size: 7px;
+  letter-spacing: 1px;
 }
 
 .awan-hero-number {
   position: absolute;
-  right: 5%;
-  bottom: 35px;
-  color: #b9b9b9;
-  font-size: 11px;
-  letter-spacing: 3px;
+  top: 50%;
+  right: 3%;
+  color: rgba(255,255,255,0.7);
+  font-size: 8px;
+  letter-spacing: 2px;
+  writing-mode: vertical-rl;
+  transform: translateY(-50%);
 }
 
-/* ===================================
+/* =========================================
+   SECTION LABEL
+========================================= */
+
+.awan-section-label {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  color: #bd875b;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+/* =========================================
    INTRODUCTION
-=================================== */
+========================================= */
 
 .awan-project-intro {
-  max-width: 1150px;
-  width: 90%;
-  margin: auto;
-  padding: 100px 0;
   display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
-  gap: 70px;
+  grid-template-columns: 1fr 0.85fr;
   align-items: center;
+  gap: 65px;
+  padding: 85px 8%;
 }
 
-.awan-project-intro h2 {
-  margin: 22px 0 0;
-  font-size: clamp(30px, 4vw, 45px);
-  line-height: 1.25;
-  color: #292e30;
-}
-
-.awan-project-intro h2 span {
-  display: block;
-  color: #b48761;
+.awan-intro-left h2 {
+  max-width: 570px;
+  margin: 18px 0 0;
+  color: #183b32;
+  font-size: clamp(30px, 4vw, 43px);
+  line-height: 1.2;
+  letter-spacing: -1.3px;
 }
 
 .awan-intro-right p {
-  color: #666c6e;
-  font-size: 15px;
-  line-height: 1.9;
+  margin: 0;
+  color: #707b73;
+  font-size: 12px;
+  line-height: 2;
 }
 
 .awan-intro-line {
+  width: 75px;
   height: 3px;
-  width: 85px;
   margin-top: 25px;
-  background: #bd9068;
+  background: #bd875b;
 }
 
-/* ===================================
+/* =========================================
    PORTFOLIO
-=================================== */
+========================================= */
 
 .awan-project-portfolio {
-  padding: 85px 5%;
-  background: #eaecea;
+  padding: 80px 8%;
+  background: #e9e8df;
 }
 
 .awan-portfolio-heading {
-  max-width: 1250px;
-  margin: 0 auto 45px;
   display: flex;
+  align-items: flex-end;
   justify-content: space-between;
-  align-items: center;
-  gap: 25px;
+  gap: 30px;
+  margin-bottom: 35px;
 }
 
 .awan-portfolio-heading h2 {
-  margin: 15px 0 10px;
-  color: #252a2c;
-  font-size: clamp(30px, 4vw, 43px);
+  margin: 15px 0 0;
+  color: #183b32;
+  font-size: clamp(27px, 3.5vw, 38px);
+  line-height: 1.2;
+  letter-spacing: -1px;
 }
 
-.awan-portfolio-heading p {
+.awan-portfolio-heading h2 span {
+  color: #bd875b;
+}
+
+.awan-portfolio-heading > p {
+  max-width: 320px;
   margin: 0;
-  color: #727779;
-  font-size: 14px;
+  color: #788279;
+  font-size: 11px;
+  line-height: 1.8;
 }
-
-.awan-total-projects {
-  display: flex;
-  align-items: center;
-  gap: 18px;
-  padding: 22px 28px;
-  background: #252a2c;
-  color: #c99b70;
-}
-
-.awan-total-projects > svg {
-  font-size: 28px;
-}
-
-.awan-total-projects div {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-}
-
-.awan-total-projects strong {
-  color: #fff;
-  font-size: 32px;
-}
-
-.awan-total-projects span {
-  color: #c4c4c4;
-  font-size: 9px;
-  letter-spacing: 1.5px;
-}
-
-/* ===================================
-   SEARCH AND FILTER
-=================================== */
-
-.awan-project-controls {
-  max-width: 1250px;
-  margin: 0 auto 25px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 20px;
-}
-
-.awan-search-box {
-  width: 350px;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  padding: 14px 17px;
-  background: #fff;
-  border: 1px solid #dedfdd;
-}
-
-.awan-search-box > svg {
-  color: #b48761;
-}
-
-.awan-search-box input {
-  flex: 1;
-  width: 100%;
-  border: none;
-  outline: none;
-  background: transparent;
-  color: #252a2c;
-  font-size: 13px;
-}
-
-.awan-search-box button {
-  border: none;
-  background: transparent;
-  color: #777;
-  cursor: pointer;
-}
-
-.awan-category-filter {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.awan-category-filter span {
-  font-size: 10px;
-  font-weight: 800;
-  letter-spacing: 1.5px;
-  color: #656a6b;
-}
-
-.awan-category-filter select {
-  min-width: 190px;
-  padding: 14px;
-  border: 1px solid #dedfdd;
-  background: #fff;
-  color: #333;
-  outline: none;
-  font-size: 12px;
-  cursor: pointer;
-}
-
-.awan-results-line {
-  max-width: 1250px;
-  margin: 0 auto 22px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  color: #777;
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 1.2px;
-}
-
-.awan-results-line strong {
-  color: #292e30;
-}
-
-.awan-completed-indicator {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  color: #56836b;
-}
-
-/* ===================================
-   PROJECT GRID
-=================================== */
 
 .awan-project-grid {
-  max-width: 1250px;
-  margin: auto;
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 28px;
+  gap: 22px;
 }
 
 .awan-project-card {
   min-width: 0;
   background: #fff;
   cursor: pointer;
-  overflow: hidden;
-  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  outline-offset: 4px;
+  transition: 0.35s ease;
 }
 
 .awan-project-card:hover {
-  transform: translateY(-9px);
-  box-shadow: 0 18px 38px rgba(28, 35, 37, 0.13);
+  transform: translateY(-7px);
+  box-shadow: 0 15px 35px rgba(16,42,36,0.12);
 }
 
 .awan-project-image {
-  height: 265px;
   position: relative;
+  height: 270px;
   overflow: hidden;
-  background: #292e30;
+  background: #183b32;
 }
 
 .awan-project-image img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
   display: block;
-  transition: transform 0.7s ease;
+  object-fit: cover;
+  transition: transform 0.65s ease;
 }
 
 .awan-project-card:hover .awan-project-image img {
-  transform: scale(1.09);
+  transform: scale(1.07);
 }
 
 .awan-image-overlay {
@@ -381,9 +354,17 @@
   inset: 0;
   background: linear-gradient(
     180deg,
-    rgba(0, 0, 0, 0.35),
-    transparent 35%,
-    rgba(0, 0, 0, 0.65)
+    rgba(8,20,15,0.05),
+    rgba(8,20,15,0.65)
+  );
+  transition: 0.3s ease;
+}
+
+.awan-project-card:hover .awan-image-overlay {
+  background: linear-gradient(
+    180deg,
+    rgba(8,20,15,0.1),
+    rgba(8,20,15,0.78)
   );
 }
 
@@ -391,38 +372,29 @@
   position: absolute;
   top: 17px;
   left: 17px;
-  color: #fff;
-  font-size: 13px;
-  font-weight: 800;
-  letter-spacing: 2px;
-}
-
-.awan-completed-badge {
-  position: absolute;
-  right: 15px;
-  top: 15px;
+  width: 38px;
+  height: 38px;
   display: flex;
   align-items: center;
-  gap: 7px;
-  padding: 8px 11px;
-  background: rgba(26, 43, 36, 0.88);
-  color: #d9eddf;
-  font-size: 9px;
-  font-weight: 800;
+  justify-content: center;
+  border: 1px solid rgba(255,255,255,0.65);
+  color: #fff;
+  font-size: 10px;
+  font-weight: 700;
   letter-spacing: 1px;
 }
 
 .awan-image-view {
   position: absolute;
-  bottom: 18px;
-  left: 20px;
+  right: 18px;
+  bottom: 19px;
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
   color: #fff;
-  font-size: 10px;
+  font-size: 9px;
   font-weight: 800;
-  letter-spacing: 1.5px;
+  letter-spacing: 1px;
   opacity: 0;
   transform: translateY(10px);
   transition: 0.3s ease;
@@ -433,262 +405,241 @@
   transform: translateY(0);
 }
 
-.awan-project-details {
-  padding: 24px 23px 18px;
+.awan-image-view svg {
+  color: #d4aa85;
 }
 
-.awan-project-category {
-  color: #b48761;
-  font-size: 9px;
+.awan-project-details {
+  min-height: 83px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 18px;
+}
+
+.awan-project-details > div > span {
+  color: #bd875b;
+  font-size: 8px;
   font-weight: 800;
-  letter-spacing: 1.7px;
+  letter-spacing: 1.3px;
 }
 
 .awan-project-details h3 {
-  min-height: 48px;
-  margin: 12px 0 22px;
-  color: #292e30;
-  font-size: 18px;
-  line-height: 1.45;
-}
-
-.awan-card-bottom {
-  padding-top: 16px;
-  border-top: 1px solid #eceeed;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.awan-card-bottom > span {
-  color: #999;
-  font-size: 9px;
-  font-weight: 700;
-  letter-spacing: 1.4px;
-}
-
-.awan-card-bottom button {
-  width: 35px;
-  height: 35px;
-  border: none;
-  background: #292e30;
-  color: #fff;
-  cursor: pointer;
-  transition: 0.3s ease;
-}
-
-.awan-card-bottom button:hover {
-  background: #bd9068;
-  transform: rotate(-45deg);
-}
-
-/* ===================================
-   EMPTY SEARCH RESULTS
-=================================== */
-
-.awan-empty-projects {
-  max-width: 600px;
-  margin: 50px auto;
-  padding: 55px 20px;
-  text-align: center;
-  background: #fff;
-}
-
-.awan-empty-projects > svg {
-  color: #bd9068;
-  font-size: 38px;
-}
-
-.awan-empty-projects h3 {
-  color: #292e30;
-  margin: 18px 0 10px;
-}
-
-.awan-empty-projects p {
-  color: #777;
+  margin: 6px 0 0;
+  color: #183b32;
   font-size: 14px;
 }
 
-.awan-empty-projects button {
-  margin-top: 15px;
-  padding: 13px 20px;
-  background: #292e30;
-  border: none;
-  color: #fff;
-  cursor: pointer;
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 1px;
+.awan-project-detail-arrow {
+  flex-shrink: 0;
+  color: #bd875b;
+  font-size: 14px;
+  transition: 0.3s ease;
 }
 
-/* ===================================
-   FEATURE SECTION
-=================================== */
+.awan-project-card:hover .awan-project-detail-arrow {
+  transform: translateX(5px);
+}
+
+.awan-gallery-note {
+  max-width: 760px;
+  margin: 35px auto 0;
+  color: #707b73;
+  font-size: 11px;
+  line-height: 1.9;
+  text-align: center;
+}
+
+/* =========================================
+   FEATURE / COMMITMENT
+========================================= */
 
 .awan-project-feature {
-  padding: 85px 7%;
-  display: flex;
+  padding: 80px 8%;
+  background:
+    linear-gradient(
+      100deg,
+      rgba(13,38,30,0.97),
+      rgba(16,42,36,0.94)
+    );
+}
+
+.awan-feature-inner {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
   align-items: center;
-  justify-content: space-between;
-  gap: 45px;
-  background: #252a2c;
-  color: #fff;
-}
-
-.awan-feature-content {
-  max-width: 570px;
-}
-
-.awan-feature-content > span {
-  color: #c99b70;
-  font-size: 11px;
-  font-weight: 800;
-  letter-spacing: 3px;
+  gap: 65px;
 }
 
 .awan-feature-content h2 {
+  max-width: 600px;
   margin: 18px 0;
-  font-size: clamp(29px, 4vw, 43px);
-  line-height: 1.3;
+  color: #fff;
+  font-size: clamp(30px, 4vw, 43px);
+  line-height: 1.2;
+  letter-spacing: -1px;
 }
 
 .awan-feature-content h2 span {
   display: block;
-  color: #c99b70;
+  color: #d4aa85;
 }
 
-.awan-feature-content p {
-  color: #c2c5c5;
-  font-size: 14px;
-  line-height: 1.9;
+.awan-feature-content > p {
+  max-width: 520px;
+  margin: 0;
+  color: #d1d9d2;
+  font-size: 12px;
+  line-height: 2;
+}
+
+.awan-feature-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 25px;
+  color: #d4aa85;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-decoration: none;
+}
+
+.awan-feature-link:hover {
+  color: #fff;
 }
 
 .awan-feature-stats {
-  display: flex;
-  gap: 35px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
 }
 
-.awan-feature-stats div {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.awan-feature-stats strong {
-  color: #c99b70;
-  font-size: 38px;
-}
-
-.awan-feature-stats span {
-  color: #ddd;
-  font-size: 9px;
-  letter-spacing: 1.5px;
-}
-
-/* ===================================
-   CONTACT SECTION
-=================================== */
-
-.awan-project-contact {
-  max-width: 1250px;
-  width: 90%;
-  margin: auto;
-  padding: 85px 0;
+.awan-feature-stats > div {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 30px;
+  padding: 20px 5px;
+  border-bottom: 1px solid rgba(255,255,255,0.17);
 }
 
-.awan-project-contact > div > span {
-  color: #b48761;
-  font-size: 10px;
-  font-weight: 800;
+.awan-feature-stats strong {
+  color: #d4aa85;
+  font-family: Georgia, serif;
+  font-size: 35px;
+}
+
+.awan-feature-stats span {
+  color: #fff;
+  font-size: 9px;
+  font-weight: 700;
   letter-spacing: 2px;
 }
 
-.awan-project-contact h2 {
-  margin: 13px 0;
-  color: #292e30;
-  font-size: clamp(26px, 4vw, 38px);
+/* =========================================
+   CONTACT CTA
+========================================= */
+
+.awan-project-contact {
+  padding: 65px 8%;
+  background: #fff;
 }
 
-.awan-project-contact p {
-  max-width: 580px;
-  color: #777;
-  font-size: 14px;
-  line-height: 1.8;
+.awan-contact-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 35px;
 }
 
-.awan-project-contact > a {
-  flex-shrink: 0;
+.awan-contact-inner h2 {
+  margin: 16px 0 10px;
+  color: #183b32;
+  font-size: clamp(28px, 3.5vw, 39px);
+  line-height: 1.2;
+}
+
+.awan-contact-inner h2 span {
+  display: block;
+  color: #bd875b;
+}
+
+.awan-contact-inner p {
+  margin: 0;
+  color: #788279;
+  font-size: 11px;
+  line-height: 1.9;
+}
+
+.awan-contact-inner > a {
+  min-height: 48px;
   display: inline-flex;
   align-items: center;
-  gap: 18px;
-  padding: 17px 25px;
-  background: #292e30;
+  justify-content: center;
+  gap: 13px;
+  flex-shrink: 0;
+  padding: 0 22px;
+  background: #183b32;
   color: #fff;
-  text-decoration: none;
-  font-size: 11px;
+  font-size: 9px;
   font-weight: 800;
   letter-spacing: 1px;
+  text-decoration: none;
   transition: 0.3s ease;
 }
 
-.awan-project-contact > a:hover {
-  background: #bd9068;
-  transform: translateY(-4px);
+.awan-contact-inner > a:hover {
+  background: #bd875b;
+  transform: translateY(-3px);
 }
 
-/* ===================================
-   FULL IMAGE MODAL
-=================================== */
+/* =========================================
+   IMAGE MODAL
+========================================= */
 
 .awan-project-modal-overlay {
   position: fixed;
-  z-index: 9999;
   inset: 0;
+  z-index: 9999;
   display: flex;
-  justify-content: center;
   align-items: center;
-  padding: 25px;
-  background: rgba(8, 10, 11, 0.96);
-  backdrop-filter: blur(7px);
+  justify-content: center;
+  padding: 30px;
+  background: rgba(5,15,11,0.93);
+  animation: awanModalFade 0.25s ease;
 }
 
 .awan-project-modal {
   position: relative;
-  width: 95%;
-  max-width: 1150px;
-  height: 88vh;
+  width: min(100%, 1050px);
+  max-height: 90vh;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  animation: awanModalShow 0.3s ease;
 }
 
-.awan-project-modal img {
-  display: block;
+.awan-project-modal > img {
   max-width: 100%;
-  max-height: 100%;
-  width: auto;
-  height: auto;
+  max-height: 78vh;
+  display: block;
   object-fit: contain;
+  box-shadow: 0 15px 55px rgba(0,0,0,0.4);
 }
 
 .awan-modal-close {
   position: absolute;
-  z-index: 5;
   top: -18px;
   right: -18px;
-  width: 43px;
-  height: 43px;
+  z-index: 3;
+  width: 42px;
+  height: 42px;
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid rgba(255, 255, 255, 0.35);
+  border: 1px solid rgba(255,255,255,0.4);
   border-radius: 50%;
-  background: #bd9068;
+  background: #bd875b;
   color: #fff;
   font-size: 17px;
   cursor: pointer;
@@ -697,34 +648,53 @@
 
 .awan-modal-close:hover {
   background: #fff;
-  color: #252a2c;
+  color: #183b32;
   transform: rotate(90deg);
 }
 
-@keyframes awanModalShow {
+.awan-modal-caption {
+  width: 100%;
+  padding-top: 15px;
+  text-align: center;
+}
+
+.awan-modal-caption span {
+  color: #d4aa85;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.awan-modal-caption h3 {
+  margin: 6px 0 0;
+  color: #fff;
+  font-size: 16px;
+}
+
+@keyframes awanModalFade {
   from {
     opacity: 0;
-    transform: scale(0.95);
   }
-
   to {
     opacity: 1;
-    transform: scale(1);
   }
 }
 
-/* ===================================
-   RESPONSIVE DESIGN
-=================================== */
+/* =========================================
+   TABLET
+========================================= */
 
 @media (max-width: 1000px) {
-  .awan-project-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+  .awan-hero-number {
+    display: none;
   }
 
-  .awan-project-feature {
-    flex-direction: column;
-    align-items: flex-start;
+  .awan-project-grid {
+    gap: 15px;
+  }
+
+  .awan-project-image {
+    height: 230px;
   }
 
   .awan-project-intro {
@@ -732,80 +702,50 @@
   }
 }
 
-@media (max-width: 650px) {
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 768px) {
   .awan-project-hero {
     min-height: 560px;
-  }
-
-  .awan-project-hero-content {
-    padding: 70px 0;
+    padding: 65px 7% 130px;
   }
 
   .awan-project-hero h1 {
-    font-size: 43px;
-    letter-spacing: -1px;
+    font-size: clamp(37px, 7vw, 49px);
   }
 
-  .awan-project-hero-content > p {
-    font-size: 14px;
-  }
-
-  .awan-hero-bottom {
-    gap: 22px;
-    font-size: 8px;
-    margin-top: 65px;
+  .awan-project-brand {
+    left: 7%;
+    right: auto;
+    bottom: 22px;
+    transform: scale(0.82);
+    transform-origin: left center;
   }
 
   .awan-project-intro {
-    padding: 65px 0;
     grid-template-columns: 1fr;
-    gap: 20px;
+    gap: 25px;
+    padding: 65px 7%;
   }
 
   .awan-project-portfolio {
-    padding: 65px 5%;
+    padding: 65px 7%;
   }
 
   .awan-portfolio-heading {
     align-items: flex-start;
     flex-direction: column;
-  }
-
-  .awan-total-projects {
-    width: 100%;
-  }
-
-  .awan-project-controls {
-    align-items: stretch;
-    flex-direction: column;
-  }
-
-  .awan-search-box {
-    width: 100%;
-  }
-
-  .awan-category-filter {
-    justify-content: space-between;
-  }
-
-  .awan-category-filter select {
-    flex: 1;
-    min-width: 0;
-  }
-
-  .awan-results-line {
-    align-items: flex-start;
-    flex-direction: column;
-    gap: 12px;
+    gap: 13px;
   }
 
   .awan-project-grid {
-    grid-template-columns: 1fr;
-    gap: 22px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .awan-project-image {
-    height: 250px;
+    height: 230px;
   }
 
   .awan-image-view {
@@ -813,274 +753,125 @@
     transform: none;
   }
 
-  .awan-project-details h3 {
-    min-height: auto;
+  .awan-feature-inner {
+    grid-template-columns: 1fr;
+    gap: 35px;
   }
 
   .awan-project-feature {
     padding: 65px 7%;
   }
 
-  .awan-feature-stats {
-    width: 100%;
-    justify-content: space-between;
-    gap: 12px;
-  }
-
-  .awan-feature-stats strong {
-    font-size: 30px;
-  }
-
-  .awan-feature-stats span {
-    font-size: 8px;
-  }
-
-  .awan-project-contact {
-    padding: 65px 0;
+  .awan-contact-inner {
     align-items: flex-start;
     flex-direction: column;
   }
 
-  .awan-project-modal-overlay {
-    padding: 12px;
-  }
-
-  .awan-project-modal {
-    width: 100%;
-    height: 80vh;
-  }
-
-  .awan-modal-close {
-    top: -17px;
-    right: -5px;
+  .awan-project-contact {
+    padding: 60px 7%;
   }
 }
 
-/* =====================================
-   AWAN COMPLETED PROJECT GALLERY
-===================================== */
+/* =========================================
+   SMALL MOBILE
+========================================= */
 
-.awan-project-portfolio {
-  width: 100%;
-  padding: 65px 6%;
-  background: #f4f5f6;
-}
-
-.awan-project-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 28px;
-  max-width: 1400px;
-  margin: auto;
-}
-
-.awan-project-card {
-  overflow: hidden;
-  background: #ffffff;
-  border: 1px solid rgba(0, 0, 0, 0.07);
-  border-radius: 15px;
-  cursor: pointer;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.07);
-  transition: transform 0.35s ease, box-shadow 0.35s ease;
-}
-
-.awan-project-card:hover {
-  transform: translateY(-7px);
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.13);
-}
-
-.awan-project-image {
-  position: relative;
-  width: 100%;
-  height: 280px;
-  overflow: hidden;
-  background: #e9ecef;
-}
-
-.awan-project-image img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.6s ease;
-}
-
-.awan-project-card:hover .awan-project-image img {
-  transform: scale(1.06);
-}
-
-.awan-image-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    to top,
-    rgba(0, 0, 0, 0.35),
-    transparent 45%
-  );
-  pointer-events: none;
-}
-
-.awan-project-number {
-  position: absolute;
-  top: 15px;
-  left: 15px;
-  width: 44px;
-  height: 44px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #fff;
-  background: rgba(25, 30, 35, 0.78);
-  backdrop-filter: blur(8px);
-  border: 1px solid rgba(255, 255, 255, 0.4);
-  border-radius: 9px;
-  font-size: 14px;
-  font-weight: 700;
-}
-
-.awan-image-view {
-  position: absolute;
-  right: 18px;
-  bottom: 18px;
-  display: flex;
-  align-items: center;
-  gap: 9px;
-  color: #fff;
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 1px;
-  opacity: 0;
-  transform: translateY(10px);
-  transition: all 0.3s ease;
-}
-
-.awan-project-card:hover .awan-image-view {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.awan-project-details {
-  padding: 20px 22px;
-  min-height: 120px;
-  display: flex;
-  align-items: center;
-  background: #fff;
-}
-
-.awan-company-quotation {
-  margin: 0;
-  color: #555e66;
-  font-size: 14px;
-  line-height: 1.85;
-  font-style: italic;
-}
-
-/* =====================================
-   FULL IMAGE POPUP
-===================================== */
-
-.awan-project-modal-overlay {
-  position: fixed;
-  inset: 0;
-  z-index: 9999;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 25px;
-  background: rgba(10, 14, 18, 0.92);
-  backdrop-filter: blur(10px);
-}
-
-.awan-project-modal {
-  position: relative;
-  width: 100%;
-  max-width: 1050px;
-  max-height: 90vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.awan-project-modal img {
-  display: block;
-  max-width: 100%;
-  max-height: 85vh;
-  object-fit: contain;
-  border-radius: 10px;
-}
-
-.awan-modal-close {
-  position: absolute;
-  top: -18px;
-  right: -18px;
-  z-index: 2;
-  width: 42px;
-  height: 42px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #fff;
-  background: #252b31;
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  border-radius: 50%;
-  font-size: 18px;
-  cursor: pointer;
-  transition: 0.3s ease;
-}
-
-.awan-modal-close:hover {
-  background: #a9783e;
-  transform: rotate(90deg);
-}
-
-/* =====================================
-   TABLET
-===================================== */
-
-@media (max-width: 900px) {
-  .awan-project-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 22px;
+@media (max-width: 520px) {
+  .awan-project-hero {
+    min-height: 590px;
+    padding: 60px 6% 130px;
   }
 
-  .awan-project-image {
-    height: 250px;
+  .awan-hero-label {
+    align-items: flex-start;
+    font-size: 8px;
+    line-height: 1.8;
+    letter-spacing: 1px;
   }
-}
 
-/* =====================================
-   MOBILE
-===================================== */
+  .awan-hero-label span {
+    width: 20px;
+    margin-top: 7px;
+  }
 
-@media (max-width: 600px) {
+  .awan-project-hero h1 {
+    font-size: 36px;
+    letter-spacing: -1px;
+  }
+
+  .awan-project-hero-content > p {
+    font-size: 11px;
+  }
+
+  .awan-hero-bottom {
+    gap: 12px;
+  }
+
+  .awan-hero-bottom span {
+    font-size: 7px;
+  }
+
+  .awan-project-brand {
+    left: 6%;
+    bottom: 18px;
+    transform: scale(0.75);
+  }
+
+  .awan-project-intro {
+    padding: 55px 6%;
+  }
+
+  .awan-intro-left h2 {
+    font-size: 32px;
+  }
+
   .awan-project-portfolio {
-    padding: 40px 5%;
+    padding: 55px 6%;
+  }
+
+  .awan-portfolio-heading h2 {
+    font-size: 29px;
   }
 
   .awan-project-grid {
     grid-template-columns: 1fr;
-    gap: 22px;
+    gap: 18px;
   }
 
   .awan-project-image {
-    height: 260px;
+    height: 270px;
   }
 
   .awan-project-details {
-    padding: 17px;
-    min-height: auto;
+    min-height: 75px;
   }
 
-  .awan-company-quotation {
-    font-size: 13px;
+  .awan-project-feature {
+    padding: 55px 6%;
+  }
+
+  .awan-feature-content h2 {
+    font-size: 32px;
+  }
+
+  .awan-project-contact {
+    padding: 50px 6%;
+  }
+
+  .awan-contact-inner h2 {
+    font-size: 30px;
   }
 
   .awan-project-modal-overlay {
     padding: 15px;
   }
 
+  .awan-project-modal > img {
+    max-height: 72vh;
+  }
+
   .awan-modal-close {
-    top: -15px;
-    right: -5px;
+    top: -48px;
+    right: 0;
   }
 }

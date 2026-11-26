@@ -1,3 +1,4 @@
+
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './Element.css';
@@ -17,19 +18,25 @@ const Element = () => {
   return (
     <main className="portal-page">
 
-      {/* HERO */}
+      {/* PREMIUM HERO */}
       <section className="portal-hero">
-        <div className="portal-container">
+        <div className="portal-hero-overlay"></div>
 
-          <span className="portal-label">
-            AWAN GENERAL ALUMINIUM
-          </span>
+        <div className="portal-container portal-hero-content">
 
-          <h1>Client Portal</h1>
+          <div className="portal-eyebrow">
+            <span></span>
+            AWAN GENERAL CONTRACTING & ALUMINIUM WORKS
+          </div>
+
+          <h1>
+            Your Projects.
+            <span>Our Commitment.</span>
+          </h1>
 
           <p>
-            Everything you need to explore our projects and connect
-            with our professional team.
+            Welcome to the AWAN Client Portal. Explore our work,
+            discover project updates and connect with our professional team.
           </p>
 
           <button
@@ -39,34 +46,65 @@ const Element = () => {
             EXPLORE PROJECTS <FaArrowRight />
           </button>
 
+          <div className="portal-hero-highlights">
+            <span><FaCheckCircle /> QUALITY SERVICE</span>
+            <span><FaCheckCircle /> PROJECT EXCELLENCE</span>
+            <span><FaCheckCircle /> CLIENT SUPPORT</span>
+          </div>
+        </div>
+
+        {/* AWAN LOGO */}
+        <div className="portal-brand-logo">
+          <div className="portal-logo-symbol">
+            <span>A</span>
+          </div>
+
+          <div className="portal-logo-details">
+            <h2>AWAN<span>.</span></h2>
+            <p>GENERAL CONTRACTING</p>
+            <small>ALUMINIUM & ARCHITECTURAL WORKS</small>
+          </div>
+        </div>
+
+        <div className="portal-hero-side">
+          <span>03 / CLIENT PORTAL</span>
+          <i></i>
+          <span>BUILT WITH PRECISION</span>
         </div>
       </section>
 
 
       {/* PORTAL NAVIGATION */}
       <section className="portal-navigation">
-        <div className="portal-container">
+        <div className="portal-container portal-nav-inner">
 
-          <button
-            className={activeTab === 'overview' ? 'active' : ''}
-            onClick={() => setActiveTab('overview')}
-          >
-            Overview
-          </button>
+          <div className="portal-nav-brand">
+            <span>AWAN</span>
+            <small>CLIENT PORTAL</small>
+          </div>
 
-          <button
-            className={activeTab === 'projects' ? 'active' : ''}
-            onClick={() => setActiveTab('projects')}
-          >
-            My Projects
-          </button>
+          <div className="portal-nav-tabs">
+            <button
+              className={activeTab === 'overview' ? 'active' : ''}
+              onClick={() => setActiveTab('overview')}
+            >
+              Overview
+            </button>
 
-          <button
-            className={activeTab === 'support' ? 'active' : ''}
-            onClick={() => setActiveTab('support')}
-          >
-            Contact Us
-          </button>
+            <button
+              className={activeTab === 'projects' ? 'active' : ''}
+              onClick={() => setActiveTab('projects')}
+            >
+              My Projects
+            </button>
+
+            <button
+              className={activeTab === 'support' ? 'active' : ''}
+              onClick={() => setActiveTab('support')}
+            >
+              Contact Us
+            </button>
+          </div>
 
         </div>
       </section>
@@ -76,18 +114,23 @@ const Element = () => {
       <section className="portal-content">
         <div className="portal-container">
 
-          {/* ================= OVERVIEW ================= */}
+          {/* OVERVIEW */}
           {activeTab === 'overview' && (
             <div className="portal-overview">
 
               <div className="portal-heading">
-                <span>WELCOME TO OUR PORTAL</span>
+                <span className="portal-section-label">
+                  <i></i> WELCOME TO OUR PORTAL
+                </span>
 
-                <h2>Our Work, Made Easy to Explore</h2>
+                <h2>
+                  Our Work, Made Easy
+                  <span> to Explore.</span>
+                </h2>
 
                 <p>
-                  Browse our aluminium and architectural projects, see our
-                  latest work and contact our team whenever you need help.
+                  Browse our aluminium and architectural projects, discover
+                  our latest work and contact our team whenever you need help.
                 </p>
               </div>
 
@@ -96,65 +139,92 @@ const Element = () => {
               <div className="portal-stats">
 
                 <button
-                  className="stat-card clickable-card"
+                  className="stat-card"
                   onClick={() => setActiveTab('projects')}
                 >
-                  <div className="stat-icon">
-                    <FaProjectDiagram />
+                  <div className="stat-card-top">
+                    <div className="stat-icon">
+                      <FaProjectDiagram />
+                    </div>
+                    <span>01</span>
                   </div>
 
                   <strong>20+</strong>
-                  <span>Active Projects</span>
+                  <h3>Active Projects</h3>
+                  <p>Explore projects currently in progress.</p>
 
-                  <small>Explore projects currently in progress</small>
+                  <div className="stat-card-link">
+                    EXPLORE PROJECTS <FaArrowRight />
+                  </div>
                 </button>
 
 
                 <button
-                  className="stat-card clickable-card"
+                  className="stat-card"
                   onClick={() => setActiveTab('projects')}
                 >
-                  <div className="stat-icon">
-                    <FaCheckCircle />
+                  <div className="stat-card-top">
+                    <div className="stat-icon">
+                      <FaCheckCircle />
+                    </div>
+                    <span>02</span>
                   </div>
 
                   <strong>2000+</strong>
-                  <span>Completed Tasks</span>
+                  <h3>Completed Tasks</h3>
+                  <p>Discover our completed work.</p>
 
-                  <small>Discover our completed work</small>
+                  <div className="stat-card-link">
+                    VIEW OUR WORK <FaArrowRight />
+                  </div>
                 </button>
 
 
                 <button
-                  className="stat-card clickable-card"
+                  className="stat-card"
                   onClick={() => setActiveTab('projects')}
                 >
-                  <div className="stat-icon">
-                    <FaClock />
+                  <div className="stat-card-top">
+                    <div className="stat-icon">
+                      <FaClock />
+                    </div>
+                    <span>03</span>
                   </div>
 
                   <strong>5+</strong>
-                  <span>Upcoming Projects</span>
+                  <h3>Upcoming Projects</h3>
+                  <p>See projects being prepared next.</p>
 
-                  <small>See what we are preparing next</small>
+                  <div className="stat-card-link">
+                    VIEW UPCOMING <FaArrowRight />
+                  </div>
                 </button>
 
               </div>
 
 
-              {/* SIMPLE CUSTOMER GUIDE */}
+              {/* CUSTOMER GUIDE */}
               <div className="customer-guide">
 
                 <div className="guide-intro">
-                  <span>HOW IT WORKS</span>
-                  <h2>Find What You Are Looking For</h2>
+                  <span className="portal-section-label">
+                    <i></i> HOW IT WORKS
+                  </span>
+
+                  <h2>Find What You Are Looking For.</h2>
+
+                  <p>
+                    Three simple steps to explore our project portfolio.
+                  </p>
                 </div>
 
                 <div className="guide-steps">
 
                   <div className="guide-step">
-                    <span>01</span>
-                    <FaClipboardList />
+                    <span className="guide-number">01</span>
+                    <div className="guide-icon">
+                      <FaClipboardList />
+                    </div>
                     <h3>Choose Projects</h3>
                     <p>
                       Open My Projects to see all available project categories.
@@ -162,34 +232,39 @@ const Element = () => {
                   </div>
 
                   <div className="guide-step">
-                    <span>02</span>
-                    <FaProjectDiagram />
+                    <span className="guide-number">02</span>
+                    <div className="guide-icon">
+                      <FaProjectDiagram />
+                    </div>
                     <h3>Select a Category</h3>
                     <p>
-                      Choose Active, Pending or Completed Projects.
+                      Choose Active, Upcoming or Completed Projects.
                     </p>
                   </div>
 
                   <div className="guide-step">
-                    <span>03</span>
-                    <FaCheckCircle />
+                    <span className="guide-number">03</span>
+                    <div className="guide-icon">
+                      <FaCheckCircle />
+                    </div>
                     <h3>Explore Our Work</h3>
                     <p>
-                      View detailed projects and discover our aluminium solutions.
+                      View project details and discover our aluminium solutions.
                     </p>
                   </div>
 
                 </div>
-
               </div>
 
 
               {/* QUICK ACTIONS */}
               <div className="quick-section">
 
-                <div>
-                  <span>QUICK ACCESS</span>
-                  <h3>Where would you like to go?</h3>
+                <div className="quick-heading">
+                  <span className="portal-section-label">
+                    <i></i> QUICK ACCESS
+                  </span>
+                  <h3>Where Would You Like to Go?</h3>
                 </div>
 
                 <div className="quick-actions">
@@ -199,12 +274,11 @@ const Element = () => {
 
                     <span>
                       <strong>Explore Projects</strong>
-                      <small>View active, pending and completed work</small>
+                      <small>View active, upcoming and completed work</small>
                     </span>
 
                     <FaArrowRight />
                   </button>
-
 
                   <button onClick={() => setActiveTab('support')}>
                     <FaHeadset />
@@ -218,35 +292,35 @@ const Element = () => {
                   </button>
 
                 </div>
-
               </div>
 
             </div>
           )}
 
 
-          {/* ================= MY PROJECTS ================= */}
+          {/* PROJECTS */}
           {activeTab === 'projects' && (
             <div className="portal-section">
 
               <div className="portal-heading project-heading">
+                <span className="portal-section-label">
+                  <i></i> MY PROJECTS
+                </span>
 
-                <span>MY PROJECTS</span>
-
-                <h2>Choose a Project Category</h2>
+                <h2>
+                  Choose a Project
+                  <span> Category.</span>
+                </h2>
 
                 <p>
-                  Select one of the options below to explore our projects.
-                  It is simple — just choose the type of project you want
-                  to see.
+                  Select one of the categories below to explore our projects
+                  and discover the work delivered by our team.
                 </p>
-
               </div>
 
 
               <div className="project-options">
 
-                {/* ACTIVE */}
                 <Link
                   to="/blog"
                   state={{ projectStatus: 'active' }}
@@ -256,7 +330,6 @@ const Element = () => {
                     <div className="option-icon">
                       <FaProjectDiagram />
                     </div>
-
                     <span>01</span>
                   </div>
 
@@ -275,7 +348,6 @@ const Element = () => {
                 </Link>
 
 
-                {/* PENDING */}
                 <Link
                   to="/blog"
                   state={{ projectStatus: 'pending' }}
@@ -285,7 +357,6 @@ const Element = () => {
                     <div className="option-icon">
                       <FaClock />
                     </div>
-
                     <span>02</span>
                   </div>
 
@@ -304,7 +375,6 @@ const Element = () => {
                 </Link>
 
 
-                {/* COMPLETED */}
                 <Link
                   to="/blog"
                   state={{ projectStatus: 'completed' }}
@@ -314,7 +384,6 @@ const Element = () => {
                     <div className="option-icon">
                       <FaCheckCircle />
                     </div>
-
                     <span>03</span>
                   </div>
 
@@ -335,11 +404,12 @@ const Element = () => {
               </div>
 
 
-              {/* HELP SECTION */}
+              {/* PROJECT HELP */}
               <div className="projects-help">
-
-                <div>
-                  <FaHeadset />
+                <div className="projects-help-left">
+                  <div className="projects-help-icon">
+                    <FaHeadset />
+                  </div>
 
                   <div>
                     <span>NEED ASSISTANCE?</span>
@@ -350,14 +420,13 @@ const Element = () => {
                 <Link to="/contact">
                   CONTACT OUR TEAM <FaArrowRight />
                 </Link>
-
               </div>
 
             </div>
           )}
 
 
-          {/* ================= CONTACT ================= */}
+          {/* CONTACT SUPPORT */}
           {activeTab === 'support' && (
             <div className="support-box">
 
@@ -365,9 +434,14 @@ const Element = () => {
                 <FaHeadset />
               </div>
 
-              <span>WE ARE HERE TO HELP</span>
+              <span className="portal-section-label">
+                <i></i> WE ARE HERE TO HELP
+              </span>
 
-              <h2>How Can We Help You?</h2>
+              <h2>
+                How Can We
+                <span> Help You?</span>
+              </h2>
 
               <p>
                 Have a question about our aluminium solutions or projects?
@@ -382,6 +456,14 @@ const Element = () => {
           )}
 
         </div>
+      </section>
+
+
+      {/* BOTTOM BRAND STRIP */}
+      <section className="portal-bottom-brand">
+        <span>AWAN.</span>
+        <p>GENERAL CONTRACTING & ALUMINIUM WORKS</p>
+        <small>BUILT WITH PRECISION. DELIVERED WITH CONFIDENCE.</small>
       </section>
 
     </main>

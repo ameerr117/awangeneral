@@ -1,7 +1,15 @@
 
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { FaWhatsapp } from 'react-icons/fa';
+
+import {
+  FaWhatsapp,
+  FaArrowRight,
+  FaArrowUpRightFromSquare,
+  FaChevronLeft,
+  FaChevronRight
+} from 'react-icons/fa6';
+
 import './Hero1.css';
 
 import image1 from '../../assets/alu006.jpg';
@@ -9,194 +17,291 @@ import image2 from '../../assets/alu008.jpg';
 import image3 from '../../assets/alu007.jpg';
 import image4 from '../../assets/alu09.jpg';
 
+const slides = [
+  {
+    image: image1,
+    title: 'ALUMINIUM DOORS',
+    number: '01',
+    link: '/door'
+  },
+  {
+    image: image2,
+    title: 'ALUMINIUM WINDOWS',
+    number: '02',
+    link: '/window'
+  },
+  {
+    image: image3,
+    title: 'ALUMINIUM CLADDING',
+    number: '03',
+    link: '/cladding'
+  },
+  {
+    image: image4,
+    title: 'ALUMINIUM TENTS',
+    number: '04',
+    link: '/tents'
+  },
+  {
+    image: image2,
+    title: 'ARCHITECTURAL GLASS',
+    number: '05',
+    link: '/glass'
+  },
+  {
+    image: image3,
+    title: 'CURTAIN WALL SYSTEMS',
+    number: '06',
+    link: '/check'
+  },
+  {
+    image: image1,
+    title: 'GLASS PARTITION SYSTEMS',
+    number: '07',
+    link: '/gallery'
+  },
+  {
+    image: image4,
+    title: 'WROUGHT IRON GATE',
+    number: '08',
+    link: '/wrought-iron'
+  },
+  {
+    image: image3,
+    title: 'CAR PARKINGS & SHADES',
+    number: '09',
+    link: '/car-parking'
+  },
+  {
+    image: image2,
+    title: 'PAINTS & GYPSUM WORKS',
+    number: '10',
+    link: '/timer'
+  }
+];
+
 const Hero1 = () => {
-  const images = [image1, image2, image3, image4];
-
   const [current, setCurrent] = useState(0);
-  const [isPaused, setIsPaused] = useState(false);
 
-  // WhatsApp number with country code
   const phoneNumber = '971562700627';
 
-  // AUTOMATIC SLIDER
   useEffect(() => {
-    if (isPaused) return;
-
     const slider = setInterval(() => {
-      setCurrent((prev) => (prev + 1) % images.length);
+      setCurrent((prev) => (prev + 1) % slides.length);
     }, 5000);
 
     return () => clearInterval(slider);
-  }, [images.length, isPaused]);
+  }, []);
 
   const nextSlide = () => {
-    setCurrent((prev) => (prev + 1) % images.length);
+    setCurrent((prev) => (prev + 1) % slides.length);
   };
 
   const previousSlide = () => {
-    setCurrent((prev) =>
-      prev === 0 ? images.length - 1 : prev - 1
-    );
+    setCurrent((prev) => (prev - 1 + slides.length) % slides.length);
   };
 
   return (
-    <section
-      className="awan-hero"
-      onMouseEnter={() => setIsPaused(true)}
-      onMouseLeave={() => setIsPaused(false)}
-      onFocus={() => setIsPaused(true)}
-      onBlur={(e) => {
-        if (!e.currentTarget.contains(e.relatedTarget)) {
-          setIsPaused(false);
-        }
-      }}
-    >
+    <section className="awan-hero">
 
-      {/* BACKGROUND IMAGES */}
+      {/* BACKGROUND IMAGE SLIDER */}
       <div className="awan-hero-images">
-        {images.map((image, index) => (
+        {slides.map((slide, index) => (
           <div
-            key={index}
+            key={slide.number}
             className={`awan-hero-image ${
               current === index ? 'show' : ''
             }`}
-            style={{ backgroundImage: `url(${image})` }}
+            style={{
+              backgroundImage: `url(${slide.image})`
+            }}
           />
         ))}
       </div>
 
-      {/* DARK IMAGE OVERLAY */}
+      {/* BACKGROUND EFFECTS */}
       <div className="awan-hero-shade"></div>
+      <div className="awan-hero-grid"></div>
+      <div className="awan-hero-glow"></div>
 
       {/* MAIN CONTENT */}
-      <div className="awan-hero-inner">
+      <div className="awan-hero-container">
 
-        <div className="awan-hero-left">
+        <div className="awan-hero-content" key={current}>
 
-          <div className="awan-hero-eyebrow">
-            <span></span>
-            AWAN GENERAL CONTRACTING & ALUMINIUM WORKS
+          <div className="hero-kicker">
+            <span className="hero-kicker-line"></span>
+            <span>AWAN GENERAL CONTRACTING</span>
+            <span className="hero-kicker-dot"></span>
+            <span>ALUMINIUM WORKS</span>
           </div>
 
-          <h1>
-            SHAPING
-            <br />
-            <span>MODERN</span>
-            <br />
-            ARCHITECTURE.
-          </h1>
+          <div className="hero-heading-wrap">
 
-          <div className="awan-hero-description">
-            <div className="awan-description-line"></div>
+            <span className="hero-small-label">
+              DESIGNED FOR MODERN SPACES
+            </span>
 
-            <p>
-              Precision-engineered aluminium and glass solutions
-              for contemporary architecture. We combine technical
-              expertise, quality materials and refined workmanship
-              to bring architectural visions to life.
-            </p>
+            <h1>
+              {slides[current].title}
+              <span className="hero-heading-period">.</span>
+            </h1>
+
           </div>
 
-          <div className="awan-hero-actions">
+          <p className="hero-description">
+            Discover premium aluminium, architectural glass and
+            interior finishing solutions, crafted with precision,
+            modern design, and exceptional attention to detail.
+            We transform architectural ideas into beautiful spaces.
+          </p>
 
-            <Link to="/blog" className="awan-primary-button">
-              EXPLORE OUR PROJECTS
-              <span>↗</span>
+          {/* BUTTONS */}
+          <div className="awan-hero-buttons">
+
+            <Link
+              to={slides[current].link}
+              className="hero-btn hero-btn-primary"
+            >
+              <span>EXPLORE SERVICE</span>
+              <FaArrowUpRightFromSquare />
             </Link>
 
-            <Link to="/contact" className="awan-secondary-button">
-              GET IN TOUCH
-              <span>→</span>
+            <Link to="/contact" className="hero-btn hero-btn-outline">
+              <span>CONTACT US</span>
+              <FaArrowRight />
             </Link>
+
+          </div>
+
+          {/* TRUST DETAILS */}
+          <div className="hero-trust-row">
+
+            <div className="hero-trust-item">
+              <span className="hero-trust-icon">01</span>
+              <div>
+                <strong>PREMIUM QUALITY</strong>
+                <small>Carefully selected materials</small>
+              </div>
+            </div>
+
+            <span className="hero-trust-divider"></span>
+
+            <div className="hero-trust-item">
+              <span className="hero-trust-icon">02</span>
+              <div>
+                <strong>MODERN DESIGN</strong>
+                <small>Elegant architectural solutions</small>
+              </div>
+            </div>
 
           </div>
 
         </div>
 
-        {/* RIGHT SIDE INFORMATION */}
-        <div className="awan-hero-right">
+        {/* RIGHT SIDE SPECIALITY CARD */}
+        <div className="hero-side-card">
 
-          <div className="awan-hero-image-caption">
-            <span className="caption-index">
-              0{current + 1}
+          <div className="hero-card-top">
+            <span>OUR SPECIALITY</span>
+
+            <span className="hero-card-status">
+              <i></i> PREMIUM
             </span>
-
-            <span className="caption-divider"></span>
-
-            <span>ARCHITECTURAL SOLUTIONS</span>
           </div>
+
+          <div className="hero-card-number">
+            {slides[current].number}
+            <span> / 10</span>
+          </div>
+
+          <div className="hero-card-line"></div>
+
+          <h3>{slides[current].title}</h3>
+
+          <p>
+            Precision, durability and timeless architectural elegance
+            in every detail.
+          </p>
+
+          <Link
+            to={slides[current].link}
+            className="hero-card-link"
+          >
+            EXPLORE THIS SERVICE
+            <FaArrowUpRightFromSquare />
+          </Link>
 
         </div>
 
       </div>
 
-      {/* BOTTOM BAR */}
-      <div className="awan-hero-footer">
+      {/* BOTTOM SLIDER CONTROLS */}
+      <div className="hero-bottom-bar">
 
-        <div className="awan-footer-brand">
-          <span className="footer-brand-mark">A.</span>
-          <span>ENGINEERED FOR EXCELLENCE</span>
-        </div>
-
-        <div className="awan-footer-specialties">
-          <span>ALUMINIUM</span>
-          <i></i>
-          <span>GLASS</span>
-          <i></i>
-          <span>FAÇADE SYSTEMS</span>
-        </div>
-
-        {/* SLIDER CONTROLS */}
-        <div className="awan-slider-controls">
+        <div className="hero-slider-controls">
 
           <button
             type="button"
+            className="hero-arrow"
             onClick={previousSlide}
             aria-label="Previous slide"
           >
-            ←
+            <FaChevronLeft />
           </button>
 
-          <div className="awan-slider-progress">
-            {images.map((_, index) => (
+          <div className="hero-slide-dots">
+            {slides.map((slide, index) => (
               <button
                 type="button"
-                key={index}
-                className={current === index ? 'selected' : ''}
+                key={slide.number}
+                className={`hero-dot ${
+                  current === index ? 'active' : ''
+                }`}
                 onClick={() => setCurrent(index)}
-                aria-label={`Show slide ${index + 1}`}
-                aria-current={current === index ? 'true' : undefined}
-              />
+                aria-label={`Go to ${slide.title}`}
+              >
+                <span></span>
+              </button>
             ))}
           </div>
 
           <button
             type="button"
+            className="hero-arrow"
             onClick={nextSlide}
             aria-label="Next slide"
           >
-            →
+            <FaChevronRight />
           </button>
 
         </div>
 
+        <div className="hero-bottom-caption">
+          <span>ARCHITECTURAL EXCELLENCE</span>
+          <span className="hero-caption-line"></span>
+          <span>CRAFTED WITH PRECISION</span>
+        </div>
+
+        <div className="hero-slide-counter">
+          <strong>{slides[current].number}</strong>
+          <span> / 10</span>
+        </div>
+
       </div>
 
-      {/* LOCATION */}
-      <div className="awan-hero-vertical">
-        ABU DHABI · UNITED ARAB EMIRATES
-      </div>
-
-      {/* FLOATING WHATSAPP */}
+      {/* WHATSAPP FLOATING BUTTON */}
       <a
         href={`https://wa.me/${phoneNumber}`}
         className="whatsapp-float"
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Chat with us on WhatsApp"
-        title="Chat with us on WhatsApp"
       >
         <FaWhatsapp />
+        <span className="whatsapp-tooltip">
+          Chat With Us
+        </span>
       </a>
 
     </section>

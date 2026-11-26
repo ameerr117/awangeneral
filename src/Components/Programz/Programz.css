@@ -369,4 +369,140 @@
 .products-stories {
   background-color: #000000;
   color: #ffffff;
+}/* =================================
+   AWAN ALUMINIUM - GREEN THEME
+================================= */
+
+.Full {
+  width: 100%;
+  background: #f3f0e8;
+  color: #183b32;
+  overflow: hidden;
+}
+
+/* HERO */
+.products-hero {
+  background:
+    linear-gradient(
+      90deg,
+      rgba(16, 42, 36, 0.94),
+      rgba(16, 42, 36, 0.55)
+    ),
+    url("../../assets/blog3.jpg.webp") center/cover no-repeat;
+}
+
+/* INTRO */
+.products-intro {
+  background: #ffffff;
+  color: #183b32;
+}
+
+.products-intro-heading h2 {
+  color: #183b32;
+}
+
+.products-intro > p {
+  color: #666f69;
+}
+
+/* PRODUCT SECTION */
+.products-section {
+  background: #f3f0e8;
+}
+
+.products-section-heading h2 {
+  color: #183b32;
+}
+
+.products-section-heading > p {
+  color: #718078;
+}
+
+/* PRODUCT CARDS */
+.product-card {
+  background: #ffffff;
+  border: 1px solid #dedbd1;
+}
+
+.product-card:hover {
+  box-shadow: 0 12px 28px rgba(24, 59, 50, 0.13);
+}
+
+.product-image {
+  background: #e5e5dc;
+}
+
+.product-number {
+  background: #bd9b75;
+  color: #102a24;
+}
+
+.product-content h3 {
+  color: #183b32;
+}
+
+.product-content p {
+  color: #707a73;
+}
+
+.product-category,
+.product-link span {
+  color: #a27d56;
+}
+
+.product-link {
+  color: #183b32;
+  border-top: 1px solid #e3e5dc;
+}
+
+.product-link:hover {
+  color: #bd875b;
+}
+
+/* CONTACT BANNER */
+.products-contact {
+  background: #183b32;
+}
+
+.products-contact h2 {
+  color: #ffffff;
+}
+
+.products-contact p {
+  color: #d0d9d3;
+}
+
+.products-contact-btn {
+  border: 1px solid #bd9b75;
+  color: #bd9b75;
+}
+
+.products-contact-btn:hover {
+  background: #bd9b75;
+  color: #102a24;
+}
+
+/* STORIES */
+.products-stories {
+  background: #ffffff;
+  color: #183b32;
+}
+
+/* LABELS */
+.products-label,
+.products-intro-heading span,
+.products-section-heading span,
+.products-contact span {
+  color: #bd875b;
+}
+
+/* HERO BUTTON */
+.products-hero-btn {
+  background: #bd9b75;
+  color: #102a24;
+}
+
+.products-hero-btn:hover {
+  background: #ffffff;
+  color: #183b32;
 }

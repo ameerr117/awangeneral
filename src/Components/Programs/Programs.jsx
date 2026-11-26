@@ -1,208 +1,101 @@
 
-import { useEffect, useState } from 'react';
-
-import blog1 from "../../assets/alu006.jpg";
-import blog2 from "../../assets/alu007.jpg";
-import blog3 from "../../assets/alu008.jpg";
-import blog4 from "../../assets/alu055.jpg";
-import blog5 from "../../assets/alu09.jpg";
-import blog6 from "../../assets/alu43.jpg";
-import blog7 from "../../assets/alu43.jpg";
-import blog8 from "../../assets/alu007.jpg";
-
-import './Programs.css';
+import { Link } from "react-router-dom";
+import "./Programs.css";
 
 const Programs = () => {
-  const [current, setCurrent] = useState(0);
-
-  const products = [
-    {
-      number: '01',
-      category: 'ALUMINIUM SYSTEMS',
-      title: 'Windows & Doors',
-      image: blog1,
-      description: 'Premium aluminium windows and doors designed for modern residential and commercial architecture.'
-    },
-    {
-      number: '02',
-      category: 'BUILDING ENVELOPE',
-      title: 'Facades & Glazing',
-      image: blog2,
-      description: 'Modern facade and glazing systems combining architectural beauty, durability and performance.'
-    },
-    {
-      number: '03',
-      category: 'FACADE ENGINEERING',
-      title: 'Curtain Wall Systems',
-      image: blog3,
-      description: 'Advanced curtain wall systems delivering elegant building exteriors and reliable performance.'
-    },
-    {
-      number: '04',
-      category: 'INTERIOR SOLUTIONS',
-      title: 'Glass Partitions',
-      image: blog4,
-      description: 'Contemporary glass partitions for offices, commercial spaces and modern interiors.'
-    },
-    {
-      number: '05',
-      category: 'SAFETY & DESIGN',
-      title: 'Glass Railings',
-      image: blog5,
-      description: 'Elegant glass railing systems designed for safety, strength and sophisticated architecture.'
-    },
-    {
-      number: '06',
-      category: 'EXTERIOR FINISHES',
-      title: 'Aluminium Cladding',
-      image: blog6,
-      description: 'High-quality aluminium cladding solutions for attractive and durable building exteriors.'
-    },
-    {
-      number: '07',
-      category: 'ARCHITECTURAL GLASS',
-      title: 'Frameless Glass',
-      image: blog7,
-      description: 'Minimalist frameless glass solutions creating open, bright and elegant spaces.'
-    },
-    {
-      number: '08',
-      category: 'CUSTOM FABRICATION',
-      title: 'Aluminium Works',
-      image: blog8,
-      description: 'Custom aluminium fabrication and installation tailored to individual project requirements.'
-    }
-  ];
-
-  const visibleCards = 3;
-  const maxSlide = Math.ceil(products.length / visibleCards) - 1;
-
-  useEffect(() => {
-    const slider = setInterval(() => {
-      setCurrent((prev) => (prev >= maxSlide ? 0 : prev + 1));
-    }, 5000);
-
-    return () => clearInterval(slider);
-  }, [maxSlide]);
-
-  const nextSlide = () => {
-    setCurrent((prev) => (prev >= maxSlide ? 0 : prev + 1));
-  };
-
-  const previousSlide = () => {
-    setCurrent((prev) => (prev <= 0 ? maxSlide : prev - 1));
-  };
-
-  const visibleProducts = products.slice(
-    current * visibleCards,
-    current * visibleCards + visibleCards
-  );
-
   return (
-    <section className="Blogs-container">
+    <section className="awan-project-banner">
 
-      <div className="showcase-top">
+      {/* Architectural background illustration */}
+      <svg
+        className="awan-building-art awan-building-left"
+        viewBox="0 0 650 400"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        aria-hidden="true"
+      >
+        <g stroke="#00C8EF" strokeWidth="1.2">
+          <path d="M30 400V0L74 30V400" />
+          <path d="M30 0L74 30" />
+          <path d="M30 105L74 82L153 130V400" />
+          <path d="M74 82V30" />
+          <path d="M74 82L153 130V153L74 105" />
+          <path d="M153 400V82L194 59L273 105V400" />
+          <path d="M153 82L194 59L273 105" />
+          <path d="M194 59V105" />
+          <path d="M194 82L273 128V151L194 105" />
+          <path d="M194 151L234 128L313 175V400" />
+          <path d="M234 128V175" />
+          <path d="M234 151L313 198V221L234 175" />
+          <path d="M313 400V175L354 152L433 199V400" />
+          <path d="M313 175L354 152L433 199" />
+          <path d="M354 152V199" />
+          <path d="M354 175L433 222V245L354 199" />
+          <path d="M433 400V128L473 105L553 151V400" />
+          <path d="M433 128L473 105L553 151" />
+          <path d="M473 105V151" />
+          <path d="M473 128L553 175V198L473 151" />
+          <path d="M553 400V221L593 198L633 221V400" />
+          <path d="M553 221L593 198L633 221" />
+          <path d="M593 198V245" />
+          <path d="M553 268L593 245L633 268" />
+          <path d="M553 291L593 268L633 291" />
+          <path d="M114 400V198L153 175L194 198" />
+          <path d="M114 245V198" />
+          <path d="M153 175V221" />
+          <path d="M153 198L194 221V244L153 221" />
+          <path d="M273 400V290L313 267L353 290" />
+          <path d="M273 313V290" />
+          <path d="M313 267V313" />
+          <path d="M313 290L353 313V336L313 313" />
+        </g>
+      </svg>
 
-        <div className="showcase-intro">
-          <span className="section-label">
-            AWAN GENERAL ALUMINIUM & CONSTRUCTION
-          </span>
+      <svg
+        className="awan-building-art awan-building-right"
+        viewBox="0 0 430 220"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        aria-hidden="true"
+      >
+        <g stroke="#00C8EF" strokeWidth="1.2">
+          <path d="M10 220V116L91 70L131 94V220" />
+          <path d="M10 116L91 70V115" />
+          <path d="M91 70V27L131 50V94" />
+          <path d="M131 94L171 116V220" />
+          <path d="M131 116L171 139V162L131 139" />
+          <path d="M210 220V115L290 70L330 94V220" />
+          <path d="M210 115L290 70V116" />
+          <path d="M290 70V27L330 50V94" />
+          <path d="M330 94L370 116V220" />
+          <path d="M330 116L370 139V162L330 139" />
+          <path d="M370 220V145L410 122V220" />
+          <path d="M370 145L410 122" />
+          <path d="M210 150L290 105L330 128" />
+          <path d="M10 150L91 105L131 128" />
+        </g>
+      </svg>
 
+      {/* Main content */}
+      <div className="awan-banner-content">
+
+        <div className="awan-banner-heading">
           <h1>
-            Our Expertise.<br />
-            <span>Eight Categories. One Standard.</span>
+            Get in Touch
+            <br />
+            for Your Next Project
           </h1>
-
-          <p>
-            Explore our range of professional aluminium, glass and
-            architectural solutions, delivered with precision,
-            quality and modern engineering.
-          </p>
         </div>
 
-        <div className="showcase-controls">
-          <button onClick={previousSlide} aria-label="Previous categories">
-            <span>←</span>
-          </button>
+        <div className="awan-banner-actions">
 
-          <button onClick={nextSlide} aria-label="Next categories">
-            <span>→</span>
-          </button>
-        </div>
+          <Link to="/contact" className="awan-quote-button">
+            Get a quote
+          </Link>
 
-      </div>
-
-      <div className="showcase-viewport">
-
-        <div className="products-row">
-
-          {visibleProducts.map((product) => (
-            <article className="post" key={product.number}>
-
-              <div className="product-index">
-                {product.number}
-              </div>
-
-              <div className="post-info">
-
-                <img
-                  src={product.image}
-                  alt={product.title}
-                />
-
-                <div className="image-overlay">
-                  <span>{product.category}</span>
-                </div>
-
-              </div>
-
-              <div className="Blogs-text">
-
-                <div className="card-line"></div>
-
-                <h3>{product.title}</h3>
-
-                <p>{product.description}</p>
-
-                <button className="more">
-                  EXPLORE SOLUTION
-                  <span>→</span>
-                </button>
-
-              </div>
-
-            </article>
-          ))}
-
-        </div>
-
-      </div>
-
-      <div className="showcase-bottom">
-
-        <div className="showcase-brand">
-          <span>AWAN</span>
-          <small>GENERAL CONTRACTING & ALUMINIUM </small>
-        </div>
-
-        <div className="showcase-progress">
-
-          <span>
-            {String(current + 1).padStart(2, '0')}
-          </span>
-
-          <div className="progress-track">
-            <div
-              className="progress-fill"
-              style={{
-                width: `${((current + 1) / (maxSlide + 1)) * 100}%`
-              }}
-            ></div>
-          </div>
-
-          <span>
-            {String(maxSlide + 1).padStart(2, '0')}
-          </span>
+          <Link to="/programz" className="awan-services-button">
+            Our services
+          </Link>
 
         </div>
 
