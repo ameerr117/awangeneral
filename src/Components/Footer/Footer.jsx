@@ -56,24 +56,26 @@ const Footer = () => {
           <div className="footer-social-icons">
 
             <a
-              href="https://www.facebook.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="footer-social"
-              aria-label="Facebook"
-            >
-              <FaFacebookF />
-            </a>
+  href="https://www.facebook.com/agcaw/about/?fb_profile_edit_entry_point=%7B%22click_point%22%3A%22edit_profile_button%22%2C%22feature%22%3A%22profile_header%22%7D&id=100091272055967&sk=about"
+  target="_blank"
+  rel="noopener noreferrer"
+  aria-label="Visit AWAN Facebook"
+  title="AWAN Facebook"
+  className="mobile-social-link"
+>
+  <FaFacebookF />
+</a>
 
-            <a
-              href="https://www.instagram.com/fadibadshah/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="footer-social"
-              aria-label="Instagram"
-            >
-              <FaInstagram />
-            </a>
+           <a
+  href="https://www.instagram.com/awangen.cont.alumi.works/"
+  target="_blank"
+  rel="noopener noreferrer"
+  aria-label="AWAN Instagram"
+  title="AWAN Instagram"
+  className="mobile-social-link"
+>
+  <FaInstagram />
+</a>
 
             <a
               href="https://www.linkedin.com/"

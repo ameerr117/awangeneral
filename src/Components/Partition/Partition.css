@@ -1,524 +1,1009 @@
 
-/* =====================================
-   AWAN PARTITION PAGE
-===================================== */
+/* ==========================================
+   AWAN PREMIUM PARTITION PAGE
+   Forest Green | Warm Ivory | Copper
+========================================== */
 
 .partition-page {
+  --partition-green: #183b32;
+  --partition-deep: #102a24;
+  --partition-cream: #f3f0e8;
+  --partition-paper: #fbfaf6;
+  --partition-copper: #bd875b;
+  --partition-text: #26352f;
+  --partition-muted: #737c74;
+
   width: 100%;
   overflow: hidden;
-  background: #f5f5f2;
-  color: #242a2d;
-  font-family: "Poppins", "Segoe UI", sans-serif;
+  background: var(--partition-paper);
+  color: var(--partition-text);
+  font-family: "DM Sans", "Segoe UI", sans-serif;
 }
 
+.partition-page * {
+  box-sizing: border-box;
+}
+
+.partition-container {
+  width: min(1240px, 90%);
+  margin: 0 auto;
+}
+
+.partition-page h1,
+.partition-page h2,
+.partition-page h3 {
+  font-family: "Playfair Display", Georgia, serif;
+  font-weight: 500;
+}
+
+.partition-page a {
+  text-decoration: none;
+}
+
+/* ==========================================
+   HERO
+========================================== */
+
 .partition-hero {
-  min-height: 540px;
-  padding: 100px 9%;
+  min-height: 690px;
+  position: relative;
   display: flex;
   align-items: center;
-  position: relative;
-  background:
-    linear-gradient(90deg, rgba(20, 26, 28, .96), rgba(20, 26, 28, .72)),
-    url("https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1800&q=85")
-    center/cover no-repeat;
+  background: var(--partition-deep);
   color: #fff;
+  isolation: isolate;
+}
+
+.partition-hero-image {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  background-image: url("https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=2000&q=90");
+  background-size: cover;
+  background-position: center;
+  transform: scale(1.01);
+}
+
+.partition-hero-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(16, 42, 36, 0.96) 0%,
+      rgba(16, 42, 36, 0.88) 42%,
+      rgba(16, 42, 36, 0.35) 100%
+    ),
+    linear-gradient(
+      0deg,
+      rgba(16, 42, 36, 0.55),
+      transparent 50%
+    );
+}
+
+.partition-hero-inner {
+  position: relative;
+  padding-top: 110px;
+  padding-bottom: 95px;
 }
 
 .partition-hero-content {
-  max-width: 750px;
-  position: relative;
-  z-index: 2;
+  max-width: 760px;
 }
 
-.partition-hero-content > span,
-.partition-cta > span {
-  color: #c5a15b;
-  font-size: 12px;
-  letter-spacing: 3px;
+.partition-eyebrow,
+.partition-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--partition-copper);
+  font-size: 11px;
   font-weight: 700;
+  letter-spacing: 2.3px;
+  text-transform: uppercase;
+}
+
+.partition-eyebrow {
+  color: #e1c4a5;
+  margin-bottom: 30px;
+}
+
+.partition-eyebrow span {
+  width: 32px;
+  height: 1px;
+  background: var(--partition-copper);
 }
 
 .partition-hero h1 {
-  font-size: clamp(40px, 6vw, 68px);
-  line-height: 1.15;
-  margin: 25px 0;
-  font-weight: 800;
+  margin: 0;
+  font-size: clamp(54px, 7.2vw, 94px);
+  line-height: 1.04;
+  letter-spacing: -2.5px;
+  color: #fff;
 }
 
-.partition-hero h1 strong {
-  color: #c5a15b;
+.partition-hero h1 em,
+.partition-feature h2 em,
+.partition-cta h2 em {
+  color: #d5ad88;
+  font-weight: 400;
 }
 
-.partition-hero-content p {
-  color: #d3d6d6;
+.partition-hero-content > p {
+  max-width: 570px;
+  margin: 28px 0 34px;
+  color: rgba(255, 255, 255, 0.78);
   font-size: 16px;
   line-height: 1.9;
-  max-width: 600px;
 }
 
-.partition-hero-buttons {
+.partition-hero-actions {
   display: flex;
-  gap: 15px;
   flex-wrap: wrap;
-  margin-top: 35px;
-}
-
-.partition-btn,
-.partition-outline-btn {
-  display: inline-block;
-  padding: 15px 25px;
-  text-decoration: none;
-  font-size: 13px;
-  font-weight: 700;
-  transition: .3s;
+  align-items: center;
+  gap: 28px;
 }
 
 .partition-btn {
-  background: #c5a15b;
-  color: #171b1d;
-}
-
-.partition-outline-btn {
-  border: 1px solid #fff;
-  color: #fff;
-}
-
-.partition-btn:hover,
-.partition-outline-btn:hover {
-  background: #fff;
-  color: #202629;
-}
-
-.partition-hero-label {
-  position: absolute;
-  right: 9%;
-  bottom: 35px;
-  display: flex;
+  min-height: 54px;
+  padding: 0 24px;
+  display: inline-flex;
+  justify-content: center;
   align-items: center;
   gap: 15px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  transition: 0.3s ease;
+}
+
+.partition-btn-copper {
+  background: var(--partition-copper);
   color: #fff;
 }
 
-.partition-hero-label span {
-  color: #c5a15b;
-  font-size: 35px;
-  font-weight: 800;
+.partition-btn-copper:hover {
+  background: #a9744b;
+  transform: translateY(-3px);
 }
 
-.partition-hero-label p {
+.partition-text-link {
+  color: #fff;
+  font-size: 12px;
+  font-weight: 600;
+  display: inline-flex;
+  gap: 14px;
+  align-items: center;
+  transition: 0.3s ease;
+}
+
+.partition-text-link:hover {
+  color: #d5ad88;
+}
+
+.partition-text-link span {
+  color: var(--partition-copper);
+  font-size: 20px;
+}
+
+.partition-hero-bottom {
+  position: absolute;
+  bottom: 30px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid rgba(255, 255, 255, 0.22);
+  padding-top: 17px;
+  color: rgba(255, 255, 255, 0.65);
   font-size: 10px;
   letter-spacing: 2px;
 }
 
-/* INTRO */
+.partition-hero-side-label {
+  position: absolute;
+  right: 25px;
+  top: 50%;
+  writing-mode: vertical-rl;
+  transform: translateY(-50%);
+  font-size: 9px;
+  letter-spacing: 3px;
+  color: rgba(255, 255, 255, 0.65);
+}
+
+/* ==========================================
+   INTRODUCTION
+========================================== */
 
 .partition-intro {
-  padding: 100px 9%;
+  padding: 115px 0;
+  background: var(--partition-cream);
+}
+
+.partition-intro-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 70px;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 100px;
   align-items: center;
-  background: #fff;
 }
 
-.partition-tag {
-  color: #a98745;
-  font-size: 12px;
-  font-weight: 800;
-  letter-spacing: 2px;
+.partition-intro-heading h2,
+.partition-section-heading h2,
+.partition-applications-heading h2 {
+  margin: 23px 0 0;
+  color: var(--partition-green);
+  font-size: clamp(38px, 4.6vw, 58px);
+  line-height: 1.17;
+  letter-spacing: -1px;
 }
 
-.partition-intro h2 {
-  font-size: clamp(29px, 4vw, 43px);
-  line-height: 1.3;
-  margin-top: 20px;
+.partition-intro-heading h2 span,
+.partition-section-heading h2 span,
+.partition-applications-heading h2 span {
+  color: var(--partition-copper);
+  font-style: italic;
 }
 
-.partition-intro h2 span {
-  color: #a98745;
+.partition-intro-description {
+  padding-left: 32px;
+  border-left: 1px solid rgba(189, 135, 91, 0.55);
 }
 
-.partition-intro-right p {
+.partition-intro-lead {
+  color: var(--partition-green) !important;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 21px !important;
+  line-height: 1.65 !important;
+}
+
+.partition-intro-description p {
+  color: var(--partition-muted);
   font-size: 14px;
-  line-height: 2;
-  color: #686e70;
-  margin-bottom: 18px;
+  line-height: 1.9;
+  margin: 0 0 19px;
 }
 
-/* SERVICES */
+.partition-underlined-link {
+  display: inline-flex;
+  gap: 13px;
+  align-items: center;
+  margin-top: 15px;
+  padding-bottom: 9px;
+  color: var(--partition-green);
+  border-bottom: 1px solid var(--partition-copper);
+  font-size: 12px;
+  font-weight: 700;
+  transition: 0.3s ease;
+}
+
+.partition-underlined-link:hover {
+  color: var(--partition-copper);
+  gap: 19px;
+}
+
+/* ==========================================
+   SERVICES
+========================================== */
 
 .partition-services {
-  padding: 100px 9%;
-  background: #f1f2ef;
+  padding: 115px 0 125px;
+  background: var(--partition-paper);
+  scroll-margin-top: 90px;
 }
 
 .partition-section-heading {
-  text-align: center;
-  max-width: 700px;
-  margin: 0 auto 55px;
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 45px;
+  margin-bottom: 55px;
 }
 
 .partition-section-heading h2 {
-  font-size: clamp(30px, 4vw, 43px);
-  margin: 15px 0;
+  margin-top: 20px;
 }
 
-.partition-section-heading p {
-  color: #737a7b;
+.partition-section-heading > p {
+  max-width: 410px;
+  margin: 0 0 8px;
+  color: var(--partition-muted);
   font-size: 14px;
-  line-height: 1.8;
+  line-height: 1.9;
 }
 
 .partition-services-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 28px;
 }
 
 .partition-service-card {
   background: #fff;
-  padding: 32px 25px;
-  min-height: 300px;
-  border-bottom: 3px solid #c5a15b;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, .04);
-  transition: .35s;
+  border: 1px solid #e9e6dc;
+  transition: 0.35s ease;
+  overflow: hidden;
 }
 
 .partition-service-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 15px 35px rgba(0, 0, 0, .1);
+  transform: translateY(-7px);
+  box-shadow: 0 22px 55px rgba(24, 59, 50, 0.11);
 }
 
-.partition-card-number {
-  font-size: 35px;
-  color: #c5a15b;
-  font-weight: 800;
+.partition-service-image {
+  position: relative;
+  height: 290px;
+  overflow: hidden;
+  background: var(--partition-cream);
 }
 
-.partition-card-line {
-  width: 45px;
-  height: 3px;
-  background: #c5a15b;
-  margin: 20px 0;
+.partition-service-image img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  transition: transform 0.65s ease;
 }
 
-.partition-service-card h3 {
-  font-size: 19px;
-  margin-bottom: 15px;
+.partition-service-card:hover .partition-service-image img {
+  transform: scale(1.06);
 }
 
-.partition-service-card p {
-  color: #747b7d;
+.partition-service-number {
+  position: absolute;
+  top: 18px;
+  left: 18px;
+  width: 48px;
+  height: 48px;
+  display: grid;
+  place-items: center;
+  background: var(--partition-copper);
+  color: #fff;
   font-size: 13px;
-  line-height: 1.9;
-  margin-bottom: 20px;
+  font-weight: 700;
 }
 
-.partition-service-card a {
-  color: #a98745;
+.partition-service-content {
+  padding: 32px 34px 35px;
+}
+
+.partition-service-subtitle {
+  color: var(--partition-copper);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.partition-service-content h3 {
+  color: var(--partition-green);
+  font-size: 30px;
+  margin: 13px 0;
+}
+
+.partition-service-content > p {
+  min-height: 80px;
+  color: var(--partition-muted);
+  font-size: 13px;
+  line-height: 1.85;
+  margin: 0 0 22px;
+}
+
+.partition-service-content ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: grid;
+  gap: 12px;
+}
+
+.partition-service-content li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--partition-text);
   font-size: 12px;
-  font-weight: 800;
-  text-decoration: none;
 }
 
-/* APPLICATIONS */
+.partition-service-content li svg {
+  color: var(--partition-copper);
+  font-size: 12px;
+  flex-shrink: 0;
+}
 
-.partition-applications {
-  padding: 100px 9%;
-  background: #202629;
+.partition-card-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 27px;
+  padding-top: 17px;
+  border-top: 1px solid #eae7df;
+  color: var(--partition-green);
+  font-size: 12px;
+  font-weight: 700;
+  transition: 0.3s ease;
+}
+
+.partition-card-link:hover {
+  color: var(--partition-copper);
+}
+
+/* ==========================================
+   FEATURE
+========================================== */
+
+.partition-feature {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background: var(--partition-green);
   color: #fff;
 }
 
-.partition-applications-content {
-  max-width: 950px;
-  margin: auto;
+.partition-feature-image {
+  min-height: 640px;
+  overflow: hidden;
 }
 
-.partition-applications h2 {
-  max-width: 650px;
-  font-size: clamp(30px, 4vw, 45px);
-  margin: 20px 0 40px;
-  line-height: 1.3;
+.partition-feature-image img {
+  width: 100%;
+  height: 100%;
+  min-height: 640px;
+  display: block;
+  object-fit: cover;
+}
+
+.partition-feature-content {
+  padding: 90px clamp(35px, 7vw, 110px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.partition-label-light {
+  color: #d8b28d;
+}
+
+.partition-feature h2 {
+  margin: 25px 0;
+  color: #fff;
+  font-size: clamp(39px, 4.2vw, 58px);
+  line-height: 1.2;
+}
+
+.partition-feature-content > p {
+  max-width: 480px;
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 14px;
+  line-height: 1.95;
+}
+
+.partition-feature-points {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px 20px;
+  margin: 30px 0 35px;
+}
+
+.partition-feature-points div {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #f3f0e8;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.partition-feature-points svg {
+  color: var(--partition-copper);
+  font-size: 17px;
+  flex-shrink: 0;
+}
+
+.partition-btn-light {
+  align-self: flex-start;
+  background: var(--partition-cream);
+  color: var(--partition-green);
+}
+
+.partition-btn-light:hover {
+  background: #fff;
+  transform: translateY(-3px);
+}
+
+/* ==========================================
+   APPLICATIONS
+========================================== */
+
+.partition-applications {
+  padding: 120px 0;
+  background: var(--partition-cream);
+}
+
+.partition-applications-grid {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 100px;
+  align-items: center;
+}
+
+.partition-applications-heading p {
+  max-width: 400px;
+  color: var(--partition-muted);
+  font-size: 14px;
+  line-height: 1.9;
+  margin-top: 24px;
 }
 
 .partition-applications-list {
+  border-top: 1px solid #dcd6c9;
+}
+
+.partition-application-item {
+  min-height: 75px;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 0;
+  grid-template-columns: 45px 1fr 30px;
+  align-items: center;
+  gap: 15px;
+  border-bottom: 1px solid #dcd6c9;
+  transition: 0.3s ease;
 }
 
-.partition-applications-list span {
-  padding: 22px 10px;
-  border-top: 1px solid rgba(255,255,255,.2);
-  color: #d4d7d7;
+.partition-application-item > span {
+  color: var(--partition-copper);
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.partition-application-item h3 {
+  color: var(--partition-green);
+  font-size: 20px;
+  margin: 0;
+  transition: 0.3s ease;
+}
+
+.partition-application-item svg {
+  color: var(--partition-copper);
   font-size: 14px;
+  transition: 0.3s ease;
 }
 
-/* PROCESS */
+.partition-application-item:hover h3 {
+  color: var(--partition-copper);
+}
+
+.partition-application-item:hover svg {
+  transform: translateX(5px);
+}
+
+/* ==========================================
+   PROCESS
+========================================== */
 
 .partition-process {
-  padding: 100px 9%;
-  background: #fff;
+  padding: 115px 0;
+  background: var(--partition-paper);
 }
 
 .partition-process-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 25px;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  border-top: 1px solid #e2ded4;
+  border-bottom: 1px solid #e2ded4;
 }
 
-.partition-process-grid > div {
-  padding: 25px;
-  border-left: 2px solid #c5a15b;
-  background: #f6f6f3;
+.partition-process-card {
+  padding: 32px 25px 35px;
+  border-right: 1px solid #e2ded4;
+  transition: 0.3s ease;
 }
 
-.partition-process-grid span {
-  color: #c5a15b;
-  font-size: 27px;
-  font-weight: 800;
+.partition-process-card:first-child {
+  border-left: 1px solid #e2ded4;
 }
 
-.partition-process-grid h3 {
-  margin: 18px 0 12px;
-  font-size: 17px;
+.partition-process-card:hover {
+  background: var(--partition-cream);
 }
 
-.partition-process-grid p {
+.partition-process-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 35px;
+}
+
+.partition-process-top > span {
+  color: var(--partition-copper);
   font-size: 13px;
-  color: #777;
-  line-height: 1.8;
+  font-weight: 700;
 }
 
-/* CTA */
+.partition-process-top div {
+  width: 43px;
+  height: 43px;
+  display: grid;
+  place-items: center;
+  border: 1px solid #d9c5ae;
+  border-radius: 50%;
+  color: var(--partition-copper);
+  font-size: 16px;
+}
+
+.partition-process-card h3 {
+  color: var(--partition-green);
+  font-size: 23px;
+  margin: 0 0 13px;
+}
+
+.partition-process-card p {
+  color: var(--partition-muted);
+  font-size: 12px;
+  line-height: 1.85;
+  margin: 0;
+}
+
+/* ==========================================
+   CTA
+========================================== */
 
 .partition-cta {
-  padding: 85px 8%;
-  text-align: center;
-  background: #252c2f;
+  position: relative;
+  padding: 100px 0;
+  background:
+    linear-gradient(
+      110deg,
+      rgba(16, 42, 36, 0.98),
+      rgba(24, 59, 50, 0.94)
+    );
   color: #fff;
 }
 
+.partition-cta::after {
+  content: "";
+  position: absolute;
+  right: 8%;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.partition-cta-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 50px;
+  position: relative;
+  z-index: 1;
+}
+
 .partition-cta h2 {
-  font-size: clamp(28px, 4vw, 42px);
-  margin: 18px 0;
+  margin: 22px 0;
+  font-size: clamp(43px, 5vw, 66px);
+  line-height: 1.13;
 }
 
 .partition-cta p {
-  color: #c7cccc;
+  max-width: 570px;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.72);
   font-size: 14px;
-  line-height: 1.8;
-  margin-bottom: 30px;
+  line-height: 1.85;
 }
 
-.partition-cta a {
-  display: inline-block;
-  padding: 15px 30px;
-  background: #c5a15b;
-  color: #202629;
-  text-decoration: none;
-  font-size: 13px;
-  font-weight: 800;
-  transition: .3s;
+.partition-cta-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+  flex-shrink: 0;
 }
 
-.partition-cta a:hover {
-  background: #fff;
+.partition-whatsapp-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 600;
+  transition: 0.3s ease;
 }
 
-/* RESPONSIVE */
+.partition-whatsapp-link svg {
+  color: #d5ad88;
+  font-size: 20px;
+}
+
+.partition-whatsapp-link:hover {
+  color: #d5ad88;
+}
+
+/* ==========================================
+   TABLET
+========================================== */
 
 @media (max-width: 1000px) {
-  .partition-services-grid,
+  .partition-intro-grid,
+  .partition-applications-grid {
+    gap: 50px;
+  }
+
+  .partition-feature-content {
+    padding: 70px 45px;
+  }
+
   .partition-process-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .partition-intro {
-    gap: 35px;
-  }
-}
-
-@media (max-width: 650px) {
-  .partition-hero {
-    min-height: 500px;
-    padding: 75px 6%;
+  .partition-process-card:nth-child(3) {
+    border-left: 1px solid #e2ded4;
   }
 
-  .partition-hero-label {
-    display: none;
+  .partition-process-card:nth-child(-n + 2) {
+    border-bottom: 1px solid #e2ded4;
   }
 
-  .partition-intro {
-    padding: 65px 6%;
-    grid-template-columns: 1fr;
-    gap: 25px;
-  }
-
-  .partition-services,
-  .partition-process,
-  .partition-applications {
-    padding: 65px 6%;
-  }
-
-  .partition-services-grid,
-  .partition-process-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .partition-applications-list {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .partition-hero-buttons {
-    flex-direction: column;
+  .partition-cta-inner {
     align-items: flex-start;
   }
 }
 
-@media (max-width: 380px) {
-  .partition-applications-list {
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media (max-width: 700px) {
+  .partition-container {
+    width: 90%;
+  }
+
+  .partition-hero {
+    min-height: 620px;
+  }
+
+  .partition-hero-image {
+    background-position: 58% center;
+  }
+
+  .partition-hero-overlay {
+    background: linear-gradient(
+      90deg,
+      rgba(16, 42, 36, 0.95),
+      rgba(16, 42, 36, 0.78)
+    );
+  }
+
+  .partition-hero-inner {
+    padding-top: 100px;
+    padding-bottom: 105px;
+  }
+
+  .partition-eyebrow {
+    font-size: 9px;
+    line-height: 1.7;
+    letter-spacing: 1.5px;
+  }
+
+  .partition-hero h1 {
+    font-size: clamp(45px, 12vw, 65px);
+    letter-spacing: -1.5px;
+  }
+
+  .partition-hero-content > p {
+    font-size: 14px;
+    line-height: 1.8;
+    margin: 24px 0 29px;
+  }
+
+  .partition-hero-actions {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 22px;
+  }
+
+  .partition-btn {
+    min-height: 51px;
+    padding: 0 18px;
+    font-size: 11px;
+  }
+
+  .partition-hero-bottom {
+    bottom: 25px;
+    font-size: 8px;
+    letter-spacing: 1.3px;
+  }
+
+  .partition-hero-side-label {
+    display: none;
+  }
+
+  .partition-intro,
+  .partition-services,
+  .partition-applications,
+  .partition-process {
+    padding: 75px 0;
+  }
+
+  .partition-intro-grid,
+  .partition-applications-grid {
     grid-template-columns: 1fr;
+    gap: 35px;
+  }
+
+  .partition-intro-heading h2,
+  .partition-section-heading h2,
+  .partition-applications-heading h2 {
+    font-size: 39px;
+  }
+
+  .partition-intro-description {
+    padding-left: 20px;
+  }
+
+  .partition-intro-lead {
+    font-size: 18px !important;
+  }
+
+  .partition-section-heading {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    margin-bottom: 35px;
+  }
+
+  .partition-section-heading > p {
+    font-size: 13px;
+  }
+
+  .partition-services-grid {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+
+  .partition-service-image {
+    height: 235px;
+  }
+
+  .partition-service-content {
+    padding: 25px 23px 28px;
+  }
+
+  .partition-service-content h3 {
+    font-size: 27px;
+  }
+
+  .partition-service-content > p {
+    min-height: 0;
+  }
+
+  .partition-feature {
+    grid-template-columns: 1fr;
+  }
+
+  .partition-feature-image,
+  .partition-feature-image img {
+    min-height: 300px;
+    height: 300px;
+  }
+
+  .partition-feature-content {
+    padding: 65px 5%;
+  }
+
+  .partition-feature h2 {
+    font-size: 40px;
+  }
+
+  .partition-feature-content > p {
+    font-size: 13px;
+  }
+
+  .partition-feature-points {
+    grid-template-columns: 1fr;
+    gap: 17px;
+  }
+
+  .partition-applications-grid {
+    gap: 30px;
+  }
+
+  .partition-application-item {
+    min-height: 68px;
+    grid-template-columns: 32px 1fr 20px;
+    gap: 10px;
+  }
+
+  .partition-application-item h3 {
+    font-size: 17px;
+  }
+
+  .partition-process-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .partition-process-card,
+  .partition-process-card:first-child,
+  .partition-process-card:nth-child(3) {
+    border-left: 1px solid #e2ded4;
+    border-right: 1px solid #e2ded4;
+    border-bottom: 1px solid #e2ded4;
+    padding: 27px 23px;
+  }
+
+  .partition-process-card:last-child {
+    border-bottom: 0;
+  }
+
+  .partition-process-top {
+    margin-bottom: 23px;
+  }
+
+  .partition-process-card h3 {
+    font-size: 22px;
+  }
+
+  .partition-cta {
+    padding: 75px 0;
+  }
+
+  .partition-cta-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 35px;
+  }
+
+  .partition-cta h2 {
+    font-size: 44px;
+  }
+
+  .partition-cta p {
+    font-size: 13px;
+  }
+
+  .partition-cta-actions {
+    gap: 20px;
   }
 }
 
-/* =========================================
-   AWAN PREMIUM PARTITION PAGE THEME
-========================================= */
+/* ==========================================
+   SMALL MOBILE
+========================================== */
 
-.partition-page {
-  --primary: #202629;
-  --secondary: #30383b;
-  --accent: #c5a15b;
-  --accent-hover: #ad8946;
-  --light: #f4f4f2;
-  --white: #ffffff;
-  --text: #30383b;
-  --muted: #777e80;
+@media (max-width: 380px) {
+  .partition-hero h1 {
+    font-size: 43px;
+  }
 
-  width: 100%;
-  overflow: hidden;
-  background: var(--light);
-  color: var(--text);
-  font-family: 'Poppins', 'Segoe UI', sans-serif;
+  .partition-intro-heading h2,
+  .partition-section-heading h2,
+  .partition-applications-heading h2 {
+    font-size: 34px;
+  }
+
+  .partition-feature h2 {
+    font-size: 35px;
+  }
+
+  .partition-cta h2 {
+    font-size: 39px;
+  }
+
+  .partition-service-content {
+    padding: 23px 18px;
+  }
 }
 
-.partition-page .partition-hero {
-  background-color: var(--primary);
-  color: var(--white);
-}
+/* ==========================================
+   REDUCED MOTION
+========================================== */
 
-.partition-page .partition-hero h1,
-.partition-page .partition-hero h2 {
-  color: var(--white);
-}
-
-.partition-page .partition-hero span,
-.partition-page .partition-hero .highlight {
-  color: var(--accent);
-}
-
-.partition-page .partition-section {
-  background: var(--light);
-  color: var(--text);
-  padding: 85px 8%;
-}
-
-.partition-page .partition-section.dark {
-  background: var(--primary);
-  color: var(--white);
-}
-
-.partition-page h2,
-.partition-page h3 {
-  color: var(--primary);
-}
-
-.partition-page .dark h2,
-.partition-page .dark h3 {
-  color: var(--white);
-}
-
-.partition-page .section-label {
-  color: var(--accent);
-  font-weight: 700;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-}
-
-.partition-page .partition-card {
-  background: var(--white);
-  border: 1px solid #e7e3da;
-  border-radius: 12px;
-  padding: 28px;
-  box-shadow: 0 8px 25px rgba(32, 38, 41, 0.06);
-  transition: 0.3s ease;
-}
-
-.partition-page .partition-card:hover {
-  transform: translateY(-8px);
-  border-color: var(--accent);
-  box-shadow: 0 15px 35px rgba(32, 38, 41, 0.12);
-}
-
-.partition-page .partition-card h3 {
-  color: var(--primary);
-}
-
-.partition-page .partition-card p {
-  color: var(--muted);
-}
-
-.partition-page .partition-icon {
-  color: var(--accent);
-}
-
-.partition-page .partition-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  background: var(--accent);
-  color: var(--primary);
-  padding: 14px 30px;
-  border-radius: 5px;
-  font-weight: 700;
-  text-decoration: none;
-  border: 1px solid var(--accent);
-  transition: 0.3s ease;
-}
-
-.partition-page .partition-btn:hover {
-  background: var(--accent-hover);
-  color: var(--white);
-  border-color: var(--accent-hover);
-}
-
-.partition-page .partition-outline-btn {
-  background: transparent;
-  color: var(--white);
-  border: 1px solid var(--accent);
-}
-
-.partition-page .partition-outline-btn:hover {
-  background: var(--accent);
-  color: var(--primary);
-}
-
-.partition-page .partition-cta {
-  background: var(--primary);
-  color: var(--white);
-}
-
-.partition-page .partition-cta h2 {
-  color: var(--white);
-}
-
-.partition-page .partition-cta p {
-  color: #d2d4d3;
-}
-
-@media (max-width: 768px) {
-  .partition-page .partition-section {
-    padding: 60px 6%;
+@media (prefers-reduced-motion: reduce) {
+  .partition-page *,
+  .partition-page *::before,
+  .partition-page *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
   }
 }

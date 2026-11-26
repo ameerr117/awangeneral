@@ -1,13 +1,25 @@
 
 /* =========================================
-   AWAN - CAR PARKINGS & SHADES
+   AWAN PREMIUM PARKING PAGE
+   Forest Green / Warm Ivory / Copper
 ========================================= */
+
+:root {
+  --parking-green: #183B32;
+  --parking-deep: #102A24;
+  --parking-ivory: #F3F0E8;
+  --parking-copper: #BD875B;
+  --parking-white: #ffffff;
+  --parking-text: #303b36;
+  --parking-muted: #777e79;
+  --parking-border: rgba(24, 59, 50, 0.13);
+}
 
 .parking-page {
   width: 100%;
   overflow: hidden;
-  background: #f5f5f2;
-  color: #252b2e;
+  background: var(--parking-ivory);
+  color: var(--parking-text);
   font-family: "Poppins", "Segoe UI", sans-serif;
 }
 
@@ -15,29 +27,53 @@
   box-sizing: border-box;
 }
 
-/* HERO */
+.parking-container {
+  width: min(1200px, 88%);
+  margin: 0 auto;
+}
+
+.parking-tag {
+  display: inline-block;
+  color: var(--parking-copper);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  line-height: 1.7;
+}
+
+/* =========================================
+   HERO
+========================================= */
 
 .parking-hero {
-  min-height: 570px;
-  padding: 100px 9%;
+  min-height: 690px;
+  position: relative;
   display: flex;
   align-items: center;
-  position: relative;
-  color: #fff;
-  background:
-    url("https://images.unsplash.com/photo-1590674899484-d5640e854abe?auto=format&fit=crop&w=1900&q=85")
-    center/cover no-repeat;
+  padding: 110px 9% 125px;
+  isolation: isolate;
+  background-image: url("https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=2000&q=90");
+  background-size: cover;
+  background-position: center;
+  color: var(--parking-white);
 }
 
 .parking-hero-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    90deg,
-    rgba(19, 25, 27, .96),
-    rgba(19, 25, 27, .76),
-    rgba(19, 25, 27, .25)
-  );
+  z-index: -1;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(16, 42, 36, 0.96) 0%,
+      rgba(16, 42, 36, 0.83) 48%,
+      rgba(16, 42, 36, 0.25) 100%
+    ),
+    linear-gradient(
+      0deg,
+      rgba(16, 42, 36, 0.5),
+      transparent 55%
+    );
 }
 
 .parking-hero-content {
@@ -46,550 +82,750 @@
   z-index: 2;
 }
 
-.parking-eyebrow,
-.parking-cta > span {
-  color: #c5a15b;
+.parking-eyebrow {
+  display: inline-block;
+  color: var(--parking-ivory);
   font-size: 11px;
-  letter-spacing: 3px;
-  font-weight: 800;
+  font-weight: 600;
+  letter-spacing: 2.7px;
+  line-height: 1.8;
+}
+
+.parking-hero-line {
+  width: 65px;
+  height: 2px;
+  margin: 24px 0;
+  background: var(--parking-copper);
 }
 
 .parking-hero h1 {
-  font-size: clamp(42px, 6vw, 72px);
-  font-weight: 800;
-  line-height: 1.13;
-  margin: 25px 0;
+  margin: 0;
+  max-width: 760px;
+  color: var(--parking-white);
+  font-size: clamp(43px, 6.2vw, 78px);
+  font-weight: 600;
+  line-height: 1.08;
+  letter-spacing: -2.5px;
 }
 
 .parking-hero h1 span {
-  color: #c5a15b;
+  display: block;
+  color: var(--parking-copper);
 }
 
 .parking-hero-content > p {
-  color: #d5d8d8;
-  font-size: 15px;
-  line-height: 1.9;
   max-width: 600px;
+  margin: 27px 0 35px;
+  color: rgba(255, 255, 255, 0.84);
+  font-size: 15px;
+  line-height: 1.95;
 }
 
 .parking-hero-buttons,
 .parking-cta-buttons {
   display: flex;
-  gap: 15px;
+  align-items: center;
   flex-wrap: wrap;
-  margin-top: 32px;
+  gap: 14px;
 }
 
 .parking-primary-btn,
 .parking-secondary-btn {
+  min-height: 52px;
   display: inline-flex;
-  justify-content: center;
   align-items: center;
-  padding: 15px 25px;
+  justify-content: center;
+  gap: 22px;
+  padding: 0 24px;
   text-decoration: none;
   font-size: 12px;
-  font-weight: 800;
-  transition: .3s ease;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+  transition: 0.3s ease;
 }
 
 .parking-primary-btn {
-  background: #c5a15b;
-  color: #202629;
-  border: 1px solid #c5a15b;
+  background: var(--parking-copper);
+  color: var(--parking-deep);
+  border: 1px solid var(--parking-copper);
 }
 
 .parking-primary-btn:hover {
-  background: #fff;
-  border-color: #fff;
-  color: #202629;
+  background: var(--parking-ivory);
+  border-color: var(--parking-ivory);
+  color: var(--parking-deep);
+  transform: translateY(-3px);
 }
 
 .parking-secondary-btn {
-  color: #fff;
-  border: 1px solid rgba(255,255,255,.7);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  color: var(--parking-white);
+  background: transparent;
 }
 
 .parking-secondary-btn:hover {
-  background: #fff;
-  color: #202629;
+  background: var(--parking-white);
+  color: var(--parking-deep);
+  border-color: var(--parking-white);
+  transform: translateY(-3px);
 }
 
 .parking-hero-bottom {
   position: absolute;
+  bottom: 0;
+  left: 9%;
   right: 9%;
-  bottom: 35px;
+  min-height: 72px;
   display: flex;
   align-items: center;
-  gap: 14px;
-  z-index: 2;
-}
-
-.parking-hero-bottom span {
-  color: #c5a15b;
-  font-size: 35px;
-  font-weight: 800;
+  justify-content: space-between;
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  color: var(--parking-ivory);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 1.7px;
 }
 
 .parking-hero-bottom p {
-  color: #fff;
-  font-size: 9px;
-  letter-spacing: 2px;
+  margin: 0;
 }
 
-/* INTRODUCTION */
+.parking-hero-side-text {
+  position: absolute;
+  right: 28px;
+  top: 50%;
+  writing-mode: vertical-rl;
+  transform: translateY(-50%);
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 9px;
+  letter-spacing: 3px;
+}
+
+/* =========================================
+   INTRODUCTION
+========================================= */
 
 .parking-intro {
-  padding: 100px 9%;
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 70px;
-  align-items: center;
-  background: #fff;
-}
-
-.parking-tag {
-  display: inline-block;
-  color: #a98745;
-  font-size: 11px;
-  font-weight: 800;
-  letter-spacing: 2.5px;
+  grid-template-columns: 1fr 0.9fr;
+  gap: 90px;
+  align-items: start;
+  padding-top: 110px;
+  padding-bottom: 110px;
 }
 
 .parking-intro-heading h2 {
-  font-size: clamp(30px, 4vw, 44px);
-  line-height: 1.3;
-  margin-top: 20px;
-  font-weight: 800;
+  max-width: 550px;
+  margin: 20px 0 0;
+  color: var(--parking-green);
+  font-size: clamp(34px, 4vw, 49px);
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -1.5px;
 }
 
 .parking-intro-heading h2 span {
-  color: #a98745;
+  display: block;
+  color: var(--parking-copper);
+}
+
+.parking-intro-text {
+  padding-top: 18px;
 }
 
 .parking-intro-text p {
-  color: #707779;
+  margin: 0 0 18px;
+  color: var(--parking-muted);
   font-size: 14px;
-  line-height: 2;
-  margin-bottom: 18px;
+  line-height: 1.95;
 }
 
 .parking-text-link {
-  display: inline-block;
-  margin-top: 8px;
-  color: #a98745;
-  font-size: 13px;
-  font-weight: 800;
+  display: inline-flex;
+  align-items: center;
+  gap: 13px;
+  margin-top: 12px;
+  color: var(--parking-green);
   text-decoration: none;
+  font-size: 12px;
+  font-weight: 700;
+  border-bottom: 1px solid var(--parking-copper);
+  padding-bottom: 8px;
+  transition: 0.3s ease;
 }
 
-/* SECTION HEADINGS */
+.parking-text-link:hover {
+  color: var(--parking-copper);
+  gap: 19px;
+}
+
+/* =========================================
+   SECTION HEADINGS
+========================================= */
 
 .parking-section-heading {
-  max-width: 720px;
+  max-width: 680px;
   margin: 0 auto 55px;
   text-align: center;
 }
 
 .parking-section-heading h2,
 .parking-materials-heading h2 {
-  font-size: clamp(30px, 4vw, 43px);
-  line-height: 1.3;
-  margin: 16px 0;
-  font-weight: 800;
+  margin: 15px 0;
+  color: var(--parking-green);
+  font-size: clamp(31px, 4vw, 46px);
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -1.3px;
 }
 
-.parking-section-heading p,
+.parking-section-heading > p,
 .parking-materials-heading > p {
-  color: #777e80;
-  font-size: 14px;
+  max-width: 610px;
+  margin: 0 auto;
+  color: var(--parking-muted);
+  font-size: 13px;
   line-height: 1.9;
 }
 
-/* SERVICES */
+/* =========================================
+   SERVICES
+========================================= */
 
 .parking-services {
-  padding: 100px 8%;
-  background: #f1f2ef;
+  padding: 105px 0 115px;
+  background: #fff;
 }
 
 .parking-services-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 22px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 25px;
 }
 
 .parking-service-card {
-  padding: 32px 27px;
-  min-height: 340px;
-  background: #fff;
-  border-bottom: 3px solid #c5a15b;
-  box-shadow: 0 7px 28px rgba(0,0,0,.04);
-  transition: .35s ease;
+  min-width: 0;
+  overflow: hidden;
+  background: var(--parking-ivory);
+  border: 1px solid rgba(24, 59, 50, 0.1);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
 }
 
 .parking-service-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 16px 35px rgba(0,0,0,.10);
+  box-shadow: 0 18px 40px rgba(16, 42, 36, 0.13);
 }
 
-.parking-service-top {
+.parking-service-image {
+  height: 230px;
+  position: relative;
+  overflow: hidden;
+  background: var(--parking-green);
+}
+
+.parking-service-image img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.parking-service-card:hover .parking-service-image img {
+  transform: scale(1.07);
+}
+
+.parking-image-number {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  min-width: 58px;
+  padding: 13px 15px;
+  background: var(--parking-copper);
+  color: var(--parking-deep);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.parking-service-content {
+  padding: 25px 25px 27px;
+}
+
+.parking-card-topline {
   display: flex;
   align-items: center;
-  gap: 15px;
-  margin-bottom: 25px;
+  justify-content: space-between;
+  color: var(--parking-copper);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
 }
 
-.parking-service-top > span {
-  color: #c5a15b;
-  font-size: 32px;
-  font-weight: 800;
+.parking-card-mark {
+  font-size: 21px;
 }
 
-.parking-service-line {
-  width: 45px;
-  height: 2px;
-  background: #c5a15b;
+.parking-service-content h3 {
+  min-height: 58px;
+  margin: 17px 0 10px;
+  color: var(--parking-green);
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.4;
 }
 
-.parking-service-card h3 {
-  font-size: 19px;
-  line-height: 1.5;
-  margin-bottom: 13px;
+.parking-service-content > p {
+  min-height: 95px;
+  margin: 0;
+  color: var(--parking-muted);
+  font-size: 12px;
+  line-height: 1.85;
 }
 
-.parking-service-card > p {
-  color: #737b7d;
-  font-size: 13px;
-  line-height: 1.8;
-  min-height: 90px;
-}
-
-.parking-service-card ul {
+.parking-service-content ul {
+  display: grid;
+  gap: 10px;
+  margin: 20px 0 22px;
+  padding: 18px 0 0;
+  border-top: 1px solid var(--parking-border);
   list-style: none;
-  padding: 0;
-  margin: 18px 0;
 }
 
-.parking-service-card li {
-  position: relative;
-  padding-left: 18px;
-  margin: 9px 0;
-  color: #50595b;
-  font-size: 12px;
+.parking-service-content li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--parking-text);
+  font-size: 11px;
 }
 
-.parking-service-card li::before {
-  content: "✓";
-  position: absolute;
-  left: 0;
-  color: #b18d4b;
+.parking-service-content li span {
+  color: var(--parking-copper);
   font-weight: 800;
 }
 
-.parking-service-card > a {
-  display: inline-block;
-  margin-top: 8px;
-  color: #a98745;
-  font-size: 12px;
-  font-weight: 800;
+.parking-card-link {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 15px;
+  border-top: 1px solid var(--parking-border);
+  color: var(--parking-green);
+  font-size: 11px;
+  font-weight: 700;
   text-decoration: none;
+  transition: 0.3s ease;
 }
 
-/* MATERIALS */
+.parking-card-link:hover {
+  color: var(--parking-copper);
+}
+
+/* =========================================
+   MATERIALS
+========================================= */
 
 .parking-materials {
-  padding: 100px 8%;
-  background: #202629;
-  color: #fff;
+  padding: 105px 0;
+  background: var(--parking-ivory);
 }
 
 .parking-materials-heading {
-  max-width: 720px;
+  max-width: 700px;
+  margin: 0 auto 50px;
   text-align: center;
-  margin: 0 auto 55px;
-}
-
-.parking-materials-heading h2 {
-  color: #fff;
-}
-
-.parking-materials-heading > p {
-  color: #c0c6c7;
 }
 
 .parking-materials-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 18px;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 17px;
 }
 
 .parking-material-card {
-  padding: 30px 23px;
-  background: #2b3336;
-  border: 1px solid rgba(197,161,91,.25);
-  transition: .3s ease;
+  min-height: 245px;
+  padding: 27px 23px;
+  background: #fff;
+  border: 1px solid var(--parking-border);
+  transition: 0.3s ease;
 }
 
 .parking-material-card:hover {
-  transform: translateY(-7px);
-  border-color: #c5a15b;
+  border-color: var(--parking-copper);
+  transform: translateY(-5px);
+  box-shadow: 0 12px 28px rgba(16, 42, 36, 0.08);
 }
 
-.parking-material-card > span {
-  color: #c5a15b;
-  font-size: 30px;
-  font-weight: 800;
+.parking-material-number {
+  color: var(--parking-copper);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.parking-material-divider {
+  width: 42px;
+  height: 2px;
+  margin: 20px 0;
+  background: var(--parking-copper);
 }
 
 .parking-material-card h3 {
-  margin: 22px 0 13px;
-  font-size: 18px;
+  margin: 0 0 13px;
+  color: var(--parking-green);
+  font-size: 17px;
+  font-weight: 600;
 }
 
 .parking-material-card p {
-  color: #c2c8c9;
-  font-size: 12px;
+  margin: 0;
+  color: var(--parking-muted);
+  font-size: 11px;
   line-height: 1.9;
 }
 
-/* BENEFITS */
+/* =========================================
+   BENEFITS / DARK FEATURE SECTION
+========================================= */
 
 .parking-benefits {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  min-height: 600px;
-  background: #fff;
-}
-
-.parking-benefits-content {
-  padding: 85px 10%;
-}
-
-.parking-benefits-content h2 {
-  font-size: clamp(30px, 4vw, 43px);
-  line-height: 1.3;
-  margin: 20px 0;
-}
-
-.parking-benefits-content h2 span {
-  color: #a98745;
-}
-
-.parking-benefits-content > p {
-  color: #737b7d;
-  font-size: 14px;
-  line-height: 1.9;
-}
-
-.parking-benefits-list {
-  margin-top: 30px;
-}
-
-.parking-benefits-list > div {
-  display: flex;
-  align-items: center;
-  gap: 17px;
-  padding: 14px 0;
-  border-bottom: 1px solid #e8e8e5;
-}
-
-.parking-benefits-list span {
-  color: #c5a15b;
-  font-size: 19px;
-  font-weight: 800;
-}
-
-.parking-benefits-list p {
-  color: #50595b;
-  font-size: 13px;
-  line-height: 1.6;
+  min-height: 680px;
+  background: var(--parking-deep);
 }
 
 .parking-benefits-image {
-  min-height: 550px;
+  min-height: 680px;
   position: relative;
-  background:
-    linear-gradient(0deg, rgba(15,20,22,.72), transparent 55%),
-    url("https://images.unsplash.com/photo-1506521781263-d8422e82f27a?auto=format&fit=crop&w=1200&q=85")
-    center/cover no-repeat;
+  background-image:
+    linear-gradient(
+      0deg,
+      rgba(16, 42, 36, 0.7),
+      rgba(16, 42, 36, 0.05)
+    ),
+    url("https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=1200&q=85");
+  background-size: cover;
+  background-position: center;
 }
 
 .parking-image-caption {
   position: absolute;
   bottom: 40px;
-  left: 40px;
-  color: #fff;
+  left: 45px;
+  color: var(--parking-white);
 }
 
 .parking-image-caption span {
-  display: block;
-  color: #c5a15b;
-  font-size: 34px;
-  font-weight: 900;
-  letter-spacing: 4px;
+  color: var(--parking-copper);
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: 5px;
 }
 
 .parking-image-caption p {
-  font-size: 10px;
+  margin: 7px 0 0;
+  font-size: 9px;
   letter-spacing: 2px;
-  margin-top: 8px;
 }
 
-/* APPLICATIONS */
-
-.parking-applications {
-  padding: 100px 8%;
-  background: #f1f2ef;
+.parking-benefits-content {
+  align-self: center;
+  max-width: 650px;
+  padding: 90px 12%;
 }
 
-.parking-applications-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1px;
-  background: #deded8;
-  border: 1px solid #deded8;
+.parking-benefits-content .parking-tag {
+  color: var(--parking-copper);
 }
 
-.parking-application-item {
-  min-height: 100px;
-  padding: 22px;
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  position: relative;
-  background: #fff;
-  transition: .3s;
+.parking-benefits-content h2 {
+  margin: 18px 0;
+  color: var(--parking-white);
+  font-size: clamp(34px, 4vw, 48px);
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -1.4px;
 }
 
-.parking-application-item:hover {
-  background: #252c2f;
-  color: #fff;
+.parking-benefits-content h2 span {
+  display: block;
+  color: var(--parking-copper);
 }
 
-.parking-application-item > span:first-child {
-  color: #b18d4b;
-  font-size: 20px;
-  font-weight: 800;
-}
-
-.parking-application-item h3 {
-  font-size: 13px;
-  font-weight: 700;
-}
-
-.parking-application-arrow {
-  margin-left: auto;
-  color: #b18d4b;
-  font-size: 18px;
-}
-
-/* PROCESS */
-
-.parking-process {
-  padding: 100px 8%;
-  background: #fff;
-}
-
-.parking-process-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
-}
-
-.parking-process-grid article {
-  padding: 28px 23px;
-  background: #f5f5f2;
-  border-left: 3px solid #c5a15b;
-}
-
-.parking-process-grid article > span {
-  color: #c5a15b;
-  font-size: 30px;
-  font-weight: 800;
-}
-
-.parking-process-grid h3 {
-  font-size: 17px;
-  margin: 20px 0 12px;
-}
-
-.parking-process-grid p {
-  color: #737b7d;
+.parking-benefits-intro {
+  margin: 0 0 25px;
+  color: rgba(255, 255, 255, 0.7);
   font-size: 12px;
   line-height: 1.9;
 }
 
-/* QUALITY */
+.parking-benefits-list {
+  display: grid;
+}
+
+.parking-benefits-list > div {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 14px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.13);
+}
+
+.parking-benefits-list > div > span {
+  color: var(--parking-copper);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.parking-benefits-list p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.86);
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+.parking-benefits-link {
+  display: inline-flex;
+  gap: 15px;
+  margin-top: 30px;
+  padding-bottom: 9px;
+  border-bottom: 1px solid var(--parking-copper);
+  color: var(--parking-copper);
+  font-size: 11px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.parking-benefits-link:hover {
+  color: var(--parking-white);
+  gap: 22px;
+}
+
+/* =========================================
+   APPLICATIONS
+========================================= */
+
+.parking-applications {
+  padding: 105px 0;
+  background: #fff;
+}
+
+.parking-applications-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  border-top: 1px solid var(--parking-border);
+  border-left: 1px solid var(--parking-border);
+}
+
+.parking-application-item {
+  min-height: 115px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 25px;
+  border-right: 1px solid var(--parking-border);
+  border-bottom: 1px solid var(--parking-border);
+  transition: 0.3s ease;
+}
+
+.parking-application-item:hover {
+  background: var(--parking-ivory);
+}
+
+.parking-application-number {
+  color: var(--parking-copper);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.parking-application-item h3 {
+  margin: 0;
+  padding-right: 20px;
+  color: var(--parking-green);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.parking-application-arrow {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  color: var(--parking-copper);
+  font-size: 17px;
+}
+
+/* =========================================
+   PROCESS
+========================================= */
+
+.parking-process {
+  padding: 105px 0 115px;
+  background: var(--parking-ivory);
+}
+
+.parking-process-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 25px;
+}
+
+.parking-process-grid article {
+  padding: 25px 20px;
+  background: #fff;
+  border: 1px solid var(--parking-border);
+  transition: 0.3s ease;
+}
+
+.parking-process-grid article:hover {
+  transform: translateY(-6px);
+  border-color: var(--parking-copper);
+}
+
+.parking-process-number {
+  color: var(--parking-copper);
+  font-size: 27px;
+  font-weight: 600;
+}
+
+.parking-process-line {
+  width: 45px;
+  height: 2px;
+  margin: 18px 0 22px;
+  background: var(--parking-copper);
+}
+
+.parking-process-grid h3 {
+  margin: 0 0 12px;
+  color: var(--parking-green);
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.parking-process-grid p {
+  margin: 0;
+  color: var(--parking-muted);
+  font-size: 11px;
+  line-height: 1.9;
+}
+
+/* =========================================
+   QUALITY & SAFETY
+========================================= */
 
 .parking-quality {
-  padding: 90px 9%;
+  padding: 105px 0;
+  background: #fff;
+}
+
+.parking-quality-layout {
   display: grid;
-  grid-template-columns: .9fr 1.1fr;
-  gap: 70px;
-  background: #202629;
-  color: #fff;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: 85px;
+  align-items: start;
 }
 
-.parking-quality > div:first-child h2 {
-  font-size: clamp(29px, 4vw, 42px);
-  line-height: 1.3;
-  margin: 20px 0;
+.parking-quality-heading h2 {
+  margin: 18px 0;
+  color: var(--parking-green);
+  font-size: clamp(32px, 3.5vw, 43px);
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: -1px;
 }
 
-.parking-quality > div:first-child > p {
-  color: #c2c8c9;
-  font-size: 13px;
+.parking-quality-heading > p {
+  color: var(--parking-muted);
+  font-size: 12px;
   line-height: 1.9;
 }
 
 .parking-quality-points {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 15px;
+  gap: 30px 25px;
 }
 
-.parking-quality-points > div {
-  padding: 22px;
-  background: #2b3336;
-  border-top: 2px solid #c5a15b;
+.parking-quality-points article {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--parking-border);
+}
+
+.parking-quality-points article > span {
+  color: var(--parking-copper);
+  font-size: 12px;
+  font-weight: 700;
 }
 
 .parking-quality-points h3 {
-  color: #c5a15b;
+  margin: 0 0 9px;
+  color: var(--parking-green);
   font-size: 15px;
-  margin-bottom: 12px;
+  font-weight: 600;
 }
 
 .parking-quality-points p {
-  color: #c4c9ca;
-  font-size: 12px;
+  margin: 0;
+  color: var(--parking-muted);
+  font-size: 11px;
   line-height: 1.8;
 }
 
-/* FINAL CTA */
+/* =========================================
+   FINAL CTA
+========================================= */
 
 .parking-cta {
-  padding: 90px 7%;
+  min-height: 440px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 90px 8%;
+  isolation: isolate;
   text-align: center;
-  background:
-    linear-gradient(rgba(23,29,31,.94), rgba(23,29,31,.94)),
-    url("https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1600&q=85")
-    center/cover;
-  color: #fff;
+  color: var(--parking-white);
+  background-image: url("https://images.unsplash.com/photo-1487958449943-2429e8be8625?auto=format&fit=crop&w=2000&q=85");
+  background-size: cover;
+  background-position: center;
 }
 
-.parking-cta h2 {
-  max-width: 750px;
-  margin: 20px auto;
-  font-size: clamp(30px, 4vw, 45px);
-  line-height: 1.3;
+.parking-cta-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: rgba(16, 42, 36, 0.9);
 }
 
-.parking-cta > p {
-  max-width: 650px;
-  margin: 0 auto;
-  color: #c5cbcc;
-  font-size: 14px;
+.parking-cta-content {
+  max-width: 800px;
+}
+
+.parking-cta-content > span {
+  color: var(--parking-copper);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 3px;
+}
+
+.parking-cta-content h2 {
+  margin: 20px 0;
+  color: var(--parking-white);
+  font-size: clamp(34px, 5vw, 55px);
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -1.5px;
+}
+
+.parking-cta-content > p {
+  max-width: 610px;
+  margin: 0 auto 30px;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 13px;
   line-height: 1.9;
 }
 
@@ -597,105 +833,249 @@
   justify-content: center;
 }
 
-/* RESPONSIVE */
+/* =========================================
+   RESPONSIVE: TABLET
+========================================= */
 
 @media (max-width: 1050px) {
+  .parking-intro {
+    gap: 45px;
+  }
+
   .parking-services-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .parking-materials-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .parking-benefits-content {
+    padding: 70px 9%;
   }
 
   .parking-process-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .parking-quality {
-    gap: 35px;
-  }
-}
-
-@media (max-width: 750px) {
-  .parking-intro,
-  .parking-benefits,
-  .parking-quality {
-    grid-template-columns: 1fr;
-  }
-
-  .parking-intro {
-    gap: 30px;
-  }
-
-  .parking-benefits-image {
-    min-height: 380px;
-  }
-
-  .parking-quality-points {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .parking-applications-grid {
-    grid-template-columns: repeat(2, 1fr);
+  .parking-quality-layout {
+    gap: 45px;
   }
 }
 
-@media (max-width: 550px) {
+/* =========================================
+   RESPONSIVE: MOBILE
+========================================= */
+
+@media (max-width: 700px) {
+  .parking-container {
+    width: 90%;
+  }
+
   .parking-hero {
-    min-height: 500px;
-    padding: 75px 6%;
+    min-height: 650px;
+    padding: 100px 6% 110px;
+    background-position: 58% center;
+  }
+
+  .parking-hero-overlay {
+    background: rgba(16, 42, 36, 0.84);
+  }
+
+  .parking-eyebrow {
+    max-width: 290px;
+    font-size: 9px;
+    letter-spacing: 1.5px;
+  }
+
+  .parking-hero-line {
+    margin: 20px 0;
   }
 
   .parking-hero h1 {
-    font-size: 42px;
+    font-size: clamp(39px, 11vw, 56px);
+    letter-spacing: -1.5px;
   }
 
-  .parking-hero-bottom {
-    display: none;
+  .parking-hero-content > p {
+    font-size: 12px;
+    line-height: 1.9;
   }
 
   .parking-hero-buttons {
+    align-items: stretch;
     flex-direction: column;
-    align-items: flex-start;
   }
 
-  .parking-intro,
-  .parking-services,
-  .parking-materials,
-  .parking-applications,
-  .parking-process,
-  .parking-quality {
-    padding: 65px 6%;
+  .parking-primary-btn,
+  .parking-secondary-btn {
+    width: 100%;
+    min-height: 50px;
   }
 
-  .parking-services-grid,
-  .parking-materials-grid,
-  .parking-process-grid,
-  .parking-applications-grid,
-  .parking-quality-points {
+  .parking-hero-bottom {
+    left: 6%;
+    right: 6%;
+    min-height: 65px;
+    gap: 12px;
+    font-size: 8px;
+    letter-spacing: 1px;
+  }
+
+  .parking-hero-bottom p {
+    max-width: 150px;
+    text-align: right;
+  }
+
+  .parking-hero-side-text {
+    display: none;
+  }
+
+  .parking-intro {
     grid-template-columns: 1fr;
+    gap: 25px;
+    padding-top: 75px;
+    padding-bottom: 75px;
   }
 
-  .parking-service-card {
+  .parking-intro-heading h2 {
+    font-size: 35px;
+  }
+
+  .parking-intro-text {
+    padding-top: 0;
+  }
+
+  .parking-section-heading {
+    margin-bottom: 35px;
+  }
+
+  .parking-section-heading h2,
+  .parking-materials-heading h2 {
+    font-size: 32px;
+  }
+
+  .parking-section-heading > p,
+  .parking-materials-heading > p {
+    font-size: 12px;
+  }
+
+  .parking-services {
+    padding: 75px 0;
+  }
+
+  .parking-services-grid {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+
+  .parking-service-image {
+    height: 220px;
+  }
+
+  .parking-service-content {
+    padding: 22px;
+  }
+
+  .parking-service-content h3 {
+    min-height: auto;
+    font-size: 19px;
+  }
+
+  .parking-service-content > p {
     min-height: auto;
   }
 
-  .parking-service-card > p {
-    min-height: 0;
+  .parking-materials {
+    padding: 75px 0;
+  }
+
+  .parking-materials-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .parking-material-card {
+    min-height: auto;
+    padding: 24px;
+  }
+
+  .parking-benefits {
+    grid-template-columns: 1fr;
+  }
+
+  .parking-benefits-image {
+    min-height: 330px;
+  }
+
+  .parking-image-caption {
+    left: 25px;
+    bottom: 25px;
   }
 
   .parking-benefits-content {
     padding: 65px 6%;
   }
 
-  .parking-image-caption {
-    left: 22px;
-    bottom: 25px;
+  .parking-benefits-content h2 {
+    font-size: 35px;
+  }
+
+  .parking-applications {
+    padding: 75px 0;
+  }
+
+  .parking-applications-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .parking-application-item {
+    min-height: 80px;
+    padding: 20px;
+  }
+
+  .parking-process {
+    padding: 75px 0;
+  }
+
+  .parking-process-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .parking-process-grid article {
+    padding: 23px;
+  }
+
+  .parking-quality {
+    padding: 75px 0;
+  }
+
+  .parking-quality-layout {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .parking-quality-heading h2 {
+    font-size: 34px;
+  }
+
+  .parking-quality-points {
+    grid-template-columns: 1fr;
+    gap: 22px;
   }
 
   .parking-cta {
-    padding: 70px 6%;
+    min-height: 460px;
+    padding: 75px 6%;
+  }
+
+  .parking-cta-content h2 {
+    font-size: 35px;
+  }
+
+  .parking-cta-content > p {
+    font-size: 12px;
   }
 
   .parking-cta-buttons {
@@ -705,142 +1085,40 @@
 }
 
 /* =========================================
-   AWAN PREMIUM PARKING PAGE THEME
+   SMALL MOBILE
 ========================================= */
 
-.parking-page {
-  --primary: #202629;
-  --secondary: #30383b;
-  --accent: #c5a15b;
-  --accent-hover: #ad8946;
-  --light: #f4f4f2;
-  --white: #ffffff;
-  --text: #30383b;
-  --muted: #777e80;
+@media (max-width: 380px) {
+  .parking-hero h1 {
+    font-size: 36px;
+  }
 
-  width: 100%;
-  overflow: hidden;
-  background: var(--light);
-  color: var(--text);
-  font-family: 'Poppins', 'Segoe UI', sans-serif;
+  .parking-intro-heading h2,
+  .parking-benefits-content h2,
+  .parking-quality-heading h2,
+  .parking-cta-content h2 {
+    font-size: 30px;
+  }
+
+  .parking-application-item h3 {
+    font-size: 12px;
+  }
+
+  .parking-hero-bottom {
+    font-size: 7px;
+  }
 }
 
-.parking-page .parking-hero {
-  background-color: var(--primary);
-  color: var(--white);
-}
+/* =========================================
+   ACCESSIBILITY
+========================================= */
 
-.parking-page .parking-hero h1,
-.parking-page .parking-hero h2 {
-  color: var(--white);
-}
-
-.parking-page .parking-hero span,
-.parking-page .parking-hero .highlight {
-  color: var(--accent);
-}
-
-.parking-page .parking-section {
-  background: var(--light);
-  color: var(--text);
-  padding: 85px 8%;
-}
-
-.parking-page .parking-section.dark {
-  background: var(--primary);
-  color: var(--white);
-}
-
-.parking-page h2,
-.parking-page h3 {
-  color: var(--primary);
-}
-
-.parking-page .dark h2,
-.parking-page .dark h3 {
-  color: var(--white);
-}
-
-.parking-page .section-label {
-  color: var(--accent);
-  font-weight: 700;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-}
-
-.parking-page .parking-card {
-  background: var(--white);
-  border: 1px solid #e7e3da;
-  border-radius: 12px;
-  padding: 28px;
-  box-shadow: 0 8px 25px rgba(32, 38, 41, 0.06);
-  transition: 0.3s ease;
-}
-
-.parking-page .parking-card:hover {
-  transform: translateY(-8px);
-  border-color: var(--accent);
-  box-shadow: 0 15px 35px rgba(32, 38, 41, 0.12);
-}
-
-.parking-page .parking-card h3 {
-  color: var(--primary);
-}
-
-.parking-page .parking-card p {
-  color: var(--muted);
-}
-
-.parking-page .parking-icon {
-  color: var(--accent);
-}
-
-.parking-page .parking-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  background: var(--accent);
-  color: var(--primary);
-  padding: 14px 30px;
-  border-radius: 5px;
-  font-weight: 700;
-  text-decoration: none;
-  border: 1px solid var(--accent);
-  transition: 0.3s ease;
-}
-
-.parking-page .parking-btn:hover {
-  background: var(--accent-hover);
-  color: var(--white);
-  border-color: var(--accent-hover);
-}
-
-.parking-page .parking-outline-btn {
-  background: transparent;
-  color: var(--white);
-  border: 1px solid var(--accent);
-}
-
-.parking-page .parking-outline-btn:hover {
-  background: var(--accent);
-  color: var(--primary);
-}
-
-.parking-page .parking-cta {
-  background: var(--primary);
-  color: var(--white);
-}
-
-.parking-page .parking-cta h2 {
-  color: var(--white);
-}
-
-.parking-page .parking-cta p {
-  color: #d2d4d3;
-}
-
-@media (max-width: 768px) {
-  .parking-page .parking-section {
-    padding: 60px 6%;
+@media (prefers-reduced-motion: reduce) {
+  .parking-page *,
+  .parking-page *::before,
+  .parking-page *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
   }
 }

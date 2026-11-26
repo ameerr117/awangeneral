@@ -23,8 +23,11 @@ import {
   FaShieldAlt,
   FaCar,
   FaPaintRoller,
-  FaWhatsapp
+  FaWhatsapp,
+  FaPhoneAlt
 } from 'react-icons/fa';
+
+import { SiGmail } from 'react-icons/si';
 
 const NavBar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -36,6 +39,42 @@ const NavBar = () => {
   const navigate = useNavigate();
 
   // =========================================
+  // OFFICIAL AWAN CONTACT INFORMATION
+  // =========================================
+
+  const infoEmail = 'info@awangcaw.com';
+  const salesEmail = 'sale@awangcaw.com';
+
+  const phoneNumber = '+971558816618';
+
+  const whatsappLink = 'https://wa.me/971558816618';
+
+  // Gmail compose links
+  const infoGmailLink =
+    'https://mail.google.com/mail/?view=cm&fs=1' +
+    `&to=${encodeURIComponent(infoEmail)}` +
+    '&su=' +
+    encodeURIComponent('General Enquiry - AWAN General Contracting') +
+    '&body=' +
+    encodeURIComponent(
+      'Hello AWAN Team,\n\n' +
+      'I would like to know more about your services.\n\n' +
+      'Thank you.'
+    );
+
+  const salesGmailLink =
+    'https://mail.google.com/mail/?view=cm&fs=1' +
+    `&to=${encodeURIComponent(salesEmail)}` +
+    '&su=' +
+    encodeURIComponent('Sales Enquiry - AWAN General Contracting') +
+    '&body=' +
+    encodeURIComponent(
+      'Hello AWAN Sales Team,\n\n' +
+      'I would like to request information and a quotation for your services.\n\n' +
+      'Thank you.'
+    );
+
+  // =========================================
   // ALL WEBSITE PAGES — COMMON SEARCH DATABASE
   // =========================================
 
@@ -45,7 +84,6 @@ const NavBar = () => {
       keywords: ['home', 'main', 'awan', 'homepage'],
       path: '/'
     },
-    
     {
       name: 'About Us',
       keywords: ['about', 'about us', 'company', 'construction', 'company profile'],
@@ -175,12 +213,13 @@ const NavBar = () => {
   // =========================================
 
   useEffect(() => {
-    document.body.style.overflow = isSearchOpen ? 'hidden' : '';
+    document.body.style.overflow =
+      isSearchOpen || isMobileOpen ? 'hidden' : '';
 
     return () => {
       document.body.style.overflow = '';
     };
-  }, [isSearchOpen]);
+  }, [isSearchOpen, isMobileOpen]);
 
   // =========================================
   // CLOSE ALL MENUS
@@ -296,23 +335,6 @@ const NavBar = () => {
       goToPage(page.path);
     }
   };
-
-  // =========================================
-  // GMAIL LINK
-  // =========================================
-
-  const gmailLink =
-    'https://mail.google.com/mail/?view=cm&fs=1' +
-    '&to=awangcaw@gmail.com' +
-    '&su=' +
-    encodeURIComponent('New Website Enquiry - AWAN General Contracting') +
-    '&body=' +
-    encodeURIComponent(
-      'Hello AWAN Team,\n\n' +
-      'I visited your website and would like to know more about your services.\n\n' +
-      'Please contact me with further information.\n\n' +
-      'Thank you.'
-    );
 
   // =========================================
   // ALL ALUMINIUM SOLUTIONS
@@ -454,7 +476,7 @@ const NavBar = () => {
               <span className="call">CALL US</span>
 
               <a
-                href="tel:+971558816618"
+                href={`tel:${phoneNumber}`}
                 className="phone-number"
               >
                 +971 558816618
@@ -494,14 +516,24 @@ const NavBar = () => {
                 <FaLinkedinIn />
               </a>
 
+              {/* GENERAL EMAIL */}
               <a
-                href={gmailLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Email AWAN"
+                href={`mailto:${infoEmail}`}
+                aria-label={`Email ${infoEmail}`}
+                title={`General Information: ${infoEmail}`}
                 className="social-link email"
               >
                 <FaEnvelope />
+              </a>
+
+              {/* SALES EMAIL */}
+              <a
+                href={`mailto:${salesEmail}`}
+                aria-label={`Email ${salesEmail}`}
+                title={`Sales and Quotations: ${salesEmail}`}
+                className="social-link email"
+              >
+                <SiGmail />
               </a>
 
             </div>
@@ -699,6 +731,39 @@ const NavBar = () => {
 
           </ul>
 
+          {/* MOBILE CONTACT INFORMATION */}
+          {isMobileOpen && (
+            <div className="mobile-contact-section">
+
+              <h3>CONTACT OUR TEAM</h3>
+
+              <a href={`tel:${phoneNumber}`}>
+                <FaPhoneAlt />
+                <span>+971 558816618</span>
+              </a>
+
+              <a href={`mailto:${infoEmail}`}>
+                <FaEnvelope />
+                <span>{infoEmail}</span>
+              </a>
+
+              <a href={`mailto:${salesEmail}`}>
+                <FaEnvelope />
+                <span>{salesEmail}</span>
+              </a>
+
+              <a
+                href={whatsappLink}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FaWhatsapp />
+                <span>WhatsApp Us</span>
+              </a>
+
+            </div>
+          )}
+
           {/* MOBILE MENU SOCIAL MEDIA */}
           {isMobileOpen && (
             <div className="mobile-social-section">
@@ -707,25 +772,27 @@ const NavBar = () => {
 
               <div className="mobile-social-icons">
 
-                <a
-                  href="https://www.facebook.com/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Facebook"
-                  className="mobile-social-link"
-                >
-                  <FaFacebookF />
-                </a>
+               <a
+  href="https://www.facebook.com/agcaw/about/?fb_profile_edit_entry_point=%7B%22click_point%22%3A%22edit_profile_button%22%2C%22feature%22%3A%22profile_header%22%7D&id=100091272055967&sk=about"
+  target="_blank"
+  rel="noopener noreferrer"
+  aria-label="Visit AWAN Facebook"
+  title="AWAN Facebook"
+  className="mobile-social-link"
+>
+  <FaFacebookF />
+</a>
 
-                <a
-                  href="https://www.instagram.com/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Instagram"
-                  className="mobile-social-link"
-                >
-                  <FaInstagram />
-                </a>
+            <a
+  href="https://www.instagram.com/awangen.cont.alumi.works/"
+  target="_blank"
+  rel="noopener noreferrer"
+  aria-label="AWAN Instagram"
+  title="AWAN Instagram"
+  className="mobile-social-link"
+>
+  <FaInstagram />
+</a>
 
                 <a
                   href="https://www.linkedin.com/"
@@ -738,7 +805,7 @@ const NavBar = () => {
                 </a>
 
                 <a
-                  href="https://wa.me/971558816618"
+                  href={whatsappLink}
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="WhatsApp"
@@ -748,13 +815,23 @@ const NavBar = () => {
                 </a>
 
                 <a
-                  href={gmailLink}
+                  href={infoGmailLink}
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label="Email AWAN"
+                  aria-label="General Gmail"
                   className="mobile-social-link"
                 >
                   <FaEnvelope />
+                </a>
+
+                <a
+                  href={salesGmailLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Sales Gmail"
+                  className="mobile-social-link"
+                >
+                  <SiGmail />
                 </a>
 
               </div>

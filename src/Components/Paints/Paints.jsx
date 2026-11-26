@@ -1,126 +1,185 @@
 
-import { Link } from 'react-router-dom';
-import gypsumImage from '../../assets/paints and gypsum works.jpeg';
-import './Paints.css';
+import { Link } from "react-router-dom";
+import gypsumImage from "../../assets/paints and gypsum works.jpeg";
+import "./Paints.css";
 
 const Paints = () => {
-  const whatsappNumber = '923XXXXXXXXX';
+  const whatsappNumber = "971562700627";
 
   const whatsappLink = (message) =>
     `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
 
   const services = [
     {
-      number: '01',
-      title: 'Interior Painting',
-      subtitle: 'Beautiful Interior Spaces',
+      number: "01",
+      title: "Interior Painting",
+      subtitle: "Beautiful Interior Spaces",
       description:
-        'Professional interior painting for homes, offices and commercial spaces. We focus on smooth preparation, neat finishing and suitable paint selection.',
+        "Professional interior painting for homes, offices and commercial spaces. We focus on smooth preparation, neat finishing and suitable paint selection.",
       features: [
-        'Wall and ceiling painting',
-        'Surface preparation and priming',
-        'Smooth and even paint application',
-        'Colour selection assistance',
+        "Wall and ceiling painting",
+        "Surface preparation and priming",
+        "Smooth and even paint application",
+        "Colour selection assistance",
       ],
-      className: 'paint-interior',
+      className: "paint-interior",
     },
     {
-      number: '02',
-      title: 'Exterior Painting',
-      subtitle: 'Protection and Appearance',
+      number: "02",
+      title: "Exterior Painting",
+      subtitle: "Protection and Appearance",
       description:
-        'Exterior painting solutions designed to improve building appearance and provide a suitable protective finish for external surfaces.',
+        "Exterior painting solutions designed to improve building appearance and provide a suitable protective finish for external surfaces.",
       features: [
-        'Exterior wall painting',
-        'Weather-suitable paint selection',
-        'Surface cleaning and preparation',
-        'Professional finishing',
+        "Exterior wall painting",
+        "Weather-suitable paint selection",
+        "Surface cleaning and preparation",
+        "Professional finishing",
       ],
-      className: 'paint-exterior',
+      className: "paint-exterior",
     },
     {
-      number: '03',
-      title: 'Decorative Finishes',
-      subtitle: 'Distinctive Wall Designs',
+      number: "03",
+      title: "Decorative Finishes",
+      subtitle: "Distinctive Wall Designs",
       description:
-        'Decorative wall treatments that add texture, character and visual interest to residential and commercial interiors.',
+        "Decorative wall treatments that add texture, character and visual interest to residential and commercial interiors.",
       features: [
-        'Feature wall finishes',
-        'Textured paint effects',
-        'Decorative colour combinations',
-        'Custom design options',
+        "Feature wall finishes",
+        "Textured paint effects",
+        "Decorative colour combinations",
+        "Custom design options",
       ],
-      className: 'paint-decorative',
+      className: "paint-decorative",
     },
     {
-      number: '04',
-      title: 'Gypsum Ceilings',
-      subtitle: 'Modern Ceiling Designs',
+      number: "04",
+      title: "Gypsum Ceilings",
+      subtitle: "Modern Ceiling Designs",
       description:
-        'Gypsum ceiling installations for contemporary interiors, including simple, layered and custom-designed ceiling arrangements.',
+        "Gypsum ceiling installations for contemporary interiors, including simple, layered and custom-designed ceiling arrangements.",
       features: [
-        'False ceiling installation',
-        'Custom ceiling designs',
-        'Recessed lighting provisions',
-        'Joint finishing and smooth surfaces',
+        "False ceiling installation",
+        "Custom ceiling designs",
+        "Recessed lighting provisions",
+        "Joint finishing and smooth surfaces",
       ],
-      className: 'paint-ceiling',
+      className: "paint-ceiling",
     },
     {
-      number: '05',
-      title: 'Gypsum Partitions',
-      subtitle: 'Flexible Interior Divisions',
+      number: "05",
+      title: "Gypsum Partitions",
+      subtitle: "Flexible Interior Divisions",
       description:
-        'Gypsum board partition systems that help organise interior layouts and create functional spaces in offices, homes and commercial buildings.',
+        "Gypsum board partition systems that help organise interior layouts and create functional spaces in offices, homes and commercial buildings.",
       features: [
-        'Office and room partitions',
-        'Metal framing systems',
-        'Board fixing and joint treatment',
-        'Custom partition layouts',
+        "Office and room partitions",
+        "Metal framing systems",
+        "Board fixing and joint treatment",
+        "Custom partition layouts",
       ],
-      className: 'paint-partition',
+      className: "paint-partition",
     },
   ];
 
   const process = [
     {
-      number: '01',
-      title: 'Site Inspection',
+      number: "01",
+      title: "Site Inspection",
       description:
-        'Reviewing the site, surface conditions, dimensions and project requirements.',
+        "Reviewing the site, surface conditions, dimensions and project requirements.",
     },
     {
-      number: '02',
-      title: 'Preparation',
+      number: "02",
+      title: "Preparation",
       description:
-        'Preparing surfaces, checking levels and arranging suitable materials.',
+        "Preparing surfaces, checking levels and arranging suitable materials.",
     },
     {
-      number: '03',
-      title: 'Installation & Application',
+      number: "03",
+      title: "Installation & Application",
       description:
-        'Carrying out painting, gypsum installation and finishing work according to the approved scope.',
+        "Carrying out painting, gypsum installation and finishing work according to the approved scope.",
     },
     {
-      number: '04',
-      title: 'Finishing & Inspection',
+      number: "04",
+      title: "Finishing & Inspection",
       description:
-        'Checking completed surfaces, details and workmanship before handover.',
+        "Checking completed surfaces, details and workmanship before handover.",
     },
   ];
 
   const applications = [
-    'Residential Buildings',
-    'Corporate Offices',
-    'Commercial Buildings',
-    'Hotels & Hospitality',
-    'Retail Shops & Showrooms',
-    'Apartments & Villas',
+    "Residential Buildings",
+    "Corporate Offices",
+    "Commercial Buildings",
+    "Hotels & Hospitality",
+    "Retail Shops & Showrooms",
+    "Apartments & Villas",
+  ];
+
+  const qualityPoints = [
+    {
+      number: "01",
+      title: "Surface Preparation",
+      description:
+        "Cleaning, repairing and preparing surfaces before applying paint or installing gypsum boards.",
+    },
+    {
+      number: "02",
+      title: "Suitable Materials",
+      description:
+        "Selecting paint, primers, gypsum boards and framing components according to project conditions.",
+    },
+    {
+      number: "03",
+      title: "Proper Installation",
+      description:
+        "Applying materials and installing systems according to product instructions and project details.",
+    },
+    {
+      number: "04",
+      title: "Final Inspection",
+      description:
+        "Reviewing finished surfaces, joints, edges and visible details before completion.",
+    },
+  ];
+
+  const relatedServices = [
+    {
+      number: "01",
+      title: "Aluminium Windows",
+      link: "/window",
+      action: "EXPLORE WINDOWS",
+    },
+    {
+      number: "02",
+      title: "Aluminium Doors",
+      link: "/door",
+      action: "EXPLORE DOORS",
+    },
+    {
+      number: "03",
+      title: "Glass Solutions",
+      link: "/glass",
+      action: "EXPLORE GLASS",
+    },
+    {
+      number: "04",
+      title: "Aluminium Cladding",
+      link: "/cladding",
+      action: "EXPLORE CLADDING",
+    },
+    {
+      number: "05",
+      title: "Curtain Wall Systems",
+      link: "/Curtain",
+      action: "EXPLORE CURTAIN WALLS",
+    },
   ];
 
   return (
     <main className="awan-paints-page">
-
       {/* HERO */}
       <section className="paints-hero">
         <div className="paints-hero-background"></div>
@@ -128,8 +187,10 @@ const Paints = () => {
 
         <div className="paints-container paints-hero-content">
           <span className="paints-eyebrow">
-            AWAN GENERAL CONTRACTING AND ALUMINIUM WORK LLC
+            AWAN GENERAL CONTRACTING & ALUMINIUM WORKS
           </span>
+
+          <div className="paints-hero-line"></div>
 
           <h1>
             PAINTS &
@@ -144,18 +205,18 @@ const Paints = () => {
 
           <div className="paints-hero-actions">
             <a href="#paints-services" className="paints-btn">
-              EXPLORE OUR SERVICES <span>→</span>
+              EXPLORE OUR SERVICES <span>↗</span>
             </a>
 
             <a
               href={whatsappLink(
-                'Hello, I would like to discuss your Paints and Gypsum Works services.'
+                "Hello, I would like to discuss your Paints and Gypsum Works services."
               )}
               target="_blank"
               rel="noopener noreferrer"
               className="paints-btn paints-btn-outline"
             >
-              REQUEST A QUOTE
+              REQUEST A QUOTE <span>↗</span>
             </a>
           </div>
         </div>
@@ -183,9 +244,9 @@ const Paints = () => {
 
         <div className="paints-intro-description">
           <p>
-            AWAN GENERAL CONTRACTING AND ALUMINIUM WORK LLC
-            provides painting and gypsum solutions for interior
-            and exterior building projects.
+            AWAN GENERAL CONTRACTING & ALUMINIUM WORKS provides
+            painting and gypsum solutions for interior and exterior
+            building projects.
           </p>
 
           <p>
@@ -196,7 +257,7 @@ const Paints = () => {
           </p>
 
           <a href="#paints-process" className="paints-text-link">
-            DISCOVER OUR WORK PROCESS <span>→</span>
+            DISCOVER OUR WORK PROCESS <span>↗</span>
           </a>
         </div>
       </section>
@@ -238,17 +299,14 @@ const Paints = () => {
                 <span>✓</span>
                 <p>Careful surface preparation</p>
               </div>
-
               <div>
                 <span>✓</span>
                 <p>Neat installation and finishing</p>
               </div>
-
               <div>
                 <span>✓</span>
                 <p>Project-specific material selection</p>
               </div>
-
               <div>
                 <span>✓</span>
                 <p>Residential and commercial solutions</p>
@@ -261,7 +319,6 @@ const Paints = () => {
       {/* SERVICES */}
       <section className="paints-services-section" id="paints-services">
         <div className="paints-container">
-
           <div className="paints-section-heading">
             <div>
               <span className="paints-section-label">
@@ -289,7 +346,6 @@ const Paints = () => {
                   <span className="paints-service-number">
                     {service.number}
                   </span>
-
                   <span className="paints-visual-brand">
                     AWAN FINISHING
                   </span>
@@ -301,7 +357,6 @@ const Paints = () => {
                   </span>
 
                   <h3>{service.title}</h3>
-
                   <p>{service.description}</p>
 
                   <ul>
@@ -321,7 +376,7 @@ const Paints = () => {
                     rel="noopener noreferrer"
                     className="paints-service-link"
                   >
-                    ENQUIRE ABOUT THIS SERVICE <span>→</span>
+                    ENQUIRE ABOUT THIS SERVICE <span>↗</span>
                   </a>
                 </div>
               </article>
@@ -333,7 +388,6 @@ const Paints = () => {
       {/* WORK PROCESS */}
       <section className="paints-process-section" id="paints-process">
         <div className="paints-container">
-
           <div className="paints-section-heading">
             <div>
               <span className="paints-section-label">
@@ -355,6 +409,7 @@ const Paints = () => {
             {process.map((step) => (
               <article className="paints-process-card" key={step.number}>
                 <span>{step.number}</span>
+                <div className="paints-process-line"></div>
                 <h3>{step.title}</h3>
                 <p>{step.description}</p>
               </article>
@@ -366,8 +421,7 @@ const Paints = () => {
       {/* MATERIALS AND QUALITY */}
       <section className="paints-quality-section">
         <div className="paints-container paints-quality-grid">
-
-          <div>
+          <div className="paints-quality-intro">
             <span className="paints-section-label">
               MATERIALS & WORKMANSHIP
             </span>
@@ -383,61 +437,29 @@ const Paints = () => {
               intended use. Proper preparation and finishing
               help achieve a consistent result.
             </p>
+
+            <Link to="/contact" className="paints-text-link">
+              DISCUSS YOUR PROJECT <span>↗</span>
+            </Link>
           </div>
 
           <div className="paints-quality-list">
-            <div>
-              <span>01</span>
-              <div>
-                <h3>Surface Preparation</h3>
-                <p>
-                  Cleaning, repairing and preparing surfaces
-                  before applying paint or installing gypsum boards.
-                </p>
-              </div>
-            </div>
-
-            <div>
-              <span>02</span>
-              <div>
-                <h3>Suitable Materials</h3>
-                <p>
-                  Selecting paint, primers, gypsum boards and
-                  framing components according to project conditions.
-                </p>
-              </div>
-            </div>
-
-            <div>
-              <span>03</span>
-              <div>
-                <h3>Proper Installation</h3>
-                <p>
-                  Applying materials and installing systems
-                  according to product instructions and project details.
-                </p>
-              </div>
-            </div>
-
-            <div>
-              <span>04</span>
-              <div>
-                <h3>Final Inspection</h3>
-                <p>
-                  Reviewing finished surfaces, joints, edges
-                  and visible details before completion.
-                </p>
-              </div>
-            </div>
+            {qualityPoints.map((point) => (
+              <article key={point.number}>
+                <span>{point.number}</span>
+                <div>
+                  <h3>{point.title}</h3>
+                  <p>{point.description}</p>
+                </div>
+              </article>
+            ))}
           </div>
-
         </div>
       </section>
 
       {/* PROJECT APPLICATIONS */}
       <section className="paints-applications-section">
         <div className="paints-container">
-
           <div className="paints-section-heading">
             <div>
               <span className="paints-section-label">
@@ -458,7 +480,7 @@ const Paints = () => {
           <div className="paints-applications-grid">
             {applications.map((application, index) => (
               <div className="paints-application-card" key={application}>
-                <span>0{index + 1}</span>
+                <span>{String(index + 1).padStart(2, "0")}</span>
                 <h3>{application}</h3>
                 <strong>↗</strong>
               </div>
@@ -467,12 +489,14 @@ const Paints = () => {
         </div>
       </section>
 
-      {/* CONTACT */}
+      {/* CONTACT CTA */}
       <section className="paints-contact-section">
+        <div className="paints-contact-overlay"></div>
+
         <div className="paints-container paints-contact-content">
           <div>
             <span className="paints-section-label">
-              LETS DISCUSS YOUR PROJECT
+              LET'S DISCUSS YOUR PROJECT
             </span>
 
             <h2>
@@ -481,21 +505,21 @@ const Paints = () => {
             </h2>
 
             <p>
-              Contact AWAN GENERAL CONTRACTING AND ALUMINIUM
-              WORK LLC for interior painting, exterior painting,
-              decorative finishes, gypsum ceilings and gypsum partitions.
+              Contact AWAN GENERAL CONTRACTING & ALUMINIUM WORKS
+              for interior painting, exterior painting, decorative
+              finishes, gypsum ceilings and gypsum partitions.
             </p>
           </div>
 
           <a
             href={whatsappLink(
-              'Hello, I need a quotation for Paints and Gypsum Works.'
+              "Hello, I need a quotation for Paints and Gypsum Works."
             )}
             target="_blank"
             rel="noopener noreferrer"
             className="paints-btn"
           >
-            CONTACT OUR TEAM <span>→</span>
+            CONTACT OUR TEAM <span>↗</span>
           </a>
         </div>
       </section>
@@ -503,10 +527,9 @@ const Paints = () => {
       {/* RELATED SOLUTIONS */}
       <section className="paints-related-section">
         <div className="paints-container">
-
           <div className="paints-related-heading">
             <span className="paints-section-label">
-              AWAN GENERAL CONTRACTING AND ALUMINIUM WORK LLC
+              AWAN GENERAL CONTRACTING & ALUMINIUM WORKS
             </span>
 
             <h2>
@@ -520,39 +543,20 @@ const Paints = () => {
           </div>
 
           <div className="paints-related-grid">
-            <Link to="/window" className="paints-related-card">
-              <span>01</span>
-              <h3>Aluminium Windows</h3>
-              <strong>EXPLORE WINDOWS →</strong>
-            </Link>
-
-            <Link to="/door" className="paints-related-card">
-              <span>02</span>
-              <h3>Aluminium Doors</h3>
-              <strong>EXPLORE DOORS →</strong>
-            </Link>
-
-            <Link to="/glass" className="paints-related-card">
-              <span>03</span>
-              <h3>Glass Solutions</h3>
-              <strong>EXPLORE GLASS →</strong>
-            </Link>
-
-            <Link to="/cladding" className="paints-related-card">
-              <span>04</span>
-              <h3>Aluminium Cladding</h3>
-              <strong>EXPLORE CLADDING →</strong>
-            </Link>
-
-            <Link to="/Curtain" className="paints-related-card">
-              <span>05</span>
-              <h3>Curtain Wall Systems</h3>
-              <strong>EXPLORE CURTAIN WALLS →</strong>
-            </Link>
+            {relatedServices.map((service) => (
+              <Link
+                to={service.link}
+                className="paints-related-card"
+                key={service.number}
+              >
+                <span>{service.number}</span>
+                <h3>{service.title}</h3>
+                <strong>{service.action} ↗</strong>
+              </Link>
+            ))}
           </div>
         </div>
       </section>
-
     </main>
   );
 };
