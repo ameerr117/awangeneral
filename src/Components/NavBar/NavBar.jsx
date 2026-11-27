@@ -67,7 +67,7 @@ const NavBar = () => {
       path: '/'
     },
     {
-      name: 'Machinery & Equipment',
+      name: ' Heavy Equipment ',
       keywords: [
         'machinery',
         'equipment',

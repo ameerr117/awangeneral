@@ -159,7 +159,7 @@ const Contact = () => {
           <h1>Contact Us</h1>
 
           <p>
-            Let's discuss your next project. Our team is ready
+            Lets discuss your next project. Our team is ready
             to assist you with professional aluminium and
             contracting solutions.
           </p>
@@ -188,7 +188,7 @@ const Contact = () => {
 
             <div className="contact-form-heading">
 
-              <span>LET'S TALK</span>
+              <span>LETS TALK</span>
 
               <h2>Send Us Your Enquiry</h2>
 
@@ -512,7 +512,7 @@ const Contact = () => {
 
             <span>CONTACT INFORMATION</span>
 
-            <h2>We're Here To Help</h2>
+            <h2>We are Here To Help</h2>
 
             <p>
               Reach out to our team through your preferred

@@ -449,7 +449,7 @@ const Blog = () => {
             </span>
 
             <h2>
-              Let's Create Something
+              Lets Create Something
               <span>Exceptional.</span>
             </h2>
 
