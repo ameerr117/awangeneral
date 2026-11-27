@@ -27,67 +27,67 @@ const AWAN_SERVICES = [
   {
     number: "01",
     name: "ALUMINIUM WINDOWS",
-    image: "aluminium-windows.jpg",
+    image: "../../assets/window mirror.jpeg",
   },
   {
     number: "02",
     name: "ALUMINIUM DOORS",
-    image: "aluminium-doors.jpg",
+    image: "../../assets/Glass door.jpeg",
   },
   {
     number: "03",
     name: "GLASS WORKS",
-    image: "glass-works.jpg",
+    image: "../../assets/Glass door.jpeg",
   },
   {
     number: "04",
     name: "GLASS CURTAIN WALLS",
-    image: "glass-curtain-walls.jpg",
+    image: "../../assets/cutain wall.jpeg",
   },
   {
     number: "05",
     name: "ALUMINIUM CLADDING",
-    image: "aluminium-cladding.jpg",
+    image: "../../assets/cladding.jpeg",
   },
   {
     number: "06",
     name: "GLASS PARTITIONS",
-    image: "glass-partitions.jpg",
+    image: "../../assets/partition.jpeg",
   },
   {
     number: "07",
     name: "ALUMINIUM KITCHENS",
-    image: "aluminium-kitchens.jpg",
+    image: "../../assets/kitchen.jpeg",
   },
   {
     number: "08",
     name: "PERGOLAS & TENTS",
-    image: "pergolas-tents.jpg",
+    image: "../../assets/tents.jpeg",
   },
   {
     number: "09",
     name: "PARKING SHADES",
-    image: "parking-shades.jpg",
+    image: "../../assets/Car Parking and shade .jpeg",
   },
   {
     number: "10",
     name: "WROUGHT IRON WORKS",
-    image: "wrought-iron-works.jpg",
+    image: "../../assets/Wrought Iron Gate.jpeg",
   },
   {
     number: "11",
     name: "GENERAL CONTRACTING",
-    image: "general-contracting.jpg",
+    image: "../../assets/MAH1.jpeg",
   },
   {
     number: "12",
     name: "CONSTRUCTION WORKS",
-    image: "construction-works.jpg",
+    image: "../../assets/MAH1.jpeg",
   },
   {
     number: "13",
     name: "HEAVY MACHINERY & TRANSPORT SERVICES",
-    image: "heavy-machinery.jpg",
+    image: "../../assets/MAH.jpeg",
   },
 ];
 
