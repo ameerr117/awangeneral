@@ -31,88 +31,24 @@ import {
 import { SiGmail } from 'react-icons/si';
 
 // ==========================================
-// AWAN COMPANY SERVICE IMAGES
-// Images must be uploaded to:
-// public/images/services/
+// AWAN COMPANY SERVICES
 // ==========================================
-
-const IMAGE_BASE_URL = "https://agcaw.com/images/services";
 
 const AWAN_SERVICES = [
-  {
-    number: "01",
-    name: "ALUMINIUM WINDOWS",
-    image: "aluminium-windows.jpg",
-  },
-  {
-    number: "02",
-    name: "ALUMINIUM DOORS",
-    image: "aluminium-doors.jpg",
-  },
-  {
-    number: "03",
-    name: "GLASS WORKS",
-    image: "glass-works.jpg",
-  },
-  {
-    number: "04",
-    name: "GLASS CURTAIN WALLS",
-    image: "curtain-walls.jpg",
-  },
-  {
-    number: "05",
-    name: "ALUMINIUM CLADDING",
-    image: "aluminium-cladding.jpg",
-  },
-  {
-    number: "06",
-    name: "GLASS PARTITIONS",
-    image: "glass-partitions.jpg",
-  },
-  {
-    number: "07",
-    name: "ALUMINIUM KITCHENS",
-    image: "aluminium-kitchens.jpg",
-  },
-  {
-    number: "08",
-    name: "PERGOLAS & TENTS",
-    image: "pergolas-tents.jpg",
-  },
-  {
-    number: "09",
-    name: "PARKING SHADES",
-    image: "parking-shades.jpg",
-  },
-  {
-    number: "10",
-    name: "WROUGHT IRON WORKS",
-    image: "wrought-iron.jpg",
-  },
-  {
-    number: "11",
-    name: "GENERAL CONTRACTING",
-    image: "general-contracting.jpg",
-  },
-  {
-    number: "12",
-    name: "CONSTRUCTION WORKS",
-    image: "construction-works.jpg",
-  },
-  {
-    number: "13",
-    name: "HEAVY EQUIPMENT & TRANSPORT SERVICES",
-    image: "heavy-equipment.jpg",
-  },
+  { number: "01", name: "ALUMINIUM WINDOWS" },
+  { number: "02", name: "ALUMINIUM DOORS" },
+  { number: "03", name: "GLASS WORKS" },
+  { number: "04", name: "GLASS CURTAIN WALLS" },
+  { number: "05", name: "ALUMINIUM CLADDING" },
+  { number: "06", name: "GLASS PARTITIONS" },
+  { number: "07", name: "ALUMINIUM KITCHENS" },
+  { number: "08", name: "PERGOLAS & TENTS" },
+  { number: "09", name: "PARKING SHADES" },
+  { number: "10", name: "WROUGHT IRON WORKS" },
+  { number: "11", name: "GENERAL CONTRACTING" },
+  { number: "12", name: "CONSTRUCTION WORKS" },
+  { number: "13", name: "HEAVY MACHINERY & TRANSPORT SERVICES" }
 ];
-
-// ==========================================
-// WHATSAPP IMAGE URL
-// ==========================================
-
-const getServiceImageUrl = (image) => {
-  return `${IMAGE_BASE_URL}/${encodeURIComponent(image)}`;
-};
 
 // ==========================================
 // WHATSAPP WELCOME MESSAGE
@@ -124,20 +60,9 @@ Thank you for contacting us!
 
 🏢 *OUR COMPANY SERVICES*
 
-${AWAN_SERVICES.map((service) => `
-━━━━━━━━━━━━━━━━━━━━
-
-🔹 *${service.number}. ${service.name}*
-
-📸 *VIEW SERVICE PICTURE:*
-${getServiceImageUrl(service.image)}
-
-🌐 *WEBSITE:*
-https://agcaw.com
-
-`).join("\n")}
-
-━━━━━━━━━━━━━━━━━━━━
+${AWAN_SERVICES.map(
+  (service) => `🔹 ${service.name}`
+).join("\n")}
 
 🌐 *VISIT OUR WEBSITE*
 https://agcaw.com
@@ -145,25 +70,15 @@ https://agcaw.com
 📞 *CALL OUR TEAM*
 +971 558816618
 
-📩 *PROJECT ENQUIRIES*
-
-Please send us your project details,
-requirements or photographs.
-
-Our team will be happy to assist you.
-
-━━━━━━━━━━━━━━━━━━━━
+📩 *FOR PROJECT ENQUIRIES*
+Please send us your project details, requirements or photographs.
 
 *AWAN GENERAL CONTRACTING & ALUMINIUM WORKS*
-
 Professional Architectural Aluminium Solutions.
 
 Thank you for choosing AWAN! 🤝`;
 
-// ==========================================
 // WHATSAPP LINK
-// ==========================================
-
 const whatsappLink = `https://wa.me/971558816618?text=${encodeURIComponent(
   whatsappMessage
 )}`;
@@ -173,7 +88,6 @@ const whatsappLink = `https://wa.me/971558816618?text=${encodeURIComponent(
 // ==========================================
 
 const NavBar = () => {
-
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileOpen, setIsMobileOpen] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
@@ -182,19 +96,13 @@ const NavBar = () => {
 
   const navigate = useNavigate();
 
-  // ==========================================
   // CONTACT INFORMATION
-  // ==========================================
-
   const infoEmail = 'info@awangcaw.com';
   const salesEmail = 'sale@awangcaw.com';
 
   const phoneNumber = '+971558816618';
 
-  // ==========================================
   // GMAIL LINKS
-  // ==========================================
-
   const infoGmailLink =
     'https://mail.google.com/mail/?view=cm&fs=1' +
     `&to=${encodeURIComponent(infoEmail)}` +
@@ -427,19 +335,16 @@ const NavBar = () => {
   // ==========================================
 
   useEffect(() => {
-
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 40);
     };
 
     window.addEventListener('scroll', handleScroll);
-
     handleScroll();
 
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
-
   }, []);
 
   // ==========================================
@@ -447,15 +352,12 @@ const NavBar = () => {
   // ==========================================
 
   useEffect(() => {
-
     const handleEscape = (e) => {
-
       if (e.key === 'Escape') {
         setIsSearchOpen(false);
         setIsMobileOpen(false);
         setOpenDropdown('');
       }
-
     };
 
     window.addEventListener('keydown', handleEscape);
@@ -463,7 +365,6 @@ const NavBar = () => {
     return () => {
       window.removeEventListener('keydown', handleEscape);
     };
-
   }, []);
 
   // ==========================================
@@ -471,14 +372,12 @@ const NavBar = () => {
   // ==========================================
 
   useEffect(() => {
-
     document.body.style.overflow =
       isSearchOpen || isMobileOpen ? 'hidden' : '';
 
     return () => {
       document.body.style.overflow = '';
     };
-
   }, [isSearchOpen, isMobileOpen]);
 
   // ==========================================
@@ -486,56 +385,38 @@ const NavBar = () => {
   // ==========================================
 
   const closeMenus = () => {
-
     setIsMobileOpen(false);
     setOpenDropdown('');
     setIsSearchOpen(false);
     setSearchTerm('');
-
   };
 
-  // ==========================================
   // NAVIGATION HANDLER
-  // ==========================================
-
   const handleNavigation = () => {
-
     closeMenus();
 
     window.scrollTo({
       top: 0,
       behavior: 'smooth'
     });
-
   };
 
-  // ==========================================
   // NAVIGATE TO PAGE
-  // ==========================================
-
   const goToPage = (path) => {
-
     closeMenus();
-
     navigate(path);
 
     window.scrollTo({
       top: 0,
       behavior: 'smooth'
     });
-
   };
 
-  // ==========================================
   // DROPDOWN HANDLER
-  // ==========================================
-
   const toggleDropdown = (name) => {
-
     setOpenDropdown((current) =>
       current === name ? '' : name
     );
-
   };
 
   // ==========================================
@@ -543,7 +424,6 @@ const NavBar = () => {
   // ==========================================
 
   const handleSearch = (e) => {
-
     e.preventDefault();
 
     const query = searchTerm
@@ -555,11 +435,9 @@ const NavBar = () => {
 
     const result = searchPages
       .map((page) => {
-
         let score = 0;
 
         page.keywords.forEach((keyword) => {
-
           const key = keyword.toLowerCase();
 
           if (query === key) {
@@ -573,35 +451,24 @@ const NavBar = () => {
           } else if (query.includes(key)) {
             score = Math.max(score, 50);
           }
-
         });
 
         return { ...page, score };
-
       })
       .filter((page) => page.score > 0)
       .sort((a, b) => b.score - a.score)[0];
 
     if (result) {
-
       goToPage(result.path);
-
     } else {
-
       alert(
         `No results found for "${searchTerm}". Please try another keyword.`
       );
-
     }
-
   };
 
-  // ==========================================
   // POPULAR SEARCH HANDLER
-  // ==========================================
-
   const handlePopularSearch = (item) => {
-
     const page = searchPages.find(
       (page) => page.name.toLowerCase() === item.toLowerCase()
     );
@@ -609,7 +476,6 @@ const NavBar = () => {
     if (page) {
       goToPage(page.path);
     }
-
   };
 
   // ==========================================
@@ -705,35 +571,25 @@ const NavBar = () => {
   // ==========================================
 
   return (
-
     <>
-
       <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
 
         {/* TOP NAVBAR */}
-
         <div className="navbar-top">
 
           {/* LOGO */}
-
           <div className="navbar-left">
-
             <Link to="/" onClick={handleNavigation}>
-
               <img
                 src={logo}
                 alt="AWAN Company Logo"
                 className="logoo"
               />
-
             </Link>
-
           </div>
 
           {/* BRAND NAME */}
-
           <div className="navbar-brand">
-
             <span className="brand-name">
               AWAN GENERAL CONTRACTING
             </span>
@@ -745,11 +601,9 @@ const NavBar = () => {
             <span className="brand-tagline">
               ARCHITECTURAL ALUMINIUM SOLUTIONS
             </span>
-
           </div>
 
           {/* RIGHT INFORMATION */}
-
           <div className="navbar-right">
 
             <Link
@@ -757,24 +611,16 @@ const NavBar = () => {
               onClick={handleNavigation}
               className="account-link"
             >
-
               <FaUserCircle className="account-icon" />
 
               <div className="account-text">
-
                 <span>CLIENT PORTAL</span>
-
                 <strong>MY ACCOUNT</strong>
-
               </div>
-
             </Link>
 
             <div className="contact-info">
-
-              <span className="call">
-                CALL US
-              </span>
+              <span className="call">CALL US</span>
 
               <a
                 href={`tel:${phoneNumber}`}
@@ -782,11 +628,9 @@ const NavBar = () => {
               >
                 +971 558816618
               </a>
-
             </div>
 
             {/* DESKTOP SOCIAL MEDIA */}
-
             <div className="social-icons">
 
               <a
@@ -838,11 +682,9 @@ const NavBar = () => {
               </a>
 
             </div>
-
           </div>
 
           {/* MOBILE HAMBURGER MENU BUTTON */}
-
           <button
             type="button"
             className="mobile-menu-btn"
@@ -850,57 +692,42 @@ const NavBar = () => {
             aria-label="Toggle navigation menu"
             aria-expanded={isMobileOpen}
           >
-
             {isMobileOpen ? <FaTimes /> : <FaBars />}
-
           </button>
 
         </div>
 
         {/* NAVIGATION LINKS */}
-
         <div className={`nav-links ${isMobileOpen ? 'mobile-active' : ''}`}>
 
           <ul>
 
             <li>
-
               <Link to="/" onClick={handleNavigation}>
                 Home
               </Link>
-
             </li>
 
             {/* HEAVY EQUIPMENT */}
-
             <li className="machinery-nav-item">
-
               <Link to="/Machinery" onClick={handleNavigation}>
-
                 <FaTools className="machinery-nav-icon" />
-
                 Heavy Equipment
-
               </Link>
-
             </li>
 
             <li>
-
               <Link to="/about" onClick={handleNavigation}>
                 About Us
               </Link>
-
             </li>
 
             {/* ALUMINIUM SOLUTIONS */}
-
             <li
               className={`dropdown programs-menu ${
                 openDropdown === 'solutions' ? 'dropdown-open' : ''
               }`}
             >
-
               <div className="nav-dropdown-heading">
 
                 <Link to="/programz" onClick={handleNavigation}>
@@ -914,19 +741,15 @@ const NavBar = () => {
                   aria-label="Toggle Aluminium Solutions"
                   aria-expanded={openDropdown === 'solutions'}
                 >
-
                   <FaChevronDown />
-
                 </button>
 
               </div>
 
               {/* MEGA MENU */}
-
               <div className="mega-menu">
 
                 <div className="mega-menu-header">
-
                   <span>
                     COMPLETE ARCHITECTURAL SOLUTIONS
                   </span>
@@ -936,34 +759,26 @@ const NavBar = () => {
                     architectural glass, metal fabrication,
                     parking shades and interior finishing services.
                   </p>
-
                 </div>
 
                 <div className="mega-menu-grid">
 
                   {solutions.map((item) => (
-
                     <div className="mega-column" key={item.title}>
 
                       <h4>
-
                         {item.icon}
-
                         {item.title}
-
                       </h4>
 
                       <Link
                         to={item.path}
                         onClick={handleNavigation}
                       >
-
                         {item.name}
-
                       </Link>
 
                     </div>
-
                   ))}
 
                 </div>
@@ -990,7 +805,6 @@ const NavBar = () => {
             </li>
 
             {/* INSIGHTS */}
-
             <li
               className={`dropdown insights-menu ${
                 openDropdown === 'insights' ? 'dropdown-open' : ''
@@ -1010,9 +824,7 @@ const NavBar = () => {
                   aria-label="Toggle Insights"
                   aria-expanded={openDropdown === 'insights'}
                 >
-
                   <FaChevronDown />
-
                 </button>
 
               </div>
@@ -1042,17 +854,32 @@ const NavBar = () => {
             </li>
 
             {/* CONTACT */}
-
             <li>
-
               <Link to="/contact" onClick={handleNavigation}>
                 Contact
               </Link>
+            </li>
+
+            {/* WHATSAPP MENU BUTTON */}
+            <li className="navbar-whatsapp-item">
+
+              <a
+                href={whatsappLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="navbar-whatsapp-link"
+                onClick={() => {
+                  setIsMobileOpen(false);
+                  setOpenDropdown('');
+                }}
+              >
+                <FaWhatsapp />
+                WhatsApp
+              </a>
 
             </li>
 
             {/* SEARCH */}
-
             <li className="nav-search-item">
 
               <button
@@ -1065,11 +892,8 @@ const NavBar = () => {
                 }}
                 aria-label="Search website"
               >
-
                 <FaSearch />
-
                 <span>SEARCH</span>
-
               </button>
 
             </li>
@@ -1077,64 +901,31 @@ const NavBar = () => {
           </ul>
 
           {/* MOBILE CONTACT INFORMATION */}
-
           {isMobileOpen && (
-
             <div className="mobile-contact-section">
 
               <h3>CONTACT OUR TEAM</h3>
 
               <a href={`tel:${phoneNumber}`}>
-
                 <FaPhoneAlt />
-
                 <span>+971 558816618</span>
-
               </a>
 
               <a href={`mailto:${infoEmail}`}>
-
                 <FaEnvelope />
-
                 <span>{infoEmail}</span>
-
               </a>
 
               <a href={`mailto:${salesEmail}`}>
-
                 <FaEnvelope />
-
                 <span>{salesEmail}</span>
-
-              </a>
-
-              {/* WHATSAPP ONLY INSIDE MOBILE MENU */}
-
-              <a
-                href={whatsappLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mobile-whatsapp-link"
-                onClick={() => {
-                  setIsMobileOpen(false);
-                  setOpenDropdown('');
-                }}
-              >
-
-                <FaWhatsapp />
-
-                <span>WhatsApp Us</span>
-
               </a>
 
             </div>
-
           )}
 
           {/* MOBILE SOCIAL MEDIA */}
-
           {isMobileOpen && (
-
             <div className="mobile-social-section">
 
               <p>CONNECT WITH AWAN</p>
@@ -1149,9 +940,7 @@ const NavBar = () => {
                   title="AWAN Facebook"
                   className="mobile-social-link"
                 >
-
                   <FaFacebookF />
-
                 </a>
 
                 <a
@@ -1162,9 +951,7 @@ const NavBar = () => {
                   title="AWAN Instagram"
                   className="mobile-social-link"
                 >
-
                   <FaInstagram />
-
                 </a>
 
                 <a
@@ -1174,9 +961,17 @@ const NavBar = () => {
                   aria-label="LinkedIn"
                   className="mobile-social-link"
                 >
-
                   <FaLinkedinIn />
+                </a>
 
+                <a
+                  href={whatsappLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="WhatsApp"
+                  className="mobile-social-link"
+                >
+                  <FaWhatsapp />
                 </a>
 
                 <a
@@ -1186,9 +981,7 @@ const NavBar = () => {
                   aria-label="General Gmail"
                   className="mobile-social-link"
                 >
-
                   <FaEnvelope />
-
                 </a>
 
                 <a
@@ -1198,9 +991,7 @@ const NavBar = () => {
                   aria-label="Sales Gmail"
                   className="mobile-social-link"
                 >
-
                   <SiGmail />
-
                 </a>
 
               </div>
@@ -1210,7 +1001,6 @@ const NavBar = () => {
               </span>
 
             </div>
-
           )}
 
         </div>
@@ -1218,18 +1008,14 @@ const NavBar = () => {
       </nav>
 
       {/* MOBILE BACKDROP */}
-
       {isMobileOpen && (
-
         <div
           className="mobile-menu-backdrop"
           onClick={closeMenus}
         />
-
       )}
 
       {/* SEARCH POPUP */}
-
       {isSearchOpen && (
 
         <div
@@ -1243,16 +1029,13 @@ const NavBar = () => {
           >
 
             {/* CLOSE BUTTON */}
-
             <button
               type="button"
               className="website-search-close"
               onClick={() => setIsSearchOpen(false)}
               aria-label="Close search"
             >
-
               <FaTimes />
-
             </button>
 
             <span className="website-search-label">
@@ -1269,7 +1052,6 @@ const NavBar = () => {
             </p>
 
             {/* SEARCH FORM */}
-
             <form onSubmit={handleSearch}>
 
               <div className="website-search-input">
@@ -1290,15 +1072,12 @@ const NavBar = () => {
                 type="submit"
                 className="website-search-submit"
               >
-
                 SEARCH WEBSITE
-
               </button>
 
             </form>
 
             {/* POPULAR SEARCHES */}
-
             <div className="website-search-suggestions">
 
               <span>POPULAR SEARCHES</span>
@@ -1310,9 +1089,7 @@ const NavBar = () => {
                   type="button"
                   onClick={() => handlePopularSearch(item)}
                 >
-
                   {item}
-
                 </button>
 
               ))}
@@ -1326,9 +1103,7 @@ const NavBar = () => {
       )}
 
     </>
-
   );
-
 };
 
 export default NavBar;

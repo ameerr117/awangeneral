@@ -90,78 +90,34 @@ const slides = [
 
 // =====================================
 // AWAN COMPANY SERVICES
+// SAME AS NAVBAR.JSX
 // =====================================
 
 const AWAN_SERVICES = [
- {
-    number: "01",
-    name: "ALUMINIUM WINDOWS",
-    image: "../../assets/window mirror.jpeg",
-  },
-  {
-    number: "02",
-    name: "ALUMINIUM DOORS",
-    image: "../../assets/Glass door.jpeg",
-  },
-  {
-    number: "03",
-    name: "GLASS WORKS",
-    image: "../../assets/Glass door.jpeg",
-  },
-  {
-    number: "04",
-    name: "GLASS CURTAIN WALLS",
-    image: "../../assets/cutain wall.jpeg",
-  },
-  {
-    number: "05",
-    name: "ALUMINIUM CLADDING",
-    image: "../../assets/cladding.jpeg",
-  },
-  {
-    number: "06",
-    name: "GLASS PARTITIONS",
-    image: "../../assets/partition.jpeg",
-  },
-  {
-    number: "07",
-    name: "ALUMINIUM KITCHENS",
-    image: "../../assets/kitchen.jpeg",
-  },
-  {
-    number: "08",
-    name: "PERGOLAS & TENTS",
-    image: "../../assets/tents.jpeg",
-  },
-  {
-    number: "09",
-    name: "PARKING SHADES",
-    image: "../../assets/Car Parking and shade .jpeg",
-  },
-  {
-    number: "10",
-    name: "WROUGHT IRON WORKS",
-    image: "../../assets/Wrought Iron Gate.jpeg",
-  },
-  {
-    number: "11",
-    name: "GENERAL CONTRACTING",
-    image: "../../assets/MAH1.jpeg",
-  },
-  {
-    number: "12",
-    name: "CONSTRUCTION WORKS",
-    image: "../../assets/MAH1.jpeg",
-  },
-  {
-    number: "13",
-    name: "HEAVY MACHINERY & TRANSPORT SERVICES",
-    image: "../../assets/MAH.jpeg",
-  },
+  { number: "01", name: "ALUMINIUM WINDOWS" },
+  { number: "02", name: "ALUMINIUM DOORS" },
+  { number: "03", name: "GLASS WORKS" },
+  { number: "04", name: "GLASS CURTAIN WALLS" },
+  { number: "05", name: "ALUMINIUM CLADDING" },
+  { number: "06", name: "GLASS PARTITIONS" },
+  { number: "07", name: "ALUMINIUM KITCHENS" },
+  { number: "08", name: "PERGOLAS & TENTS" },
+  { number: "09", name: "PARKING SHADES" },
+  { number: "10", name: "WROUGHT IRON WORKS" },
+  { number: "11", name: "GENERAL CONTRACTING" },
+  { number: "12", name: "CONSTRUCTION WORKS" },
+  { number: "13", name: "HEAVY MACHINERY & TRANSPORT SERVICES" }
 ];
 
 // =====================================
+// WHATSAPP PHONE NUMBER
+// =====================================
+
+const phoneNumber = '971558816618';
+
+// =====================================
 // WHATSAPP WELCOME MESSAGE
+// SAME MESSAGE AS NAVBAR.JSX
 // =====================================
 
 const whatsappMessage = `👋 *WELCOME TO AWAN GENERAL CONTRACTING & ALUMINIUM WORKS*
@@ -171,19 +127,8 @@ Thank you for contacting us!
 🏢 *OUR COMPANY SERVICES*
 
 ${AWAN_SERVICES.map(
-  (service) => `
-━━━━━━━━━━━━━━━━━━━━
-
-🔹 *${service.number}. ${service.name}*
-
-🖼️ SERVICE PICTURE:
-https://agcaw.com/images/services/${service.image}
-
-🌐 WEBSITE:
-https://agcaw.com`
+  (service) => `🔹 ${service.name}`
 ).join("\n")}
-
-━━━━━━━━━━━━━━━━━━━━
 
 🌐 *VISIT OUR WEBSITE*
 https://agcaw.com
@@ -195,7 +140,6 @@ https://agcaw.com
 Please send us your project details, requirements or photographs.
 
 *AWAN GENERAL CONTRACTING & ALUMINIUM WORKS*
-
 Professional Architectural Aluminium Solutions.
 
 Thank you for choosing AWAN! 🤝`;
@@ -203,8 +147,6 @@ Thank you for choosing AWAN! 🤝`;
 // =====================================
 // WHATSAPP LINK
 // =====================================
-
-const phoneNumber = '971558816618';
 
 const whatsappLink = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
   whatsappMessage
@@ -471,8 +413,7 @@ const Hero1 = () => {
 
       {/* =================================
           FIXED WHATSAPP BUTTON
-          ALL SCREEN SIZES
-          COMPLETE 13 SERVICES MESSAGE
+          SAME MESSAGE AS NAVBAR
       ================================= */}
 
       <a
@@ -544,7 +485,7 @@ const Hero1 = () => {
           {/* PHONE */}
 
           <a
-            href={`tel:+${phoneNumber}`}
+            href="tel:+971562700627"
             className="awan-contact-item"
           >
 
