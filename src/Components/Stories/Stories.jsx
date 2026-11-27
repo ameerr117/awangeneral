@@ -1,18 +1,20 @@
 
-import React, { useState, useEffect, useCallback } from "react";
+import  { useState, useEffect, useCallback } from "react";
 import { Link } from "react-router-dom";
 import "./Stories.css";
 
-import class1 from "../../assets/ay00.jpeg";
-import class2 from "../../assets/ay01.jpeg";
-import class3 from "../../assets/ay02.jpeg";
-import class4 from "../../assets/ay03.jpeg";
-import class5 from "../../assets/ay04.jpeg";
-import class6 from "../../assets/ay05.jpeg";
-import class7 from "../../assets/ay06.jpeg";
-import class8 from "../../assets/ay07.jpeg";
-import class9 from "../../assets/ay08.jpeg";
-import class10 from "../../assets/ay09.jpeg";
+import class1 from "../../assets/009.jpeg";
+import class2 from "../../assets/008.jpeg";
+import class3 from "../../assets/007.jpeg";
+import class4 from "../../assets/006.jpeg";
+import class5 from "../../assets/005.jpeg";
+import class6 from "../../assets/004.jpeg";
+import class7 from "../../assets/003.jpeg";
+import class8 from "../../assets/002.jpeg";
+import class9 from "../../assets/001.jpeg";
+import class10 from "../../assets/000.jpeg";
+import class11 from "../../assets/0001.jpeg";
+import class12 from "../../assets/0002.jpeg";
 
 const stories = [
   {
@@ -90,6 +92,22 @@ const stories = [
   {
     title: "Complete Projects",
     image: class10,
+    description:
+      "Complete project solutions bringing together aluminium, glazing and construction expertise.",
+    quotation:
+      "From the first idea to the final finish, we build with commitment, care and quality.",
+  },
+   {
+    title: "Complete Projects",
+    image: class11,
+    description:
+      "Complete project solutions bringing together aluminium, glazing and construction expertise.",
+    quotation:
+      "From the first idea to the final finish, we build with commitment, care and quality.",
+  },
+   {
+    title: "Complete Projects",
+    image: class12,
     description:
       "Complete project solutions bringing together aluminium, glazing and construction expertise.",
     quotation:

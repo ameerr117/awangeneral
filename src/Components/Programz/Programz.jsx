@@ -2,27 +2,34 @@
 import { Link } from 'react-router-dom';
 import Stories from "../../Components/Stories/Stories";
 
-import blog1 from "../../assets/WhatsApp Image 2026-11-11 at 12.28.50 AM (1).jpeg";
-import blog2 from "../../assets/alu006.jpg";
-import blog3 from "../../assets/alu008.jpg";
-import blog4 from "../../assets/alu007.jpg";
+import blog1 from "../../assets/window mirror.jpeg";
+import blog2 from "../../assets/Glass door.jpeg";
+import blog3 from "../../assets/cladding.jpeg";
+import blog4 from "../../assets/tents.jpeg";
+import blog5 from "../../assets/kitchen.jpeg";
+import blog6 from "../../assets/cutain wall.jpeg";
+import blog7 from "../../assets/partition.jpeg";
+import blog8 from "../../assets/Wrought Iron Gate.jpeg";
+import blog9 from "../../assets/Car Parking and shade .jpeg";
+import blog10 from "../../assets/paints and gypsum works.jpeg";
+
 
 import './Programz.css';
 
 
 const products = [
   {
-    title: "Aluminium Windows",
+    title: "Aluminium Windows & Mirror",
     category: "WINDOWS",
     image: blog1,
-    description: "Premium aluminium window systems for modern residential and commercial buildings.",
+    description: "Premium aluminium window & Mirror systems for modern residential and commercial buildings.",
     link: "/Window"
   },
   {
-    title: "Aluminium Doors",
+    title: "Aluminium & Glass Doors",
     category: "DOORS",
     image: blog2,
-    description: "Modern aluminium door solutions combining durability, functionality and architectural style.",
+    description: "Modern aluminium & glass door solutions combining durability, functionality and architectural style.",
     link: "/Door"
   },
   {
@@ -40,44 +47,44 @@ const products = [
     link: "/Tents"
   },
   {
-    title: "Architectural Glass",
+    title: "Kitchen Aluminium",
     category: "GLASS",
-    image: blog1,
-    description: "Architectural glass solutions for modern buildings, offices and interior spaces.",
+    image: blog5,
+    description: "Kitchen Aluminium solutions for modern buildings, offices and interior spaces.",
     link: "/Glass"
   },
   {
-    title: "Curtain Wall Systems",
+    title: "Glass Curtain Wall Systems",
     category: "CURTAIN WALLS",
-    image: blog2,
+    image: blog6,
     description: "Modern aluminium and glass curtain wall systems for elegant building exteriors.",
     link: "/Curtain"
   },
   {
     title: "Glass Partition Systems",
     category: "GLASS PARTITIONS",
-    image: blog3,
+    image: blog7,
     description: "Professional glass partition systems for modern offices and interior environments.",
     link: "/Partition"
   },
   {
     title: "Wrought Iron Gate",
     category: "WROUGHT IRON GATE",
-    image: blog4,
+    image: blog8,
     description: "Custom wrought iron gates designed for security, strength and attractive entrances.",
     link: "/Iron"
   },
   {
     title: "Car Parkings & Shades",
     category: "CAR PARKINGS & SHADES",
-    image: blog1,
+    image: blog9,
     description: "Durable parking shades and structures designed to protect vehicles from sunlight and weather.",
     link: "/Parking"
   },
   {
     title: "Paints & Gypsum Works",
     category: "PAINTS & GYPSUM WORKS",
-    image: blog2,
+    image: blog10,
     description: "Professional painting and gypsum finishing solutions for modern residential and commercial interiors.",
     link: "/Paints"
   }

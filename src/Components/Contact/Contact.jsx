@@ -684,7 +684,7 @@ const Contact = () => {
 
           <div className="contact-cta-content">
 
-            <span>LET'S BUILD SOMETHING GREAT</span>
+            <span>LETS BUILD SOMETHING GREAT</span>
 
             <h2>
               Ready To Start Your Next Project?
@@ -697,13 +697,13 @@ const Contact = () => {
 
             <div className="contact-cta-buttons">
 
-              <a href="tel:+971562700627">
+              <a href="tel:+971558816618">
                 CALL US
                 <FaPhoneAlt />
               </a>
 
               <a
-                href="https://wa.me/971562700627"
+                href="https://wa.me/971558816618"
                 target="_blank"
                 rel="noreferrer"
               >

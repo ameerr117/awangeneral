@@ -24,7 +24,8 @@ import {
   FaCar,
   FaPaintRoller,
   FaWhatsapp,
-  FaPhoneAlt
+  FaPhoneAlt,
+  FaTools
 } from 'react-icons/fa';
 
 import { SiGmail } from 'react-icons/si';
@@ -38,51 +39,47 @@ const NavBar = () => {
 
   const navigate = useNavigate();
 
-  // =========================================
-  // OFFICIAL AWAN CONTACT INFORMATION
-  // =========================================
-
+  // CONTACT INFORMATION
   const infoEmail = 'info@awangcaw.com';
   const salesEmail = 'sale@awangcaw.com';
 
   const phoneNumber = '+971558816618';
-
   const whatsappLink = 'https://wa.me/971558816618';
 
-  // Gmail compose links
+  // GMAIL LINKS
   const infoGmailLink =
     'https://mail.google.com/mail/?view=cm&fs=1' +
     `&to=${encodeURIComponent(infoEmail)}` +
     '&su=' +
-    encodeURIComponent('General Enquiry - AWAN General Contracting') +
-    '&body=' +
-    encodeURIComponent(
-      'Hello AWAN Team,\n\n' +
-      'I would like to know more about your services.\n\n' +
-      'Thank you.'
-    );
+    encodeURIComponent('General Enquiry - AWAN General Contracting');
 
   const salesGmailLink =
     'https://mail.google.com/mail/?view=cm&fs=1' +
     `&to=${encodeURIComponent(salesEmail)}` +
     '&su=' +
-    encodeURIComponent('Sales Enquiry - AWAN General Contracting') +
-    '&body=' +
-    encodeURIComponent(
-      'Hello AWAN Sales Team,\n\n' +
-      'I would like to request information and a quotation for your services.\n\n' +
-      'Thank you.'
-    );
+    encodeURIComponent('Sales Enquiry - AWAN General Contracting');
 
-  // =========================================
-  // ALL WEBSITE PAGES — COMMON SEARCH DATABASE
-  // =========================================
-
+  // WEBSITE SEARCH DATABASE
   const searchPages = [
     {
       name: 'Home',
       keywords: ['home', 'main', 'awan', 'homepage'],
       path: '/'
+    },
+    {
+      name: 'Machinery & Equipment',
+      keywords: [
+        'machinery',
+        'equipment',
+        'machinery and equipment',
+        'machinery equipment',
+        'construction machinery',
+        'construction equipment',
+        'industrial machinery',
+        'heavy equipment',
+        'tools'
+      ],
+      path: '/Machinery'
     },
     {
       name: 'About Us',
@@ -171,10 +168,7 @@ const NavBar = () => {
     }
   ];
 
-  // =========================================
   // SCROLL DETECTION
-  // =========================================
-
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 40);
@@ -188,10 +182,7 @@ const NavBar = () => {
     };
   }, []);
 
-  // =========================================
   // CLOSE MENU WITH ESCAPE
-  // =========================================
-
   useEffect(() => {
     const handleEscape = (e) => {
       if (e.key === 'Escape') {
@@ -208,10 +199,7 @@ const NavBar = () => {
     };
   }, []);
 
-  // =========================================
   // PREVENT BACKGROUND SCROLL
-  // =========================================
-
   useEffect(() => {
     document.body.style.overflow =
       isSearchOpen || isMobileOpen ? 'hidden' : '';
@@ -221,10 +209,7 @@ const NavBar = () => {
     };
   }, [isSearchOpen, isMobileOpen]);
 
-  // =========================================
   // CLOSE ALL MENUS
-  // =========================================
-
   const closeMenus = () => {
     setIsMobileOpen(false);
     setOpenDropdown('');
@@ -232,10 +217,7 @@ const NavBar = () => {
     setSearchTerm('');
   };
 
-  // =========================================
   // NAVIGATION HANDLER
-  // =========================================
-
   const handleNavigation = () => {
     closeMenus();
 
@@ -245,10 +227,7 @@ const NavBar = () => {
     });
   };
 
-  // =========================================
   // NAVIGATE TO PAGE
-  // =========================================
-
   const goToPage = (path) => {
     closeMenus();
     navigate(path);
@@ -259,20 +238,14 @@ const NavBar = () => {
     });
   };
 
-  // =========================================
   // DROPDOWN HANDLER
-  // =========================================
-
   const toggleDropdown = (name) => {
     setOpenDropdown((current) =>
       current === name ? '' : name
     );
   };
 
-  // =========================================
-  // IMPROVED WEBSITE SEARCH
-  // =========================================
-
+  // WEBSITE SEARCH
   const handleSearch = (e) => {
     e.preventDefault();
 
@@ -281,9 +254,7 @@ const NavBar = () => {
       .toLowerCase()
       .replace(/\s+/g, ' ');
 
-    if (!query) {
-      return;
-    }
+    if (!query) return;
 
     const result = searchPages
       .map((page) => {
@@ -305,10 +276,7 @@ const NavBar = () => {
           }
         });
 
-        return {
-          ...page,
-          score
-        };
+        return { ...page, score };
       })
       .filter((page) => page.score > 0)
       .sort((a, b) => b.score - a.score)[0];
@@ -322,10 +290,7 @@ const NavBar = () => {
     }
   };
 
-  // =========================================
   // POPULAR SEARCH HANDLER
-  // =========================================
-
   const handlePopularSearch = (item) => {
     const page = searchPages.find(
       (page) => page.name.toLowerCase() === item.toLowerCase()
@@ -336,10 +301,7 @@ const NavBar = () => {
     }
   };
 
-  // =========================================
-  // ALL ALUMINIUM SOLUTIONS
-  // =========================================
-
+  // ALUMINIUM SOLUTIONS
   const solutions = [
     {
       icon: <FaWindowMaximize />,
@@ -403,10 +365,7 @@ const NavBar = () => {
     }
   ];
 
-  // =========================================
-  // POPULAR SEARCH BUTTONS
-  // =========================================
-
+  // POPULAR SEARCHES
   const popularSearches = [
     'Windows',
     'Doors',
@@ -418,6 +377,7 @@ const NavBar = () => {
     'Wrought Iron Gates',
     'Car Parkings & Shades',
     'Paints & Gypsum Works',
+    'Machinery & Equipment',
     'About Us',
     'Projects',
     'Contact'
@@ -516,7 +476,6 @@ const NavBar = () => {
                 <FaLinkedinIn />
               </a>
 
-              {/* GENERAL EMAIL */}
               <a
                 href={`mailto:${infoEmail}`}
                 aria-label={`Email ${infoEmail}`}
@@ -526,7 +485,6 @@ const NavBar = () => {
                 <FaEnvelope />
               </a>
 
-              {/* SALES EMAIL */}
               <a
                 href={`mailto:${salesEmail}`}
                 aria-label={`Email ${salesEmail}`}
@@ -563,6 +521,14 @@ const NavBar = () => {
               </Link>
             </li>
 
+            {/* NEW MACHINERY & EQUIPMENT */}
+            <li className="machinery-nav-item">
+  <Link to="/Machinery" onClick={handleNavigation}>
+    <FaTools className="machinery-nav-icon" />
+    Machinery & Equipment
+  </Link>
+</li>
+
             <li>
               <Link to="/about" onClick={handleNavigation}>
                 About Us
@@ -575,7 +541,6 @@ const NavBar = () => {
                 openDropdown === 'solutions' ? 'dropdown-open' : ''
               }`}
             >
-
               <div className="nav-dropdown-heading">
 
                 <Link to="/programz" onClick={handleNavigation}>
@@ -598,7 +563,6 @@ const NavBar = () => {
               <div className="mega-menu">
 
                 <div className="mega-menu-header">
-
                   <span>
                     COMPLETE ARCHITECTURAL SOLUTIONS
                   </span>
@@ -608,7 +572,6 @@ const NavBar = () => {
                     architectural glass, metal fabrication,
                     parking shades and interior finishing services.
                   </p>
-
                 </div>
 
                 <div className="mega-menu-grid">
@@ -764,7 +727,7 @@ const NavBar = () => {
             </div>
           )}
 
-          {/* MOBILE MENU SOCIAL MEDIA */}
+          {/* MOBILE SOCIAL MEDIA */}
           {isMobileOpen && (
             <div className="mobile-social-section">
 
@@ -772,27 +735,27 @@ const NavBar = () => {
 
               <div className="mobile-social-icons">
 
-               <a
-  href="https://www.facebook.com/agcaw/about/?fb_profile_edit_entry_point=%7B%22click_point%22%3A%22edit_profile_button%22%2C%22feature%22%3A%22profile_header%22%7D&id=100091272055967&sk=about"
-  target="_blank"
-  rel="noopener noreferrer"
-  aria-label="Visit AWAN Facebook"
-  title="AWAN Facebook"
-  className="mobile-social-link"
->
-  <FaFacebookF />
-</a>
+                <a
+                  href="https://www.facebook.com/agcaw/about/?fb_profile_edit_entry_point=%7B%22click_point%22%3A%22edit_profile_button%22%2C%22feature%22%3A%22profile_header%22%7D&id=100091272055967&sk=about"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Visit AWAN Facebook"
+                  title="AWAN Facebook"
+                  className="mobile-social-link"
+                >
+                  <FaFacebookF />
+                </a>
 
-            <a
-  href="https://www.instagram.com/awangen.cont.alumi.works/"
-  target="_blank"
-  rel="noopener noreferrer"
-  aria-label="AWAN Instagram"
-  title="AWAN Instagram"
-  className="mobile-social-link"
->
-  <FaInstagram />
-</a>
+                <a
+                  href="https://www.instagram.com/awangen.cont.alumi.works/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="AWAN Instagram"
+                  title="AWAN Instagram"
+                  className="mobile-social-link"
+                >
+                  <FaInstagram />
+                </a>
 
                 <a
                   href="https://www.linkedin.com/"
@@ -837,7 +800,7 @@ const NavBar = () => {
               </div>
 
               <span>
-                AWAN GENERAL CONTRACTING &amp; ALUMINIUM WORKS
+                AWAN GENERAL CONTRACTING & ALUMINIUM WORKS
               </span>
 
             </div>
@@ -885,10 +848,9 @@ const NavBar = () => {
             <h2>Search Our Website</h2>
 
             <p className="website-search-text">
-              Find aluminium solutions, windows, doors,
-              curtain walls, partitions, glass systems,
-              wrought iron gates, car parking shades,
-              paints and gypsum works.
+              Find aluminium solutions, machinery and equipment,
+              windows, doors, curtain walls, partitions, glass systems,
+              wrought iron gates, car parking shades, paints and gypsum works.
             </p>
 
             {/* SEARCH FORM */}

@@ -1,0 +1,767 @@
+
+/* =========================================
+   AWAN TRANSPORT
+   HEAVY MACHINERY & EQUIPMENT SERVICES
+========================================= */
+
+.awan-transport-page {
+  --transport-navy: #092858;
+  --transport-blue: #12458c;
+  --transport-gold: #d4aa35;
+  --transport-white: #ffffff;
+  --transport-light: #f4f6f9;
+  --transport-text: #596575;
+
+  width: 100%;
+  overflow: hidden;
+  background: #fff;
+  color: var(--transport-navy);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.transport-container {
+  width: min(1180px, 92%);
+  margin: 0 auto;
+}
+
+.transport-section {
+  padding: 85px 0;
+}
+
+.transport-label {
+  display: inline-block;
+  margin-bottom: 15px;
+  color: #b88930;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+/* =========================================
+   HERO
+========================================= */
+
+.transport-hero {
+  position: relative;
+  min-height: 650px;
+  display: flex;
+  align-items: center;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: #fff;
+}
+
+.transport-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(4, 23, 51, .95) 0%,
+    rgba(4, 23, 51, .76) 45%,
+    rgba(4, 23, 51, .15) 100%
+  );
+}
+
+.transport-hero-content {
+  position: relative;
+  z-index: 2;
+  padding: 100px 0 140px;
+}
+
+.transport-small-heading {
+  color: #f1c45e;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 3px;
+}
+
+.transport-hero h1 {
+  margin: 20px 0 12px;
+  color: #fff;
+  font-size: clamp(44px, 7vw, 82px);
+  line-height: 1.05;
+  font-weight: 900;
+}
+
+.transport-hero h1 span {
+  color: #f1c45e;
+}
+
+.transport-hero h2 {
+  max-width: 700px;
+  margin: 0 0 18px;
+  color: #fff;
+  font-size: clamp(17px, 2.5vw, 25px);
+  letter-spacing: 1.2px;
+  line-height: 1.5;
+}
+
+.transport-hero-content > p {
+  max-width: 620px;
+  color: #e0e6ef;
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+.transport-hero-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 30px;
+}
+
+.transport-btn {
+  min-height: 48px;
+  padding: 14px 22px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 800;
+  transition: .3s ease;
+}
+
+.primary-btn {
+  background: #f1c45e;
+  color: var(--transport-navy);
+}
+
+.primary-btn:hover {
+  background: white;
+  transform: translateY(-3px);
+}
+
+.outline-btn {
+  border: 1px solid white;
+  color: white;
+}
+
+.outline-btn:hover {
+  background: white;
+  color: var(--transport-navy);
+}
+
+.transport-hero-bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 2;
+  width: 100%;
+  min-height: 75px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 70px;
+  background: rgba(4, 23, 51, .94);
+  border-top: 2px solid #d4aa35;
+}
+
+.transport-hero-bottom div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: white;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.transport-hero-bottom svg {
+  color: #f1c45e;
+  font-size: 20px;
+}
+
+/* =========================================
+   INTRODUCTION
+========================================= */
+
+.transport-intro-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 55px;
+}
+
+.transport-intro-text h2,
+.transport-benefits h2 {
+  margin: 0 0 20px;
+  color: var(--transport-navy);
+  font-size: clamp(29px, 4vw, 42px);
+  line-height: 1.2;
+}
+
+.transport-intro-text h2 span,
+.transport-benefits h2 span {
+  color: #bd936e;
+}
+
+.transport-intro-text p,
+.transport-benefits p {
+  color: var(--transport-text);
+  font-size: 15px;
+  line-height: 1.9;
+  margin-bottom: 15px;
+}
+
+.transport-text-link {
+  display: inline-flex;
+  gap: 10px;
+  align-items: center;
+  margin-top: 15px;
+  color: var(--transport-navy);
+  font-size: 14px;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.transport-text-link:hover {
+  color: #bd936e;
+}
+
+.transport-intro-image {
+  position: relative;
+}
+
+.transport-intro-image > img {
+  width: 100%;
+  height: 390px;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 5px;
+}
+
+.transport-image-caption {
+  position: absolute;
+  left: -20px;
+  bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 18px 22px;
+  background: var(--transport-navy);
+  color: white;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, .15);
+}
+
+.transport-image-caption > svg {
+  color: #f1c45e;
+  font-size: 30px;
+}
+
+.transport-image-caption strong,
+.transport-image-caption span {
+  display: block;
+}
+
+.transport-image-caption strong {
+  font-size: 14px;
+}
+
+.transport-image-caption span {
+  margin-top: 5px;
+  color: #d9e0eb;
+  font-size: 11px;
+}
+
+/* =========================================
+   SECTION HEADINGS
+========================================= */
+
+.transport-section-heading {
+  max-width: 720px;
+  margin: 0 auto 45px;
+  text-align: center;
+}
+
+.transport-section-heading h2 {
+  margin: 0 0 14px;
+  color: var(--transport-navy);
+  font-size: clamp(28px, 4vw, 40px);
+  line-height: 1.2;
+}
+
+.transport-section-heading p {
+  margin: 0;
+  color: var(--transport-text);
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+/* =========================================
+   MACHINERY CARDS
+========================================= */
+
+.transport-machinery {
+  background: var(--transport-light);
+}
+
+.transport-machinery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 25px;
+}
+
+.transport-machine-card {
+  min-width: 0;
+  overflow: hidden;
+  background: white;
+  border-radius: 6px;
+  box-shadow: 0 8px 30px rgba(9, 40, 88, .07);
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+
+.transport-machine-card:hover {
+  transform: translateY(-7px);
+  box-shadow: 0 15px 35px rgba(9, 40, 88, .14);
+}
+
+.transport-machine-image {
+  position: relative;
+  height: 225px;
+  overflow: hidden;
+  background: #e1e5eb;
+}
+
+.transport-machine-image img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+  transition: transform .5s ease;
+}
+
+.transport-machine-card:hover .transport-machine-image img {
+  transform: scale(1.07);
+}
+
+.transport-machine-number {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  padding: 8px 12px;
+  background: #f1c45e;
+  color: var(--transport-navy);
+  font-size: 13px;
+  font-weight: 900;
+}
+
+.transport-machine-content {
+  padding: 25px 23px;
+}
+
+.transport-machine-category {
+  color: #bd936e;
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 1px;
+}
+
+.transport-machine-content h3 {
+  margin: 12px 0;
+  color: var(--transport-navy);
+  font-size: 21px;
+  line-height: 1.3;
+}
+
+.transport-machine-content > p {
+  min-height: 80px;
+  color: var(--transport-text);
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.transport-machine-content ul {
+  margin: 20px 0;
+  padding: 0;
+  list-style: none;
+}
+
+.transport-machine-content li {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  margin: 11px 0;
+  color: #4d596a;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.transport-machine-content li svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+  color: #bd936e;
+  font-size: 13px;
+}
+
+.transport-card-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 9px;
+  padding-top: 15px;
+  border-top: 1px solid #e9edf2;
+  width: 100%;
+  color: var(--transport-navy);
+  font-size: 12px;
+  font-weight: 900;
+  text-decoration: none;
+}
+
+.transport-card-link:hover {
+  color: #bd936e;
+}
+
+/* =========================================
+   APPLICATIONS
+========================================= */
+
+.transport-applications {
+  background: var(--transport-navy);
+}
+
+.light-heading h2 {
+  color: white;
+}
+
+.light-heading p {
+  color: #d1dbe9;
+}
+
+.transport-application-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.transport-application-card {
+  padding: 32px 22px;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, .16);
+  background: rgba(255, 255, 255, .05);
+  transition: .3s ease;
+}
+
+.transport-application-card:hover {
+  background: rgba(255, 255, 255, .12);
+  transform: translateY(-5px);
+}
+
+.transport-application-icon {
+  width: 60px;
+  height: 60px;
+  display: grid;
+  place-items: center;
+  margin: 0 auto 20px;
+  background: #f1c45e;
+  color: var(--transport-navy);
+  border-radius: 50%;
+  font-size: 23px;
+}
+
+.transport-application-card h3 {
+  color: white;
+  font-size: 17px;
+}
+
+.transport-application-card p {
+  color: #cbd5e2;
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+/* =========================================
+   WHY CHOOSE AWAN
+========================================= */
+
+.transport-benefits-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 65px;
+  align-items: center;
+}
+
+.transport-benefit-list {
+  display: grid;
+  gap: 14px;
+}
+
+.transport-benefit-item {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  padding: 17px 18px;
+  background: var(--transport-light);
+  color: var(--transport-navy);
+  font-size: 14px;
+  font-weight: 700;
+  border-left: 3px solid #d4aa35;
+}
+
+.transport-benefit-item svg {
+  color: #bd936e;
+  font-size: 17px;
+  flex-shrink: 0;
+}
+
+/* =========================================
+   CONTACT CTA
+========================================= */
+
+.transport-contact {
+  padding: 65px 0;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(4, 23, 51, .97),
+      rgba(9, 40, 88, .92)
+    );
+}
+
+.transport-contact-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+}
+
+.transport-contact h2 {
+  margin: 0 0 12px;
+  color: white;
+  font-size: clamp(25px, 4vw, 36px);
+  line-height: 1.25;
+}
+
+.transport-contact p {
+  max-width: 650px;
+  margin: 0;
+  color: #d6deea;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.transport-contact-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.contact-phone-btn {
+  border: 1px solid white;
+  color: white;
+}
+
+.contact-phone-btn:hover {
+  background: white;
+  color: var(--transport-navy);
+}
+
+/* =========================================
+   CONTACT INFORMATION STRIP
+========================================= */
+
+.transport-info-strip {
+  padding: 23px 0;
+  background: #061b3a;
+  border-top: 1px solid rgba(255, 255, 255, .15);
+}
+
+.transport-info-grid {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.transport-info-grid a {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  color: white;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.transport-info-grid a svg {
+  color: #f1c45e;
+  font-size: 17px;
+}
+
+.transport-info-grid a:hover {
+  color: #f1c45e;
+}
+
+/* =========================================
+   TABLET RESPONSIVE
+========================================= */
+
+@media (max-width: 950px) {
+  .transport-machinery-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .transport-application-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .transport-hero-bottom {
+    gap: 25px;
+  }
+
+  .transport-contact-content {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
+/* =========================================
+   MOBILE RESPONSIVE
+========================================= */
+
+@media (max-width: 650px) {
+  .transport-section {
+    padding: 55px 0;
+  }
+
+  .transport-container {
+    width: 90%;
+  }
+
+  .transport-hero {
+    min-height: 620px;
+    background-position: center;
+  }
+
+  .transport-hero-overlay {
+    background: rgba(4, 23, 51, .78);
+  }
+
+  .transport-hero-content {
+    padding: 70px 0 155px;
+  }
+
+  .transport-small-heading {
+    font-size: 10px;
+    letter-spacing: 1.5px;
+  }
+
+  .transport-hero h1 {
+    font-size: 43px;
+  }
+
+  .transport-hero h2 {
+    font-size: 17px;
+    line-height: 1.5;
+  }
+
+  .transport-hero-content > p {
+    font-size: 14px;
+  }
+
+  .transport-hero-buttons {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .transport-btn {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .transport-hero-bottom {
+    min-height: 105px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5px;
+    padding: 12px 8px;
+    box-sizing: border-box;
+  }
+
+  .transport-hero-bottom div {
+    flex-direction: column;
+    gap: 6px;
+    text-align: center;
+    font-size: 10px;
+  }
+
+  .transport-hero-bottom svg {
+    font-size: 19px;
+  }
+
+  .transport-intro-grid,
+  .transport-benefits-grid {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+
+  .transport-intro-image > img {
+    height: 280px;
+  }
+
+  .transport-image-caption {
+    left: 10px;
+    bottom: 10px;
+    padding: 12px;
+  }
+
+  .transport-machinery-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .transport-machine-image {
+    height: 230px;
+  }
+
+  .transport-machine-content > p {
+    min-height: auto;
+  }
+
+  .transport-application-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  .transport-application-card {
+    padding: 23px 12px;
+  }
+
+  .transport-application-card h3 {
+    font-size: 14px;
+  }
+
+  .transport-application-card p {
+    font-size: 11px;
+  }
+
+  .transport-contact-content {
+    gap: 25px;
+  }
+
+  .transport-contact-buttons {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .transport-info-grid {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 17px;
+  }
+}
+
+@media (max-width: 360px) {
+  .transport-hero h1 {
+    font-size: 36px;
+  }
+
+  .transport-application-grid {
+    grid-template-columns: 1fr;
+  }
+}

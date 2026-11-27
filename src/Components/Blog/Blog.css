@@ -875,3 +875,188 @@
     right: 0;
   }
 }
+
+/* =========================================
+   AWAN PROJECT GALLERY - 12 IMAGE FIX
+========================================= */
+
+.awan-project-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 25px;
+}
+
+.awan-project-card {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  padding: 0;
+  border: none;
+  background: #fff;
+  text-align: left;
+  font: inherit;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.awan-project-card:focus-visible {
+  outline: 3px solid #d4aa35;
+  outline-offset: 4px;
+}
+
+.awan-project-image {
+  position: relative;
+  width: 100%;
+  height: 250px;
+  overflow: hidden;
+  background: #e9edf2;
+}
+
+.awan-project-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform .5s ease;
+}
+
+.awan-project-card:hover .awan-project-image img {
+  transform: scale(1.07);
+}
+
+.awan-project-card:hover .awan-image-overlay {
+  opacity: 1;
+}
+
+.awan-project-card:hover .awan-image-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.awan-project-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 18px 15px;
+  background: #fff;
+}
+
+.awan-project-details h3 {
+  margin: 8px 0 0;
+  color: #092858;
+  font-size: 17px;
+}
+
+.awan-project-details span {
+  color: #bd936e;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.awan-project-detail-arrow {
+  flex-shrink: 0;
+  color: #bd936e;
+}
+
+.awan-modal-caption p {
+  color: #596575;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+/* TABLET */
+
+@media (max-width: 900px) {
+  .awan-project-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+  }
+
+  .awan-project-image {
+    height: 230px;
+  }
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+  .awan-project-grid {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+
+  .awan-project-image {
+    height: 250px;
+  }
+
+  .awan-project-details {
+    padding: 15px 12px;
+  }
+
+  .awan-project-details h3 {
+    font-size: 16px;
+  }
+}
+
+/* PROJECT POPUP */
+
+.awan-project-modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background: rgba(2, 12, 29, .92);
+}
+
+.awan-project-modal {
+  position: relative;
+  width: min(950px, 100%);
+  max-height: 90vh;
+  overflow-y: auto;
+  background: #fff;
+}
+
+.awan-project-modal > img {
+  display: block;
+  width: 100%;
+  max-height: 65vh;
+  object-fit: contain;
+  background: #071b37;
+}
+
+.awan-modal-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: 3;
+  width: 42px;
+  height: 42px;
+  border: none;
+  border-radius: 50%;
+  background: #092858;
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.awan-modal-caption {
+  padding: 20px 25px;
+}
+
+.awan-modal-caption span {
+  color: #bd936e;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.awan-modal-caption h3 {
+  margin: 8px 0;
+  color: #092858;
+  font-size: 24px;
+}

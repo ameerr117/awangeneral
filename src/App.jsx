@@ -27,6 +27,9 @@ import BlogDetail from "./Components/BlogDetail/BlogDetail";
 import Element from "./Components/Element/Element";
 import Contact from "./Components/Contact/Contact";
 
+// MACHINERY IMPORT
+import Machinery from "./Components/Machinery/Machinery";
+
 // Product Pages
 import Window from "./Components/Window/Window";
 import Door from "./Components/Door/Door";
@@ -122,12 +125,25 @@ const App = () => {
               </>
             }
           />
-           {/* Iron */}
+
+          {/* IRON */}
           <Route
             path="/Iron"
             element={
               <>
                 <Iron />
+                <Stories />
+                <Footer />
+              </>
+            }
+          />
+
+          {/* MACHINERY & EQUIPMENT */}
+          <Route
+            path="/Machinery"
+            element={
+              <>
+                <Machinery />
                 <Stories />
                 <Footer />
               </>
@@ -145,7 +161,8 @@ const App = () => {
               </>
             }
           />
- {/* Partition */}
+
+          {/* PARTITION */}
           <Route
             path="/Partition"
             element={
@@ -156,7 +173,8 @@ const App = () => {
               </>
             }
           />
-           {/* Parking */}
+
+          {/* PARKING */}
           <Route
             path="/Parking"
             element={
@@ -167,6 +185,7 @@ const App = () => {
               </>
             }
           />
+
           {/* TENTS */}
           <Route
             path="/Tents"
@@ -202,6 +221,8 @@ const App = () => {
               </>
             }
           />
+
+          {/* PAINTS */}
           <Route
             path="/Paints"
             element={

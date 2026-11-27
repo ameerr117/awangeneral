@@ -64,7 +64,7 @@ const Footer = () => {
           </a>
 
           <a href="tel:+971562700627">
-            <FaPhoneAlt /> +971 56 270 0627
+            <FaPhoneAlt /> tel:+971558816618
           </a>
 
           <a
