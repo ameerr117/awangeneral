@@ -44,7 +44,36 @@ const NavBar = () => {
   const salesEmail = 'sale@awangcaw.com';
 
   const phoneNumber = '+971558816618';
-  const whatsappLink = 'https://wa.me/971558816618';
+
+  // WHATSAPP WELCOME MESSAGE
+  const message = `👋 WELCOME TO AWAN GENERAL CONTRACTING & ALUMINIUM WORKS
+
+Thank you for contacting us!
+
+OUR SERVICES:
+Aluminium Windows
+Aluminium Doors
+Glass Works
+Glass Curtain Walls
+Aluminium Cladding
+Glass Partitions
+Aluminium Kitchens
+Pergolas & Tents
+Parking Shades
+Wrought Iron Works
+General Contracting
+Construction Works
+Heavy Machinery & Transport Services
+
+Website: https://agcaw.com
+Call: +971 558816618
+
+Please share your project details or photographs.
+
+Thank you for choosing AWAN!`;
+
+  const whatsappLink =
+    `https://wa.me/971558816618?text=${encodeURIComponent(message)}`;
 
   // GMAIL LINKS
   const infoGmailLink =
@@ -67,7 +96,7 @@ const NavBar = () => {
       path: '/'
     },
     {
-      name: ' Heavy Equipment ',
+      name: 'Heavy Equipment',
       keywords: [
         'machinery',
         'equipment',
@@ -497,7 +526,7 @@ const NavBar = () => {
             </div>
           </div>
 
-          {/* MOBILE MENU BUTTON */}
+          {/* MOBILE HAMBURGER MENU BUTTON */}
           <button
             type="button"
             className="mobile-menu-btn"
@@ -521,13 +550,13 @@ const NavBar = () => {
               </Link>
             </li>
 
-            {/* NEW MACHINERY & EQUIPMENT */}
+            {/* MACHINERY & EQUIPMENT */}
             <li className="machinery-nav-item">
-  <Link to="/Machinery" onClick={handleNavigation}>
-    <FaTools className="machinery-nav-icon" />
-    Machinery & Equipment
-  </Link>
-</li>
+              <Link to="/Machinery" onClick={handleNavigation}>
+                <FaTools className="machinery-nav-icon" />
+                Machinery & Equipment
+              </Link>
+            </li>
 
             <li>
               <Link to="/about" onClick={handleNavigation}>
@@ -673,7 +702,7 @@ const NavBar = () => {
               </Link>
             </li>
 
-            {/* SEARCH */}
+            {/* SEARCH - NO WHATSAPP ITEM IN MAIN NAVBAR */}
             <li className="nav-search-item">
 
               <button
@@ -715,6 +744,7 @@ const NavBar = () => {
                 <span>{salesEmail}</span>
               </a>
 
+              {/* WHATSAPP ONLY INSIDE MOBILE MENU */}
               <a
                 href={whatsappLink}
                 target="_blank"

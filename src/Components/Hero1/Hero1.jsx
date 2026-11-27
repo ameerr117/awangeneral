@@ -87,7 +87,36 @@ const slides = [
 const Hero1 = () => {
   const [current, setCurrent] = useState(0);
 
-  const phoneNumber = '971562700627';
+  // AWAN WHATSAPP DETAILS
+  const message = `👋 WELCOME TO AWAN GENERAL CONTRACTING & ALUMINIUM WORKS
+
+Thank you for contacting us!
+
+OUR SERVICES:
+Aluminium Windows
+Aluminium Doors
+Glass Works
+Glass Curtain Walls
+Aluminium Cladding
+Glass Partitions
+Aluminium Kitchens
+Pergolas & Tents
+Parking Shades
+Wrought Iron Works
+General Contracting
+Construction Works
+Heavy Machinery & Transport Services
+
+Website: https://agcaw.com
+Call: +971 558816618
+
+Please share your project details or photographs.
+
+Thank you for choosing AWAN!`;
+
+  const phoneNumber = '971558816618';
+
+  const whatsappLink = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
 
   useEffect(() => {
     const slider = setInterval(() => {
@@ -303,17 +332,16 @@ const Hero1 = () => {
 
       </section>
 
-
       {/* =================================
           FIXED WHATSAPP BUTTON
           ALL SCREEN SIZES
       ================================= */}
       <a
-        href={`https://wa.me/${phoneNumber}`}
+        href={whatsappLink}
         className="whatsapp-float"
         target="_blank"
         rel="noopener noreferrer"
-        aria-label="Chat with us on WhatsApp"
+        aria-label="Chat with AWAN on WhatsApp"
       >
         <FaWhatsapp />
 
@@ -321,7 +349,6 @@ const Hero1 = () => {
           Chat With Us
         </span>
       </a>
-
 
       {/* =================================
           AWAN CONTACT INFORMATION STRIP

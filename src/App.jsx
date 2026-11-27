@@ -10,6 +10,7 @@ import NavBar from "./Components/NavBar/NavBar";
 import Timer from "./Components/Timer/Timer";
 import Footer from "./Components/Footer/Footer";
 
+
 // Home Components
 import Hero1 from "./Components/Hero1/Hero1";
 import Approach from "./Components/Approach/Approach";
