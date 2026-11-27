@@ -30,6 +30,125 @@ import {
 
 import { SiGmail } from 'react-icons/si';
 
+// ==========================================
+// AWAN COMPANY SERVICES
+// ==========================================
+
+const AWAN_SERVICES = [
+  {
+    number: "01",
+    name: "ALUMINIUM WINDOWS",
+    image: "aluminium-windows.jpg",
+  },
+  {
+    number: "02",
+    name: "ALUMINIUM DOORS",
+    image: "aluminium-doors.jpg",
+  },
+  {
+    number: "03",
+    name: "GLASS WORKS",
+    image: "glass-works.jpg",
+  },
+  {
+    number: "04",
+    name: "GLASS CURTAIN WALLS",
+    image: "glass-curtain-walls.jpg",
+  },
+  {
+    number: "05",
+    name: "ALUMINIUM CLADDING",
+    image: "aluminium-cladding.jpg",
+  },
+  {
+    number: "06",
+    name: "GLASS PARTITIONS",
+    image: "glass-partitions.jpg",
+  },
+  {
+    number: "07",
+    name: "ALUMINIUM KITCHENS",
+    image: "aluminium-kitchens.jpg",
+  },
+  {
+    number: "08",
+    name: "PERGOLAS & TENTS",
+    image: "pergolas-tents.jpg",
+  },
+  {
+    number: "09",
+    name: "PARKING SHADES",
+    image: "parking-shades.jpg",
+  },
+  {
+    number: "10",
+    name: "WROUGHT IRON WORKS",
+    image: "wrought-iron-works.jpg",
+  },
+  {
+    number: "11",
+    name: "GENERAL CONTRACTING",
+    image: "general-contracting.jpg",
+  },
+  {
+    number: "12",
+    name: "CONSTRUCTION WORKS",
+    image: "construction-works.jpg",
+  },
+  {
+    number: "13",
+    name: "HEAVY MACHINERY & TRANSPORT SERVICES",
+    image: "heavy-machinery.jpg",
+  },
+];
+
+// ==========================================
+// WHATSAPP WELCOME MESSAGE
+// ==========================================
+
+const whatsappMessage = `👋 *WELCOME TO AWAN GENERAL CONTRACTING & ALUMINIUM WORKS*
+
+Thank you for contacting us!
+
+🏢 *OUR COMPANY SERVICES*
+
+${AWAN_SERVICES.map(
+  (service) => `
+🔹 ${service.number}. ${service.name}
+
+🖼️ SERVICE PICTURE:
+https://agcaw.com/images/services/${service.image}
+
+🌐 WEBSITE:
+https://agcaw.com`
+).join("\n")}
+
+━━━━━━━━━━━━━━━━━━━━
+
+🌐 *VISIT OUR WEBSITE*
+https://agcaw.com
+
+📞 *CALL OUR TEAM*
++971 558816618
+
+📩 *FOR PROJECT ENQUIRIES*
+Please send us your project details, requirements or photographs.
+
+*AWAN GENERAL CONTRACTING & ALUMINIUM WORKS*
+
+Professional Architectural Aluminium Solutions.
+
+Thank you for choosing AWAN! 🤝`;
+
+// WHATSAPP LINK
+const whatsappLink = `https://wa.me/971558816618?text=${encodeURIComponent(
+  whatsappMessage
+)}`;
+
+// ==========================================
+// NAVBAR COMPONENT
+// ==========================================
+
 const NavBar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileOpen, setIsMobileOpen] = useState(false);
@@ -45,36 +164,6 @@ const NavBar = () => {
 
   const phoneNumber = '+971558816618';
 
-  // WHATSAPP WELCOME MESSAGE
-  const message = `👋 WELCOME TO AWAN GENERAL CONTRACTING & ALUMINIUM WORKS
-
-Thank you for contacting us!
-
-OUR SERVICES:
-Aluminium Windows
-Aluminium Doors
-Glass Works
-Glass Curtain Walls
-Aluminium Cladding
-Glass Partitions
-Aluminium Kitchens
-Pergolas & Tents
-Parking Shades
-Wrought Iron Works
-General Contracting
-Construction Works
-Heavy Machinery & Transport Services
-
-Website: https://agcaw.com
-Call: +971 558816618
-
-Please share your project details or photographs.
-
-Thank you for choosing AWAN!`;
-
-  const whatsappLink =
-    `https://wa.me/971558816618?text=${encodeURIComponent(message)}`;
-
   // GMAIL LINKS
   const infoGmailLink =
     'https://mail.google.com/mail/?view=cm&fs=1' +
@@ -88,7 +177,10 @@ Thank you for choosing AWAN!`;
     '&su=' +
     encodeURIComponent('Sales Enquiry - AWAN General Contracting');
 
+  // ==========================================
   // WEBSITE SEARCH DATABASE
+  // ==========================================
+
   const searchPages = [
     {
       name: 'Home',
@@ -106,98 +198,204 @@ Thank you for choosing AWAN!`;
         'construction equipment',
         'industrial machinery',
         'heavy equipment',
+        'bobcat',
+        'shovel',
+        'excavator',
+        'loader',
         'tools'
       ],
       path: '/Machinery'
     },
     {
       name: 'About Us',
-      keywords: ['about', 'about us', 'company', 'construction', 'company profile'],
+      keywords: [
+        'about',
+        'about us',
+        'company',
+        'construction',
+        'company profile'
+      ],
       path: '/about'
     },
     {
       name: 'Aluminium Solutions',
-      keywords: ['solution', 'solutions', 'services', 'aluminium solutions'],
+      keywords: [
+        'solution',
+        'solutions',
+        'services',
+        'aluminium solutions'
+      ],
       path: '/programz'
     },
     {
       name: 'Windows',
-      keywords: ['window', 'windows', 'aluminium window', 'sliding window'],
+      keywords: [
+        'window',
+        'windows',
+        'aluminium window',
+        'sliding window'
+      ],
       path: '/Window'
     },
     {
       name: 'Doors',
-      keywords: ['door', 'doors', 'aluminium door', 'sliding door'],
+      keywords: [
+        'door',
+        'doors',
+        'aluminium door',
+        'sliding door'
+      ],
       path: '/Door'
     },
     {
       name: 'Cladding',
-      keywords: ['cladding', 'aluminium cladding', 'facade', 'façade', 'building facade'],
+      keywords: [
+        'cladding',
+        'aluminium cladding',
+        'facade',
+        'façade',
+        'building facade'
+      ],
       path: '/Cladding'
     },
     {
       name: 'Tents',
-      keywords: ['tent', 'tents', 'aluminium tent', 'fabric structure'],
+      keywords: [
+        'tent',
+        'tents',
+        'aluminium tent',
+        'fabric structure'
+      ],
       path: '/Tents'
     },
     {
       name: 'Glass',
-      keywords: ['glass', 'architectural glass', 'toughened glass', 'glass work'],
+      keywords: [
+        'glass',
+        'architectural glass',
+        'toughened glass',
+        'glass work'
+      ],
       path: '/Glass'
     },
     {
       name: 'Curtain Walls',
-      keywords: ['curtain', 'curtain wall', 'curtain walls', 'aluminium curtain wall', 'facade system'],
+      keywords: [
+        'curtain',
+        'curtain wall',
+        'curtain walls',
+        'aluminium curtain wall',
+        'facade system'
+      ],
       path: '/Curtain'
     },
     {
       name: 'Partitions',
-      keywords: ['partition', 'partitions', 'glass partition', 'office partition', 'aluminium partition'],
+      keywords: [
+        'partition',
+        'partitions',
+        'glass partition',
+        'office partition',
+        'aluminium partition'
+      ],
       path: '/Partition'
     },
     {
       name: 'Wrought Iron Gates',
-      keywords: ['iron', 'wrought iron', 'wrought iron gate', 'iron gate', 'gates', 'metal gate'],
+      keywords: [
+        'iron',
+        'wrought iron',
+        'wrought iron gate',
+        'iron gate',
+        'gates',
+        'metal gate'
+      ],
       path: '/Iron'
     },
     {
       name: 'Car Parkings & Shades',
-      keywords: ['parking', 'car parking', 'car parkings', 'parking shade', 'parking shades', 'car shade', 'carport'],
+      keywords: [
+        'parking',
+        'car parking',
+        'car parkings',
+        'parking shade',
+        'parking shades',
+        'car shade',
+        'carport'
+      ],
       path: '/Parking'
     },
     {
       name: 'Paints & Gypsum Works',
-      keywords: ['paint', 'paints', 'painting', 'gypsum', 'gypsum works', 'interior painting', 'exterior painting'],
+      keywords: [
+        'paint',
+        'paints',
+        'painting',
+        'gypsum',
+        'gypsum works',
+        'interior painting',
+        'exterior painting'
+      ],
       path: '/Paints'
     },
     {
       name: 'Insights',
-      keywords: ['insights', 'blog', 'blogs', 'news', 'articles'],
+      keywords: [
+        'insights',
+        'blog',
+        'blogs',
+        'news',
+        'articles'
+      ],
       path: '/blog'
     },
     {
       name: 'Projects',
-      keywords: ['project', 'projects', 'our projects', 'portfolio'],
+      keywords: [
+        'project',
+        'projects',
+        'our projects',
+        'portfolio'
+      ],
       path: '/blog'
     },
     {
       name: 'Blog Details',
-      keywords: ['blog details', 'other services'],
+      keywords: [
+        'blog details',
+        'other services'
+      ],
       path: '/blog-detail'
     },
     {
       name: 'Client Portal',
-      keywords: ['client portal', 'client', 'account', 'my account', 'technical information'],
+      keywords: [
+        'client portal',
+        'client',
+        'account',
+        'my account',
+        'technical information'
+      ],
       path: '/element'
     },
     {
       name: 'Contact',
-      keywords: ['contact', 'contact us', 'phone', 'email', 'address', 'location'],
+      keywords: [
+        'contact',
+        'contact us',
+        'phone',
+        'email',
+        'address',
+        'location'
+      ],
       path: '/contact'
     }
   ];
 
+  // ==========================================
   // SCROLL DETECTION
+  // ==========================================
+
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 40);
@@ -211,7 +409,10 @@ Thank you for choosing AWAN!`;
     };
   }, []);
 
+  // ==========================================
   // CLOSE MENU WITH ESCAPE
+  // ==========================================
+
   useEffect(() => {
     const handleEscape = (e) => {
       if (e.key === 'Escape') {
@@ -228,7 +429,10 @@ Thank you for choosing AWAN!`;
     };
   }, []);
 
+  // ==========================================
   // PREVENT BACKGROUND SCROLL
+  // ==========================================
+
   useEffect(() => {
     document.body.style.overflow =
       isSearchOpen || isMobileOpen ? 'hidden' : '';
@@ -238,7 +442,10 @@ Thank you for choosing AWAN!`;
     };
   }, [isSearchOpen, isMobileOpen]);
 
+  // ==========================================
   // CLOSE ALL MENUS
+  // ==========================================
+
   const closeMenus = () => {
     setIsMobileOpen(false);
     setOpenDropdown('');
@@ -274,7 +481,10 @@ Thank you for choosing AWAN!`;
     );
   };
 
+  // ==========================================
   // WEBSITE SEARCH
+  // ==========================================
+
   const handleSearch = (e) => {
     e.preventDefault();
 
@@ -330,7 +540,10 @@ Thank you for choosing AWAN!`;
     }
   };
 
+  // ==========================================
   // ALUMINIUM SOLUTIONS
+  // ==========================================
+
   const solutions = [
     {
       icon: <FaWindowMaximize />,
@@ -394,7 +607,10 @@ Thank you for choosing AWAN!`;
     }
   ];
 
+  // ==========================================
   // POPULAR SEARCHES
+  // ==========================================
+
   const popularSearches = [
     'Windows',
     'Doors',
@@ -406,11 +622,15 @@ Thank you for choosing AWAN!`;
     'Wrought Iron Gates',
     'Car Parkings & Shades',
     'Paints & Gypsum Works',
-    'Machinery & Equipment',
+    'Heavy Equipment',
     'About Us',
     'Projects',
     'Contact'
   ];
+
+  // ==========================================
+  // NAVBAR DISPLAY
+  // ==========================================
 
   return (
     <>
@@ -539,7 +759,10 @@ Thank you for choosing AWAN!`;
 
         </div>
 
-        {/* NAVIGATION LINKS */}
+        {/* ======================================
+            NAVIGATION LINKS
+        ====================================== */}
+
         <div className={`nav-links ${isMobileOpen ? 'mobile-active' : ''}`}>
 
           <ul>
@@ -550,11 +773,11 @@ Thank you for choosing AWAN!`;
               </Link>
             </li>
 
-            {/* MACHINERY & EQUIPMENT */}
+            {/* HEAVY EQUIPMENT */}
             <li className="machinery-nav-item">
               <Link to="/Machinery" onClick={handleNavigation}>
                 <FaTools className="machinery-nav-icon" />
-                Machinery & Equipment
+                Heavy Equipment
               </Link>
             </li>
 
@@ -702,7 +925,7 @@ Thank you for choosing AWAN!`;
               </Link>
             </li>
 
-            {/* SEARCH - NO WHATSAPP ITEM IN MAIN NAVBAR */}
+            {/* SEARCH */}
             <li className="nav-search-item">
 
               <button
@@ -749,6 +972,11 @@ Thank you for choosing AWAN!`;
                 href={whatsappLink}
                 target="_blank"
                 rel="noopener noreferrer"
+                className="mobile-whatsapp-link"
+                onClick={() => {
+                  setIsMobileOpen(false);
+                  setOpenDropdown('');
+                }}
               >
                 <FaWhatsapp />
                 <span>WhatsApp Us</span>
@@ -798,16 +1026,6 @@ Thank you for choosing AWAN!`;
                 </a>
 
                 <a
-                  href={whatsappLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="WhatsApp"
-                  className="mobile-social-link"
-                >
-                  <FaWhatsapp />
-                </a>
-
-                <a
                   href={infoGmailLink}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -848,7 +1066,10 @@ Thank you for choosing AWAN!`;
         />
       )}
 
-      {/* SEARCH POPUP */}
+      {/* ======================================
+          SEARCH POPUP
+      ====================================== */}
+
       {isSearchOpen && (
 
         <div
@@ -878,9 +1099,10 @@ Thank you for choosing AWAN!`;
             <h2>Search Our Website</h2>
 
             <p className="website-search-text">
-              Find aluminium solutions, machinery and equipment,
-              windows, doors, curtain walls, partitions, glass systems,
-              wrought iron gates, car parking shades, paints and gypsum works.
+              Find aluminium solutions, heavy equipment,
+              windows, doors, curtain walls, partitions,
+              glass systems, wrought iron gates,
+              car parking shades, paints and gypsum works.
             </p>
 
             {/* SEARCH FORM */}

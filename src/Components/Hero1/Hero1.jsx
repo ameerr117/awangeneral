@@ -21,6 +21,10 @@ import image2 from '../../assets/alu008.jpg';
 import image3 from '../../assets/alu007.jpg';
 import image4 from '../../assets/alu09.jpg';
 
+// =====================================
+// HERO SLIDES
+// =====================================
+
 const slides = [
   {
     image: image1,
@@ -84,39 +88,136 @@ const slides = [
   }
 ];
 
-const Hero1 = () => {
-  const [current, setCurrent] = useState(0);
+// =====================================
+// AWAN COMPANY SERVICES
+// =====================================
 
-  // AWAN WHATSAPP DETAILS
-  const message = `👋 WELCOME TO AWAN GENERAL CONTRACTING & ALUMINIUM WORKS
+const AWAN_SERVICES = [
+  {
+    number: "01",
+    name: "ALUMINIUM WINDOWS",
+    image: "aluminium-windows.jpg",
+  },
+  {
+    number: "02",
+    name: "ALUMINIUM DOORS",
+    image: "aluminium-doors.jpg",
+  },
+  {
+    number: "03",
+    name: "GLASS WORKS",
+    image: "glass-works.jpg",
+  },
+  {
+    number: "04",
+    name: "GLASS CURTAIN WALLS",
+    image: "glass-curtain-walls.jpg",
+  },
+  {
+    number: "05",
+    name: "ALUMINIUM CLADDING",
+    image: "aluminium-cladding.jpg",
+  },
+  {
+    number: "06",
+    name: "GLASS PARTITIONS",
+    image: "glass-partitions.jpg",
+  },
+  {
+    number: "07",
+    name: "ALUMINIUM KITCHENS",
+    image: "aluminium-kitchens.jpg",
+  },
+  {
+    number: "08",
+    name: "PERGOLAS & TENTS",
+    image: "pergolas-tents.jpg",
+  },
+  {
+    number: "09",
+    name: "PARKING SHADES",
+    image: "parking-shades.jpg",
+  },
+  {
+    number: "10",
+    name: "WROUGHT IRON WORKS",
+    image: "wrought-iron-works.jpg",
+  },
+  {
+    number: "11",
+    name: "GENERAL CONTRACTING",
+    image: "general-contracting.jpg",
+  },
+  {
+    number: "12",
+    name: "CONSTRUCTION WORKS",
+    image: "construction-works.jpg",
+  },
+  {
+    number: "13",
+    name: "HEAVY MACHINERY & TRANSPORT SERVICES",
+    image: "heavy-machinery.jpg",
+  }
+];
+
+// =====================================
+// WHATSAPP WELCOME MESSAGE
+// =====================================
+
+const whatsappMessage = `👋 *WELCOME TO AWAN GENERAL CONTRACTING & ALUMINIUM WORKS*
 
 Thank you for contacting us!
 
-OUR SERVICES:
-Aluminium Windows
-Aluminium Doors
-Glass Works
-Glass Curtain Walls
-Aluminium Cladding
-Glass Partitions
-Aluminium Kitchens
-Pergolas & Tents
-Parking Shades
-Wrought Iron Works
-General Contracting
-Construction Works
-Heavy Machinery & Transport Services
+🏢 *OUR COMPANY SERVICES*
 
-Website: https://agcaw.com
-Call: +971 558816618
+${AWAN_SERVICES.map(
+  (service) => `
+━━━━━━━━━━━━━━━━━━━━
 
-Please share your project details or photographs.
+🔹 *${service.number}. ${service.name}*
 
-Thank you for choosing AWAN!`;
+🖼️ SERVICE PICTURE:
+https://agcaw.com/images/services/${service.image}
 
-  const phoneNumber = '971558816618';
+🌐 WEBSITE:
+https://agcaw.com`
+).join("\n")}
 
-  const whatsappLink = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+━━━━━━━━━━━━━━━━━━━━
+
+🌐 *VISIT OUR WEBSITE*
+https://agcaw.com
+
+📞 *CALL OUR TEAM*
++971 558816618
+
+📩 *FOR PROJECT ENQUIRIES*
+Please send us your project details, requirements or photographs.
+
+*AWAN GENERAL CONTRACTING & ALUMINIUM WORKS*
+
+Professional Architectural Aluminium Solutions.
+
+Thank you for choosing AWAN! 🤝`;
+
+// =====================================
+// WHATSAPP LINK
+// =====================================
+
+const phoneNumber = '971558816618';
+
+const whatsappLink = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
+  whatsappMessage
+)}`;
+
+// =====================================
+// HERO COMPONENT
+// =====================================
+
+const Hero1 = () => {
+  const [current, setCurrent] = useState(0);
+
+  // AUTOMATIC IMAGE SLIDER
 
   useEffect(() => {
     const slider = setInterval(() => {
@@ -126,9 +227,13 @@ Thank you for choosing AWAN!`;
     return () => clearInterval(slider);
   }, []);
 
+  // NEXT SLIDE
+
   const nextSlide = () => {
     setCurrent((prev) => (prev + 1) % slides.length);
   };
+
+  // PREVIOUS SLIDE
 
   const previousSlide = () => {
     setCurrent((prev) => (prev - 1 + slides.length) % slides.length);
@@ -139,10 +244,13 @@ Thank you for choosing AWAN!`;
       {/* =================================
           HERO SECTION
       ================================= */}
+
       <section className="awan-hero">
 
         {/* BACKGROUND IMAGE SLIDER */}
+
         <div className="awan-hero-images">
+
           {slides.map((slide, index) => (
             <div
               key={slide.number}
@@ -154,23 +262,31 @@ Thank you for choosing AWAN!`;
               }}
             />
           ))}
+
         </div>
 
         {/* BACKGROUND EFFECTS */}
+
         <div className="awan-hero-shade"></div>
         <div className="awan-hero-grid"></div>
         <div className="awan-hero-glow"></div>
 
         {/* MAIN CONTENT */}
+
         <div className="awan-hero-container">
 
           <div className="awan-hero-content" key={current}>
 
             <div className="hero-kicker">
+
               <span className="hero-kicker-line"></span>
+
               <span>AWAN GENERAL CONTRACTING</span>
+
               <span className="hero-kicker-dot"></span>
+
               <span>ALUMINIUM WORKS</span>
+
             </div>
 
             <div className="hero-heading-wrap">
@@ -194,6 +310,7 @@ Thank you for choosing AWAN!`;
             </p>
 
             {/* BUTTONS */}
+
             <div className="awan-hero-buttons">
 
               <Link
@@ -215,24 +332,31 @@ Thank you for choosing AWAN!`;
             </div>
 
             {/* TRUST DETAILS */}
+
             <div className="hero-trust-row">
 
               <div className="hero-trust-item">
+
                 <span className="hero-trust-icon">01</span>
+
                 <div>
                   <strong>PREMIUM QUALITY</strong>
                   <small>Carefully selected materials</small>
                 </div>
+
               </div>
 
               <span className="hero-trust-divider"></span>
 
               <div className="hero-trust-item">
+
                 <span className="hero-trust-icon">02</span>
+
                 <div>
                   <strong>MODERN DESIGN</strong>
                   <small>Elegant architectural solutions</small>
                 </div>
+
               </div>
 
             </div>
@@ -240,14 +364,17 @@ Thank you for choosing AWAN!`;
           </div>
 
           {/* RIGHT SIDE SPECIALITY CARD */}
+
           <div className="hero-side-card">
 
             <div className="hero-card-top">
+
               <span>OUR SPECIALITY</span>
 
               <span className="hero-card-status">
                 <i></i> PREMIUM
               </span>
+
             </div>
 
             <div className="hero-card-number">
@@ -277,6 +404,7 @@ Thank you for choosing AWAN!`;
         </div>
 
         {/* BOTTOM SLIDER CONTROLS */}
+
         <div className="hero-bottom-bar">
 
           <div className="hero-slider-controls">
@@ -291,6 +419,7 @@ Thank you for choosing AWAN!`;
             </button>
 
             <div className="hero-slide-dots">
+
               {slides.map((slide, index) => (
                 <button
                   type="button"
@@ -304,6 +433,7 @@ Thank you for choosing AWAN!`;
                   <span></span>
                 </button>
               ))}
+
             </div>
 
             <button
@@ -318,14 +448,21 @@ Thank you for choosing AWAN!`;
           </div>
 
           <div className="hero-bottom-caption">
+
             <span>ARCHITECTURAL EXCELLENCE</span>
+
             <span className="hero-caption-line"></span>
+
             <span>CRAFTED WITH PRECISION</span>
+
           </div>
 
           <div className="hero-slide-counter">
+
             <strong>{slides[current].number}</strong>
+
             <span> / 10</span>
+
           </div>
 
         </div>
@@ -335,7 +472,9 @@ Thank you for choosing AWAN!`;
       {/* =================================
           FIXED WHATSAPP BUTTON
           ALL SCREEN SIZES
+          COMPLETE 13 SERVICES MESSAGE
       ================================= */}
+
       <a
         href={whatsappLink}
         className="whatsapp-float"
@@ -343,25 +482,30 @@ Thank you for choosing AWAN!`;
         rel="noopener noreferrer"
         aria-label="Chat with AWAN on WhatsApp"
       >
+
         <FaWhatsapp />
 
         <span className="whatsapp-tooltip">
           Chat With Us
         </span>
+
       </a>
 
       {/* =================================
           AWAN CONTACT INFORMATION STRIP
       ================================= */}
+
       <section className="awan-contact-strip">
 
         <div className="awan-contact-inner">
 
           {/* EMAIL */}
+
           <a
             href="mailto:awangcaw@gmail.com"
             className="awan-contact-item"
           >
+
             <div className="awan-contact-icon">
               <FaEnvelope />
             </div>
@@ -370,17 +514,20 @@ Thank you for choosing AWAN!`;
               <span>Email:</span>
               <strong>awangcaw@gmail.com</strong>
             </div>
+
           </a>
 
           <span className="awan-contact-divider"></span>
 
           {/* WEBSITE */}
+
           <a
             href="https://www.agcaw.com"
             target="_blank"
             rel="noopener noreferrer"
             className="awan-contact-item"
           >
+
             <div className="awan-contact-icon">
               <FaGlobe />
             </div>
@@ -389,15 +536,18 @@ Thank you for choosing AWAN!`;
               <span>Website:</span>
               <strong>www.agcaw.com</strong>
             </div>
+
           </a>
 
           <span className="awan-contact-divider"></span>
 
           {/* PHONE */}
+
           <a
             href={`tel:+${phoneNumber}`}
             className="awan-contact-item"
           >
+
             <div className="awan-contact-icon">
               <FaPhone />
             </div>
@@ -406,17 +556,20 @@ Thank you for choosing AWAN!`;
               <span>Contact:</span>
               <strong>+971 56 270 0627</strong>
             </div>
+
           </a>
 
           <span className="awan-contact-divider"></span>
 
           {/* ADDRESS */}
+
           <a
             href="https://www.google.com/maps/search/?api=1&query=M32%2F2%2C+Abu+Dhabi%2C+UAE"
             target="_blank"
             rel="noopener noreferrer"
             className="awan-contact-item awan-location-item"
           >
+
             <div className="awan-contact-icon">
               <FaLocationDot />
             </div>
@@ -425,13 +578,19 @@ Thank you for choosing AWAN!`;
               <span>Location:</span>
               <strong>M32/2, ABU DHABI - UAE</strong>
             </div>
+
           </a>
 
           {/* TAGLINE */}
+
           <div className="awan-contact-tagline">
+
             <span>Build Better...</span>
+
             <strong>Together</strong>
+
             <i></i>
+
           </div>
 
         </div>

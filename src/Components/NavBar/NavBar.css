@@ -1928,3 +1928,39 @@
     outline-offset: 4px;
   }
 }
+
+/* ==========================================
+   WHATSAPP ONLY INSIDE MOBILE MENU
+========================================== */
+
+.mobile-whatsapp-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: fit-content;
+  margin-top: 12px;
+  padding: 12px 20px;
+  background: #25D366;
+  color: #ffffff !important;
+  text-decoration: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 700;
+  transition: all 0.3s ease;
+}
+
+.mobile-whatsapp-link:hover {
+  background: #128C7E;
+  color: #ffffff !important;
+}
+
+.mobile-whatsapp-link svg {
+  font-size: 20px;
+}
+
+/* Do not display WhatsApp in desktop navigation */
+.navbar-whatsapp-item,
+.navbar-whatsapp-link {
+  display: none !important;
+}

@@ -19,6 +19,128 @@ import {
 
 import "./Contact.css";
 
+// =====================================
+// AWAN COMPANY SERVICES
+// =====================================
+
+const AWAN_SERVICES = [
+  {
+    number: "01",
+    name: "ALUMINIUM WINDOWS",
+    image: "aluminium-windows.jpg",
+  },
+  {
+    number: "02",
+    name: "ALUMINIUM DOORS",
+    image: "aluminium-doors.jpg",
+  },
+  {
+    number: "03",
+    name: "GLASS WORKS",
+    image: "glass-works.jpg",
+  },
+  {
+    number: "04",
+    name: "GLASS CURTAIN WALLS",
+    image: "glass-curtain-walls.jpg",
+  },
+  {
+    number: "05",
+    name: "ALUMINIUM CLADDING",
+    image: "aluminium-cladding.jpg",
+  },
+  {
+    number: "06",
+    name: "GLASS PARTITIONS",
+    image: "glass-partitions.jpg",
+  },
+  {
+    number: "07",
+    name: "ALUMINIUM KITCHENS",
+    image: "aluminium-kitchens.jpg",
+  },
+  {
+    number: "08",
+    name: "PERGOLAS & TENTS",
+    image: "pergolas-tents.jpg",
+  },
+  {
+    number: "09",
+    name: "PARKING SHADES",
+    image: "parking-shades.jpg",
+  },
+  {
+    number: "10",
+    name: "WROUGHT IRON WORKS",
+    image: "wrought-iron-works.jpg",
+  },
+  {
+    number: "11",
+    name: "GENERAL CONTRACTING",
+    image: "general-contracting.jpg",
+  },
+  {
+    number: "12",
+    name: "CONSTRUCTION WORKS",
+    image: "construction-works.jpg",
+  },
+  {
+    number: "13",
+    name: "HEAVY MACHINERY & TRANSPORT SERVICES",
+    image: "heavy-machinery.jpg",
+  },
+];
+
+// =====================================
+// WHATSAPP WELCOME MESSAGE
+// =====================================
+
+const whatsappMessage = `👋 *WELCOME TO AWAN GENERAL CONTRACTING & ALUMINIUM WORKS*
+
+Thank you for contacting us!
+
+🏢 *OUR COMPANY SERVICES*
+
+${AWAN_SERVICES.map(
+  (service) => `
+━━━━━━━━━━━━━━━━━━━━
+
+🔹 *${service.number}. ${service.name}*
+
+🖼️ SERVICE PICTURE:
+https://agcaw.com/images/services/${service.image}
+
+🌐 WEBSITE:
+https://agcaw.com`
+).join("\n")}
+
+━━━━━━━━━━━━━━━━━━━━
+
+🌐 *VISIT OUR WEBSITE*
+https://agcaw.com
+
+📞 *CALL OUR TEAM*
++971 558816618
+
+📩 *FOR PROJECT ENQUIRIES*
+Please send us your project details, requirements or photographs.
+
+*AWAN GENERAL CONTRACTING & ALUMINIUM WORKS*
+
+Professional Architectural Aluminium Solutions.
+
+Thank you for choosing AWAN! 🤝`;
+
+// ENCODE WHATSAPP MESSAGE
+
+const whatsappLink = `https://wa.me/971558816618?text=${encodeURIComponent(
+  whatsappMessage
+)}`;
+
+// =====================================
+// INITIAL FORM
+// =====================================
+
 const INITIAL_FORM = {
   name: "",
   email: "",
@@ -28,11 +150,19 @@ const INITIAL_FORM = {
   message: "",
 };
 
+// =====================================
+// EMAIL RECIPIENTS
+// =====================================
+
 const RECIPIENT_EMAILS = {
   info: "info@agcaw.com",
   sales: "sale@agcaw.com",
   both: "info@agcaw.com, sale@agcaw.com",
 };
+
+// =====================================
+// CONTACT COMPONENT
+// =====================================
 
 const Contact = () => {
   const [formData, setFormData] = useState(INITIAL_FORM);
@@ -40,6 +170,7 @@ const Contact = () => {
   const [loading, setLoading] = useState(false);
 
   // HANDLE INPUT CHANGES
+
   const handleChange = (e) => {
     const { name, value } = e.target;
 
@@ -54,6 +185,7 @@ const Contact = () => {
   };
 
   // HANDLE FORM SUBMISSION
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -63,18 +195,19 @@ const Contact = () => {
     setStatus("");
 
     // EMAILJS CONFIGURATION
+
     const serviceID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
     const templateID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
     const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
-    // CHECK EMAILJS CREDENTIALS
     console.log("EmailJS configuration:", {
       serviceID: serviceID ? "Found" : "Missing",
       templateID: templateID ? "Found" : "Missing",
       publicKey: publicKey ? "Found" : "Missing",
     });
 
-    // CHECK MISSING CREDENTIALS
+    // CHECK CONFIGURATION
+
     if (!serviceID || !templateID || !publicKey) {
       console.error("EmailJS configuration is incomplete.");
 
@@ -87,6 +220,7 @@ const Contact = () => {
     }
 
     // SELECT RECIPIENT
+
     const selectedRecipient =
       RECIPIENT_EMAILS[formData.recipient];
 
@@ -97,6 +231,7 @@ const Contact = () => {
     }
 
     // EMAIL TEMPLATE PARAMETERS
+
     const templateParams = {
       from_name: formData.name.trim(),
       from_email: formData.email.trim(),
@@ -108,7 +243,6 @@ const Contact = () => {
     };
 
     try {
-      // SEND EMAIL
       const response = await emailjs.send(
         serviceID,
         templateID,
@@ -253,7 +387,7 @@ const Contact = () => {
 
             </div>
 
-            {/* FORM */}
+            {/* CONTACT FORM */}
 
             <form
               onSubmit={handleSubmit}
@@ -342,37 +476,14 @@ const Contact = () => {
                       Choose a service
                     </option>
 
-                    <option value="Aluminium Works">
-                      Aluminium Works
-                    </option>
-
-                    <option value="Glass Works">
-                      Glass Works
-                    </option>
-
-                    <option value="Curtain Wall">
-                      Curtain Wall
-                    </option>
-
-                    <option value="Doors and Windows">
-                      Doors and Windows
-                    </option>
-
-                    <option value="Iron Works">
-                      Iron Works
-                    </option>
-
-                    <option value="Cladding Works">
-                      Cladding Works
-                    </option>
-
-                    <option value="Partitions">
-                      Partitions
-                    </option>
-
-                    <option value="General Contracting">
-                      General Contracting
-                    </option>
+                    {AWAN_SERVICES.map((service) => (
+                      <option
+                        key={service.number}
+                        value={service.name}
+                      >
+                        {service.number} - {service.name}
+                      </option>
+                    ))}
 
                     <option value="Other Services">
                       Other Services
@@ -574,12 +685,12 @@ const Contact = () => {
 
             </a>
 
-            {/* WHATSAPP */}
+            {/* WHATSAPP WITH ALL 13 SERVICES */}
 
             <a
-              href="https://wa.me/971562700627"
+              href={whatsappLink}
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
               className="contact-info-card"
             >
 
@@ -590,6 +701,10 @@ const Contact = () => {
               <h3>WhatsApp</h3>
 
               <p>Chat With Our Team</p>
+
+              <p>+971 558816618</p>
+
+              <small>View All 13 Company Services</small>
 
             </a>
 
@@ -702,10 +817,12 @@ const Contact = () => {
                 <FaPhoneAlt />
               </a>
 
+              {/* WHATSAPP WITH ALL 13 SERVICES */}
+
               <a
-                href="https://wa.me/971558816618"
+                href={whatsappLink}
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
               >
                 WHATSAPP
                 <FaWhatsapp />
